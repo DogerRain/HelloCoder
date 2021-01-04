@@ -1,0 +1,62 @@
+Windows系统是使用C++和C语言编写的，你要想Java运行在Windows系统，那就要安装Java的运行环境（Java 虚拟机）才行，不然Windows是无法识别你的代码的。
+
+在Mac、Linux也是同理，你要运行Python、C++，也一样要安装语言支持的环境。
+
+
+
+## 1、安装Java运行环境
+
+> 以Windows10、jdk1.8 为例
+
+JDK是 Java 语言的软件开发工具包，JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。
+
+这是Java程序运行必须依赖当前环境。也是我们使用Java开发必须安装的环境，安装完毕配置jdk的环境即可。
+
+
+
+### 1、下载 jdk
+
+下载地址：
+
+https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
+
+Windows 64位版本：
+
+![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210104162158102.png)
+
+其他jdk版本也是一样。
+
+
+
+### 2、安装
+
+安装成功后，打开电脑的 `环境变量`
+
+1、新建一个名为“`JAVA_HOME`”的环境变量，变量值为Java的安装路径，本人为：`D:\project\Java\jdk8`
+
+2、设置Path环境变量，该变量已经存在，所以在列表中选择Path，点击下方的“编辑”按钮，在弹出的窗口中添加如下信息： `%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin`，然后点击“确认”按钮即可，如果你是win7，前面需要加`;`，即`;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin`
+
+3、和`JAVA_HOME`一样，新建一个名为“`classpath`”的环境变量，变量值为：`%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar`
+
+### 3、验证
+
+`win+R` 输入 `java -version`
+
+```java
+C:\Users\HaC>java -version
+java version "1.8.0_131"
+Java(TM) SE Runtime Environment (build 1.8.0_131-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)
+```
+
+出现版本信息表示安装成功。
+
+
+
+## JDK、JRE、JVM 的关系
+
+JDK：Java 开发工具包，同时还包含了编译java源码的编译器javac，供开发使用。
+JRE：Java 运行时环境，一些基本类库，供运行使用。
+JVM：Java 虚拟机。它只认识 xxx.class 这种类型的文件，它能够将 class 文件中的字节码指令进行识别并针对不同操作系统向上的 API 完成动作。
+
+![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201014161247843.png)

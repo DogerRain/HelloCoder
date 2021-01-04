@@ -2,9 +2,11 @@
 
 > LearnJavaToFindAJob 是一个帮助Java入门到找到一份工作的学习路线文档
 
-涵盖了 Java基础知识、Java项目、Java面试、服务器、运维 等知识
+涵盖了 Java基础知识、Java项目、Java面试、服务器、运维、MySQL、中间件、简历 等知识。
 
 在这里，期待与各位共同进步。
+
+愿各位看完有收获，找到一份满意的工作。
 
 
 
@@ -24,9 +26,9 @@
 
 在线阅读地址：
 
-GitHub Pages：https://dogerrain.github.io/LearnJavaToFindAJob/#/
+GitHub Pages：[https://dogerrain.github.io/LearnJavaToFindAJob/#/](https://dogerrain.github.io/LearnJavaToFindAJob/#/)
 
-Gittee Pages ：https://dogerrain.github.io/LearnJavaToFindAJob/#/（国内访问快）
+Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://dogerrain.github.io/LearnJavaToFindAJob/#/ )（国内访问快）
 
 
 
