@@ -169,6 +169,18 @@ System.out.println(y); // 1
 
 
 
+变量是可以使用 `修饰符` 修饰的：
+
+eg：
+
+```java
+int x = 1;
+static int y = 2;
+static final int z = 3;
+```
+
+
+
 ## 引用数据类型
 
 引用数据类型，先学完数组和面向对象再详细讲一下。

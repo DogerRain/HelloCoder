@@ -342,9 +342,16 @@ public class HelloCoder {
     public static void printName() {
         String name = "HaC"; //定义一个name的局部变量，必须初始化才能使用
         System.out.println(name); 
+        System.out.println(age);  //使用全局变量
     }
 }
 ```
+
+
+
+普通方法可以调用**全局变量**，方法不能使用其他方法的局部变量。
+
+> 全局变量，即全局，所有的方法都可以使用的；局部变量，则是属于自己的。
 
 
 
