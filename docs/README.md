@@ -14,7 +14,7 @@
 
 项目是根据作者个人的工作经历和学习历程的路线整理，本项目也将根据以下的学习路线进行展开：
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/Java学习路线 公众号：HelloCoder.png)
+![HelloCode](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/HelloCode.png)
 
 ## 更新时间线
 
@@ -24,7 +24,7 @@
 
 
 
-在线阅读地址：
+## 在线阅读地址：
 
 GitHub Pages：[https://dogerrain.github.io/LearnJavaToFindAJob/#/](https://dogerrain.github.io/LearnJavaToFindAJob/#/)
 

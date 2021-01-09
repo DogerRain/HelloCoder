@@ -16,7 +16,11 @@
 
 ![](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/5862033-c11fa3de611d671c.webp)
 
-eclipse也是一个非常优秀的开源免费的集成开发工具，Eclipse原来是IBM公司开发专门用于java的IDE开发环境，2001年11月贡献给开源社区，现在它由非营利软件供应商联盟Eclipse基金会管理，Eclipse 是一个开放源代码的、基于Java的可扩展开发平台。Eclipse设计非常优良，它本身只是一个框架和一组服务，可以通过插件的方式构建开发环境，并扩展其功能。而且，Eclipse 附带了一个标准的插件集，其中就包括Java开发工具（Java Development Kit，JDK）。 
+eclipse也是一个非常优秀的开源免费的集成开发工具，Eclipse原来是IBM公司开发专门用于java的IDE开发环境，2001年11月贡献给开源社区，现在它由非营利软件供应商联盟Eclipse基金会管理，Eclipse 是一个开放源代码的、基于Java的可扩展开发平台。
+
+
+
+Eclipse设计非常优良，它本身只是一个框架和一组服务，可以通过插件的方式构建开发环境，并扩展其功能。而且，Eclipse 附带了一个标准的插件集，其中就包括Java开发工具（Java Development Kit，JDK）。 
 
 ![](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200525234502327.png)
 
@@ -78,7 +82,7 @@ MyEclipse不需要jdk环境，因为已经内置了，而且内置了tomcat，�
 
 
 
-经验总结：
+**经验总结：**
 
 1. IDEA调试功能非常优秀，代码编辑功能比eclipse、Myclipse优秀许多，但是资源消耗比较大。
 2. eclipse虽然体积小，但是扩展需要自己下载插件，崩溃了较高
