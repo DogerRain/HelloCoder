@@ -291,6 +291,13 @@ class HelloCoder{ //可以有多个类
 }
 ```
 
+类的实例化：
+
+```java
+Hello hello = new Hello();
+HelloCoder helloCoder = new HelloCoder();
+```
+
 
 
 ### 1.2 、方法 
@@ -299,29 +306,47 @@ class HelloCoder{ //可以有多个类
 
 用`{}` 表示方法的起始。
 
-```java
-public class HelloCoder {
-    public void printName() {  //方法
-    	System.out.println("HaC");
-	}	
-}
-```
+方法可以自定义参数、返回值。
 
-这里的 `void` 表示方法没有返回值。
+ `void` 表示方法没有返回值。
 
-我们希望调用这个`printName()`方法返回需要的值，可以改成基本数据类型或者引用数据类型，如：
+> 返回值如果为空则使用void，如果不写则会报错
+
+eg：
 
 ```java
 public class HelloCoder {
-    public boolean printName() {
+    public void printName() {  //没有返回值方法
         System.out.println("HaC");
-        return true;
     }
-    public int printSex() {
+    public int printSex() { //有返回值方法
         System.out.println("男");
         return 1;
     }
+    public static void printWhatYouInput(String input) { //静态、带参数，无返回值方法
+        System.out.println(input);
+    }
 }
+```
+
+方法的调用：
+
+```java
+public static void main(String[] args) {
+    HelloCoder helloCoder = new HelloCoder(); //实例化
+    helloCoder.printName(); //方法的调用
+    System.out.println(helloCoder.printSex());
+    HelloCoder.printWhatYouInput("任意输入");
+}
+```
+
+输出：
+
+```
+HaC
+男
+1
+任意输入
 ```
 
 
@@ -552,4 +577,5 @@ printName() 方法输出类变量age、name的值，因为没有初始化，所�
 
 
 
-以上一知半解不重要，继续往下学习。
+以上一知半解不重要，坚持继续往下学习。
+
