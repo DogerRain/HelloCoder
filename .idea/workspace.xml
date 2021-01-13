@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3420879d-e3ab-40fc-bc7e-0c26317fe485" name="Default Changelist" comment="20210106">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="3420879d-e3ab-40fc-bc7e-0c26317fe485" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Hello.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/1、Java基础语法.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/1、Java基础语法.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/2、Java数据变量和类型.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/2、Java数据变量和类型.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/4、Java 运算符.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/4、Java 运算符.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/字符和字符串.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/继承.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/面向对象/继承.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,12 +12,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/checkstyle-idea.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -58,6 +52,7 @@
         <option value="$PROJECT_DIR$/docs/index.html" />
         <option value="$PROJECT_DIR$/docs/_coverpage.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
       </list>
     </option>
   </component>
@@ -509,31 +504,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1610100117849" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1610418627520" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -583,6 +563,10 @@
       <workItem from="1609860301113" duration="16000" />
       <workItem from="1609862645335" duration="39000" />
       <workItem from="1610035102469" duration="314000" />
+      <workItem from="1610101244822" duration="716000" />
+      <workItem from="1610328241122" duration="1236000" />
+      <workItem from="1610361242623" duration="656000" />
+      <workItem from="1610420555174" duration="4695000" />
     </task>
     <task id="LOCAL-00001" summary="首次提交">
       <created>1609682366782</created>
@@ -605,17 +589,30 @@
       <option name="project" value="LOCAL" />
       <updated>1609862665263</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="20210108">
+      <created>1610101424976</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1610101424976</updated>
+    </task>
+    <task id="LOCAL-00005" summary="20210111">
+      <created>1610361273150</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610361273150</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16140000" />
+    <option name="totallyTimeSpent" value="23443000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2563966" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -635,8 +632,10 @@
       <window_info anchor="bottom" id="CheckStyle" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" visible="true" weight="0.32998884" />
+      <window_info anchor="bottom" id="Version Control" order="12" visible="true" weight="0.31813127" />
       <window_info anchor="bottom" id="Alibaba Cloud View" order="13" />
+      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="LuaCheck" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -648,15 +647,30 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Alibaba Log Console" order="10" />
+      <window_info anchor="right" id="Maven" order="11" />
+      <window_info anchor="right" id="Alibaba ROS Templates" order="12" />
+      <window_info anchor="right" id="SciView" order="13" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="首次提交" />
     <MESSAGE value="20210106" />
-    <option name="LAST_COMMIT_MESSAGE" value="20210106" />
+    <MESSAGE value="20210108" />
+    <MESSAGE value="20210111" />
+    <option name="LAST_COMMIT_MESSAGE" value="20210111" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/docs/目录1/（2）搭建服务器环境.md" />
@@ -724,11 +738,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/articles/Java基础/Java基础/字符和字符串.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/docs/articles/Java基础/Java基础/字符和字符串.md" />
+    <entry file="file://$PROJECT_DIR$/.idea/checkstyle-idea.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -736,13 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/checkstyle-idea.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
