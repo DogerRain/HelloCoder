@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3420879d-e3ab-40fc-bc7e-0c26317fe485" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/Head-Java对象的理解.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/面向对象/Head-Java对象的理解.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/多态.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/面向对象/多态.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/接口.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/面向对象/接口.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/继承.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/面向对象/继承.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/重载和重写.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/面向对象/重载和重写.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,26 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/checkstyle-idea.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -51,8 +37,8 @@
         <option value="$PROJECT_DIR$/docs/_sidebar.md" />
         <option value="$PROJECT_DIR$/docs/index.html" />
         <option value="$PROJECT_DIR$/docs/_coverpage.md" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -504,16 +490,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore&#10;F:/笔记/docsifyLearnJavaToFindAJob/.idea/checkstyle-idea.xml&#10;F:/笔记/docsifyLearnJavaToFindAJob/.idea/workspace.xml" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1610418627520" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1610594691155" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -566,7 +567,8 @@
       <workItem from="1610101244822" duration="716000" />
       <workItem from="1610328241122" duration="1236000" />
       <workItem from="1610361242623" duration="656000" />
-      <workItem from="1610420555174" duration="4695000" />
+      <workItem from="1610420555174" duration="5435000" />
+      <workItem from="1610603276236" duration="594000" />
     </task>
     <task id="LOCAL-00001" summary="首次提交">
       <created>1609682366782</created>
@@ -603,16 +605,23 @@
       <option name="project" value="LOCAL" />
       <updated>1610361273150</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="20210113">
+      <created>1610534012219</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610534012219</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23443000" />
+    <option name="totallyTimeSpent" value="24777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2563966" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25692964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -632,10 +641,11 @@
       <window_info anchor="bottom" id="CheckStyle" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" visible="true" weight="0.31813127" />
+      <window_info anchor="bottom" id="Version Control" order="12" visible="true" weight="0.3114572" />
       <window_info anchor="bottom" id="Alibaba Cloud View" order="13" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="LuaCheck" order="15" />
+      <window_info anchor="bottom" id="Messages" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -670,7 +680,8 @@
     <MESSAGE value="20210106" />
     <MESSAGE value="20210108" />
     <MESSAGE value="20210111" />
-    <option name="LAST_COMMIT_MESSAGE" value="20210111" />
+    <MESSAGE value="20210113" />
+    <option name="LAST_COMMIT_MESSAGE" value="20210113" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/docs/目录1/（2）搭建服务器环境.md" />
@@ -739,17 +750,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/articles/Java基础/Java基础/字符和字符串.md" />
-    <entry file="file://$PROJECT_DIR$/.idea/checkstyle-idea.xml">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        <state relative-caret-position="160">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="80">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/checkstyle-idea.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
