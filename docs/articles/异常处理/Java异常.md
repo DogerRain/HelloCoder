@@ -176,12 +176,11 @@ wuLingHongGuang.changeWeel(4, "备胎2"); //把 备胎2 换到第5个位置
 
 ### 非RuntimeException异常
 
-非RuntimeException异常属于 `CheckedException`，需要程序员处理，**要么直接抛异常，要么直接捕获**。否则代码无法通过编译。
+非RuntimeException异常属于 `CheckedException`，需要程序员处理，**要么直接抛出异常，要么直接捕获**。否则代码无法通过编译。
 
 这就涉及到几个Java的关键字了：
 
-- throws
+- throws、throw
 - try-catch-finally
 
 异常在出现的时候，会导致程序的逻辑发生改变，如果异常没有**捕获**、**抛出**，则会直接返回调用程序的上一层，如果上一层调用者也没有捕获，就会一直往上抛出。
-
