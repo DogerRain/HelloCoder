@@ -15,7 +15,7 @@ wuLingHongGuang.getCarName();
 
 
 
-反射，即Reflection。
+**反射**，即Reflection。
 
 和正射相反，它一开始并不知道要初始化的类对象，无法使用`new` 去创建对象。
 
@@ -28,10 +28,10 @@ Class<?> clz = Class.forName("com.hac.reflect.WuLingHongGuang"); // 取得Class�
 Constructor constructor = clz.getConstructor(String.class);//获得构造方法
 Object object = constructor.newInstance("五菱宏光"); //反射实例化对象
 Method method = clz.getMethod("getCarName"); //获得get方法
-method.invoke(object); //使用invoke 调用getCarName方法
+method.invoke(object); //使用invoke， 调用getCarName方法
 ```
 
-
+> 下面例子会附上完整代码
 
 上面两段代码执行的结果是一样的，但是思路不一样。
 
@@ -132,6 +132,8 @@ HaC
 HaC的五菱宏光
 ```
 
+以上正射和发射输出的结果都是一样的。
+
 
 
 例子可能有一些绕，来解读一下：
@@ -144,7 +146,7 @@ HaC的五菱宏光
 
 正射的输出结果都很容易理解。
 
-接下来解析一下发射的方法步骤：
+接下来解析一下反射的方法步骤：
 
 ### 反射的步骤
 
@@ -173,6 +175,22 @@ WuLingHongGuang wuLingHongGuang = new WuLingHongGuang("五菱宏光");
 Class clz = wuLingHongGuang.getClass();
 ```
 
+
+
+这里可以验证：**static代码块是和对象无关，只和类有关**
+
+我们在`WuLingHongGuang` 类里面加入静态代码：
+
+```java
+    static {
+        System.out.println("这是一辆五菱宏光");
+    }
+```
+
+你会发现在**获取类的Class对象实例**这一步，就会把静态代码块的内容执行了。
+
+
+
 #### 2、获取构造方法Constructor对象
 
 ```java
@@ -189,15 +207,11 @@ Constructor[] constructors = clz.getConstructors();
 
 #### 3、反实例化方法Object
 
-一切皆对象，对象的父类是Object，我这里是带参数构造方法：
+一切皆对象，对象的父类是Object，我这里是带一个String参数构造方法：
 
 ```java
 Object object = constructor.newInstance("五菱宏光");
 ```
-
-
-
-
 
 这一步也可以一步到位直接强转：
 
@@ -222,9 +236,15 @@ Method method = clz.getMethod("getCarName");
 Method method = clz.getMethod("setCarName", String.class);
 ```
 
+#### 5、调用方法
 
+```java
+method.invoke(object);
+```
 
-#### 5、获取变量
+使用 `invoke` 表示调用方法，这里表示执行 `getCarName` 的方法
+
+#### 6、获取变量
 
 ```java
 Field nameField1= clz.getDeclaredField("userName"); // 获得userName 属性
@@ -242,10 +262,84 @@ Field nameField2 = clz.getField("carName"); // 获得父类 carName属性
 >
 > 理论上反射可以访问任何类中的的任何方法或者属性，但这样就导致了不安全的状态。
 
-打印变量值：
+获取变量值：
 
 ```java
-System.out.println(nameField1.get(object));
-System.out.println(nameField2.get(object));
+nameField1.get(object); // 获取 nameField1 即 userName 的值
+nameField2.get(object);
 ```
 
+
+
+反射的包`java.lang.reflect` 还有很多API，比如说获取接口、静态变量，可以去自行研究。
+
+
+
+那么反射有什么作用呢？
+
+## 4、反射的作用
+
+`Class.forName()` 其实也是通过调用`ClassLoader`来实现的。
+
+`ClassLoader`就是遵循双亲委派模型最终调用启动类加载器的类加载器，实现的功能是“通过一个类的全限定名来获取描述此类的二进制字节流”，获取到二进制流后放到JVM中。
+
+如果使用：
+
+```java
+ClassLoader.getSystemClassLoader().loadClass("com.hac.reflect.WuLingHongGuang");
+```
+
+去加载类，是不会初始化类的（不会执行类的静态代码块），最终Class.forName() 是调用：
+
+```java
+private static native Class<?> forName0(String name, boolean initialize,
+                                            ClassLoader loader,
+                                            Class<?> caller)
+        throws ClassNotFoundException;
+```
+
+需要指定`ClassLoader` ，且初始化（注册）自己。
+
+
+
+反射用到最多的地方：
+
+**1、 spring框架**
+
+spring通过xml的配置得到一个类的路径，然后通过反射得到某个实例的对象，这样就能动态配置很多东西了，而不是每次都要在代码里面new 对象，（这可以理解为IOC，就是通过CLassLoader来实现的）。
+
+还有就是Spring的AOP，AOP就用到了动态代理，其底层也是反射。
+
+参考：https://www.cnblogs.com/aspirant/p/9036805.html
+
+Hibernate 框架也是使用了大量的反射，在加载的时候就很方便的初始化了对象。
+
+**2、Mysql的Driver**
+
+通过`Class.forName("com.mysql.jdbc.Driver")`的静态代码块，为自己注册一个对象：
+
+```java
+package com.mysql.jdbc;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Driver extends NonRegisteringDriver implements java.sql.Driver {
+    public Driver() throws SQLException {
+    }
+
+    static {
+        try {
+            DriverManager.registerDriver(new Driver()); //注册一个自己
+        } catch (SQLException var1) {
+            throw new RuntimeException("Can't register driver!");
+        }
+    }
+}
+```
+
+---
+
+程序员在自己的业务开发很少会使用反射，也尽量少用反射。
+
+反射的性能是需要考虑的，反射相当于一系列解释操作，通知jvm要做的事情，性能比直接的java代码（正射）要慢很多。
