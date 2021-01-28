@@ -150,6 +150,8 @@ false
 
 3、name3 、name4 都是指向各自 new String("HaC") 的堆地址，new 的过程中 它们先去常量池找有没有**HaC，如果有就copy一份到堆，如果没有就新建一个，再copy到堆，但是这两个的地址是不一样的。**
 
+> 所以你就很容易理解==比较的是地址，equals 比较的是值 
+
 
 
 ### 2、去除首尾空白字符
@@ -265,7 +267,7 @@ API可以理解为一个方法，String 是JDK提供的一个类，在`java.lang
 
 然后就会跳转到这个类：
 
-点击 View→Tool Windows→Structure，快捷键为`Alt+7`
+点击 **View→Tool Windows→Structure**，快捷键为`Alt+7`
 
 就会出现 structure ，右侧这里就是String的API了
 
@@ -303,3 +305,15 @@ String 还有很多API，可以自行了解。
 
 
 JDK1.8中文的API文档下载地址：
+
+
+
+## String总结
+
+**特点：**
+
+1. String类是final的，不可被继承。
+
+2. String类是的本质是字符数组char[]（1.8及以前，1.9 是byte[]）， 并且其值不可改变。
+
+3. Java运行时会维护一个String Pool（String池），JavaDoc翻译很模糊“字符串缓冲区”。String池用来存放运行时中产生的各种字符串，并且池中的字符串的内容不重复。而一般new 对象不存在这个缓冲池，并且创建的对象仅仅存在于方法的堆栈区。

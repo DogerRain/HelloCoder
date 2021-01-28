@@ -37,6 +37,8 @@ method.invoke(object); //使用invoke， 调用getCarName方法
 
 第一段是通过实例化一个`WuLingHongGuang`对象，在编译的时候，就确定了类，自然而然就拥有了类的变量、方法。
 
+
+
 第二段是通过类的路径获得的对象，再通过JDK一系列的反射方法得到对象、构造方法、普通方法。
 
 
