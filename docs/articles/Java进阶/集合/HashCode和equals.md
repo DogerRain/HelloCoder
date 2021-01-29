@@ -62,7 +62,7 @@ JDK中对hashCode()方法的作用，以及实现时的注意事项做了说明�
 
 - （1）hashCode()在哈希表中起作用，如java.util.HashMap。
 - （2）如果对象在equals()中使用的信息都没有改变，那么hashCode()值始终不变。
-- （3）如果两个对象使用equals()方法判断为相等，则hashCode()方法也应该相等。
+- （3）**如果两个对象使用equals()方法判断为相等，则hashCode()方法也应该相等。**
 - （4）如果两个对象使用equals()方法判断为不相等，则不要求hashCode()也必须不相等；但是开发人员应该认识到，不相等的对象产生不相同的hashCode可以提高哈希表的性能。
 
 **重写hashcode()的原则**
