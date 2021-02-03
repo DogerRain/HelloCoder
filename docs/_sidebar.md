@@ -15,11 +15,11 @@
         * [字符和字符串](articles\Java基础\Java基础\5、字符和字符串.md)
         * [注释](articles\Java基础\Java基础\6、注释.md)
       * Java流程控制
-        * [Java控制流程介绍](articles\Java基础\Java基础\Java流程控制\6、Java控制流程.md)
-        * [for循环语句](articles\Java基础\Java基础\Java流程控制\循环语句.md)
-        * [if条件语句](articles\Java基础\Java基础\Java流程控制\条件语句.md)
-        * [switch-case匹配语句](articles\Java基础\Java基础\Java流程控制\switch-case匹配语句.md)
-        * [跳出语句](articles\Java基础\Java基础\Java流程控制\跳出语句.md)
+        * [Java控制流程介绍](articles\Java基础\Java流程控制\6、Java控制流程.md)
+        * [for循环语句](articles\Java基础\Java流程控制\循环语句.md)
+        * [if条件语句](articles\Java基础\Java流程控制\条件语句.md)
+        * [switch-case匹配语句](articles\Java基础\Java流程控制\switch-case匹配语句.md)
+        * [跳出语句](articles\Java基础\Java流程控制\跳出语句.md)
     * 面向对象
         * [Java对象的理解](articles\面向对象\Head-Java对象的理解.md) 
         * [方法](articles\面向对象\1、方法.md)
@@ -40,7 +40,7 @@
         * [String类](articles\Java进阶\常用类\String.md)
         * [StringBuilder、StringBuffer、StringJoiner](articles\Java进阶\常用类\StringBuilder、StringBuffer、StringJoiner.md)
         * [包装类型](articles\Java进阶\常用类\包装类型.md)
-        * [BigDecima类l](articles\Java进阶\常用类\BigDecimal.md)
+        * [BigDecima类](articles\Java进阶\常用类\BigDecimal.md)
         * [Math类](articles\Java进阶\常用类\Math类.md)
         * [日期类](articles\Java进阶\常用类\日期类.md)
         * [File类](articles\Java进阶\常用类\File类.md)
@@ -53,4 +53,3 @@
         * [Comparable接口](articles\Java进阶\集合\Comparable接口.md)
         * [Iterator与Collection](articles\Java进阶\集合\Iterator与Collection.md)
       * [Java IO介绍](articles\Java进阶\IO\IO.md)
-
