@@ -773,7 +773,7 @@ section.cover blockquote > p > a:hover {
 }
 
 .markdown-section ol, .markdown-section ul {
-    padding-left: 1.5rem
+    padding-left: 1.5rem;
     margin: 1.8em 0;
     letter-spacing: 0.1em;
     font-size: 1.05em;
@@ -787,8 +787,9 @@ section.cover blockquote > p > a:hover {
 }
 
 .markdown-section blockquote p {
-    font-weight: 600;
-    margin-left: 0
+    /*font-weight: 600;*/
+    /*margin-left: 0*/
+    padding: 0.5em 0;
 }
 
 .markdown-section iframe {
@@ -918,7 +919,7 @@ section.cover blockquote > p > a:hover {
     margin: 0 2px;
     max-width: inherit;
     overflow: inherit;
-    padding: 2.2em 5px;
+    padding: 0.5em 5px;
     white-space: inherit
 }
 
