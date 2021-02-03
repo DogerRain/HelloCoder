@@ -1,5 +1,5 @@
 * **Java教程**
-    * Java基础
+    * 1、Java基础
       * Java入门
         * [Java介绍](articles\Java基础\Java入门\Java介绍.md)
         * [Java开发环境搭建](articles\Java基础\Java入门\安装Java运行环境.md)
@@ -20,7 +20,7 @@
         * [if条件语句](articles\Java基础\Java流程控制\条件语句.md)
         * [switch-case匹配语句](articles\Java基础\Java流程控制\switch-case匹配语句.md)
         * [跳出语句](articles\Java基础\Java流程控制\跳出语句.md)
-    * 面向对象
+    * 2、面向对象
         * [Java对象的理解](articles\面向对象\Head-Java对象的理解.md) 
         * [方法](articles\面向对象\1、方法.md)
         * [静态字段和静态方法](articles\面向对象\2、静态字段和静态方法.md)
@@ -31,11 +31,11 @@
         * [接口](articles\面向对象\7、接口.md)
         * [值传递和引用传递](articles\面向对象\8、值传递和引用传递.md)
         * [枚举](articles\面向对象\9、枚举.md)
-    * 异常处理
+    * 3、异常处理
         * [Java异常](articles\异常处理\1、Java异常.md)
         * [异常处理](articles\异常处理\2、异常处理.md)
         * [自定义异常](articles\异常处理\3、自定义异常.md)
-    * Java进阶
+    * 4、Java进阶
       * [Java常用类](articles\Java进阶\常用类\Java常用类.md)
         * [String类](articles\Java进阶\常用类\String.md)
         * [StringBuilder、StringBuffer、StringJoiner](articles\Java进阶\常用类\StringBuilder、StringBuffer、StringJoiner.md)
