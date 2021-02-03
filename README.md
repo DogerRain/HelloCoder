@@ -16,7 +16,7 @@
 
 > 文件太大，右击 `在新标签页打开图片`
 
-![HelloCode](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/HelloCode.png)
+![HelloCoder](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/HelloCode.png)
 
 ## 更新时间线
 
@@ -30,7 +30,7 @@
 
 > 第一次打开有点慢
 
-服务器端：[https://learnjava.baimuxym.cn/[](https://learnjava.baimuxym.cn/)
+服务器端：[https://learnjava.baimuxym.cn/](https://learnjava.baimuxym.cn/)
 
 GitHub Pages：[https://dogerrain.github.io/LearnJavaToFindAJob/#/](https://dogerrain.github.io/LearnJavaToFindAJob/#/)
 
