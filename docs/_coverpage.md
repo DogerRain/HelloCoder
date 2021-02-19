@@ -1,16 +1,21 @@
 ![logo](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/HelloCoder.png)
 
-# LearnJavaToFindAJob
+#  LearnJavaToFindAJob
 
-> Java学到什么程度才能找到一份工作
+### LearnJavaToFindAJob  是一个帮助Java程序员到找到一份工作的面试指南。
 
-### LearnJavaToFindAJob 是一个帮助Java初学者从入门到找到一份工作所需技能的教程文档。
-
-> 第一档 8k
+>  Java学到什么程度才能找到一份工作？
 >
-> 第二档 12~15k
->
-> 第三档 18k~26k
+>  这是我收到读者最多的疑问，他们大多数是即将毕业的学生，不知道Java面试需要准备什么。
+
+在这里，我将分享最常见的面试要点，主要围绕以下展开：
+
+- Java常见的面试题
+- 大厂原题
+- 如何补充项目经验
+- 简历
+
+
 
 <span id="busuanzi_container_site_pv">
 👀    本站总访问量 <span id="busuanzi_value_site_pv"></span>次

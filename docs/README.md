@@ -34,11 +34,13 @@
 - 源码
 - ......
 
-### 1.2 牛客网总结题
+### 1.2、 牛客网总结题
 
 - 50道牛客网真题
 
-### 1.4 算法
+### 1.3、项目深度
+
+### 1.4 、算法
 
 - 排序算法
 - 动态规划
@@ -79,11 +81,19 @@ Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://do
 
 由于工作量大，难免出现错误，欢迎给我提bug。
 
+
+
 欢迎关注我的Java技术公众号，不定时分享Java技术干货：
+
+
 
  <img src="https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7HelloCoder.png" style="zoom:50%;" />
 
+
+
 或者微信搜一搜 【**HelloCoder**】
+
+
 
 同时，本项目已经整理成了PDF，github 更新可能存在延迟，如果需要第一时间获取最新版本，可以关注我的公众号。
 

@@ -1,151 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3420879d-e3ab-40fc-bc7e-0c26317fe485" name="Default Changelist" comment="20210203">
+    <list default="true" id="6ed49c58-25f2-42db-9fb9-a5fbd391d85d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_coverpage.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_coverpage.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/_sidebar.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_sidebar.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/IDEA快捷键.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/JavaIDE介绍.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/Java介绍.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/Java的就业和发展.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/picture/image-20210104105506719.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/picture/image-20210104135710398.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/picture/image-20210104150140677.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/picture/image-20210104150308595.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/picture/image-20210104162158102.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/picture/image-20210104163638568.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/picture/image-20210104180530916.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/picture/image-20210104182531278.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/使用IDEA编写第一个Java程序.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/安装Java运行环境.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java入门/运行第一个Java程序.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/1、Java基础语法.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/2、Java数据变量和类型.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/3、Java数组.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/4、Java运算符.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/5、字符和字符串.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/6、注释.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210105112121205.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210106105230992.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210106144859241.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210106145934674.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210107110919861.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210107111002172.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210107112141838.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210108101209502.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210108101424894.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java基础/picture/image-20210108111838227.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java流程控制/6、Java控制流程.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java流程控制/switch-case匹配语句.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java流程控制/循环语句.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java流程控制/条件语句.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java基础/Java流程控制/跳出语句.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/IO.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210129104236502.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210129105449996.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210129110127528.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210129110918410.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210129112440603.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210202160401298.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210202162909660.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210202165332796.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210203141103518.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/IO/picture/image-20210203141105472.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/反射/Java反射.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/BigDecimal.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/File类.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/Java常用类.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/Math类.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/String.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/StringBuilder、StringBuffer、StringJoiner.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/clipboard-1611561219762.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/clipboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210120160540203.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210120162055534.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210120162232346.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210120162301580.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210120173256307.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210121144951658.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210121150102127.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210201170821969.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210201172326048.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/picture/image-20210201172947437.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/包装类型.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/常用类/日期类.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/泛型.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/Comparable接口.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/HashCode和equals.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/Iterator与Collection.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/List.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/Map.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/Set.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/picture/image-20210127100352350.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/picture/image-20210128095931650.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/picture/image-20210128105508292.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/picture/image-20210128153543008.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/Java进阶/集合/集合类的介绍.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/异常处理/1、Java异常.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/异常处理/2、异常处理.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/异常处理/3、自定义异常.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/异常处理/picture/image-20210115150112189.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/异常处理/picture/image-20210115150402927.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/异常处理/picture/image-20210115172917862.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/异常处理/picture/image-20210118112833111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/1、方法.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/2、静态字段和静态方法.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/3、继承.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/4、重载和重写.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/5、多态.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/6、抽象类.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/7、接口.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/8、值传递和引用传递.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/9、枚举.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/Head-Java对象的理解.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/picture/image-20210115123015487.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/picture/image-2021011512304995811.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/面向对象/picture/image-20210115123544141.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/picture/HelloCoder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/思维导图/.java文件.xmind" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/思维导图/值传递和引用传递.vsdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/思维导图/异常.xmind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
+  <component name="FUSProjectUsageTrigger">
+    <session id="826208512">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="md" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Markdown" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="17" />
+          <entry key="md" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="17" />
+          <entry key="Markdown" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="580">
-                <caret line="29" selection-start-line="29" selection-end-line="29" />
-              </first_editor>
-              <second_editor />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1363">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -154,479 +64,79 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="354">
+                <caret line="103" column="19" selection-start-line="103" selection-start-column="15" selection-end-line="103" selection-end-column="19" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/mycss.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18560">
+              <caret line="928" column="1" selection-start-line="928" selection-start-column="1" selection-end-line="928" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/_navbar.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="80">
+                <caret line="4" selection-start-line="4" selection-end-line="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/_sidebar.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="40">
+                <caret line="2" selection-start-line="2" selection-end-line="2" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>subMaxLevel</find>
-      <find>开始阅读</find>
-      <find>idea</find>
-      <find>.markdown-section blockquote</find>
-      <find>.markdown-section ol, .markdown-section p, .markdown-section ul</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/docs/README.md" />
-        <option value="$PROJECT_DIR$/docs/_sidebar.md" />
         <option value="$PROJECT_DIR$/docs/index.html" />
-        <option value="$PROJECT_DIR$/docs/_coverpage.md" />
-        <option value="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
-        <option value="$PROJECT_DIR$/docs/mycss.css" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="localRepository" value="G:\apache-maven-3.5.4-bin\repertories" />
-        <option name="mavenHome" value="G:/apache-maven-3.5.4-bin/apache-maven-3.5.4" />
-        <option name="userSettingsFile" value="G:\apache-maven-3.5.4-bin\apache-maven-3.5.4\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-110" />
+    <option name="y" value="49" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>Abstraction issuesJava</id>
-          </State>
-          <State>
-            <id>AccessibilityLintAndroid</id>
-          </State>
-          <State>
-            <id>Android</id>
-          </State>
-          <State>
-            <id>Angular</id>
-          </State>
-          <State>
-            <id>Application Servers</id>
-          </State>
-          <State>
-            <id>Assignment issuesJava</id>
-          </State>
-          <State>
-            <id>Bean Validation</id>
-          </State>
-          <State>
-            <id>Bidirectional TextInternationalizationLintAndroid</id>
-          </State>
-          <State>
-            <id>Bitwise operation issuesJava</id>
-          </State>
-          <State>
-            <id>Bitwise operation issuesJavaScript</id>
-          </State>
-          <State>
-            <id>CDI (Contexts and Dependency Injection)</id>
-          </State>
-          <State>
-            <id>CSS</id>
-          </State>
-          <State>
-            <id>Chrome OSCorrectnessLintAndroid</id>
-          </State>
-          <State>
-            <id>Class metricsJava</id>
-          </State>
-          <State>
-            <id>Class structureJava</id>
-          </State>
-          <State>
-            <id>Cloning issuesJava</id>
-          </State>
-          <State>
-            <id>Code maturityJava</id>
-          </State>
-          <State>
-            <id>Code style issuesJava</id>
-          </State>
-          <State>
-            <id>Code style issuesJavaScript</id>
-          </State>
-          <State>
-            <id>CodeSpring CoreSpring</id>
-          </State>
-          <State>
-            <id>CoffeeScript</id>
-          </State>
-          <State>
-            <id>Compiler issuesJava</id>
-          </State>
-          <State>
-            <id>Control flow issuesGroovy</id>
-          </State>
-          <State>
-            <id>Control flow issuesJava</id>
-          </State>
-          <State>
-            <id>Control flow issuesJavaScript</id>
-          </State>
-          <State>
-            <id>CorrectnessLintAndroid</id>
-          </State>
-          <State>
-            <id>Cucumber</id>
-          </State>
-          <State>
-            <id>Declaration redundancyJava</id>
-          </State>
-          <State>
-            <id>DeclarationGroovy</id>
-          </State>
-          <State>
-            <id>Dependency issuesJava</id>
-          </State>
-          <State>
-            <id>ECMAScript 6 migration aidsJavaScript</id>
-          </State>
-          <State>
-            <id>EncapsulationJava</id>
-          </State>
-          <State>
-            <id>Error handlingGroovy</id>
-          </State>
-          <State>
-            <id>Error handlingJava</id>
-          </State>
-          <State>
-            <id>Error handlingJavaScript</id>
-          </State>
-          <State>
-            <id>Faces Model</id>
-          </State>
-          <State>
-            <id>FreeMarker</id>
-          </State>
-          <State>
-            <id>GPathGroovy</id>
-          </State>
-          <State>
-            <id>GSPGrailsGroovy</id>
-          </State>
-          <State>
-            <id>General</id>
-          </State>
-          <State>
-            <id>GeneralCoffeeScript</id>
-          </State>
-          <State>
-            <id>GeneralJavaScript</id>
-          </State>
-          <State>
-            <id>Google Web Toolkit</id>
-          </State>
-          <State>
-            <id>Gradle</id>
-          </State>
-          <State>
-            <id>GrailsGroovy</id>
-          </State>
-          <State>
-            <id>Groovy</id>
-          </State>
-          <State>
-            <id>Guice</id>
-          </State>
-          <State>
-            <id>HTML</id>
-          </State>
-          <State>
-            <id>Hibernate</id>
-          </State>
-          <State>
-            <id>IconsUsabilityLintAndroid</id>
-          </State>
-          <State>
-            <id>Inheritance issuesJava</id>
-          </State>
-          <State>
-            <id>InitializationJava</id>
-          </State>
-          <State>
-            <id>InternationalizationJava</id>
-          </State>
-          <State>
-            <id>InternationalizationLintAndroid</id>
-          </State>
-          <State>
-            <id>J2ME issuesJava</id>
-          </State>
-          <State>
-            <id>JBoss Seam</id>
-          </State>
-          <State>
-            <id>JPA</id>
-          </State>
-          <State>
-            <id>JSON and JSON5</id>
-          </State>
-          <State>
-            <id>JSP</id>
-          </State>
-          <State>
-            <id>JUnitJava</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Java 5Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Java 7Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Java 8Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Java 9Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Java EE</id>
-          </State>
-          <State>
-            <id>Java interop issuesKotlin</id>
-          </State>
-          <State>
-            <id>Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>JavaBeans issuesJava</id>
-          </State>
-          <State>
-            <id>JavaFX</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript function metricsJavaScript</id>
-          </State>
-          <State>
-            <id>JavadocJava</id>
-          </State>
-          <State>
-            <id>Kotlin</id>
-          </State>
-          <State>
-            <id>Language Injection</id>
-          </State>
-          <State>
-            <id>LintAndroid</id>
-          </State>
-          <State>
-            <id>LoggingJava</id>
-          </State>
-          <State>
-            <id>Manifest</id>
-          </State>
-          <State>
-            <id>Markdown</id>
-          </State>
-          <State>
-            <id>Maven</id>
-          </State>
-          <State>
-            <id>MemoryJava</id>
-          </State>
-          <State>
-            <id>MessagesCorrectnessLintAndroid</id>
-          </State>
-          <State>
-            <id>Method metricsGroovy</id>
-          </State>
-          <State>
-            <id>Method metricsJava</id>
-          </State>
-          <State>
-            <id>Modularization issuesJava</id>
-          </State>
-          <State>
-            <id>Naming conventionsGroovy</id>
-          </State>
-          <State>
-            <id>Naming conventionsJava</id>
-          </State>
-          <State>
-            <id>Naming conventionsJavaScript</id>
-          </State>
-          <State>
-            <id>Numeric issuesJava</id>
-          </State>
-          <State>
-            <id>OSGi</id>
-          </State>
-          <State>
-            <id>Packaging issuesJava</id>
-          </State>
-          <State>
-            <id>Pattern Validation</id>
-          </State>
-          <State>
-            <id>PerformanceJava</id>
-          </State>
-          <State>
-            <id>PerformanceLintAndroid</id>
-          </State>
-          <State>
-            <id>Plugin DevKit</id>
-          </State>
-          <State>
-            <id>PortabilityJava</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsGroovy</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsJavaScript</id>
-          </State>
-          <State>
-            <id>Probable bugs</id>
-          </State>
-          <State>
-            <id>Probable bugsCSS</id>
-          </State>
-          <State>
-            <id>Probable bugsGradle</id>
-          </State>
-          <State>
-            <id>Probable bugsJava</id>
-          </State>
-          <State>
-            <id>Probable bugsJavaScript</id>
-          </State>
-          <State>
-            <id>Probable bugsKotlin</id>
-          </State>
-          <State>
-            <id>Properties Files</id>
-          </State>
-          <State>
-            <id>RELAX NG</id>
-          </State>
-          <State>
-            <id>Reactor</id>
-          </State>
-          <State>
-            <id>Redundant constructsKotlin</id>
-          </State>
-          <State>
-            <id>Reflective accessJava</id>
-          </State>
-          <State>
-            <id>RegExp</id>
-          </State>
-          <State>
-            <id>Resource managementJava</id>
-          </State>
-          <State>
-            <id>SQL</id>
-          </State>
-          <State>
-            <id>SecurityJava</id>
-          </State>
-          <State>
-            <id>SecurityLintAndroid</id>
-          </State>
-          <State>
-            <id>Serialization issuesJava</id>
-          </State>
-          <State>
-            <id>SetupSpring CoreSpring</id>
-          </State>
-          <State>
-            <id>Spring</id>
-          </State>
-          <State>
-            <id>Spring AOPSpring</id>
-          </State>
-          <State>
-            <id>Spring CoreSpring</id>
-          </State>
-          <State>
-            <id>Struts</id>
-          </State>
-          <State>
-            <id>Struts 1Struts</id>
-          </State>
-          <State>
-            <id>Style issuesKotlin</id>
-          </State>
-          <State>
-            <id>TestNGJava</id>
-          </State>
-          <State>
-            <id>Threading issuesGroovy</id>
-          </State>
-          <State>
-            <id>Threading issuesJava</id>
-          </State>
-          <State>
-            <id>TypeScript</id>
-          </State>
-          <State>
-            <id>TypographyUsabilityLintAndroid</id>
-          </State>
-          <State>
-            <id>UI Form</id>
-          </State>
-          <State>
-            <id>UsabilityLintAndroid</id>
-          </State>
-          <State>
-            <id>Velocity</id>
-          </State>
-          <State>
-            <id>Verbose or redundant code constructsJava</id>
-          </State>
-          <State>
-            <id>WebSocket</id>
-          </State>
-          <State>
-            <id>XML</id>
-          </State>
-          <State>
-            <id>XMLSpring CoreSpring</id>
-          </State>
-          <State>
-            <id>XPath</id>
-          </State>
-          <State>
-            <id>YAML</id>
-          </State>
-        </expanded-state>
-      </profile-state>
-    </entry>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <autoscrollFromSource ProjectPane="true" />
@@ -637,37 +147,29 @@
         <subPane>
           <expand>
             <path>
-              <item name="LearnJavaToFindAJob（Java面试题）" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnJavaToFindAJob（Java面试题）" type="462c0819:PsiDirectoryNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore&#10;F:/笔记/docsifyLearnJavaToFindAJob/.idea/checkstyle-idea.xml&#10;F:/笔记/docsifyLearnJavaToFindAJob/.idea/workspace.xml" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1612780202368" />
-    <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\笔记\docsifyLearnJavaToFindAJob" />
-      <recent name="F:\笔记\docsifyLearnJavaToFindAJob\docs" />
-      <recent name="F:\笔记\docsifyLearnJavaToFindAJob - 副本\docs" />
-    </key>
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1613749399329" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -680,9 +182,6 @@
         </RuleState>
       </list>
     </option>
-  </component>
-  <component name="SshConsoleOptionsProvider">
-    <option name="myEncoding" value="UTF-8" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -840,16 +339,16 @@
       <option name="project" value="LOCAL" />
       <updated>1612694382305</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44912000" />
+    <option name="totallyTimeSpent" value="1148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2707889" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28091684" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -858,7 +357,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Alibaba Cloud Explorer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -890,19 +389,6 @@
       <window_info anchor="right" id="SciView" order="13" />
     </layout>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="首次提交" />
     <MESSAGE value="20210106" />
@@ -922,92 +408,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="20210207" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/目录1/（2）搭建服务器环境.md" />
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/_coverpage.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="520">
-            <caret line="26" selection-start-line="26" selection-end-line="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/picture/HelloCoder.png" />
-    <entry file="file://$PROJECT_DIR$/docs/_navbar.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="3" selection-start-line="3" selection-end-line="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/_sidebar.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="40">
-            <caret line="2" selection-start-line="2" selection-end-line="2" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="396">
-            <caret line="33" selection-start-line="33" selection-end-line="33" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/articles/Java基础/Java基础/字符和字符串.md" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="43" column="39" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/checkstyle-idea.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/思维导图/.java文件.xmind" />
-    <entry file="file://$PROJECT_DIR$/docs/mycss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1129">
-          <caret line="683" column="10" lean-forward="true" selection-start-line="683" selection-start-column="10" selection-end-line="683" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="580">
-            <caret line="29" selection-start-line="29" selection-end-line="29" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1015,98 +415,26 @@
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="ideajad">
-    <property name="annotate" value="false" />
-    <property name="annotateFully" value="false" />
-    <property name="braces" value="false" />
-    <property name="clear" value="false" />
-    <property name="confirmNavigationTriggeredDecompile" value="true" />
-    <property name="dead" value="true" />
-    <property name="defaultInitializers" value="false" />
-    <property name="dissassemblerOnly" value="false" />
-    <property name="fieldsFirst" value="true" />
-    <property name="fileExtension" value="java" />
-    <property name="fullyQualifiedNames" value="false" />
-    <property name="indentation" value="4" />
-    <property name="intRadix" value="10" />
-    <property name="lineNumbersAsComments" value="true" />
-    <property name="longRadix" value="10" />
-    <property name="maxStringLength" value="64" />
-    <property name="nocast" value="false" />
-    <property name="noclass" value="false" />
-    <property name="nocode" value="false" />
-    <property name="noconv" value="false" />
-    <property name="noctor" value="false" />
-    <property name="nodos" value="false" />
-    <property name="nofd" value="false" />
-    <property name="noinner" value="false" />
-    <property name="nolvt" value="false" />
-    <property name="nonlb" value="false" />
-    <property name="outputDirectory" value="" />
-    <property name="packFields" value="3" />
-    <property name="packImports" value="7" />
-    <property name="prefixNumericalClasses" value="_cls" />
-    <property name="prefixNumericalFields" value="_fld" />
-    <property name="prefixNumericalLocals" value="_lcl" />
-    <property name="prefixNumericalMethods" value="_mth" />
-    <property name="prefixNumericalParameters" value="_prm" />
-    <property name="prefixUnusedExceptions" value="_ex" />
-    <property name="readonly" value="false" />
-    <property name="safe" value="false" />
-    <property name="sort" value="false" />
-    <property name="spaceAfterKeyword" value="false" />
-    <property name="splitStringsAtNewline" value="false" />
-    <property name="useTabs" value="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>JDK1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>JDK1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/docs/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="354">
+            <caret line="103" column="19" selection-start-line="103" selection-start-column="15" selection-end-line="103" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1363">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
