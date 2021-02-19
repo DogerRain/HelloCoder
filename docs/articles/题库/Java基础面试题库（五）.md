@@ -1,0 +1,246 @@
+##### 41、 下列选项中符合Java命名规则的标识符是（）
+A	2japro
+B	&Class
+C	const
+D	_123
+
+
+
+**D**
+
+const是关键字
+
+> Java 标识符有如下命名规则： 
+>
+> - 由26个英文字母大小写、数字（0-9） 符号 _  、`$`  组成 
+> - 标识符应以 字母 、_  、`$` 开头。
+> - 标识符不能是关键字。
+
+
+
+
+
+##### 42、给出以下代码,请给出结果
+
+```java
+class Two{
+    Byte x;
+}
+class PassO{
+    public static void main(String[] args){
+        PassO p=new PassO();
+        p.start();
+    }
+    void start(){
+        Two t=new Two();
+        System.out.print(t.x+””);
+        Two t2=fix(t);
+        System.out.print(t.x+” ” +t2.x);
+    }
+    Two fix(Two tt){
+        tt.x=42;
+        return tt;
+    }
+}
+```
+
+
+
+```
+null 42 42
+```
+
+1.注意第二行代码，Byte x；Byte是包装类，不是byte（基本数据类型），因此Byte的默认是null，不是0
+2.t是一个引用地址类型，在调用fit（Two tt）函数是，是一个实参到形参的传值，也就是把t的地址赋值给了tt，但是都是指向堆内存中新建的对象，因此当对tt.x和t.x指向是相同的。因此t.x也是42
+3.Two t2=fit（t）；fit函数返回的还是一个引用地址，这句代码相当于把t（函数里面返回的是tt）的地址赋值给了t2，因此t2.x也是42
+
+
+
+##### 43、下面的switch语句中，x可以是哪些类型的数据：()
+
+```java
+switch(x)
+{
+default:
+System.out.println("Hello");
+}
+```
+
+A	long
+B	char
+C	float
+D	byte
+E	double
+F	Object
+
+
+
+**B D**
+
+在Java7之前，switch只能支持 byte、short、char、int或者其对应的封装类以及Enum类型。
+
+在Java7中，支持了String、Enum 类型
+
+
+
+##### 44、输出结果为：
+
+```java
+String str = "12,3";
+String str2 = "123";
+System.out.print(str.split(",").length);
+System.out.print(str2.split(",").length);
+```
+
+
+
+ **2  1**
+
+split 这个方法默认返回一个数组，  
+
+如果 找到分隔符，  会把整个字符串当成字符串数组，即 { "12","3" }
+
+如果没有找到分隔符，  会把整个字符串当成一个长度为1的字符串数组 , 即 { "123" }
+
+
+
+##### 45、以下输出什么？
+
+```java
+class testTryCatch {
+    public static void main(String[] args) {
+        System.out.println(test2());
+    }
+
+    public static int test2() {
+        int b = 20;
+        try {
+            System.out.println("try block");
+            return b;
+        } catch (Exception e) {
+            b = 50;
+            System.out.println("catch block");
+        } finally {
+            b = 100;
+            System.out.println("finally block");
+        }
+        return b;
+    }
+}
+```
+
+
+
+>try block
+>finally block
+>20
+
+1. finally块的语句在try或catch中的return语句执行之后返回之前执行
+2. finally里的修改语句可能影响也可能不影响try或catch中 return已经确定的返回值，若finally里也有return语句则覆盖try或catch中的return语句 则 直接返回。
+
+
+
+##### 46、下列说法正确的是（）
+
+A	JAVA程序的main方法必须写在类里面
+B	JAVA程序中可以有多个名字为main方法
+C	JAVA程序中类名必须与文件名一样
+D	JAVA程序的main方法中，如果只有一条语句，可以不用{}（大括号）括起来
+
+
+
+**A B** 
+
+C： JAVA程序中public修饰的类名必须与文件名一样
+D： JAVA程序的main方法中，不管有多少条语句都必须用{}（大括号）括起来
+
+
+
+##### 47、可以把任何一种数据类型的变量赋给Object类型的变量。
+
+A	对
+B	错
+
+
+
+**A**
+
+Java中一切都是对象，Object是所有类的根类，而且自动数据类型会自动装箱。
+
+
+
+
+
+##### 48、以下程序的输出结果为
+
+```java
+class Base{
+    public Base(String s){
+        System.out.print("B");
+    }
+}
+public class Derived extends Base{
+    public Derived (String s) {
+        System.out.print("D");
+    }
+    public static void main(String[] args){
+        new Derived("C");
+    }
+}
+```
+
+A	BD
+B	DB
+C	C
+D	编译错误
+
+
+
+**D**
+
+在调用子类构造器之前，会先调用父类构造器，**当子类构造器中没有使用"super(参数或无参数)"指定调用父类构造器时，是默认调用父类的无参构造器**，如果父类中包含有参构造器，却没有无参构造器，则在子类构造器中一定要使用“super(参数)”指定调用父类的有参构造器，不然就会报错。
+
+
+
+##### 49、以下执行结果是：
+
+```java
+public class Test {
+    private String name = "abc";
+    public static void main(String[] args) {
+        Test test = new Test();
+        Test testB = new Test();
+        String result = test.equals(testB) + ",";
+        result += test.name.equals(testB.name) + ",";
+        result += test.name == testB.name;
+        System.out.println(result);
+    }
+}
+```
+
+**false,true,true**
+
+
+
+test.equals(testB)是比较内存地址，显然不一样。
+
+test.name和testB.name指向的都是常量池的"abc"
+
+
+
+##### 50、下面哪段程序能够正确的实现了GBK编码字节流到UTF-8编码字节流的转换：
+
+```java
+A	dst=String.fromBytes(src，"GBK").getBytes("UTF-8")
+B	dst=new String(src，"GBK").getBytes("UTF-8")
+C	dst=new String("GBK"，src).getBytes()
+D	dst=String.encode(String.decode(src，"GBK"))，"UTF-8" )
+```
+
+答案：**B**
+
+操作步骤就是先解码再编码
+
+用new String(src，"GBK")解码得到字符串
+
+用getBytes("UTF-8")得到UTF8编码字节数组

@@ -1,0 +1,225 @@
+##### 31、关于Java的一些概念，下面哪些描述是正确的：(  )
+
+A	所有的Java异常和错误的基类都是java.lang.Exception, 包括java.lang.RuntimeException
+B	通过try … catch … finally语句，finally中的语句部分无论发生什么异常都会得到执行
+C	java中所有的数据都是对象
+D	Java通过垃圾回收回收不再引用的变量，垃圾回收时对象的finallize方法一定会得到执行
+E	Java是跨平台的语言，无论通过哪个版本的Java编写的程序都能在所有的Java运行平台中运行
+F	Java通过synchronized进行访问的同步，synchronized作用非静态成员方法和静态成员方法上同步的目标是不同的
+
+
+
+**B F** 
+
+A、java异常和错误的基类是Throwable,包括Exception和Error
+B、try...catch...finally finally不管什么异常都会执行
+C、java是面向对象的，但是不是所有的都是对象，基本数据类型就不是对象，所以才会有封装类的；
+D、垃圾回收器并不总是工作，只有当内存资源告急时，垃圾回收器才会工作；即使垃圾回收器工作，finalize方法也不一定得到执行，这是由于程序中的其他线程的优先级远远高于执行finalize（）函数线程的优先级。
+E、JAVA跨平台性    实现在任意平台（不是任意版本）的java程序都可以在其他平台运行
+F、synchronized实现方式有多种，修饰静态方法和非静态方法是不一样的。
+
+
+
+##### 32、Java1.8之后，Java接口的修饰符可以为（）
+
+A	private
+B	protected
+C	final
+D	abstract
+
+
+
+**D**
+
+接口默认是 public abstract修饰
+
+
+
+##### 33、哪些是 setVar方法的重载？
+
+```java
+public class methodover
+{
+    public void setVar(int a, int b, float c) {
+    
+    }
+}
+```
+
+A	private void setVar(int a， float c， int b){}
+B	protected void setVar(int e， int d， float f){}
+C	public int setVar(int a， float c， int b){return a;}
+D	public int setVar(int a， float c){return a;}
+
+
+
+**A C D**
+
+重载是在同一个类中，有多个方法名相同，参数列表不同(参数个数不同，参数类型不同),与方法的返回值无关，与权限修饰符无关。
+
+
+
+##### 34、下面这三条语句输出结果是？
+
+```java
+System.out.println("is "+ 100 + 5);
+System.out.println(100 + 5 +" is");
+System.out.println("is "+ (100 + 5));
+```
+
+
+
+```
+is 1005
+105 is
+is 105
+```
+
+
+
+1."is"说明后面的内容都会被强制转换为string，is 100再和 5 拼接。
+2.100+5先得到105，然后与is拼接
+3.先算括号内的
+
+int 和 String 用 “+” 拼接，自动强制转换为string。
+
+
+
+##### 35、下面叙述那个是正确的？（）
+
+A	java中的集合类（如Vector）可以用来存储任何类型的对象，且大小可以自动调整。但需要事先知道所存储对象的类型，才能正常使用。
+B	在java中，我们可以用违例（Exception）来抛出一些并非错误的消息，但这样比直接从函数返回一个结果要更大的系统开销。
+C	java接口包含函数声明和变量声明。
+D	java中，子类不可以访问父类的私有成员和受保护的成员。
+
+
+
+**B**
+
+vector默认就Object类型，不需要事先知道对象类型
+接口的变量是final，准确的说叫常量，不是变量。
+子类可以访问父类受保护（protected）的成员，不能访问的是privated。
+
+
+
+##### 36、Java中，以下输出是？
+
+```java
+byte b = 127;
+int sum = 200;
+b += 1;
+sum += b;
+System.out.println(sum);
+```
+
+
+**72**
+
+java中byte只有1个字节，8位，所以它的范围是 -128~127
+
+会发生溢出, 对127加一发生溢出,  0111 1111 --> 1000 0000, 1000 0000为补码-128, 所以结果为200-128=72
+
+
+
+##### 37、最后输出什么？
+
+```java
+ public void test() {
+        int a = 10;
+        System.out.println(a++ + a--);
+    }
+```
+
+A	19
+B	20
+C	21
+D	22
+
+
+
+**C**
+
+a++ 先把10赋值给a 再+1 所以左边是10 但此时a=11。
+
+右边a -- 也是先赋值 此时右边赋值了，这里**a=11**，再 -1。10+11=2
+
+最后a的值是10。
+
+
+
+如果：
+
+```java
+int b = 1; 
+System.out.println(b++ + b); 
+System.out.println(b);
+```
+
+输出 
+
+>3
+>2
+
+`b++ + b` 左边值是 1 ，b赋值是2；右边 b是2，值也是2 ，所以是3。
+
+
+
+##### 38、关于这段代码的描述：
+
+```java
+byte b1=1,b2=2,b3,b6;  
+final byte b4=4,b5=6;  
+b6=b4+b5;  
+b3=(b1+b2);  
+System.out.println(b3+b6);
+```
+
+A	输出结果：13
+B	语句：b6=b4+b5编译出错
+C	语句：b3=b1+b2编译出错
+D	运行期抛出异常
+
+
+
+ **C**
+
+所有的byte,short,char型的值将被提升为int型，b1+b2计算后已经是int类型，赋值给b3，b3是byte类型，类型不匹配，编译不会通过，需要进行强制转换。
+
+声明为final的变量会被JVM优化，第三行相当于b6=10，第6行相当于 b6 = 10
+
+
+
+##### 39、关于Java中的数组，下面的一些描述，哪些描述是准确的：（    ）
+
+A	数组是一个对象，不同类型的数组具有不同的类
+B	数组长度是可以动态调整的
+C	数组是一个连续的存储结构
+D	一个固定长度的数组可类似这样定义: int array[100]
+E	两个数组用equals方法比较时，会逐个便利遍历其中的元素，对每个元素进行比较
+F	可以二维数组，且可以有多维数组，都是在Java中合法的
+
+
+
+**A C F** 
+
+数组的长度是固定的，不能动态调整。
+
+一个固定长度的数组 初始化 `int[] array =new int[100] `
+两个数组equals，比较的是是否同一个对象。
+
+
+
+##### 40、表达式(short)10/10.2*2运算后结果是什么类型？
+
+A	short
+B	int
+C	double
+D	float
+
+
+
+**C**
+
+java中，你如果 没有在数字后面声明，浮点数默认为double。
+
+>要注意是(short)10/10.2*2，而不是(short) (10/10.2 *2)，前者只是把10强转为short，又由于式子中存在浮点数，所以会对结果值进行一个自动类型的提升，浮点数默认为double，所以答案是double；后者是把计算完之后值强转short。

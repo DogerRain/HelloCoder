@@ -1,0 +1,302 @@
+##### 21、关于Java的一些概念，下面哪些描述是正确的：(    )
+
+A	所有的Java异常和错误的基类都是java.lang.Exception, 包括java.lang.RuntimeException
+B	通过try … catch … finally语句，finally中的语句部分无论发生什么异常都会得到执行
+C	java中所有的数据都是对象
+D	Java通过垃圾回收回收不再引用的变量，垃圾回收时对象的finallize方法一定会得到执行
+E	Java是跨平台的语言，无论通过哪个版本的Java编写的程序都能在所有的Java运行平台中运行
+F	Java通过synchronized进行访问的同步，synchronized作用非静态成员方法和静态成员方法上同步的目标是不同的
+
+
+
+**B F**  
+
+A:Java中所有错误和异常的父类是java.lang.Throwable
+B：基本数据类型不是对象，不能用new的方法获取，但是每个基本数据类型都对应着封装类型，这些封装类型为了解决基本数据类型面向对象用的。
+C:Java垃圾回收器负责回收无用对象占据的内存资源,但对象没有使用new获取了一块特殊区域，这块特殊区域的回收使用finallize（）
+D：Java跨平台是因为有JVM的存在，Java的三个版本的运行需要各自不同的环境。
+
+
+
+##### 22、关于继承和实现说法正确的 是 ？ (    )
+
+A	类可以实现多个接口，接口可以继承（或扩展）多个接口
+B	类可以实现多个接口，接口不能继承（或扩展）多个接口
+C	类和接口都可以实现多个接口
+D	类和接口都不可以实现多个接口
+
+
+
+**A**
+
+
+
+##### 23、如下哪些是 java 中有效的关键字（）
+
+A	native
+B	NULL
+C	false
+D	this
+
+
+
+ **A D** 
+
+**这个关键字常见的坑：**
+true、false、null都不是关键字 ，而是常量，
+goto、const、是保留的关键字
+
+Java的所有关键字：
+
+```
+abstract                continue           for            new        
+switch                  default            if             package     
+synchronized            do                 goto           private     
+this                    break              double         implements   
+protected               throw              byte           else       
+import                  public             throws         case       
+enum                    instanceof         return         transient  
+catch                   extends            int            short       
+try                     char               final          interface    
+static                  void               class          finally   
+long                    strictfp           volatile       const      
+float                   native             super          while
+boolean                 assert 
+```
+
+
+
+##### 24、java中提供了哪两种用于多态的机制
+
+ A	通过子类对父类方法的覆盖实现多态
+B	利用重载来实现多态.即在同一个类中定义多个同名的不同方法来实现多态。
+C	利用覆盖来实现多态.即在同一个类中定义多个同名的不同方法来实现多态。
+D	通过子类对父类方法的重载实现多态
+
+**AB**
+
+Java通过方法重写和方法重载实现多态
+
+方法重写是指子类重写了父类的同名方法
+方法重载是指在同一个类中，方法的名字相同，但是参数列表不同
+
+
+
+##### 25、以下程序段执行后将有（）个字节被写入到文件afile.txt中。
+
+```java
+try {
+    FileOutputStream fos = new FileOutputStream("afile.txt");
+    DataOutputStream dos = new DataOutputStream(fos);
+    dos.writeInt(3);
+    dos.writeChar(1);
+    dos.close();
+    fos.close();
+} catch (IOException e) {}
+
+```
+
+
+
+**6**
+
+FileOutputStream是字节流。
+
+java采用的uincode编码，两个字节表示一个字符，因此 char型在java中占两个字节，而int型占四个字节，故总共占四个字节。
+
+
+
+##### 26、输出结果是？
+
+```java
+class HelloA {
+        public HelloA() {
+            System.out.println("A init");
+        }
+
+        {
+            System.out.println("I’m A class");
+        }
+
+        static {
+            System.out.println("static A");
+        }
+    }
+
+    class HelloB extends HelloA {
+        static {
+            System.out.println("static B");
+        }
+
+        public HelloB() {
+            System.out.println("B init");
+        }
+
+        {
+            System.out.println("I’m B class");
+        }
+
+        public static void main(String[] args) {
+            new HelloB();
+        }
+    }
+```
+
+>static A
+>static B
+>I’m A class
+>A init
+>I’m B class
+>B init
+
+执行顺序如下：
+
+1. 父类的静态代码块
+2. 子类的静态代码块
+3. 父类的普通代码块
+4. 父类的构造方法
+5. 子类的普通代码块
+6. 子类的构造方法
+
+
+
+
+
+##### 27、设int x=1,float y=2,则表达式x/y的值是：（）
+
+A	0
+B	1
+C	2
+D	0.5
+
+
+
+**D**
+
+不同类型运算时以高精度的为准。
+向上转型：byte-short-int-long-float-double
+转化为：float(1.0)/float(2.0)=0.5
+
+
+
+##### 28、输出是？
+
+```java
+StringBuffer s1=new StringBuffer(10);
+s1.append("1234");
+s1.capacity();
+System.out.println(s1.length());
+System.out.println(s1.capacity());
+```
+
+**4** 
+**10**
+
+>length 返回当前长度
+>
+>如果字符串长度没有初始化长度大，capacity返回初始化的长度
+>
+>如果append后的字符串长度超过初始化长度，capacity返回增长后的长度
+
+
+
+假如 ：
+
+```java
+StringBuffer s1=new StringBuffer(1);
+```
+
+则输出：
+
+**4**
+**4**
+
+StringBuffer 第一次扩容是2倍+2，如果扩充后的容量还是不够，则直接扩充到需要的容量大小。
+
+
+
+##### 29、以下输出什么？
+
+```java
+System.out.println((-3)%2);
+System.out.println(4%3);
+System.out.println((-3)%(-2));
+System.out.println(4%(-3));
+System.out.println((-12) % (-5));
+```
+
+输出：
+
+```
+-1
+1
+-1
+1
+-2
+```
+
+(-3)%2 = -1 余 -1
+
+(-12) % (-5) = 2余 -2
+
+
+
+##### 30、以下输出是什么？
+
+```java
+class A {
+}
+
+class B extends A {
+}
+
+class C extends A {
+}
+
+class D extends B {
+}
+
+
+public class InstanceofTest {
+
+    public static void main(String[] args) {
+        A obj = new D();
+
+        System.out.println(obj instanceof B);
+
+        System.out.println(obj instanceof C);
+
+        System.out.println(obj instanceof D);
+
+        System.out.println(obj instanceof A);
+
+    }
+}
+```
+
+
+
+输出：
+
+```
+true
+false
+true
+true
+```
+
+instance是java的二元运算符，用来判断他左边的对象是否为右面类（接口，抽象类，父类）的实例。
+
+A obj = new D()，obj的实际类型为D。
+
+结构如下：
+
+  A
+
+|    |
+
+B   C
+
+|
+
+D
