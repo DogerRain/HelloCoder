@@ -1,7 +1,10 @@
 ##### 41、 下列选项中符合Java命名规则的标识符是（）
 A	2japro
+
 B	&Class
+
 C	const
+
 D	_123
 
 
@@ -67,10 +70,15 @@ System.out.println("Hello");
 ```
 
 A	long
+
 B	char
+
 C	float
+
 D	byte
+
 E	double
+
 F	Object
 
 
@@ -143,8 +151,11 @@ class testTryCatch {
 ##### 46、下列说法正确的是（）
 
 A	JAVA程序的main方法必须写在类里面
+
 B	JAVA程序中可以有多个名字为main方法
+
 C	JAVA程序中类名必须与文件名一样
+
 D	JAVA程序的main方法中，如果只有一条语句，可以不用{}（大括号）括起来
 
 
@@ -159,6 +170,7 @@ D： JAVA程序的main方法中，不管有多少条语句都必须用{}（大�
 ##### 47、可以把任何一种数据类型的变量赋给Object类型的变量。
 
 A	对
+
 B	错
 
 
@@ -190,8 +202,11 @@ public class Derived extends Base{
 ```
 
 A	BD
+
 B	DB
+
 C	C
+
 D	编译错误
 
 

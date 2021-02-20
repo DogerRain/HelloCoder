@@ -1,10 +1,15 @@
 ##### 31、关于Java的一些概念，下面哪些描述是正确的：(  )
 
 A	所有的Java异常和错误的基类都是java.lang.Exception, 包括java.lang.RuntimeException
+
 B	通过try … catch … finally语句，finally中的语句部分无论发生什么异常都会得到执行
+
 C	java中所有的数据都是对象
+
 D	Java通过垃圾回收回收不再引用的变量，垃圾回收时对象的finallize方法一定会得到执行
+
 E	Java是跨平台的语言，无论通过哪个版本的Java编写的程序都能在所有的Java运行平台中运行
+
 F	Java通过synchronized进行访问的同步，synchronized作用非静态成员方法和静态成员方法上同步的目标是不同的
 
 
@@ -23,8 +28,11 @@ F、synchronized实现方式有多种，修饰静态方法和非静态方法是�
 ##### 32、Java1.8之后，Java接口的修饰符可以为（）
 
 A	private
+
 B	protected
+
 C	final
+
 D	abstract
 
 
@@ -47,8 +55,11 @@ public class methodover
 ```
 
 A	private void setVar(int a， float c， int b){}
+
 B	protected void setVar(int e， int d， float f){}
+
 C	public int setVar(int a， float c， int b){return a;}
+
 D	public int setVar(int a， float c){return a;}
 
 
@@ -88,8 +99,11 @@ int 和 String 用 “+” 拼接，自动强制转换为string。
 ##### 35、下面叙述那个是正确的？（）
 
 A	java中的集合类（如Vector）可以用来存储任何类型的对象，且大小可以自动调整。但需要事先知道所存储对象的类型，才能正常使用。
+
 B	在java中，我们可以用违例（Exception）来抛出一些并非错误的消息，但这样比直接从函数返回一个结果要更大的系统开销。
+
 C	java接口包含函数声明和变量声明。
+
 D	java中，子类不可以访问父类的私有成员和受保护的成员。
 
 
@@ -175,8 +189,11 @@ System.out.println(b3+b6);
 ```
 
 A	输出结果：13
+
 B	语句：b6=b4+b5编译出错
+
 C	语句：b3=b1+b2编译出错
+
 D	运行期抛出异常
 
 
@@ -192,10 +209,15 @@ D	运行期抛出异常
 ##### 39、关于Java中的数组，下面的一些描述，哪些描述是准确的：（    ）
 
 A	数组是一个对象，不同类型的数组具有不同的类
+
 B	数组长度是可以动态调整的
+
 C	数组是一个连续的存储结构
+
 D	一个固定长度的数组可类似这样定义: int array[100]
+
 E	两个数组用equals方法比较时，会逐个便利遍历其中的元素，对每个元素进行比较
+
 F	可以二维数组，且可以有多维数组，都是在Java中合法的
 
 
