@@ -53,7 +53,7 @@
 
 
 
-
+---
 
 ## 2、更新时间线
 
@@ -61,7 +61,7 @@
 | ---- | ---------- | ---------- |
 | 1.0  | 2021-01-01 | 第一次发布 |
 
-
+---
 
 ## 3、在线阅读地址：
 
@@ -75,7 +75,7 @@ GitHub Pages：[https://dogerrain.github.io/LearnJavaToFindAJob/#/](https://doge
 
 Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://dogerrain.github.io/LearnJavaToFindAJob/#/ )（国内访问快）
 
- 
+---
 
 ## 4、联系我
 
@@ -101,7 +101,7 @@ Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://do
 
 ---
 
-最后，希望各位可以帮我点一个 star :star: ，这样我就更有动力更新了。 
+最后，希望各位可以帮我点一个 **star** ，这样我就更有动力更新了。 
 
 在这里，期待与各位共同进步。
 
