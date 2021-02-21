@@ -720,7 +720,7 @@ section.cover blockquote > p > a:hover {
 }
 
 .markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section strong {
-    color: #2c3e50;
+    color: #000000;
     font-weight: 600
 }
 
@@ -749,7 +749,7 @@ section.cover blockquote > p > a:hover {
 }
 
 .markdown-section h5 {
-    font-size: 1rem
+    font-size: 1.1rem
 }
 
 .markdown-section h6 {
@@ -765,7 +765,7 @@ section.cover blockquote > p > a:hover {
 }
 
 .markdown-section ol, .markdown-section p, .markdown-section ul {
-    line-height: 1.6rem;
+    line-height: 2rem;
     word-spacing: .05rem;
     margin: 1.8em 0;
     letter-spacing: 0.1em;
