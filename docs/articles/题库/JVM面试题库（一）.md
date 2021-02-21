@@ -14,10 +14,15 @@ str0=null;
 **15**
 
 str0和str1 在常量池。
+
 str2，substring实际是new，5字符
+
 str3和str4也都是new，每个5字符
+
 以上三个分别都会创建新的对象，存放在堆。
+
 常量池是PermGen的。（永久代：存储的是final常量，static变量，常量池。）
+
 经过fullgc之后，年老区的内存回收，则年轻区的占了15个，不算PermGen，因此一共15字符
 
 
@@ -41,23 +46,31 @@ public class MyApplication {
 ```
 
 A	能编译通过，并正确运行
+
 B	因为使用了未初始化的变量，所以不能编译通过
+
 C	以错误的方式访问了静态方法
+
 D	能编译通过，但因变量为null，不能正常运行
 
 
 
  **A** 
 
-静态方法属于静态绑定，编译器根据引用类型所属的静态类型为它绑定其对应的方法。此语句会翻译成invokestatic，该指令的调用中不会涉及this,所以不会依赖对象！ 还有引用类型=null，其实就是指该引用在堆中没有对应的对象，但是编译的时候还是能根据声明找到其所属的静态类型。
+静态方法属于静态绑定，编译器根据引用类型所属的静态类型为它绑定其对应的方法。
+
+此语句会翻译成invokestatic，该指令的调用中不会涉及this,所以不会依赖对象！ 还有引用类型=null，其实就是指该引用在堆中没有对应的对象，但是编译的时候还是能根据声明找到其所属的静态类型。
 
 
 
 ##### 3、java运行时内存分为“线程共享”和“线程私有”两部分，以下哪些属于“线程共享”部分
 
 A	程序计算器
+
 B	方法区
+
 C	java虚拟机栈
+
 D	java堆
 
 
@@ -75,8 +88,11 @@ D	java堆
 ##### 4、JVM内存不包含如下哪个部分( )
 
 A	Stacks
+
 B	PC寄存器
+
 C	Heap
+
 D	Heap Frame
 
 
@@ -103,8 +119,11 @@ java只有栈帧 没有堆帧
 请问eden区最终分配的大小是多少？
 
 A	64M
+
 B	500M
+
 C	300M
+
 D	100M
 
 
@@ -112,9 +131,13 @@ D	100M
 **C**
 
 java -Xmx2G -Xms1G -Xmn500M -Xss128k
+
 -Xmx2G：设置JVM最大可用内存为2G。
+
 -Xms1G：设置JVM促使内存为1G。此值可以设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存。
+
 -Xmn500M：设置年轻代大小为2G。整个JVM内存大小= 年轻代大小 + 年老代大小 + 持久代大小。
+
 -XX:SurvivorRatio=3:新生代中又会划分为 Eden 区，from Survivor、to Survivor 区。
 
 其中 Eden 和 Survivor 区的比例默认是 8:1:1，当然也支持参数调整 -XX:SurvivorRatio=3的话就是3:1:1。
@@ -126,8 +149,11 @@ java -Xmx2G -Xms1G -Xmn500M -Xss128k
 ##### 6、关于OutOfMemoryError，下面说法正确的是（）？
 
 A	`java.lang.OutOfMemoryError: PermGen space` 增加-XX:MaxPermSize这个参数的值的话，这个问题通常会得到解决。
+
 B	`java.lang.OutOfMemoryError: Requested array size exceeds VM limit`当你正准备创建一个超过虚拟机允许的大小的数组时，这条错误将会出现
+
 C	 `java.lang.OutOfMemoryError: Java heap space` 一般情况下解决这个问题最快的方法就是通过-Xmx参数来增加堆的大小
+
 D	`java.lang.OutOfMemoryError: nativeGetNewTLA`这个异常只有在jRockit虚拟机时才会碰到
 
 
@@ -149,8 +175,11 @@ D：java.lang.OutOfMemoryError: nativeGetNewTLA指当虚拟机不能分配新的
 ##### 7、判断一块内存空间是否符合垃圾收集器收集的标准有哪些？
 
 A	给对象赋予了空值null,以下再没有调用过
+
 B	对象重新分配了内存空间
+
 C	给对象赋予了空值null
+
 D	给对象赋予了新值
 
 
@@ -158,7 +187,9 @@ D	给对象赋予了新值
 **A B D**
 
 在java语言中，判断一块内存空间是否符合垃圾收集器收集标准的标准只有两个：
+
 1.给对象赋值为null，以下没有调用过。
+
 2.给对象赋了新的值，重新分配了内存空间。
 
 
@@ -166,9 +197,13 @@ D	给对象赋予了新值
 ##### 8、jvm中 full GC触发的条件可能有哪些？
 
 A	栈空间满
+
 B	年轻代空间满
+
 C	老年代满
+
 D	持久代满
+
 E	System.gc()
 
 
@@ -176,10 +211,15 @@ E	System.gc()
 **C D E** 
 
 Full GC触发机制：
+
 　　（1）调用System.gc时，系统建议执行Full GC，但是不必然执行
+
 　　（2）老年代空间不足
+
 　　（3）方法区空间不足
+
 　　（4）通过Minor GC后进入老年代的平均大小大于老年代的可用内存
+
 　　（5）由Eden区、survivor space1（From Space）区向survivor space2（To Space）区复制时，对象大小大于To Space可用内存，则把该对象转存到老年代，且老年代的可用内存小于该对象大小
 
 ![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/ef6b51c229a19ac5dd2ce52b8d4c3480.jpg)
@@ -203,7 +243,9 @@ class A {
 **堆区、栈区、栈区**
 
 堆区：只存放类对象，线程共享；
+
 方法区：又叫静态存储区，存储JVM加载的类信息、常量、静态变量，即使编译器编译后的代码等数据，线程共享;
+
 栈区：存放方法局部变量，基本类型变量区、执行环境上下文、操作指令区，线程不共享;
 
 a在堆区，但是aa在常量池。bb、cc 也在常量池。
@@ -213,10 +255,15 @@ a在堆区，但是aa在常量池。bb、cc 也在常量池。
 ##### 10、 关于Java中的ClassLoader下面的哪些描述是错误的：(     )
 
 A	默认情况下，Java应用启动过程涉及三个ClassLoader: Boostrap, Extension, System
+
 B	一般的情况不同ClassLoader装载的类是不相同的，但接口类例外，对于同一接口所有类装载器装载所获得的类是相同的
+
 C	类装载器需要保证类装载过程的线程安全
+
 D	ClassLoader的loadClass在装载一个类时，如果该类不存在它将返回null
+
 E	ClassLoader的父子结构中，默认装载采用了父优先
+
 F	所有ClassLoader装载的类都来自CLASSPATH环境指定的路径
 
 
@@ -269,7 +316,9 @@ public class Base
 ```
 
 A	null
+
 B	sub
+
 C	base
 
 
