@@ -1,8 +1,17 @@
 
 
 
-
-[toc]
+* [HelloCoder](#hellocoder)
+  * [1、LearnJavaToFindAJob介绍💐](#1learnjavatofindajob介绍)
+* [1\.1、 高频面试题](#11-高频面试题)
+    * [1\.2、 牛客网总结题](#12-牛客网总结题)
+    * [1\.3、项目深度](#13项目深度)
+    * [1\.4 、算法](#14-算法)
+    * [1\.5、大厂原题](#15大厂原题)
+    * [1\.6、面经分享](#16面经分享)
+  * [2、更新时间线](#2更新时间线)
+  * [3、在线阅读地址：](#3在线阅读地址)
+  * [4、联系我](#4联系我)
 
 # HelloCoder
 
@@ -36,7 +45,7 @@
 
 ### 1.2、 牛客网总结题
 
-- 50道牛客网真题
+- 75道牛客网真题
 
 ### 1.3、项目深度
 
@@ -83,7 +92,9 @@ Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://do
 
 欢迎关注我的Java技术公众号，不定时分享Java技术干货：
 
- <img src="https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7HelloCoder.png" style="zoom:50%;" />
+<div align="center"> <img src="https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7HelloCoder.png"/  style="zoom:50%;"> </div>
+
+ 
 
 
 或者微信搜一搜 【**HelloCoder**】
