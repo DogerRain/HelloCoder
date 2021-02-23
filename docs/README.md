@@ -2,7 +2,6 @@
 
 
 
-[toc]
 
 # HelloCoder
 
