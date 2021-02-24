@@ -73,7 +73,7 @@
 
 GitHub Pages：[https://dogerrain.github.io/LearnJavaToFindAJob/#/](https://dogerrain.github.io/LearnJavaToFindAJob/#/)
 
-Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://dogerrain.github.io/LearnJavaToFindAJob/#/ )（国内访问快）
+Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://rainyudianxx.gitee.io/learnjavatofindajob/#/)（国内访问快）
 
  
 
