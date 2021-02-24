@@ -72,7 +72,7 @@ Java内存模型的主要目标是定义程序中各个变量的访问规则，�
 
 工作内存：java虚拟机中每个线程都有自己的工作内存，该内存是线程私有的为了方便理解，可以认为是虚拟机栈。
 
-
+Java内存模型的详细介绍，可参考：https://rain.baimuxym.cn/article/15
 
 ### 3、 Java内存区域（Java内存结构）
 
@@ -80,11 +80,9 @@ Java虚拟机在运行程序时把其自动管理的内存划分为以下几个�
 
 #### Java内存区域:
 
-![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200917123516415.png)
+![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200917123516415.png) 
 
-![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200917123537436.png)
-
-
+![](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200917123537436.png)
 
 **(一)、 方法区(Method Area)**
 
@@ -110,7 +108,7 @@ Java虚拟机在运行程序时把其自动管理的内存划分为以下几个�
 
 运行时常量池是类文件中常量池表的运行时形式，它包含编译时已知的常量信息、必须在运行时解析的方法和字段引用等信息。
 
-
+详细可参考：https://rain.baimuxym.cn/article/14
 
 ### 4、Java 中堆和栈有什么区别
 
@@ -120,20 +118,17 @@ JVM 中堆和栈属于不同的内存区域，使用目的也不同。栈常用�
 
 
 
-### 5、JVM中一次完整的GC流程是怎样的
+### 5、栈帧都有哪些数据？
 
-GC是垃圾收集的意思，Java语言没有提供释放已分配内存的显示操作方法。开发者不用担心内存管理，因为垃圾收集器会自动进行管理。
+见上图：
 
-首先，
+![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210224161111353.png)
 
-Java堆 = 新生代 + 老年代 
-新生代 = Eden + S0 + S1
+JVM的运行是基于栈的，和C语言的栈类似，它的大多数数据都是在堆里面的，只有少部分运行时的数据存在于栈上。
 
-- 当 Eden 区的空间满了， Java虚拟机会触发一次 Minor GC，以收集新生代的垃圾，存活下来的对象，则会转移到 Survivor区。
+在JVM中，每个线程栈里面的元素，就叫`栈帧`。
 
-- **大对象**（需要大量连续内存空间的Java对象，如那种很长的字符串）**直接进入老年态**；
-- 如果对象在Eden出生，并经过第一次Minor GC后仍然存活，并且被Survivor容纳的话，年龄设为1，每熬过一次Minor GC，年龄+1，**若年龄超过一定限制（15），则被晋升到老年态**。即**长期存活的对象进入老年态**。
-- 老年代满了而**无法容纳更多的对象**，Minor GC 之后通常就会进行Full GC，Full GC 清理整个内存堆 – **包括年轻代和年老代**。
+栈帧包含：局部变量表、操作数栈、动态连接、返回地址等。
 
 
 
@@ -155,30 +150,61 @@ Java堆 = 新生代 + 老年代
 
 ### 7、常用的jvm参数有什么？
 
+如果面试官问你怎么看参数：
+
+你可以回答 使用-XX:+PrintFlagsFinal参数可以看到参数的默认值。
+
+常用参数：
+
 -Xms300m 起始内存（堆大小）设置为300m
+
 -Xmx 最大内存
+
 -Xmn 新生代内存
+
 -Xss 栈大小。 就是创建线程后，分配给每一个线程的内存大小
+
 -XX:NewRatio=n:设置年轻代和年老代的比值。如:为3，表示年轻代与年老代比值为1：3，年轻代占整个年轻代年老代和的1/4
+
 -XX:SurvivorRatio=n:年轻代中Eden区与两个Survivor区的比值。注意Survivor区有两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5
+
 -XX:MaxPermSize=n:设置持久代大小
-收集器设置：
+
+**收集器设置：**
+
 -XX:+UseSerialGC:设置串行收集器
+
 -XX:+UseParallelGC:设置并行收集器
+
 -XX:+UseParalledlOldGC:设置并行年老代收集器
+
 -XX:+UseConcMarkSweepGC:设置并发收集器
-垃圾回收统计信息：
+
+**垃圾回收统计信息：**
+
 -XX:+PrintGC
+
 -XX:+PrintGCDetails
+
 -XX:+PrintGCTimeStamps
+
 -Xloggc:filename
-并行收集器设置：
+
+**并行收集器设置：**
+
 -XX:ParallelGCThreads=n:设置并行收集器收集时使用的CPU数。并行收集线程数。
+
 -XX:MaxGCPauseMillis=n:设置并行收集最大暂停时间
+
 -XX:GCTimeRatio=n:设置垃圾回收时间占程序运行时间的百分比。公式为1/(1+n)
-并发收集器设置：
+
+**并发收集器设置：**
+
 -XX:+CMSIncrementalMode:设置为增量模式。适用于单CPU情况。
+
 -XX:ParallelGCThreads=n:设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。
+
+`Xmx`、`Xms`、`Xmn`、`MetaspaceSize` 这几个是关键，一定要记住。
 
 
 
@@ -213,9 +239,9 @@ Java堆 = 新生代 + 老年代
 
 ##### 分代垃圾回收器工作过程：
 
-代回收器有两个分区：老生代和新生代，新生代默认的空间占比总空间的 1/3，老生代的默认占比是 2/3。
+分代回收器有两个分区：老生代和新生代，新生代默认的空间占比总空间的 1/3，老生代的默认占比是 2/3。
 
-新生代使用的是复制算法，新生代里有 3 个分区：Eden、To Survivor、From Survivor，它们的默认占比是 8:1:1，它的执行流程如下：
+新生代使用的是复制算法，新生代里有 3 个分区：Eden、To Survivor、From Survivor，它们的默认占比是 `8:1:1`，它的执行流程如下：
 
 - 把 Eden + From Survivor 存活的对象放入 To Survivor 区；
 - 清空 Eden 和 From Survivor 分区；
@@ -248,80 +274,4 @@ Java堆 = 新生代 + 老年代
 - 整堆回收器：G1
 
 
-
-### 11、 哪些内存需要回收，如何判断回收？
-
-对于java来说，包括程序计数器，栈内存 ，他们随线程生，随线程灭，方法结束后内存也就回收了。
-
-判断对象是否存活一般有两种方式：
-
-- 引用计数：每个对象有一个引用计数属性，新增一个引用时计数加1，引用释放时计数减1，计数为0时可以回收。此方法简单，无法解决对象相互循环引用的问题。
-- 可达性分析（Reachability Analysis）：从GC Roots开始向下搜索，搜索所走过的路径称为引用链。当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的，不可达对象。
-
-
-
-### 12、GC监控怎么看？
-
-jdk自带的命令：
-
-- jps，JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程。
-- jstat，JVM statistics Monitoring是用于监视虚拟机运行时状态信息的命令，它可以显示出虚拟机进程中的类装载、内存、垃圾收集、JIT编译等运行数据。
-- jmap，JVM Memory Map命令用于生成heap dump文件
-- jhat，JVM Heap Analysis Tool命令是与jmap搭配使用，用来分析jmap生成的dump，jhat内置了一个微型的HTTP/HTML服务器，生成dump的分析结果后，可以在浏览器中查看
-- jstack，用于生成java虚拟机当前时刻的线程快照。
-- jinfo，JVM Configuration info 这个命令作用是实时查看和调整虚拟机运行参数。
-
-工具：
-
-jdk自带监控工具：jconsole和jvisualvm，位于bin目录
-
-
-
-### 13、有没有遇到过OutOfMemoryError和StackOverflowError，这两者的区别是什么，怎么解决？
-
-1、OutOfMemoryError 常见场景：
-
-- Java.lang.OutOfMemoryError: PermGen space
-
-  程序中使用了大量的jar或class，使java虚拟机装载类的空间不够。
-  解决：增加java虚拟机中的XX:PermSize和XX:MaxPermSize参数的大小，如： -XX:PermSize=64M -XX:MaxPermSize=128m
-
-- java.lang.OutOfMemoryError: Java heap space
-  java虚拟机创建的对象太多，在进行垃圾回收之前，虚拟机分配的到堆内存空间已经用满了。
-
-  解决：设置堆的起始大小、最大空间，如-Xms256m -Xmx1024m
-
-- java.lang.OutOfMemoryError： unable to create new native thread
-
-  环境提供的服务器配置偏低，而项目本身为了性能，大量的使用的线程，因为线程的开辟比new Object是需要很大空间的。创建线程数超过了操作系统的限制。
-
-  解决：减少程序的线程数量；或者增大服务器的线程限制数量。
-
-2、StackOverflowError 常见场景：
-
-StackOverflowError 是一个java中常出现的错误：在jvm运行时的数据区域中有一个java虚拟机栈，当执行java方法时会进行压栈弹栈的操作。在栈中会保存局部变量，操作数栈，方法出口等等。jvm规定了栈的最大深度，当执行时栈的深度大于了规定的深度，就会抛出StackOverflowError错误。
-
-- java.lang.StackOverflowError 
-  出现这种异常，大多是由于循环调用
-
-典型的例子：
-
-```java
-public class StackOverFlowErrorDemo {
-    public static void HaC(){
-        HaC();
-    }
-    public static void main(String[] args) {
-        HaC();
-    }
-}
-```
-
-解决方案：
-
-​	把递归调用函数改用while或者for循环来实现 。
-​	增大栈的大小值。（如  -Xss100m ）
-​	改用堆内存。（把局部变量改成全局静态变量）
-
-​	
 

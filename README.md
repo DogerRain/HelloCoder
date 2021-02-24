@@ -1,6 +1,3 @@
-
-
-
 * [HelloCoder](#hellocoder)
   * [1、LearnJavaToFindAJob介绍💐](#1learnjavatofindajob介绍)
 * [1\.1、 高频面试题](#11-高频面试题)

@@ -57,18 +57,24 @@
 - Redis
   - [Redis基础面试题](articles\Redis\Redis面试题.md)
   
-  
 - 算法
 
   - [高频算法面试题](articles\算法\高频算法面试题.md)
 
 - <font style="color:black;font-size:20px;font-weight:2px">中级篇</font>
-  
   - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
   - [Redis之缓存击穿、穿透、雪崩](articles\Redis\Redis之缓存击穿、穿透、雪崩.md)
   - [Redis分布式事务锁的原理](articles\Redis\Redis分布式事务锁的原理.md)
   - [Redis的删除策略和内存淘汰机制](articles\Redis\Redis的删除策略和内存淘汰机制.md)
   - [Redis的持久化机制，RDB和AOF](articles\Redis\Redis的持久化机制，RDB和AOF.md)
-
+  
 - <font style="color:black;font-size:20px;font-weight:2px">进阶篇</font>
   - 待续
+
+- <font style="color:black;font-size:20px;font-weight:2px">面经</font>
+
+
+  - - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md)
+
+- <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
+

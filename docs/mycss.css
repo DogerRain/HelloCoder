@@ -767,7 +767,7 @@ section.cover blockquote > p > a:hover {
 .markdown-section ol, .markdown-section p, .markdown-section ul {
     line-height: 2rem;
     word-spacing: .05rem;
-    margin: 1.8em 0;
+    margin: 1em 0;
     letter-spacing: 0.1em;
     font-size: 1.05em;
 }
@@ -780,9 +780,9 @@ section.cover blockquote > p > a:hover {
 }
 
 .markdown-section blockquote {
-    border-left: 4px solid var(--theme-color, #42b983);
+    border-left: 4px solid var(--theme-color, #858585);
     color: #858585;
-    margin: 2em 0;
+    margin: 2em 1em;
     padding-left: 20px;
     background: #d2dde844;
 }
@@ -790,7 +790,7 @@ section.cover blockquote > p > a:hover {
 .markdown-section blockquote p {
     /*font-weight: 600;*/
     /*margin-left: 0*/
-    padding: 0.5em 0;
+    padding: 0em 0;
 }
 
 .markdown-section iframe {
