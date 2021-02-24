@@ -1,3 +1,5 @@
 ### IntelliJ IDEA ###
 .idea
 .gitignore
+gh-md-toc.exe
+.idea/workspace.xml

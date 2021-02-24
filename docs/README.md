@@ -1,9 +1,3 @@
-
-
-
-
-[toc]
-
 # HelloCoder
 
 ## 1、LearnJavaToFindAJob介绍
@@ -42,16 +36,13 @@
 
 ### 1.4 、算法
 
-- 排序算法
-- 动态规划
 
 ### 1.5、大厂原题
 
 
-
 ### 1.6、面经分享
 
-
+### 1.7、如何和HR谈薪
 
 ---
 
@@ -87,9 +78,9 @@ Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://do
 
 
 
- <img src="https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7HelloCoder.png" style="zoom:50%;" />
+<div align="center"> <img src="https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7HelloCoder.png"/  style="zoom:50%;"> </div>
 
-
+ 
 
 或者微信搜一搜 【**HelloCoder**】
 
