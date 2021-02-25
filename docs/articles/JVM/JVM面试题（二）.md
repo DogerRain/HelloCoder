@@ -276,7 +276,7 @@ MajorGC指的是老年代的GC，出现MajorGC一般经常伴有MinorGC。
 
 FullGC有以下几种情况
 
-> FullGC是清理整个堆空间—包括年轻代和老年代、永久代（如果有）
+> FullGC 是清理整个堆空间—包括年轻代和老年代、永久代（如果有）
 
 ​		（1）调用System.gc时，系统建议执行Full GC，但是不必然执行
 
