@@ -264,7 +264,7 @@ public class StackOverFlowErrorDemo {
 
 2、 `jstack -l 15850`  查看进程的堆栈情况，拉到最后就有死锁的信息了 ：
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210224172104760.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20210224172104760.png)
 
 ### 8、MinorGC，MajorGC、FullGC都什么时候发生？
 
