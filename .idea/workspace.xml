@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ed49c58-25f2-42db-9fb9-a5fbd391d85d" name="Default Changelist" comment="20210207">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/JVM面试题库（一）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/JVM面试题库（一）.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（一）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（一）.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（三）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（三）.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（二）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（二）.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（五）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（五）.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（六）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（六）.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（四）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（四）.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/Java线程类面试题库（一）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/Java线程类面试题库（一）.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/articles/题库/Java集合类面试题库（一）.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/articles/题库/Java集合类面试题库（一）.md" afterDir="false" />
+    <list default="true" id="6ed49c58-25f2-42db-9fb9-a5fbd391d85d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+    </list>
+    <list id="ee44e954-e305-4423-8136-679c996c86e2" name="不推荐" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,16 +13,58 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="826208512">
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.merge" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="md" value="2" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Markdown" value="2" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="1" />
+          <entry key="md" value="11" />
+          <entry key="txt" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="1" />
+          <entry key="Markdown" value="11" />
+          <entry key="PLAIN_TEXT" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+            <state relative-caret-position="583">
+              <caret line="68" column="6" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#2;n#ul#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,8 +73,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="100">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（二）.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="5600">
+                <caret line="280" column="46" selection-start-line="280" selection-start-column="46" selection-end-line="280" selection-end-column="46" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/articles/题库/Java线程类面试题库（一）.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="2360">
+                <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -48,8 +107,20 @@
         <entry file="file://$PROJECT_DIR$/docs/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="369">
-                <caret line="103" column="19" selection-start-line="103" selection-start-column="15" selection-end-line="103" selection-end-column="19" />
+              <first_editor relative-caret-position="1640">
+                <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="2020">
+                <caret line="101" selection-start-line="101" selection-end-line="101" />
               </first_editor>
               <second_editor />
             </state>
@@ -59,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/mycss.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="847" lean-forward="true" selection-start-line="847" selection-end-line="847" />
+            <state relative-caret-position="18440">
+              <caret line="922" column="23" selection-start-line="922" selection-start-column="23" selection-end-line="922" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -91,6 +162,11 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Java反射主要涉及的类如Cla</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -98,9 +174,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/docs/README.md" />
+        <option value="$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（二）.md" />
         <option value="$PROJECT_DIR$/docs/index.html" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-110" />
@@ -117,30 +200,49 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="LearnJavaToFindAJob（Java面试题）" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnJavaToFindAJob（Java面试题）" type="462c0819:PsiDirectoryNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LearnJavaToFindAJob（Java面试题）" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnJavaToFindAJob（Java面试题）" type="462c0819:PsiDirectoryNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docsifyLearnJavaToFindAJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docsifyLearnJavaToFindAJob" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+              <item name="题库" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.idea/workspace.xml" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1613784017971" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1614184948547" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -187,13 +289,15 @@
       <workItem from="1612694352300" duration="4385000" />
       <workItem from="1613730814300" duration="74000" />
       <workItem from="1613783506160" duration="1111000" />
+      <workItem from="1614410847192" duration="106000" />
+      <workItem from="1614485591205" duration="1204000" />
     </task>
-    <task id="LOCAL-00001" summary="首次提交">
-      <created>1609682366782</created>
+    <task id="LOCAL-00001" summary="20210225">
+      <created>1614182572369</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1609682366782</updated>
+      <updated>1614182572369</updated>
     </task>
     <task id="LOCAL-00002" summary="首次提交">
       <created>1609690631611</created>
@@ -314,15 +418,17 @@
       <option name="project" value="LOCAL" />
       <updated>1612694382305</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2259000" />
+    <option name="totallyTimeSpent" value="5086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28411514" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20682302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -342,7 +448,7 @@
       <window_info anchor="bottom" id="CheckStyle" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" visible="true" weight="0.2502781" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.24972129" />
       <window_info anchor="bottom" id="Alibaba Cloud View" order="13" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="LuaCheck" order="15" />
@@ -376,6 +482,9 @@
       </list>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="首次提交" />
     <MESSAGE value="20210106" />
@@ -392,9 +501,77 @@
     <MESSAGE value="20210128——常用类、集合" />
     <MESSAGE value="20210203" />
     <MESSAGE value="20210207" />
-    <option name="LAST_COMMIT_MESSAGE" value="20210207" />
+    <MESSAGE value="20210225" />
+    <option name="LAST_COMMIT_MESSAGE" value="20210225" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="68" column="6" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/articles/题库/Java基础面试题库（二）.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="5600">
+            <caret line="280" column="46" selection-start-line="280" selection-start-column="46" selection-end-line="280" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/articles/题库/Java线程类面试题库（一）.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2360">
+            <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1640">
+            <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2020">
+            <caret line="101" selection-start-line="101" selection-end-line="101" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/mycss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18440">
+          <caret line="922" column="23" selection-start-line="922" selection-start-column="23" selection-end-line="922" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docs/_navbar.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -412,41 +589,6 @@
             <caret line="2" selection-start-line="2" selection-end-line="2" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="369">
-            <caret line="103" column="19" selection-start-line="103" selection-start-column="15" selection-end-line="103" selection-end-column="19" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/mycss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="847" lean-forward="true" selection-start-line="847" selection-end-line="847" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
