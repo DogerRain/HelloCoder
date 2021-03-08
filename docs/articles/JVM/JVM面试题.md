@@ -10,7 +10,7 @@
 
 - 应用程序类加载器（Application ClassLoader）。负责加载用户类路径（classpath）上的指定类库，我们可以直接使用这个类加载器。一般情况，如果我们没有自定义类加载器默认就是用这个加载器。
 
-![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200917103311630.png)
+![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20200917103311630.png)
 
 类加载器 就是根据指定全限定名称将class文件加载到JVM内存，转为Class对象。
 

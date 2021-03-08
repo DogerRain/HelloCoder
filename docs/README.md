@@ -70,7 +70,7 @@ Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://do
 
 ## 4、联系我
 
-由于工作量大，难免出现错误，欢迎给我提bug。
+由于工作量大，难免出现错误，有有任何疑问，欢迎给我提bug。
 
 
 
@@ -83,10 +83,6 @@ Gittee Pages ：[https://dogerrain.github.io/LearnJavaToFindAJob/#/ ](https://do
  
 
 或者微信搜一搜 【**HelloCoder**】
-
-
-
-同时，本项目已经整理成了PDF，github 更新可能存在延迟，如果需要第一时间获取最新版本，可以关注我的公众号。
 
 
 
