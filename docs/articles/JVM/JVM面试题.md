@@ -10,7 +10,7 @@
 
 - 应用程序类加载器（Application ClassLoader）。负责加载用户类路径（classpath）上的指定类库，我们可以直接使用这个类加载器。一般情况，如果我们没有自定义类加载器默认就是用这个加载器。
 
-![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200917103311630.png)
+![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20200917103311630.png)
 
 类加载器 就是根据指定全限定名称将class文件加载到JVM内存，转为Class对象。
 
@@ -124,11 +124,7 @@ JVM 中堆和栈属于不同的内存区域，使用目的也不同。栈常用�
 
 ![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210224161111353.png)
 
-JVM的运行是基于栈的，和C语言的栈类似，它的大多数数据都是在堆里面的，只有少部分运行时的数据存在于栈上。
 
-在JVM中，每个线程栈里面的元素，就叫`栈帧`。
-
-栈帧包含：局部变量表、操作数栈、动态连接、返回地址等。
 
 
 

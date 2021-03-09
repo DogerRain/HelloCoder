@@ -1,4 +1,4 @@
-- <font style="color:black;font-size:20px;font-weight:2px">基础</font>
+- <font style="color:black;font-size:20px;font-weight:2px">基础篇</font>
 
 
 - Java基础
@@ -7,6 +7,7 @@
 - JVM
   
   - [JVM面试题](articles\JVM\JVM面试题.md)
+  - [JVM面试题（二）](articles\JVM\JVM面试题（二）)
 - Java多线程
   
   - [Java多线程面试题](articles\Java线程\Java多线程面试题.md)
@@ -56,25 +57,20 @@
   - [消息队列面试题](articles\中间件\消息队列面试题.md)
 - Redis
   - [Redis基础面试题](articles\Redis\Redis面试题.md)
-  
 - 算法
 
   - [高频算法面试题](articles\算法\高频算法面试题.md)
-
-- <font style="color:black;font-size:20px;font-weight:2px">中级篇</font>
+- <font style="color:black;font-size:20px;font-weight:2px">进阶篇</font>
   - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
   - [Redis之缓存击穿、穿透、雪崩](articles\Redis\Redis之缓存击穿、穿透、雪崩.md)
   - [Redis分布式事务锁的原理](articles\Redis\Redis分布式事务锁的原理.md)
   - [Redis的删除策略和内存淘汰机制](articles\Redis\Redis的删除策略和内存淘汰机制.md)
   - [Redis的持久化机制，RDB和AOF](articles\Redis\Redis的持久化机制，RDB和AOF.md)
-  
-- <font style="color:black;font-size:20px;font-weight:2px">进阶篇</font>
-  - 待续
+- <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
 
+  - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
 
-
-  - - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md)
-
+    - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md)
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
 
