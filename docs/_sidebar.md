@@ -35,11 +35,11 @@
   - [JVM面试题库（一）](articles\题库\JVM面试题库（一）.md)
 - JavaEE
   - [Docker面试题](articles\Java框架\Docker面试题.md)
-  - [Dubbo面试题](articles\Java框架\Dubbo面试题.md)
+  - [Dubbo面试题](articles\中间件\Dubbo面试题.md) 
   - [elasticsearch面试题](articles\Java框架\elasticsearch面试题.md)
   - [Hibernate面试题](articles\Java框架\Hibernate面试题.md)
   - [Mybatis面试题](articles\Java框架\Mybatis面试题.md)
-  - [Netty面试题](articles\Java框架\Netty面试题.md)
+  -  [Netty面试题](articles\中间件\Netty面试题.md) 
   - [Struts面试题](articles\Java框架\Struts面试题.md)
   - [Tomcat面试题](articles\Java框架\Tomcat面试题.md)
   - [Zookeeper面试题](articles\Java框架\Zookeeper面试题.md)
@@ -66,11 +66,12 @@
   - [Redis分布式事务锁的原理](articles\Redis\Redis分布式事务锁的原理.md)
   - [Redis的删除策略和内存淘汰机制](articles\Redis\Redis的删除策略和内存淘汰机制.md)
   - [Redis的持久化机制，RDB和AOF](articles\Redis\Redis的持久化机制，RDB和AOF.md)
+  - [springBoot的Jar直接运行原理](articles\进阶\为什么springBoot的jar可以直接运行.md)
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
-
-  - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
+- [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
 
-    - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md)
+    - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
+    - [腾讯后端Java岗社招面经](articles\面经\腾讯后端Java岗社招面经.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
 

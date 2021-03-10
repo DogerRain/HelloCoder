@@ -16,7 +16,7 @@ Nginx ，是一个 Web 服务器和反向代理服务器用于 HTTP、HTTPS、SM
 
 ### 2、正向代理和反向代理的区别是什么？
 
- ![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201028150646664.png)
+ ![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201028150646664.png)
 
  
 

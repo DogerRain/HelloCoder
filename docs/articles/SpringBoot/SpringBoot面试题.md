@@ -113,7 +113,7 @@ public @interface SpringBootApplication {
 
 然后就会自动依赖其他组件：
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210220112427605.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20210220112427605.png)
 
 而不是像spring那样，你需要在pom单独引入spring-core、spring-beans、spring-aop 等等，最最最重要的是，**可以省去了版本冲突的问题。**还可以通过`spring-boot-starter-parent` 统一控制版本。
 
@@ -213,7 +213,7 @@ spring-boot-maven-plugin 提供了一些像 jar 一样打包或者运行应用�
 
 这是springboot的默认打包插件和命令：
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210220164501305.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20210220164501305.png)
 
 **spring-boot-maven-plugin 会打包成一个可以直接运行的JAR文件，使用"`java -jar`"命令就可以直接运行。**
 
@@ -270,6 +270,6 @@ Spring Boot 的 jar 无法被其他项目依赖，主要还是它和普通 jar �
 
 这样会打成两个jar，一个是可以直接运行的，一个exec是可以被其他项目依赖的：
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210220164955457.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20210220164955457.png)
 
 我觉得这样没必要，你要打成一个依赖包给其他项目用，那你没必要把这个项目打成可运行的jar，最好的方法就是把依赖项目重新放到一个新的项目，使用`<skip>true</skip>`被其他项目依赖即可。
