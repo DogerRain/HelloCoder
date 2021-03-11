@@ -85,6 +85,8 @@ Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://r
 
 ## 4、联系我
 
+### 1、公众号联系我
+
 由于工作量大，难免出现错误，欢迎给我提bug。
 
 欢迎关注我的Java技术公众号，不定时分享Java技术干货：
@@ -96,15 +98,10 @@ Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://r
 
 或者微信搜一搜 【**HelloCoder**】
 
-同时，本项目已经整理成了PDF，github 更新可能存在延迟，如果需要第一时间获取最新版本，可以关注我的公众号。
+同时，本项目后续会整理成PDF，Github 更新可能存在延迟，如果需要第一时间获取最新版本，可以关注我的公众号。
 
+### 2、围观我的博客
 
+http://rain.baimuxym.cn/
 
----
-
-最后，希望各位可以帮我点一个 star :star: ，这样我就更有动力更新了。 
-
-在这里，期待与各位共同进步。
-
-愿各位看完有收获，找到一份满意的工作。
-
+一个搬砖的技术人。

@@ -57,8 +57,10 @@
   - [消息队列面试题](articles\中间件\消息队列面试题.md)
 - Redis
   - [Redis基础面试题](articles\Redis\Redis面试题.md)
+  -  [Redis的使用规范有哪些？.md](articles\Redis\Redis的使用规范有哪些？.md) 
 - 算法
 
+  -  [八大排序算法](articles\算法\八大排序算法.md) 
   - [高频算法面试题](articles\算法\高频算法面试题.md)
 - <font style="color:black;font-size:20px;font-weight:2px">进阶篇</font>
   - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
@@ -67,6 +69,7 @@
   - [Redis的删除策略和内存淘汰机制](articles\Redis\Redis的删除策略和内存淘汰机制.md)
   - [Redis的持久化机制，RDB和AOF](articles\Redis\Redis的持久化机制，RDB和AOF.md)
   - [springBoot的Jar直接运行原理](articles\进阶\为什么springBoot的jar可以直接运行.md)
+  -  [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
 - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
