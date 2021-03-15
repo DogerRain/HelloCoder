@@ -70,11 +70,14 @@
   - [Redis的持久化机制，RDB和AOF](articles\Redis\Redis的持久化机制，RDB和AOF.md)
   - [springBoot的Jar直接运行原理](articles\进阶\为什么springBoot的jar可以直接运行.md)
   -  [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
+  -   [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
-- [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
+
+    - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
 
     - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
     - [腾讯后端Java岗社招面经](articles\面经\腾讯后端Java岗社招面经.md) 
+    - [最近面试一些厂的面经整理（阿里，腾讯，字节等）.md](articles\面经\最近面试一些厂的面经整理（阿里，腾讯，字节等）.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
 
