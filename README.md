@@ -91,7 +91,7 @@ Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://r
 
 欢迎关注我的Java技术公众号，不定时分享Java技术干货：
 
-<div align="center"> <img src="https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7HelloCoder.png"  style="zoom:30%;"> </div>
+<div align="center"> <img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/HelloCoder.png"  style="zoom:30%;"> </div>
 
  
 
@@ -100,8 +100,13 @@ Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://r
 
 同时，本项目后续会整理成PDF，Github 更新可能存在延迟，如果需要第一时间获取最新版本，可以关注我的公众号。
 
-### 2、围观我的博客
+### 2、博客联系我
 
 http://rain.baimuxym.cn/
 
 一个搬砖的技术人。
+
+
+
+ 
+
