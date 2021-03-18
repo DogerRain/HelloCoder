@@ -91,7 +91,7 @@ Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://r
 
 欢迎关注我的Java技术公众号，不定时分享Java技术干货：
 
-<div align="center"> <img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/HelloCoder.png"  style="zoom:30%;"> </div>
+<div align="center"> <img src="https://cdn.jsdelivr.net/gh/DogerRain/home@main/Home/HelloCoder.png"  style="zoom:30%;"> </div>
 
  
 
