@@ -6,7 +6,7 @@ cat、vi、vim、ls、mkdir、touch 、cp、mv
 
 查找是否存在该文件名：
 
-```java
+```bash
 find / -name mysql 
 ```
 
