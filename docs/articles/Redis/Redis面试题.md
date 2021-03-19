@@ -33,7 +33,7 @@
 
 简单理解：
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201022172324401.png)
+![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201022172324401.png)
 
 多个socket请求，socket包括很多种事件类型，有get、push、exit 等等。这些socket准备好， 将其置入队列之中 ，文件事件分派器依次去队列中取，转发到不同的事件处理器中。
 
