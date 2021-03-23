@@ -51,7 +51,7 @@ example.jar
 - BOOT-INF/lib：目录存放应用依赖的第三方JAR包文件。
 - META-INF：目录存放应用打包信息(Maven坐标、pom文件)和MANIFEST.MF文件。
 - org：目录存放SpringBoot相关class文件。
-   
+  
 
 
 
