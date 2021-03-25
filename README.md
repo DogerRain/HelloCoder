@@ -53,19 +53,28 @@
 
 ### 1.5、大厂原题
 
-
+- 阿里
+- 腾讯
+- 美团
+- 字节跳动
 
 ### 1.6、面经分享
 
+- 流程
 
+### 1.7、其他
 
-
+- 简历
+- 谈薪
 
 ## 2、更新时间线
 
-| 版本 | 时间       | 更新内容   |
-| ---- | ---------- | ---------- |
-| 1.0  | 2021-01-01 | 第一次发布 |
+| 版本 | 时间       | 更新内容                        |
+| ---- | ---------- | ------------------------------- |
+| 1.0  | 2021-01-01 | 第一次发布—Java八股文           |
+| 2.0  | 2021-03-01 | 进阶、大厂面试题、Redis、场景题 |
+
+
 
 
 
@@ -91,7 +100,7 @@ Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://r
 
 欢迎关注我的Java技术公众号，不定时分享Java技术干货：
 
-<div align="center"> <img src="https://cdn.jsdelivr.net/gh/DogerRain/home@main/Home/HelloCoder.png"  style="zoom:30%;"> </div>
+<div align="center"> <img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/HelloCoder.png"  style="zoom:30%;"></img> </div>
 
  
 
