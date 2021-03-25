@@ -24,6 +24,7 @@
 - MySQL
   
   - [MySQL面试题](articles\MySQL\MySQL面试题.md)
+  - 
 - 刷了牛客网1000道题挑选出75道典型题
   - [Java基础面试题库（一）](articles\题库\Java基础面试题库（一）.md)
   - [Java基础面试题库（二）](articles\题库\Java基础面试题库（二）.md)
@@ -47,7 +48,7 @@
 - Spring
   - [SpringMVC面试题](articles\Spring\SpringMVC面试题.md)
   - [Spring面试题](articles\Spring\Spring面试题.md)
-- SpringBoot
+- SpringBoot 
   
   - [SpringBoot面试题](articles\SpringBoot\SpringBoot面试题.md)
 - SpringCloud
@@ -70,6 +71,8 @@
   - [Redis的删除策略和内存淘汰机制](articles\Redis\Redis的删除策略和内存淘汰机制.md)
   - [Redis的持久化机制，RDB和AOF](articles\Redis\Redis的持久化机制，RDB和AOF.md)
   -  [Redis为什么要使用单线程，新版本为什么引入多线程？.md](articles\Redis\Redis为什么要使用单线程，新版本为什么引入多线程？.md) 
+  -   [Redis为什么删除数据后，内存占用依然很高？.md](articles\Redis\Redis为什么删除数据后，内存占用依然很高？.md) 
+  -   
   - [springBoot的Jar直接运行原理](articles\进阶\为什么springBoot的jar可以直接运行.md)
   -  [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
   -   [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
@@ -79,10 +82,12 @@
 
     - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
 - <font style="color:black;font-size:20px;font-weight:2px">大厂面试题</font>
--  [阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
-    -  [【阿里面试题】FileInputStream 在使用完以后，不关闭流，想二次使用可以怎么操作.md](articles\大厂面试题\[阿里面试题]FileInputStream 在使用完以后，不关闭流，想二次使用可以怎么操作.md) 
-    -   [【原创】腾讯面试官：线程池要设置多大.md](articles\大厂面试题\腾讯\[原创]腾讯面试官：线程池要设置多大.md) 
-    -   [阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md](articles\大厂面试题\阿里\阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md) 
+- [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
+    -  [【阿里面试题】FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md](articles\大厂面试题\阿里\阿里面试题-FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md) 
+    - [【原创】腾讯面试官：线程池要设置多大.md](articles\大厂面试题\腾讯\线程池要设置多大？.md)  
+    -  [蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md](articles\大厂面试题\阿里\蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md) 
+    -  [阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md](articles\大厂面试题\阿里\阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md) 
+    - [阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md](articles\大厂面试题\阿里\阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
 
     - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
@@ -90,5 +95,5 @@
     - [最近面试一些厂的面经整理（阿里，腾讯，字节等）](articles\面经\最近面试一些厂的面经整理（阿里，腾讯，字节等）.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
 
-- 正在马不停蹄的更新ing....
+    - 正在马不停蹄的更新ing....
 

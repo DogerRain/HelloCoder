@@ -50,10 +50,10 @@ SDS直接获取， 时间复杂度为`O(1)`，因为有 len 函数记录字符�
 C语言不记录自身长度，字符串在执行拼接字符串时，如果长度不够会产生缓冲区溢出的问题。
 
 >  `/strcat` 函数可以将 `src` 字符串中的内容拼接到 `dest` 字符串的末尾：
->
-> ```
-> char *strcat(char *dest, const char *src);
-> ```
+
+```c
+char *strcat(char *dest, const char *src);
+```
 
 SDS的空间分配策略完全杜绝了这种可能性，当API需要对SDS进行修改时，  API会首先会检查SDS的空间是否满足条件, 如果不满足， API会自动对它的空间动态扩展。
 

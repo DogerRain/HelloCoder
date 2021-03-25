@@ -102,9 +102,7 @@ Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://r
 
 ### 2、博客联系我
 
-http://rain.baimuxym.cn/
-
-一个搬砖的技术人。
+<a hrep="http://rain.baimuxym.cn"  target="_blank">http://rain.baimuxym.cn</a>
 
 
 
