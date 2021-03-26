@@ -65,32 +65,39 @@
   -  [八大排序算法](articles\算法\八大排序算法.md) 
   - [高频算法面试题](articles\算法\高频算法面试题.md)
 - <font style="color:black;font-size:20px;font-weight:2px">进阶篇</font>
+  
+  - <font style="color:black;font-size:18px;font-weight:2px">Java基础进阶篇</font>
+  - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
+  -  [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
+  - <font style="color:black;font-size:18px;font-weight:2px">Redis进阶篇</font>
   - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
   - [Redis之缓存击穿、穿透、雪崩](articles\Redis\Redis之缓存击穿、穿透、雪崩.md)
   - [Redis分布式事务锁的原理](articles\Redis\Redis分布式事务锁的原理.md)
   - [Redis的删除策略和内存淘汰机制](articles\Redis\Redis的删除策略和内存淘汰机制.md)
   - [Redis的持久化机制，RDB和AOF](articles\Redis\Redis的持久化机制，RDB和AOF.md)
-  -  [Redis为什么要使用单线程，新版本为什么引入多线程？.md](articles\Redis\Redis为什么要使用单线程，新版本为什么引入多线程？.md) 
-  -   [Redis为什么删除数据后，内存占用依然很高？.md](articles\Redis\Redis为什么删除数据后，内存占用依然很高？.md) 
-  -   
+  - [Redis为什么要使用单线程，新版本为什么引入多线程？.md](articles\Redis\Redis为什么要使用单线程，新版本为什么引入多线程？.md) 
+  - [Redis为什么删除数据后，内存占用依然很高？.md](articles\Redis\Redis为什么删除数据后，内存占用依然很高？.md) 
+  - 
   - [springBoot的Jar直接运行原理](articles\进阶\为什么springBoot的jar可以直接运行.md)
-  -  [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
-  -   [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
-  -    [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
-  -    [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
+  - [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
+  - 
+  - [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
+  -  [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL 索引的分类、何时使用、何时不使用、何时失效？.md) 
+  -  [可重复读是否能解决幻读？.md](articles\MySQL\可重复读是否能解决幻读？.md) 
+  -  [Innodb和MyISAM索引的区别.md](articles\MySQL\Innodb和MyISAM索引的区别.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
-
-    - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
+- [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
 - <font style="color:black;font-size:20px;font-weight:2px">大厂面试题</font>
-- [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
-    -  [【阿里面试题】FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md](articles\大厂面试题\阿里\阿里面试题-FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md) 
-    - [【原创】腾讯面试官：线程池要设置多大.md](articles\大厂面试题\腾讯\线程池要设置多大？.md)  
-    -  [蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md](articles\大厂面试题\阿里\蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md) 
-    -  [阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md](articles\大厂面试题\阿里\阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md) 
-    - [阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md](articles\大厂面试题\阿里\阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md) 
-- <font style="color:black;font-size:20px;font-weight:2px">面经</font>
 
-    - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
+    - [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
+    - [【阿里面试题】FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md](articles\大厂面试题\阿里\阿里面试题-FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md) 
+    - [【原创】腾讯面试官：线程池要设置多大.md](articles\大厂面试题\腾讯\线程池要设置多大？.md)  
+    - [蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md](articles\大厂面试题\阿里\蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md) 
+    - [阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md](articles\大厂面试题\阿里\阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md) 
+    - [阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md](articles\大厂面试题\阿里\阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md) 
+    -  [快手Java后台三面，意向已拿，面试官都问了些啥？.md](articles\大厂面试题\快手\快手Java后台三面，意向已拿，面试官都问了些啥？.md) 
+- <font style="color:black;font-size:20px;font-weight:2px">面经</font>
+- [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
     - [腾讯后端Java岗社招面经](articles\面经\腾讯后端Java岗社招面经.md) 
     - [最近面试一些厂的面经整理（阿里，腾讯，字节等）](articles\面经\最近面试一些厂的面经整理（阿里，腾讯，字节等）.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
