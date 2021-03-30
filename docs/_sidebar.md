@@ -85,8 +85,7 @@
   -  [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL索引的分类、何时使用、何时不使用、何时失效？.md) 
   -  [可重复读是否能解决幻读？.md](articles\MySQL\可重复读是否能解决幻读？.md) 
   -  [Innodb和MyISAM索引的区别.md](articles\MySQL\Innodb和MyISAM索引的区别.md) 
-  -  
-  -   [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端100%消息投递成功？.md) 
+  -   [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端消息投递成功？.md)   
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
     - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
     -  [对读写分离的理解.md](articles\项目深度\对读写分离的理解.md) 
