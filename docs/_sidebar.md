@@ -82,11 +82,16 @@
   - [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
   - 
   - [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
-  -  [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL 索引的分类、何时使用、何时不使用、何时失效？.md) 
+  -  [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL索引的分类、何时使用、何时不使用、何时失效？.md) 
   -  [可重复读是否能解决幻读？.md](articles\MySQL\可重复读是否能解决幻读？.md) 
   -  [Innodb和MyISAM索引的区别.md](articles\MySQL\Innodb和MyISAM索引的区别.md) 
+  -  
+  -   [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端100%消息投递成功？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
 - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
+    -  [对读写分离的理解.md](articles\项目深度\对读写分离的理解.md) 
+    -  [你知道怎么分库分表吗？如何做到永不迁移数据和避免热点吗？.md](articles\项目深度\你知道怎么分库分表吗？如何做到永不迁移数据和避免热点吗？.md) 
+    -  [在读多写少的情况下，如何优化MySQL的数据查询方案.md](articles\项目深度\在读多写少的情况下，如何优化MySQL的数据查询方案.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">大厂面试题</font>
 
     - [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
@@ -95,11 +100,13 @@
     - [蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md](articles\大厂面试题\阿里\蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md) 
     - [阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md](articles\大厂面试题\阿里\阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md) 
     - [阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md](articles\大厂面试题\阿里\阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md) 
-    -  [快手Java后台三面，意向已拿，面试官都问了些啥？.md](articles\大厂面试题\快手\快手Java后台三面，意向已拿，面试官都问了些啥？.md) 
+    - [快手Java后台三面，意向已拿，面试官都问了些啥？.md](articles\大厂面试题\快手\快手Java后台三面，意向已拿，面试官都问了些啥？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
-- [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
+
+    - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
     - [腾讯后端Java岗社招面经](articles\面经\腾讯后端Java岗社招面经.md) 
     - [最近面试一些厂的面经整理（阿里，腾讯，字节等）](articles\面经\最近面试一些厂的面经整理（阿里，腾讯，字节等）.md) 
+    -  [三个面试中遇到的问题.md](articles\面经\三个面试中遇到的问题.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
 
     - 正在马不停蹄的更新ing....
