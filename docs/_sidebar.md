@@ -65,7 +65,7 @@
   -  [八大排序算法](articles\算法\八大排序算法.md) 
   - [高频算法面试题](articles\算法\高频算法面试题.md)
 - <font style="color:black;font-size:20px;font-weight:2px">进阶篇</font>
-  
+
   - <font style="color:black;font-size:18px;font-weight:2px">Java基础进阶篇</font>
   - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
   -  [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
@@ -88,7 +88,7 @@
   -  
   -   [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端100%消息投递成功？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
-- [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
+    - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
     -  [对读写分离的理解.md](articles\项目深度\对读写分离的理解.md) 
     -  [你知道怎么分库分表吗？如何做到永不迁移数据和避免热点吗？.md](articles\项目深度\你知道怎么分库分表吗？如何做到永不迁移数据和避免热点吗？.md) 
     -  [在读多写少的情况下，如何优化MySQL的数据查询方案.md](articles\项目深度\在读多写少的情况下，如何优化MySQL的数据查询方案.md) 
