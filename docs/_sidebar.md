@@ -66,9 +66,13 @@
   - [高频算法面试题](articles\算法\高频算法面试题.md)
   -  [1-两数之和.md](articles\算法\1-两数之和.md) 
   -  [2-两数相加](articles\算法\2两数相加.md) 
+  -   [387-字符串中的第一个唯一字符.md](articles\算法\387-字符串中的第一个唯一字符.md) 
+  -    [206-翻转链表.md](articles\算法\206-翻转链表.md) 
   -  [543-二叉树最大直径](articles\算法\543二叉树最大直径.md) 
+  -   [11-盛水最多的容器.md](articles\算法\11-盛水最多的容器.md) 
 - <font style="color:black;font-size:20px;font-weight:800">进阶篇</font>
-- <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
+
+    - <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
     - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
     - [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
     - <font style="color:black;font-size:18px;font-weight:500">Redis进阶篇</font>
@@ -114,5 +118,6 @@
     -   [知乎-一些质量很高的面试题.md](articles\面经\知乎-一些质量很高的面试题.md) 
     -   [知乎-七彩云霞的回答.md](articles\面经\知乎-七彩云霞的回答.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
-- 正在马不停蹄的更新ing....
+
+    - 正在马不停蹄的更新ing....
 
