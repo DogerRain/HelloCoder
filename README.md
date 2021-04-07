@@ -90,7 +90,7 @@ GitHub Pages：[https://dogerrain.github.io/LearnJavaToFindAJob/#/](https://doge
 
 Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://rainyudianxx.gitee.io/learnjavatofindajob/#/)（国内访问快）
 
- 
+> Gittee Pages  同步会慢一点
 
 ## 4、联系我
 
@@ -112,8 +112,3 @@ Gittee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://r
 ### 2、博客联系我
 
 <a hrep="http://rain.baimuxym.cn"  target="_blank">http://rain.baimuxym.cn</a>
-
-
-
- 
-
