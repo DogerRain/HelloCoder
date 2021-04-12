@@ -60,16 +60,16 @@
 - Redis
   - [Redis基础面试题](articles\Redis\Redis面试题.md)
   -  [Redis的使用规范有哪些？.md](articles\Redis\Redis的使用规范有哪些？.md) 
-- 算法
+- [算法](articles\算法\高频算法面试题.md)
 
-  -  [八大排序算法](articles\算法\八大排序算法.md) 
-  - [高频算法面试题](articles\算法\高频算法面试题.md)
-  -  [1-两数之和.md](articles\算法\1-两数之和.md) 
-  -  [2-两数相加](articles\算法\2两数相加.md) 
-  -   [387-字符串中的第一个唯一字符.md](articles\算法\387-字符串中的第一个唯一字符.md) 
-  -    [206-翻转链表.md](articles\算法\206-翻转链表.md) 
-  -  [543-二叉树最大直径](articles\算法\543二叉树最大直径.md) 
-  -   [11-盛水最多的容器.md](articles\算法\11-盛水最多的容器.md) 
+    - [八大排序算法](articles\算法\八大排序算法.md) 
+    - [1-两数之和](articles\算法\1-两数之和.md) 
+    - [2-两数相加](articles\算法\2两数相加.md) 
+    - [387-字符串中的第一个唯一字符.md](articles\算法\387-字符串中的第一个唯一字符.md) 
+    - [20-有效的括号.md](articles\算法\20-有效的括号.md) 
+    - [206-翻转链表.md](articles\算法\206-翻转链表.md) 
+    - [543-二叉树最大直径](articles\算法\543二叉树最大直径.md) 
+    - [11-盛水最多的容器.md](articles\算法\11-盛水最多的容器.md) 
 - <font style="color:black;font-size:20px;font-weight:800">进阶篇</font>
 
     - <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
@@ -91,10 +91,11 @@
     - [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
     - [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL索引的分类、何时使用、何时不使用、何时失效？.md) 
     - [可重复读是否能解决幻读？.md](articles\MySQL\可重复读是否能解决幻读？.md) 
-    - [Innodb和MyISAM索引的区别.md](articles\MySQL\Innodb和MyISAM索引的区别.md) 
+    - [Innodb和MyISAM索引的区别（B树、B+树、聚簇索引、非聚簇索引）](articles\MySQL\Innodb和MyISAM索引的区别.md) 
     - [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
     - 
     - [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端消息投递成功？.md)   
+    -  [高并发下如何保证接口的幂等性？.md](articles\进阶\高并发下如何保证接口的幂等性？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
     - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
     -    [对读写分离的理解，为什么要读写分离？.md](articles\项目深度\对读写分离的理解，为什么要读写分离？.md) 

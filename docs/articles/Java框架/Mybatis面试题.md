@@ -26,7 +26,7 @@ Mybatis中有一级缓存和二级缓存，默认情况下一级缓存是开启�
 
 二级缓存是指可以跨 SqlSession 的缓存。是 mapper 级别的缓存，对于mapper 级别的缓存不同的sqlsession 是可以共享的。
 
-![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200925165917288.png)
+<img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-20210401/image-20200925165917288.png" alt=" "  />
 
 
 
