@@ -59,3 +59,54 @@ B选项，private修饰符定义的属性及方法不能被子类实现，而抽
 
 C选项，修饰符重复，而且没有定义数据类型。 
 
+
+
+##### 54、以下输出是？
+
+这是一道比较经典的多态题目。
+
+```java
+public class A {
+    A() {
+        print();
+    }
+
+    void print() {
+        System.out.println("A");
+    }
+}
+
+class B extends A {
+    int i = 4;
+ 	B(){
+        print();
+    }
+    @Override
+    void print() {
+        System.out.println(i + " ");
+    }
+
+    public static void main(String[] args) {
+        A a = new B();
+        a.print();
+    }
+}
+```
+
+输出：
+
+```
+0 
+4 
+4
+```
+
+1、 `A a = new B();` 先调用父类 A 的构造方法
+
+2、构造方法`A()`里面的 `print();` 其实是调用子类的方法，并不是自己的方法
+
+3、调用之类的`print()`方法时，B还没初始化，所以只能拿到 i 的声明，也就是 初始化的值 0，输出 0
+
+4、之后调用之类 B 的构造方法，输出4
+
+5、`a.print()` 调用的是A的方法，输出4
