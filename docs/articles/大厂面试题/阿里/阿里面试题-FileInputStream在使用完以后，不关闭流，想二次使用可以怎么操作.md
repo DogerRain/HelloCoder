@@ -96,7 +96,7 @@ My webSite is https://rain.baimuxym.cn
 
 要重新复用流，那肯定就不能重新`new FileInputStream`，我想到的是使用反射，如果对反射不熟悉的，建议看一下：
 
-[Java的反射是个什么东西？？？](https://purejava.baimuxym.cn/#/articles\Java%E8%BF%9B%E9%98%B6\%E5%8F%8D%E5%B0%84\Java%E5%8F%8D%E5%B0%84)
+[Java的反射是个什么东西？？？](https://purejava.baimuxym.cn/#/articles//Java%E8%BF%9B%E9%98%B6//%E5%8F%8D%E5%B0%84//Java%E5%8F%8D%E5%B0%84)
 
 那反射要实现，需要获取哪个方法呢？我们看一下`FileInputStream` 的源码：
 
