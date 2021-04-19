@@ -76,6 +76,9 @@
     - <font style="color:orange;font-size:18px;font-weight:500">树：</font>
     - [543-二叉树最大直径](articles\算法\543二叉树最大直径.md) 
     - [11-盛水最多的容器](articles\算法\11-盛水最多的容器.md) 
+    - <font style="color:orange;font-size:18px;font-weight:500">动态规划：</font>
+    -  [70-爬楼梯](articles\算法\70-爬楼梯.md) 
+    -   [53-连续最大子序和](articles\算法\53-连续最大子序和.md) 
 - <font style="color:black;font-size:20px;font-weight:800">进阶篇</font>
 - <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
     - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
