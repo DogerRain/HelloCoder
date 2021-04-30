@@ -16,7 +16,7 @@ Nginx ，是一个 Web 服务器和反向代理服务器用于 HTTP、HTTPS、SM
 
 ### 2、正向代理和反向代理的区别是什么？
 
- ![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201028150646664.png)
+![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201028150646664.png)
 
  
 
@@ -26,7 +26,7 @@ Nginx ，是一个 Web 服务器和反向代理服务器用于 HTTP、HTTPS、SM
 
 **反向代理**实际运行方式是代理服务器接受网络上的连接请求。它将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给网络上请求连接的客户端 。代理服务器和原始服务器处于同一个局域网内。
 
- 比如说我要访问taobao，对我来说不知道图片、json、css 是不是同一个服务器返回回来的，但是我不关心，是反向代理 处理的，我不知道原始服务器。
+比如说我要访问taobao，对我来说不知道图片、json、css 是不是同一个服务器返回回来的，但是我不关心，是反向代理 处理的，我不知道原始服务器。
 
 
 
