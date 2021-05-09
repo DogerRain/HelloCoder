@@ -34,3 +34,9 @@ IO的模型一般分为四种：
 Redis就是这种多路复用IO
 
 ![img](https://img-blog.csdnimg.cn/20201016154144678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x6YjM0ODExMDE3NQ==,size_16,color_FFFFFF,t_70)
+
+![](F:\笔记\LearnJavaToFindAJob（Java面试题）\docs\articles\Java基础\picture\image-20210509005400086.png)
+
+![](/picture/image-20210509005521009.png)
+
+![](picture/image-20210509005521009-1620492942401.png)

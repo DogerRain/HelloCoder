@@ -26,5 +26,7 @@
 
 
 
+![](https://blockchainlittlebook.com/images/blbcover.gif)
+
 
 
