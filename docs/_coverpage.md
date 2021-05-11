@@ -20,7 +20,7 @@
 
 [开始阅读](/README.md)
 
-![](/picture/src=http___img.zcool.cn_community_01c1805c8b627ca8012141686fc8ec.gif&refer=http___img.zcool.gif)
+![](https://blockchainlittlebook.com/images/blbcover.gif)
 
 
 
