@@ -14,19 +14,13 @@
 - 项目经验
 - 简历
 
-
-
 <span id="busuanzi_container_site_pv">
 👀    本站总访问量 <span id="busuanzi_value_site_pv"></span>次
 </span>| 🐒本站访客数<span id="busuanzi_value_site_uv"></span>人次
 
 [开始阅读](/README.md)
 
-
-
-
-
-![](https://blockchainlittlebook.com/images/blbcover.gif)
+![](/picture/src=http___img.zcool.cn_community_01c1805c8b627ca8012141686fc8ec.gif&refer=http___img.zcool.gif)
 
 
 
