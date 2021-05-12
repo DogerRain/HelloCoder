@@ -83,9 +83,11 @@ Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://ra
 
 ### 1、公众号联系我
 
-由于都是我一个人在维护，难免出现错误，欢迎给我提bug。
+由于都是我一个人在维护，bug可能并不少，可以互相交流。
 
-欢迎关注我的Java技术公众号，不定时分享Java技术干货（虽然也什么没什么干货😅.....）
+起初是整理了很多的面试题在云笔记，为了更方便的查看，所以用了docsify 生成了文档，重新排好顺序，分享给有需要的人看。
+
+可以佛系关注我的Java技术公众号，不定时分享Java技术干货（虽然也什么没什么干货😅.....）
 
 <div align="center"> <img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/wuli_HelloCoder.png"  style="zoom:30%;"></img> </div>
 

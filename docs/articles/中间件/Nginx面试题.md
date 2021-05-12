@@ -183,7 +183,7 @@ Nginx 默认提供的负载均衡策略：
 
 ### 11、ngx_http_upstream_module模块了解吗？
 
-ngx_http_upstream_module模块用于将多个服务器定义成服务器组，可通过fastcgi传递、proxy传递、uwsgi传递、memcached传递和scgi传递指令来引用的服务器组。
+ngx_http_upstream_module 模块用于将多个服务器定义成服务器组，可通过fastcgi传递、proxy传递、uwsgi传递、memcached传递和scgi传递指令来引用的服务器组。
 
 比如访问www.a.com 缓存+调度：
 
@@ -226,16 +226,16 @@ Nginx 提供两种限流方式，一是控制速率，二是控制并发连接�
 
 **1.1 正常限流：**
 
-```
+```bash
 http {
-limit_req_zone 192.168.1.1 zone=myLimit:10m rate=5r/s;
+	limit_req_zone 192.168.1.1 zone=myLimit:10m rate=5r/s;
 }
 
 server {
-location / {
-limit_req zone=myLimit;
-rewrite / http://www.hac.cn permanent;
-}
+	location / {
+		limit_req zone=myLimit;
+		rewrite / http://www.hac.cn permanent;
+	}
 }
 ```
 
@@ -255,12 +255,12 @@ rate: 用于设置最大访问速率。
 
 这时候可以加上**burst** 参数，一般再结合 **nodelay** 一起使用。
 
-```
+```bash
 server {
-location / {
-limit_req zone=myLimit burst=20 nodelay;
-rewrite / http://www.hac.cn permanent;
-}
+	location / {
+		limit_req zone=myLimit burst=20 nodelay;
+		rewrite / http://www.hac.cn permanent;
+	}
 }
 ```
 
