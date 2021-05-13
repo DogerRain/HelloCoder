@@ -67,9 +67,9 @@
 
 ## 3、在线阅读地址：
 
-为了方便大家阅读，我做了一个在线阅读文档，点击链接即可在线阅读：
+为了方便大家阅读，我做了一个在线阅读文档，点击任意一个链接即可在线阅读：
 
- 
+
 
 服务器端Pages：[https://learnjava.baimuxym.cn/#/](https://learnjava.baimuxym.cn/#/)
 
@@ -79,9 +79,9 @@ Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://ra
 
 > Gitee Pages  更新会慢一点
 
-## 5、友情链接4、联系我
+## 4、联系我
 
-### 1、公众号联系我
+### 4.1、公众号联系我
 
 由于都是我一个人在维护，bug可能并不少，可以互相交流。
 
@@ -97,9 +97,9 @@ Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://ra
 
 
 
-### 2、博客联系我
+### 4.2、博客联系我
 
-- <a hrep="http://rain.baimuxym.cn"  target="_blank">http://rain.baimuxym.cn</a> 写点与技术无关的事情
+- <a href="http://rain.baimuxym.cn"  target="_blank">http://rain.baimuxym.cn</a> 写点与技术无关的事情
 
 
 
@@ -113,7 +113,7 @@ Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://ra
 
 ---
 
-最后，希望各位可以帮我点一个 **star** ，这样我就更有动力更新了。 
+最后，希望各位可以帮我点一个 **[⭐star](https://github.com/DogerRain/LearnJavaToFindAJob)** ，这样我就更有动力更新了。 
 
 在这里，期待与各位共同进步。
 
@@ -121,9 +121,8 @@ Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://ra
 
 
 
-<font style="color:black;font-size:50px;font-weight:2px;text-algin:center">[GO](/articles\Java基础\Java基础面试题.md)</font>
+<font style="color:black;font-size:50px;font-weight:2px">[GO](/articles\Java基础\Java基础面试题.md)</font>
 
 
 
-> 最后更新时间：`2021年5月9日 19:34:42`
-
+> 最后更新时间：`2021年5月13日09:21:21`

@@ -20,6 +20,8 @@
 
 [开始阅读](/README.md)
 
+<!--封面-->
+
 ![](https://blockchainlittlebook.com/images/blbcover.gif)
 
 

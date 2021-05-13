@@ -34,8 +34,11 @@
     window.$docsify = {
         coverpage: true,
         name: 'LearnJavaToFindAJob',
+		//点击name对应的URL
+        nameLink: '#/README',
         repo: 'https://github.com/DogerRain/LearnJavaToFindAJob',
         loadNavbar: true,
+		basePath: '/',
         loadSidebar: true, // 加载自定义侧边栏
         maxLevel: 0, // 默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级。
         subMaxLevel: 0, // 生成目录的最大层级
@@ -44,25 +47,30 @@
             '/.*/_sidebar.md': '/_sidebar.md',//防止意外回退
             '/.*/_navbar.md': '/_navbar.md'
         },
-        nameLink: '#/README',
+		
         auto2top: true,
+		noEmoji: false,
+		//代码一键复制
         copyCode: {
             buttonText: '复制',
             errorText: 'Error',
             successText: '复制成功'
         },
+		//分页
         pagination: {
             previousText: '上一章节',
             nextText: '下一章节',
             crossChapter: true,
             crossChapterText: true,
         },
+		//全局搜索
         search: {
             paths: 'auto',
             placeholder: '搜索',
             noData: '找不到结果',
-            depth: 3,
+            depth: 3, //搜索的标题深度
         },
+		//字数统计，需要引入js
         count:{
             countable:true,
             fontsize:'0.9em',
@@ -70,11 +78,18 @@
             language:'chinese'
         },
 		 coverpage: true,
-		onlyCover: true
+		onlyCover: true,
+		formatUpdated: '{MM}/{DD} {HH}:{mm}',
+
+  formatUpdated: function(time) {
+    // ...
+
+    return time;
+  }
 
     }
 </script>
-<!-- Docsify v4 -->
+<!-- Docsify v4 核心-->
 <!--<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>-->
 <script src="js/docsify@4.js"></script>
 <!--代码高亮-->
@@ -98,7 +113,8 @@
 <!--搜索-->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 <!--字数统计-->
-<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+<!--<script src="//unpkg.com/docsify-count/dist/countable.js"></script>-->
+<script src="js/countable.js"></script>
 
 <!--主题-->
 <!--<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
