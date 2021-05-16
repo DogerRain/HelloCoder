@@ -8,6 +8,7 @@
   
   - [JVM面试题](articles\JVM\JVM面试题.md)
   - [JVM面试题（二）](articles\JVM\JVM面试题（二）)
+  -  [谈谈你对类加载过程和双亲委派模型的了解](articles\JVM\类加载过程和双亲委派模型.md) 
 - Java多线程
   
   - [Java多线程面试题](articles\Java线程\Java多线程面试题.md)
