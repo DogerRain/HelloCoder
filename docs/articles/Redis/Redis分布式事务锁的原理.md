@@ -98,11 +98,11 @@
 
 - 保证加锁与解锁操作是原子性操作
 
-  这个其实属于是实现分布式锁的问题，假设a用redis实现分布式锁
-
-  假设加锁操作，操作步骤分为两步：**1，设置key set（key，value）  2，给key设置过期时间**
-
-  假设现在a刚实现set后，程序崩了就导致了没给key设置过期时间就导致key一直存在就发生了死锁。
+  > 这个其实属于是实现分布式锁的问题，假设a用redis实现分布式锁
+>
+  > 假设加锁操作，操作步骤分为两步：**1，设置key set（key，value）  2，给key设置过期时间**
+>
+  > 假设现在a刚实现set加锁后，程序崩了就导致了没给key设置过期时间，这样就导致key一直存在就发生了死锁，这就不是原子操作了。（而下面的命令借助lua就可以解决）
 
 
 
@@ -121,7 +121,7 @@ SET key value NX EX timeOut
 >EX：设置key的过期时间为秒，具体时间由第5个参数决定
 >timeOut：设置过期时间保证不会出现死锁【避免宕机死锁】
 
-代码实现：
+代码实现：**（一气呵成，原子操作，避免加锁设置时间不同步）**
 
 ```java
  public Boolean lock(String key,String value,Long timeOut){
@@ -165,6 +165,8 @@ public Boolean redisUnLock(String key, String value) {
 
 
 上面加锁、解锁，看着是挺麻烦的，而且还必须设置锁的过期时间；不然死机了，恰好你的锁还没释放，就GG了，所以就出现了Redisson。
+
+而且还有一个问题，就是Redis加锁和解锁
 
 ## 5、Redisson 分布式锁原理
 
@@ -304,7 +306,7 @@ finally {
 
 ---
 
-以上说了这么多，redisson还是挺好用的，也是现在很多行业的解决方案，如果你想知道怎么用，可以参考我的另外一篇文章，用redisson模拟一个秒杀：
+以上说了这么多，redisson还是挺好用的，也是现在很多行业的解决方案，如果你想知道怎么用，可以参考我的另外一篇文章，用redisson模拟一个秒杀：[Redis分布式事务锁的秒杀、超卖简单例子](https://purejava.baimuxym.cn/#/articles\Redis\Redis分布式事务锁的秒杀、超卖简单例子.md)
 
 
 

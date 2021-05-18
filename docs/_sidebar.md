@@ -95,8 +95,8 @@
     - [Redis分布式事务锁的原理](articles\Redis\Redis分布式事务锁的原理.md)
     - [Redis的删除策略和内存淘汰机制](articles\Redis\Redis的删除策略和内存淘汰机制.md)
     - [Redis的持久化机制，RDB和AOF](articles\Redis\Redis的持久化机制，RDB和AOF.md)
-    - [Redis为什么要使用单线程，新版本为什么引入多线程？.md](articles\Redis\Redis为什么要使用单线程，新版本为什么引入多线程？.md) 
-    - [Redis为什么删除数据后，内存占用依然很高？.md](articles\Redis\Redis为什么删除数据后，内存占用依然很高？.md) 
+    - [Redis为什么要使用单线程，新版本为什么引入多线程？](articles\Redis\Redis为什么要使用单线程，新版本为什么引入多线程？.md) 
+    - [Redis为什么删除数据后，内存占用依然很高？](articles\Redis\Redis为什么删除数据后，内存占用依然很高？.md) 
     - 
     - [springBoot的Jar直接运行原理](articles\进阶\为什么springBoot的jar可以直接运行.md)
     - 
