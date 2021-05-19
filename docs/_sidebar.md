@@ -89,6 +89,7 @@
     - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
     - [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
     -  [IO模型有哪些，BIO、NIO、AIO了解吗？.md](articles\Java基础\IO模型有哪些？.md) 
+    -   [HashMap的put过程是怎么样的？.md](articles\Java基础\HashMap的put过程是怎么样的？.md) 
     - <font style="color:black;font-size:18px;font-weight:500">Redis进阶篇</font>
     - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
     - [Redis之缓存击穿、穿透、雪崩](articles\Redis\Redis之缓存击穿、穿透、雪崩.md)
@@ -125,14 +126,12 @@
     - [阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md](articles\大厂面试题\阿里\阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md) 
     - [快手Java后台三面，意向已拿，面试官都问了些啥？.md](articles\大厂面试题\快手\快手Java后台三面，意向已拿，面试官都问了些啥？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
-
-    - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
+- [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
     - [腾讯后端Java岗社招面经](articles\面经\腾讯后端Java岗社招面经.md) 
     - [最近面试一些厂的面经整理（阿里，腾讯，字节等）](articles\面经\最近面试一些厂的面经整理（阿里，腾讯，字节等）.md) 
     -  [三个面试中遇到的问题.md](articles\面经\三个面试中遇到的问题.md) 
     -   [知乎-一些质量很高的面试题.md](articles\面经\知乎-一些质量很高的面试题.md) 
     -   [知乎-七彩云霞的回答.md](articles\面经\知乎-七彩云霞的回答.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
-
-    - 正在马不停蹄的更新ing....
+- 正在马不停蹄的更新ing....
 

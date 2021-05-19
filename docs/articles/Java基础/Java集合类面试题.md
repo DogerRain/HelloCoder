@@ -122,7 +122,7 @@ Collections是一个集合的工具类，提供了排序、查找等操作集合
 - comparable接口实际上是出自java.lang包，它有一个 compareTo(Object obj)方法用来排序
 - comparator接口实际上是出自 java.util 包，它有一个compare(Object obj1, Object obj2)方法用来排序
 
-一般我们需要对一个集合使用自定义排序时，我们就要重写compareTo方法或compare方法，当我们需要对某一个集合实现两种排序方式，比如一个song对象中的歌名和歌手名分别采用一种排序方法的话，我们可以重写compareTo方法和使用自制的Comparator方法或者以两个Comparator来实现歌名排序和歌星名排序，第二种代表我们只能使用两个参数版的Collections.sort().
+一般我们需要对一个集合使用自定义排序时，我们就要重写compareTo方法或compare方法，当我们需要对某一个集合实现两种排序方式，比如一个song对象中的歌名和歌手名分别采用一种排序方法的话，我们可以重写compareTo方法和使用自制的Comparator方法或者以两个Comparator来实现歌名排序和歌手名排序，第二种代表我们只能使用两个参数版的Collections.sort().
 
 
 
@@ -201,14 +201,14 @@ class Student implements Comparable<Student> {
 
 第一个main输出：
 
-```
+```java
 已重写后的list --->>>[Student(name=xiaohong, age=21), Student(name=xiaoming, age=20), Student(name=xiaogang, age=19)]
 自定义排序list --->>>[Student(name=xiaogang, age=19), Student(name=xiaoming, age=20), Student(name=xiaohong, age=21)]
 ```
 
 第二个main输出：
 
-```
+```java
 已重写后的list --->>>[Student(name=xiaohong, age=21), Student(name=xiaoming, age=20), Student(name=xiaogang, age=19)]
 自定义比较--->>>-1
 ```
@@ -217,7 +217,7 @@ class Student implements Comparable<Student> {
 
 ### 11、ConcurrentHashMap分段锁
 
-jdk1.7中：
+**jdk1.7中：**
 
 ConcurrentHashMap 是由 Segment 数组结构和 HashEntry 数组结构组成。Segment 是一种可重入锁 ReentrantLock，在 ConcurrentHashMap 里扮演锁的角色，HashEntry 则用于存储键值对数据。
 
@@ -227,7 +227,7 @@ Segment数组的意义就是将一个大的table分割成多个小的table来进
 
 
 
-1.8 中：
+**jdk1.8中：**
 
 放弃了Segment，直接用 Node数组+链表+红黑树 的数据结构来实现，并发控制使用Synchronized + CAS来操作，整个看起来就像是优化过且线程安全的HashMap。
 
@@ -292,7 +292,7 @@ Segment数组的意义就是将一个大的table分割成多个小的table来进
 
 ### 15、HashMap原理、哈希冲突的解决
 
-HashMap基于hashing原理，我们通过put()和get()方法储存和获取对象。当我们将键值对传递给put()方法时，它调用键对象的hashCode()方法来计算hashcode，然后找到bucket位置来储存值对象。当获取对象时，通过键对象的equals()方法找到正确的键值对，然后返回值对象。HashMap使用链表来解决碰撞问题，当发生碰撞了，对象将会储存在链表的下一个节点中。 HashMap在每个链表节点中储存键值对对象。
+HashMap基于hashing原理，我们通过put()和get()方法储存和获取对象。当我们将键值对传递给put()方法时，它调用键对象的hashCode()方法来计算hashcode，然后找到bucket位置来储存值对象。当获取对象时，通过键对象的equals()方法找到正确的键值对，然后返回值对象。HashMap使用**链表**来解决碰撞问题，当发生碰撞了，对象将会储存在链表的下一个节点中。 HashMap在每个链表节点中储存键值对对象。
 
 
 
