@@ -109,7 +109,7 @@ Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://ra
 
 ### 2、博客联系我
 
-- <a hrep="http://rain.baimuxym.cn"  target="_blank">http://rain.baimuxym.cn 写点与技术无关的事情</a>
+-  [HaC的博客](http://rain.baimuxym.cn) 写点与技术无关的事情
 
 
 
