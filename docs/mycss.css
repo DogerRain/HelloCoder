@@ -787,7 +787,20 @@ section.cover blockquote > p > a:hover {
     margin: 1em 1em;
     padding-left: 20px;
     background: #d2dde844;
+    position: relative;
 }
+
+/*.markdown-section blockquote::before {*/
+    /*content: "“";*/
+    /*position: absolute;*/
+    /*left: 12px;*/
+    /*top: 0px;*/
+    /*color: var(--main-6);*/
+    /*font-size: 2em;*/
+    /*font-family: Arial, serif;*/
+    /*line-height: 1em;*/
+    /*font-weight: 700;*/
+/*}*/
 
 .markdown-section blockquote p {
     /*font-weight: 600;*/
