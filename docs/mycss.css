@@ -737,12 +737,12 @@ section.cover blockquote > p > a:hover {
 
 .markdown-section h2 {
     font-size: 1.75rem;
-    margin: 45px 0 .8rem
+    margin: 20px 0 .8rem
 }
 
 .markdown-section h3 {
     font-size: 1.5rem;
-    margin: 40px 0 .6rem
+    margin: 15px 0 .6rem
 }
 
 .markdown-section h4 {
@@ -768,14 +768,14 @@ section.cover blockquote > p > a:hover {
 .markdown-section ol, .markdown-section p, .markdown-section ul {
     line-height: 1.5rem;
     word-spacing: .05rem;
-    margin: 1em 0;
+    margin: 0.5rem 0;
     letter-spacing: 0.1em;
-    font-size: 1.05em;
+    /*font-size: 1.05em;*/
 }
 
 .markdown-section ol, .markdown-section ul {
-    padding-left: 3rem;
-    margin: 1.8em 0;
+    padding-left: 2rem;
+    margin: 0.5rem 0;
     letter-spacing: 0.1em;
     font-size: 1.05em;
     line-height: 2rem;
@@ -821,7 +821,7 @@ section.cover blockquote > p > a:hover {
 .markdown-section pre {
     -moz-osx-font-smoothing: initial;
     -webkit-font-smoothing: initial;
-    line-height: 1.4rem;
+    line-height: 1.2rem;
     margin: 1.2em 0;
     overflow: auto;
     padding: 0 1.4rem;
@@ -918,7 +918,7 @@ section.cover blockquote > p > a:hover {
     color: #525252;
     display: block;
     font-family: Roboto Mono, Monaco, courier, monospace;
-    font-size: .85rem;
+    font-size: .8rem;
     line-height: inherit;
     margin: 2px 2px;
     max-width: inherit;
