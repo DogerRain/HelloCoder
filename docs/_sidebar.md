@@ -86,11 +86,12 @@
     -   <font style="color:orange;font-size:14px;font-weight:500">回溯：</font>
     -  [46-全排列](articles\算法\46-全排列.md) 
 - <font style="color:black;font-size:20px;font-weight:800">进阶篇</font>
-- <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
+
+    - <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
     - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
     - [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
-    -  [IO模型有哪些，BIO、NIO、AIO了解吗？.md](articles\Java基础\IO模型有哪些？.md) 
-    -   [HashMap的put过程是怎么样的？.md](articles\Java基础\HashMap的put过程是怎么样的？.md) 
+    - [IO模型有哪些，BIO、NIO、AIO了解吗？.md](articles\Java基础\IO模型有哪些？.md) 
+    - [HashMap的put过程是怎么样的？.md](articles\Java基础\HashMap的put过程是怎么样的？.md) 
     - <font style="color:black;font-size:18px;font-weight:500">Redis进阶篇</font>
     - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
     - [Redis之缓存击穿、穿透、雪崩](articles\Redis\Redis之缓存击穿、穿透、雪崩.md)
@@ -108,15 +109,16 @@
     - [可重复读是否能解决幻读？.md](articles\MySQL\可重复读是否能解决幻读？.md) 
     - [Innodb和MyISAM索引的区别（B树、B+树、聚簇索引、非聚簇索引）](articles\MySQL\Innodb和MyISAM索引的区别.md) 
     - [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
+    -  [MySQL的自增ID用完了会怎样？](articles\MySQL\MySQL的自增ID用完了会怎样？.md) 
     - 
-    - [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端消息投递成功？.md)   
-    - [高并发下如何保证接口的幂等性？.md](articles\进阶\高并发下如何保证接口的幂等性？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
     - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
     -    [对读写分离的理解，为什么要读写分离？.md](articles\项目深度\对读写分离的理解，为什么要读写分离？.md) 
     -    [对分库分表的理解，为什么要分库分表？.md](articles\项目深度\对分库分表的理解，为什么要分库分表？.md) 
     -  [你知道怎么分库分表吗？如何做到永不迁移数据和避免热点吗？.md](articles\项目深度\你知道怎么分库分表吗？如何做到永不迁移数据和避免热点吗？.md) 
     -  [在读多写少的情况下，如何优化MySQL的数据查询方案.md](articles\项目深度\在读多写少的情况下，如何优化MySQL的数据查询方案.md) 
+    -  [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端消息投递成功？.md)   
+    - [高并发下如何保证接口的幂等性？.md](articles\进阶\高并发下如何保证接口的幂等性？.md) 
 - <font style="color:black;font-size:20px;font-weight:800">大厂面试题</font>
 
     - [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
@@ -136,5 +138,6 @@
     - [知乎-一些质量很高的面试题.md](articles\面经\知乎-一些质量很高的面试题.md) 
     - [知乎-七彩云霞的回答.md](articles\面经\知乎-七彩云霞的回答.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
+- 正在马不停蹄的更新ing....
+    - 
 
-    - 正在马不停蹄的更新ing....
