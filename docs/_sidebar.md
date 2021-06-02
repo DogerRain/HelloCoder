@@ -110,7 +110,7 @@
     - [Innodb和MyISAM索引的区别（B树、B+树、聚簇索引、非聚簇索引）](articles\MySQL\Innodb和MyISAM索引的区别.md) 
     - [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
     -  [MySQL的自增ID用完了会怎样？](articles\MySQL\MySQL的自增ID用完了会怎样？.md) 
-    - 
+    -  [数据库连接池为什么要使用ThreadLocal？](articles\Java线程\数据库连接池为什么要使用ThreadLocal？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
     - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
     -    [对读写分离的理解，为什么要读写分离？.md](articles\项目深度\对读写分离的理解，为什么要读写分离？.md) 
@@ -138,6 +138,7 @@
     - [知乎-一些质量很高的面试题.md](articles\面经\知乎-一些质量很高的面试题.md) 
     - [知乎-七彩云霞的回答.md](articles\面经\知乎-七彩云霞的回答.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
-- 正在马不停蹄的更新ing....
+
+    - 正在马不停蹄的更新ing....
     - 
 
