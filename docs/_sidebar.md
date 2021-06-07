@@ -85,9 +85,11 @@
     -   [11-盛水最多的容器](articles\算法\11-盛水最多的容器.md) 
     -   <font style="color:orange;font-size:14px;font-weight:500">回溯：</font>
     -  [46-全排列](articles\算法\46-全排列.md) 
+    -  <font style="color:orange;font-size:14px;font-weight:500">大厂题：</font>
+    -   [64匹马，只有8个赛道，挑选出最快的4匹马](articles\算法\64匹马，只有8个赛道，挑选出最快的4匹马.md) 
+    -   [剪绳子](articles\算法\剪绳子.md) 
 - <font style="color:black;font-size:20px;font-weight:800">进阶篇</font>
-
-    - <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
+- <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
     - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
     - [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
     - [IO模型有哪些，BIO、NIO、AIO了解吗？.md](articles\Java基础\IO模型有哪些？.md) 
