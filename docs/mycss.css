@@ -957,7 +957,7 @@ pre:after {
     content: attr(data-lang);
     font-size: .6rem;
     font-weight: 600;
-    height: 15px;
+    height: 15px;；
     line-height: 15px;
     padding: 5px 10px 0;
     position: absolute;

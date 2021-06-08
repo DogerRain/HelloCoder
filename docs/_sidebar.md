@@ -63,8 +63,7 @@
   - [Redis基础面试题](articles\Redis\Redis面试题.md)
   -  [Redis的使用规范有哪些？.md](articles\Redis\Redis的使用规范有哪些？.md) 
 - [算法](articles\算法\高频算法面试题.md)
-
-    - [八大排序算法](articles\算法\八大排序算法.md) 
+- [八大排序算法](articles\算法\八大排序算法.md) 
     - <font style="color:orange;font-size:14px;font-weight:500">字符串(辅助Map)：</font>
     - [1-两数之和](articles\算法\1-两数之和.md) 
     - [2-两数相加](articles\算法\2两数相加.md) 
@@ -87,14 +86,17 @@
     -  [46-全排列](articles\算法\46-全排列.md) 
     -  <font style="color:orange;font-size:14px;font-weight:500">大厂题：</font>
     -   [64匹马，只有8个赛道，挑选出最快的4匹马](articles\算法\64匹马，只有8个赛道，挑选出最快的4匹马.md) 
-    -   [剪绳子](articles\算法\剪绳子.md) 
+    -   [快手-剪绳子](articles\算法\剪绳子.md) 
+    -   [腾讯-旋转数](articles\算法\旋转数.md) 
 - <font style="color:black;font-size:20px;font-weight:800">进阶篇</font>
 - <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
+    
     - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
     - [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
     - [IO模型有哪些，BIO、NIO、AIO了解吗？.md](articles\Java基础\IO模型有哪些？.md) 
     - [HashMap的put过程是怎么样的？.md](articles\Java基础\HashMap的put过程是怎么样的？.md) 
-    - <font style="color:black;font-size:18px;font-weight:500">Redis进阶篇</font>
+- <font style="color:black;font-size:18px;font-weight:500">Redis进阶篇</font>
+
     - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
     - [Redis之缓存击穿、穿透、雪崩](articles\Redis\Redis之缓存击穿、穿透、雪崩.md)
     - [Redis分布式事务锁的原理](articles\Redis\Redis分布式事务锁的原理.md)
@@ -105,14 +107,15 @@
     - 
     - [springBoot的Jar直接运行原理](articles\进阶\为什么springBoot的jar可以直接运行.md)
     - 
-    - <font style="color:black;font-size:18px;font-weight:500">MySQL进阶篇</font>
+- <font style="color:black;font-size:18px;font-weight:500">MySQL进阶篇</font>
+
     - [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
     - [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL索引的分类、何时使用、何时不使用、何时失效？.md) 
     - [可重复读是否能解决幻读？.md](articles\MySQL\可重复读是否能解决幻读？.md) 
     - [Innodb和MyISAM索引的区别（B树、B+树、聚簇索引、非聚簇索引）](articles\MySQL\Innodb和MyISAM索引的区别.md) 
     - [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
-    -  [MySQL的自增ID用完了会怎样？](articles\MySQL\MySQL的自增ID用完了会怎样？.md) 
-    -  [数据库连接池为什么要使用ThreadLocal？](articles\Java线程\数据库连接池为什么要使用ThreadLocal？.md) 
+    - [MySQL的自增ID用完了会怎样？](articles\MySQL\MySQL的自增ID用完了会怎样？.md) 
+    - [数据库连接池为什么要使用ThreadLocal？](articles\Java线程\数据库连接池为什么要使用ThreadLocal？.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
     - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
     -    [对读写分离的理解，为什么要读写分离？.md](articles\项目深度\对读写分离的理解，为什么要读写分离？.md) 
@@ -122,14 +125,15 @@
     -  [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端消息投递成功？.md)   
     - [高并发下如何保证接口的幂等性？.md](articles\进阶\高并发下如何保证接口的幂等性？.md) 
 - <font style="color:black;font-size:20px;font-weight:800">大厂面试题</font>
-- [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
+
+    - [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
     - [【阿里面试题】FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md](articles\大厂面试题\阿里\阿里面试题-FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md) 
     - [【原创】腾讯面试官：线程池要设置多大.md](articles\大厂面试题\腾讯\线程池要设置多大？.md)  
     - [蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md](articles\大厂面试题\阿里\蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md) 
     - [阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md](articles\大厂面试题\阿里\阿里面试真题NIO为什么不适合文件上传场景、如何优雅解决.md) 
     - [阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md](articles\大厂面试题\阿里\阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md) 
     - [快手Java后台三面，意向已拿，面试官都问了些啥？.md](articles\大厂面试题\快手\快手Java后台三面，意向已拿，面试官都问了些啥？.md) 
-    -  [IBM面试题-不借助变量交换两个数.md](articles\大厂面试题\IBM面试题-不借助变量交换两个数.md) 
+    - [IBM面试题-不借助变量交换两个数.md](articles\大厂面试题\IBM面试题-不借助变量交换两个数.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
 
     - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
