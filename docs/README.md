@@ -105,7 +105,7 @@ Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://ra
 
 ## 5、友情链接
 
-- [PureJavaCoderRoad](https://github.com/DogerRain/PureJavaCoderRoad)   一个**Java小白**要学些什么才能找到一份实习工作，才算真正入门？
+- [PureJavaCoderRoad](https://github.com/DogerRain/PureJavaCoderRoad)  一个**Java小白**要学些什么才能找到一份实习工作？列举小白作为过来人找工作的技能点。
 
 - [awesome-programming-resources](https://github.com/DogerRain/awesome-programming-resources)  一个收集计算机优质资源的合集（包含电子书、教程、视频、一些工具，全部资源都是由我收集的，都是免费开源的）
 
