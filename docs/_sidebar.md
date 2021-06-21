@@ -67,6 +67,7 @@
     - <font style="color:orange;font-size:14px;font-weight:500">字符串(辅助Map)：</font>
     - [1-两数之和](articles\算法\1-两数之和.md) 
     - [2-两数相加](articles\算法\2两数相加.md) 
+    - [136-只出现一次的数字](articles\算法\136-只出现一次的数字.md) 
     - [387-字符串中的第一个唯一字符](articles\算法\387-字符串中的第一个唯一字符.md) 
     - [20-有效的括号](articles\算法\20-有效的括号.md) 
     -  [09-用两个栈实现一个队列](articles\算法\09-用两个栈实现一个队列.md) 
@@ -90,7 +91,7 @@
     -   [腾讯-旋转数](articles\算法\旋转数.md) 
 - <font style="color:black;font-size:20px;font-weight:800">进阶篇</font>
 - <font style="color:black;font-size:18px;font-weight:500">Java基础进阶篇</font>
-    
+  
     - [线程池中多余的线程是如何回收的.md](articles\进阶\线程池中多余的线程是如何回收的.md) 
     - [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
     - [IO模型有哪些，BIO、NIO、AIO了解吗？.md](articles\Java基础\IO模型有哪些？.md) 
