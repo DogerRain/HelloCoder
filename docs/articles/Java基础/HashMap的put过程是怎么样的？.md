@@ -14,9 +14,9 @@ HashMap作为集合的一员大将，它是非线程安全，以key、value（�
 
 在JDK1.7和JDK1.8中，两个不同版本的HashMap有差异。
 
-1.7中：数组+链表
+**1.7中**：数组+链表
 
-1.8中：数组+链表或红黑树
+**1.8中**：数组+链表或红黑树
 
 HashMap图示如下所示：
 
@@ -58,7 +58,7 @@ static final int hash(Object key) {
 
 ### 2.1、为什么要异或运算？为什么要右移16位？
 
-首先采用位运算符会十分快。`>>>`无符号右移，低位挤走，高位补0；`^` 为按位异或，即转成二进制后，相异为 1，相同为0
+首先采用位运算符会十分快。`>>>`无符号右移，低位挤走，高位补0；`^` 为按位异或，即转成二进制后，相异为 1，相同为 0
 
 > **&** 运算符，两个操作数中**位**都为1，结果才为1，否则结果为0，所以**结果向 0 靠拢**。
 >
@@ -156,7 +156,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 
 > 在链表中查找数据必须从第一个元素开始一层一层往下找，如果hash冲突多，那么查询的效率就越低，接近O(N)
 
-所以引入了红黑树，数据查询时间复杂度为O(logN)。
+所以引入了红黑树，数据查询时间复杂度为`O(logN)`。
 
 
 
@@ -200,6 +200,78 @@ final int hash(Object k) {
 另外就是put方法，jdk1.7没有用到红黑树，只能通过链表解决，在HashMap扩容时，会改变链表中的元素的顺序，将元素从链表头部插入。
 
 如果在线程竞争下进行同时扩容，就有可能形成闭环，参考：https://blog.csdn.net/hhx0626/article/details/54024222
+
+
+
+## 6、一些细节和 参数
+
+### 6.1、什么时候转换成红黑树？
+
+上面代码看到如果**链表长度**超过 8 调用`treeifyBin()`方法转换红黑树，但是再看看`treeifyBin()`方法：
+
+```java
+final void treeifyBin(Node<K,V>[] tab, int hash) {
+        int n, index; Node<K,V> e;
+        if (tab == null || (n = tab.length) < MIN_TREEIFY_CAPACITY) //MIN_TREEIFY_CAPACITY = 64
+            resize();
+        else if ((e = tab[index = (n - 1) & hash]) != null) {
+            TreeNode<K,V> hd = null, tl = null;
+            do {
+                TreeNode<K,V> p = replacementTreeNode(e, null);
+                if (tl == null)
+                    hd = p;
+                else {
+                    p.prev = tl;
+                    tl.next = p;
+                }
+                tl = p;
+            } while ((e = e.next) != null);
+            if ((tab[index] = hd) != null)
+                hd.treeify(tab);
+        }
+    }
+```
+
+可以看到，如果数组（桶）的长度 小于 64，走的是扩容，而不是转化为数。
+
+所以转换成红黑树的条件是：
+
+- 链表长度超过 8 
+- 数组（桶）的长度超过 64
+
+### 6.2、初始化容量
+
+```java
+static final int DEFAULT_INITIAL_CAPACITY = 1 << 4
+```
+
+初始容量，默认容量=16，箱子的个数不能太多或太少。如果太少，很容易触发扩容，如果太多，遍历哈希表会比较慢。
+
+### 6.3 负载因子
+
+```java
+static final float DEFAULT_LOAD_FACTOR = 0.75f
+```
+
+当存储的所有节点数 大于 (16 * 0.75 = 12 )时，就会触发扩容，这个是泊松分布？折中的方法减少rehash次数，提高查找成本。
+
+### 6.4、UNTREEIFY_THRESHOLD
+
+```java
+static final int UNTREEIFY_THRESHOLD = 6
+```
+
+在哈希表扩容时，如果发现链表长度 <= 6，则会由树重新退化为链表。
+
+为什么要设置为6？ 可能是因为时间和空间的**权衡**
+
+因为链表的查询时间复杂度是 `O(n)`，红黑树是`O(logn)`
+
+> 当链表长度为6时 查询的平均长度为 n/2=3（大部分情况不会在最后位置的~），红黑树 log(6) = 2.6 ，为8时 :链表  8/2=4， 红黑树  log(8)=3。
+>
+> 所以在小于6的时候，链表查询会快一点，空间也节省一点。
+
+
 
 ---
 

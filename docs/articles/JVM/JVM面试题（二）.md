@@ -166,7 +166,7 @@ GC是垃圾收集的意思，Java语言没有提供释放已分配内存的显�
 
   （4）当 Old 区也被填满时，进行 **Full GC**，对 Old 区进行垃圾回收。
 
-  > 可以通过参数 SurvivorRatio 手动配置 Eden 区和单个 Survivor 区的比例，默认为 8。可以通过参数–XX:SurvivorRatio 来设定，即将堆内存中年轻代划分为8:1:1
+  > 可以通过参数 SurvivorRatio 手动配置 Eden 区和单个 Survivor 区的比例，默认为 8。可以通过参数–XX:SurvivorRatio 来设定，即将堆内存中年轻代划分为`8:1:1`
 
  
 

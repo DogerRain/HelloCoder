@@ -9,6 +9,8 @@
   - [JVM面试题](articles\JVM\JVM面试题.md)
   - [JVM面试题（二）](articles\JVM\JVM面试题（二）)
   -  [谈谈你对类加载过程和双亲委派模型的了解](articles\JVM\类加载过程和双亲委派模型.md) 
+  -   [如何手动触发全量回收垃圾，如何立即触发垃圾回收？](articles\进阶\如何手动触发全量回收垃圾，如何立即触发垃圾回收.md) 
+  -  
 - Java多线程
   
   - [Java多线程面试题](articles\Java线程\Java多线程面试题.md)
@@ -96,6 +98,7 @@
     - [为什么在lambda中使用的局部变量必须是final或有效final.md](articles\Java基础\为什么在lambda中使用的局部变量必须是final或有效final.md) 
     - [IO模型有哪些，BIO、NIO、AIO了解吗？.md](articles\Java基础\IO模型有哪些？.md) 
     - [HashMap的put过程是怎么样的？.md](articles\Java基础\HashMap的put过程是怎么样的？.md) 
+    - 
 - <font style="color:black;font-size:18px;font-weight:500">Redis进阶篇</font>
 
     - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)

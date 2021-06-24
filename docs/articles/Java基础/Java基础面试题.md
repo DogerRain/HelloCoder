@@ -562,9 +562,9 @@ super可以理解为是指向自己超（父）类对象的一个指针，而这
 
 ### 24、Java获取反射的三种方法
 
-1. 通过new对象实现反射机制（ 对象.getClass() ）
-2. 通过路径实现反射机制（ Class.forName("包名.类名") ）
-3. 通过类名实现反射机制 （ 类名.Class ）
+1. 通过new对象实现反射机制（ `对象.getClass()` ）
+2. 通过路径实现反射机制（ `Class.forName("包名.类名")` ）
+3. 通过类名实现反射机制 （ `类名.Class` ）
 
 demo：
 
@@ -604,4 +604,17 @@ pub1ic class Get {
 | 弱引用   | 正常垃圾回收时 | 对象缓存           | 垃圾回收后终止    |
 | 虚引用   | 正常垃圾回收时 | 跟踪对象的垃圾回收 | 垃圾回收后终止    |
 
+
+
+### 26、junit用法，before,beforeClass,after, afterClass的执行顺序
+
+BeforeClass 》 before 》test 》 after 》 afterClass
+
+有多个before，多个after ，它们的执行顺序是怎么样的呢？
+
+我猜测是方法名的大小比较（和位置无关），我本地实验结果：
+
+before3》before2》before1
+
+after1》after2》after3 
 
