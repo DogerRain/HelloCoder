@@ -357,7 +357,7 @@ System. out. println(str==str2); //false
 
 ### 12、 异常
 
-![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200916203705888.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/image-20210115172917862.png)
 
 Throwable 分为Exception（异常） 和 Error（错误） ，二者都是 Java 异常处理的重要子类，各自都包含大量子类。
 
