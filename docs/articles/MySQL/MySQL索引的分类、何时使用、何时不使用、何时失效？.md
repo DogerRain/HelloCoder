@@ -1,4 +1,4 @@
-## 索引分类
+## 1、索引分类
 
 索引有五种，分别是：
 
@@ -11,6 +11,15 @@
 ```mysql
 alter table `table_name` add index index_name(`column`);
 ```
+
+创建索引最好的做法是在建表的时候就顺带创建，如果之后再创建：
+
+- 对于聚簇索引，会根据原来的表，再创建一个新的带有索引数据结构的表，然后把原来的表删除，再把表名改成原来表的名字。
+- 非聚集索引则是通过修改索引文件来完成（因为索引是在单独的文件）
+
+但是这两者，都占用了额外的资源。
+
+
 
 ### 2、唯一索引
 
@@ -38,10 +47,27 @@ alter table `table_name` add index index_name(`column1`,`column2`,`column3`);
 
 ### 5、全文索引
 
-用的比较少，现在只有char，varchar，text上可以创建全文索引。类似于一个搜索引擎，在大量数据中寻找。
+关键字：FULLTEXT 。用的比较少，现在只有**char，varchar，text**上可以创建全文索引。类似于一个搜索引擎，在大量数据中寻找。
+
+> 注意：FULLTEXT索引仅可用于 MyISAM 表
 
 ```mysql
-alter table `table_name` add fulltext(`column`);
+# 创建表的时候添加全文索引
+CREATE TABLE `artical` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `subject` char(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `title` char(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+    `time` Date NULL DEFAULT NULL,
+    PRIMARY KEY(`id`),
+    FULLTEXT (content)
+)engine=MyISAM;
+
+# 修改表结构添加全文索引
+alter table `artical` add FULLTEXT(`content`);
+
+# 直接创建索引
+CREATE FULLTEXT INDEX index_content ON `artical`(`content`);
 ```
 
 ## 2、何时使用索引
@@ -117,3 +143,18 @@ where A=a or B=b（失效，除非A和B都加上索引）
 5、遵循最左匹配原则
 
 6、注意隐式转换（上面说到）
+
+
+
+## 6、使用索引的优缺点有哪些？
+
+**优点:**
+1.可以通过建立唯一索引或者主键索引，保证数据库表中每一行数据的唯一性
+2.建立索引可以大大提高检索的数据，以及减少表的检索行数
+3.在表连接的连接条件，可以加速表与表直接的相连
+4.在**分组**和**排序**字句进行数据检索，可以减少查询时间中分组和 排序时所消耗的时间(数据库的记录会重新排序)
+5.建立索引,在查询中使用索引，可以提高性能
+**缺点:**
+1.创建索引和维护索引会耗费时间，随着数据量的增加而增加
+2.索引文件会占用物理空间，除了数据表需要占用物理空间之外，每一个索引还会占用一定的物理空间
+3.当对表的数据进行 INSERT,UPDATE,DELETE 的时候,索引也要动态的维护,这样就会降低数据的维护速度,(建立索引会占用磁盘空间的索引文件。一般情况这个问题不太严重，但如果你在一个大表上创建了多种组合索引，索引文件的会膨胀很快)。

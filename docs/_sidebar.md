@@ -113,14 +113,15 @@
     - 
 - <font style="color:black;font-size:18px;font-weight:500">MySQL进阶篇</font>
 
-    - [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
-    - [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL索引的分类、何时使用、何时不使用、何时失效？.md) 
-    - [可重复读是否能解决幻读？.md](articles\MySQL\可重复读是否能解决幻读？.md) 
+    -  [聊聊MySQL索引的分类和结构吧.md](articles\MySQL\聊聊MySQL索引的分类和结构吧.md) 
     - [Innodb和MyISAM索引的区别（B树、B+树、聚簇索引、非聚簇索引）](articles\MySQL\Innodb和MyISAM索引的区别.md) 
+    - [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL索引的分类、何时使用、何时不使用、何时失效？.md) 
+    - [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
+    - [可重复读是否能解决幻读？.md](articles\MySQL\可重复读是否能解决幻读？.md) 
     - [你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？](articles\进阶\你知道如何更新缓存吗？如何保证缓存和数据库双写一致性？.md) 
     - [MySQL的自增ID用完了会怎样？](articles\MySQL\MySQL的自增ID用完了会怎样？.md) 
     - [数据库连接池为什么要使用ThreadLocal？](articles\Java线程\数据库连接池为什么要使用ThreadLocal？.md) 
-    -  [MySQL的架构和执行流程.md](articles\MySQL\MySQL的架构和执行流程.md) 
+    - [MySQL的架构和执行流程.md](articles\MySQL\MySQL的架构和执行流程.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
     - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
     -    [对读写分离的理解，为什么要读写分离？.md](articles\项目深度\对读写分离的理解，为什么要读写分离？.md) 
