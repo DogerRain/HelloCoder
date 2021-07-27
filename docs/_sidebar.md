@@ -114,6 +114,7 @@
 - <font style="color:black;font-size:18px;font-weight:500">MySQL进阶篇</font>
 
     -  [聊聊MySQL索引的分类和结构吧.md](articles\MySQL\聊聊MySQL索引的分类和结构吧.md) 
+    -   [MySQL联合索引在B+数的存储结构和最左匹配原则原理.md](articles\MySQL\MySQL联合索引在B+数的存储结构和最左匹配原则原理.md) 
     - [Innodb和MyISAM索引的区别（B树、B+树、聚簇索引、非聚簇索引）](articles\MySQL\Innodb和MyISAM索引的区别.md) 
     - [MySQL 索引的分类、何时使用、何时不使用、何时失效？.md](articles\MySQL\MySQL索引的分类、何时使用、何时不使用、何时失效？.md) 
     - [什么是前缀索引，什么情况才使用？.md](articles\MySQL\什么是前缀索引，什么情况才使用？.md) 
