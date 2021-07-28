@@ -64,7 +64,7 @@
 - Redis
   - [Redis基础面试题](articles\Redis\Redis面试题.md)
   -  [Redis的使用规范有哪些？.md](articles\Redis\Redis的使用规范有哪些？.md) 
-- [算法](articles\算法\高频算法面试题.md)
+- [算法篇](articles\算法\高频算法面试题.md)
 - [八大排序算法](articles\算法\八大排序算法.md) 
     - <font style="color:orange;font-size:14px;font-weight:500">字符串(辅助Map)：</font>
     - [1-两数之和](articles\算法\1-两数之和.md) 
@@ -132,8 +132,7 @@
     -  [如何保障生产端100%消息投递成功？.md](articles\进阶\如何保障生产端消息投递成功？.md)   
     - [高并发下如何保证接口的幂等性？.md](articles\进阶\高并发下如何保证接口的幂等性？.md) 
 - <font style="color:black;font-size:20px;font-weight:800">大厂面试题</font>
-
-    - [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
+- [【合集】阿里面试题.md](articles\大厂面试题\阿里\阿里面试题.md) 
     - [【阿里面试题】FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md](articles\大厂面试题\阿里\阿里面试题-FileInputStream在使用完以后，不关闭流，想二次使用可以怎么操作.md) 
     - [【原创】腾讯面试官：线程池要设置多大.md](articles\大厂面试题\腾讯\线程池要设置多大？.md)  
     - [蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md](articles\大厂面试题\阿里\蚂蚁二面MQ消费端遇到瓶颈除了横向扩容外还有其他解决办法.md) 
@@ -150,7 +149,9 @@
     - [知乎-一些质量很高的面试题.md](articles\面经\知乎-一些质量很高的面试题.md) 
     - [知乎-七彩云霞的回答.md](articles\面经\知乎-七彩云霞的回答.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
-
-    - 正在马不停蹄的更新ing....
+- 正在马不停蹄的更新ing....
     - 
 
+
+
+C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static.;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;%MAVEN_HOME%\bin;E:\TortoiseSVN\bin;%GRADLE_HOME%\bin;E:\nodejs\download\npm-global;E:\node\;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\build-tools\26.0.2;E:\Git\cmd;C:\Program Files\SourceGear\Common\DiffMerge\;E:\Python2.7\Scripts\;E:\Python2.7\;E:\Python\Scripts\;E:\Python\
