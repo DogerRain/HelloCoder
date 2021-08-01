@@ -10,13 +10,13 @@
 
 2、注解@Transactional所在类中，注解修饰的方法被类内部方法调用；
 
-2、业务代码抛出异常类型`非RuntimeException`，事务失效；
+3、业务代码抛出异常类型`非RuntimeException`，事务失效；
 
-3、业务代码中存在异常时，使用try…catch…语句块捕获，而catch语句块没有throw new RuntimeExecption异常;（相对于正常处理了）
+4、业务代码中存在异常时，使用`try…catch…`语句块捕获，而catch语句块没有throw new RuntimeExecption异常;（相对于正常处理了）
 
-4、注解@Transactional中Propagation属性值设置错误即`Propagation.NOT_SUPPORTED`（一般不会设置此种传播机制），或者使用`PROPAGATION_REQUIRES_NEW`起一个新的事务，旧的事务报错了回滚，新的事务没有回滚。
+5、注解@Transactional中Propagation属性值**设置错误**即`Propagation.NOT_SUPPORTED`（一般不会设置此种传播机制），或者使用`PROPAGATION_REQUIRES_NEW`起一个新的事务，旧的事务报错了回滚，新的事务没有回滚。
 
-5、mysql关系型数据库不支持，且存储引擎是MyISAM而非InnoDB，则事务会不起作用(基本开发中不会遇到)；
+6、mysql关系型数据库不支持，且存储引擎是MyISAM而非InnoDB，则事务会不起作用(基本开发中不会遇到)；
 
 
 
@@ -72,8 +72,22 @@ public class OrderServiceImpl implements OrderService {
 }
 ```
 
+## 3、非RuntimeException
 
+事务默认的回滚的异常是RuntimeException，如果是抛出`非RuntimeException` ，是不会回滚的。
 
-## 5、mysql不支持事务
+当然你也可以指定自定义的异常回滚。
+
+## 4、try…catch捕获
+
+`try…catch`语句捕获后，就是相当于的异常处理了，这也是开发中要注意的，一不小心调用的方法有异常处理，捕获的时候也没有抛出，即使出错了，也不会回滚事务。
+
+## 5、Propagation属性值设置错误
+
+`PROPAGATION_REQUIRED`  ：如果当前没有事务，就**新建一个事务**。这是最常见的选择，也是 Spring 默认的事务的传播。  
+
+除此之外，还有很多属性，如果使用`PROPAGATION_REQUIRES_NEW`，表示新起一个事务，这样当两个事务就是不相干了，出错也会回滚。
+
+## 6、mysql不支持事务
 
 从 MySQL 5.5.5 开始的默认存储引擎是：InnoDB，之前默认的都是：MyISAM，所以这点要值得注意，底层引擎不支持事务，spring也没有办法，毕竟spring的事务就是建立在数据库的事务之上的。
