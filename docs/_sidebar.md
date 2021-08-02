@@ -149,9 +149,6 @@
     - [知乎-一些质量很高的面试题.md](articles\面经\知乎-一些质量很高的面试题.md) 
     - [知乎-七彩云霞的回答.md](articles\面经\知乎-七彩云霞的回答.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">如何和HR谈薪资</font>
-- 正在马不停蹄的更新ing....
+
+    - 正在马不停蹄的更新ing....
     - 
-
-
-
-C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static.;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;%MAVEN_HOME%\bin;E:\TortoiseSVN\bin;%GRADLE_HOME%\bin;E:\nodejs\download\npm-global;E:\node\;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\build-tools\26.0.2;E:\Git\cmd;C:\Program Files\SourceGear\Common\DiffMerge\;E:\Python2.7\Scripts\;E:\Python2.7\;E:\Python\Scripts\;E:\Python\
