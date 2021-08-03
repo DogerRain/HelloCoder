@@ -152,3 +152,5 @@
 
     - 正在马不停蹄的更新ing....
     - 
+
+C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static.;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;%MAVEN_HOME%\bin;E:\TortoiseSVN\bin;%GRADLE_HOME%\bin;E:\nodejs\download\npm-global;E:\node\;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\build-tools\26.0.2;E:\Git\cmd;C:\Program Files\SourceGear\Common\DiffMerge\;E:\Python\Scripts\;E:\Python\;E:\Python2.7\;E:\Python2.7\Scripts
