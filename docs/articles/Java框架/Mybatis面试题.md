@@ -60,9 +60,11 @@ key：MapperID+offset+limit+Sql+所有的入参
 
 ### 5、`#{}`和`${}`的区别是什么
 
-`#{}`是预编译处理，`${}`是字符串替换。
+`#{}`是预编译处理，对应的变量**自动加上**单引号 ''
 
-Mybatis在处理`#{}`时，会将sql中的#{}替换为?号，调用`PreparedStatement`的set方法来赋值；
+`${}`是字符串替换，对应的变量**不会加上**单引号 ''
+
+Mybatis在处理`#{}`时，会将sql中的`#{}`替换为`?`号，调用`PreparedStatement`的set方法来赋值；
 
 Mybatis在处理`${}`时，就是把`${}`替换成变量的值。
 
@@ -72,7 +74,7 @@ Mybatis在处理`${}`时，就是把`${}`替换成变量的值。
 
 预编译语句的优势在于归纳 为：**一次编译、多次运行，省去了解析优化等过程；此外预编译语句能防止sql注入。**
 
-
+> 使用`#{}`预编译会更好一点
 
 ### 6、什么是MyBatis的接口绑定？有哪些实现方式？
 
@@ -98,17 +100,19 @@ Mybatis在处理`${}`时，就是把`${}`替换成变量的值。
 
 ### 8、Mybatis一对一、一对多的查询
 
-MyBatis 中使用collection标签来解决一对多的关联查询，collection标签可用的属性如下：
-property:指的是集合属性的值.
-ofType:指的是集合中元素的类型.
-column:所对应的外键字段名称.
-select:使用另一个查询封装的结果.
+MyBatis 中使用`collection`标签来解决一对多的关联查询，collection标签可用的属性如下：
 
-MyBatis 中使用association标签来解决一对一的关联查询，association标签可用的属性如下：
-property:对象属性的名称.
-javaType:对象属性的类型.
-column:所对应的外键字段名称.
-select:使用另一个查询封装的结果！
+> property:指的是集合属性的值.
+> ofType:指的是集合中元素的类型.
+> column:所对应的外键字段名称.
+> select:使用另一个查询封装的结果.
+
+MyBatis 中使用`association`标签来解决一对一的关联查询，association标签可用的属性如下：
+
+>property:对象属性的名称.
+>javaType:对象属性的类型.
+>column:所对应的外键字段名称.
+>select:使用另一个查询封装的结果！
 
 如：
 
@@ -170,4 +174,26 @@ Mybatis使用RowBounds对象进行分页，它是针对ResultSet结果集执行�
 
 1) 传统的JDBC的方法，在组合SQL语句的时候需要去拼接，稍微不注意就会少少了一个空格，标点符号，都会导致系统错误。Mybatis的动态SQL就是为了解决这种问题而产生的；Mybatis的动态SQL语句值基于OGNL表达式的，方便在SQL语句中实现某些逻辑；可以使用标签组合成灵活的sql语句，提供开发的效率。 
 
-2) Mybatis的动态SQL标签主要由以下几类： If语句（简单的条件判断） Choose(when/otherwise),相当于java语言中的switch，与jstl中choose类似 Trim(对包含的内容加上prefix，或者suffix) Where(主要是用来简化SQL语句中where条件判断，能智能的处理and/or 不用担心多余的语法导致的错误) Set(主要用于更新时候) Foreach(一般使用在mybatis in语句查询时特别有用)
+2) Mybatis的动态SQL标签主要由以下几类： 
+
+If语句（简单的条件判断） 
+
+Choose(when/otherwise)，相当于java语言中的switch，
+
+ Trim(对包含的内容加上prefix，或者suffix)
+
+ Where(主要是用来简化SQL语句中where条件判断，能智能的处理and/or 不用担心多余的语法导致的错误) 
+
+Set(主要用于更新时候) 
+
+Foreach(一般使用在mybatis in语句查询时特别有用)
+
+
+
+### 11、Mybatis的批量操作数据的方法
+
+一般三种：
+
+1、使用for循环在java代码中insert （不推荐）
+
+2、foreach

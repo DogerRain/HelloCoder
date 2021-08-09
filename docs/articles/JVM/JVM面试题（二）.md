@@ -196,18 +196,18 @@ OOM问题。
 - Java.lang.OutOfMemoryError: PermGen space
 
   程序中使用了大量的jar或class，使java虚拟机装载类的空间不够。
-  解决：增加java虚拟机中的XX:PermSize和XX:MaxPermSize参数的大小，如： -XX:PermSize=64M -XX:MaxPermSize=128m
+  **解决：**增加java虚拟机中的XX:PermSize和XX:MaxPermSize参数的大小，如： `-XX:PermSize=64M -XX:MaxPermSize=128m`
 
 - java.lang.OutOfMemoryError: Java heap space
   java虚拟机创建的对象太多，在进行垃圾回收之前，虚拟机分配的到堆内存空间已经用满了。
 
-  解决：设置堆的起始大小、最大空间，如-Xms256m -Xmx1024m
+  **解决：**设置堆的起始大小、最大空间，如`-Xms256m -Xmx1024m`
 
 - java.lang.OutOfMemoryError： unable to create new native thread
 
   环境提供的服务器配置偏低，而项目本身为了性能，大量的使用的线程，因为线程的开辟比new Object是需要很大空间的。创建线程数超过了操作系统的限制。
 
-  解决：减少程序的线程数量；或者增大服务器的线程限制数量。
+  **解决**：减少程序的线程数量；或者增大服务器的系统线程限制数量。
 
 2、StackOverflowError 常见场景：
 
@@ -230,11 +230,11 @@ public class StackOverFlowErrorDemo {
 }
 ```
 
-解决方案：
+**解决方案：**
 
 ​	把递归调用函数改用while或者for循环来实现 。
 
-​	增大栈的大小值。（如  -Xss100m ）
+​	增大栈的大小值。（如  `-Xss100m` ）
 
 ​	改用堆内存。（把局部变量改成全局静态变量）
 

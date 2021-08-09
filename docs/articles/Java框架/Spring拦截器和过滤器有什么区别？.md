@@ -6,9 +6,9 @@ Spring的拦截器和过滤器大家或多或少都会用到，那**Spring拦截
 
 过滤器 和 拦截器 都是AOP的编程思想，功能也大致一样，可以用来实现日志记录、登录鉴权、过滤等等，但是它们的不同点也很多，所以应用场景也不一样。
 
- **拦截器(Interceptor):** 用于在某个方法被访问之前进行拦截，然后在方法执行之前或之后加入某些操作，其实就是AOP的一种实现策略。
+ **拦截器(Interceptor):** 用于在某个方法被访问之前进行拦截，然后在方法执行之前或之后加入某些操作，**其实就是AOP的一种实现策略**。
 
- **过滤器(Interceptor):** 在某个请求进入前进行过滤，依赖于Servlet容器，属于Servlet规范的一部分。
+ **过滤器(Filter):** 在某个请求进入前进行过滤，依赖于Servlet容器，属于Servlet规范的一部分。
 
 ## 1、实现原理不一样
 
@@ -58,7 +58,7 @@ Spring的拦截器和过滤器大家或多或少都会用到，那**Spring拦截
 
 ## 4、使用不一样
 
-一般来说使用拦截器进行微观处理，比如说拦截是否有权限操作、记录操作的日志等等，常见的方法是preHandle、postHandle
+一般来说使用**拦截器**进行**微观**处理，比如说拦截是否有权限操作、记录操作的日志等等，常见的方法是preHandle、postHandle
 
 ```java
 @Component
@@ -82,7 +82,7 @@ public class MyInterceptor implements HandlerInterceptor{
 }
 ```
 
-一般来说过滤器是宏观上面的过滤，比如说过滤URI、用户是否登录等等，常见的方法是init、doFilter、destroy：
+一般来说**过滤器**是**宏观**上面的过滤，比如说过滤URI、用户是否登录等等，常见的方法是init、doFilter、destroy：
 
 ```java
 public class MyFilter implements Filter {
@@ -108,7 +108,7 @@ public class MyFilter implements Filter {
 
 > 注意，以上只是简单的使用，除此之外要使用它们还需要配置过滤、拦截的路径
 
-
+---
 
 参考：
 
