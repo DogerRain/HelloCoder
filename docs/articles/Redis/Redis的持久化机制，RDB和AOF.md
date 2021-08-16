@@ -24,7 +24,7 @@ RDB持久化是将当前进程中的数据生成**快照**保存到硬盘(因此
 常见配置：
 
 
-```java
+```shell
 # Redis默认设置， 表示  900秒内产生1条写入命令就触发一次快照，自动触发 bgsave
 save 900 1
 save 300 10
@@ -88,13 +88,27 @@ RDB bgsave 具体过程如下：
 
 
 
+### RDB优缺点：
+
+优点：
+
+1. 采用子线程创建RDB文件，不会对redis服务器性能造成大的影响；
+2. 快照生成的RDB文件是一种压缩的二进制文件，可以方便的在网络中传输和保存。通过RDB文件，可以方便的将redis数据恢复到某一历史时刻，可以提高数据安全性，避免宕机等意外对数据的影响。
+
+缺点：
+
+1. 在redis文件在时间点A生成，之后产生了新数据，还未到达另一次生成RDB文件的条件，redis服务器崩溃了，那么在时间点A之后的数据会丢失掉，数据一致性不是完美的好，如果可以接受这部分丢失的数据，可以用生成RDB的方式；
+2. 快照持久化方法通过调用fork()方法创建子线程。当redis内存的数据量比较大时，创建子线程和生成RDB文件会占用大量的系统资源和处理时间，对 redis处理正常的客户端请求造成较大影响。
+
+
+
 ## 3、AOF
 
-AOF是记录Redis的命令，增量备份。
+AOF是**记录Redis的命令**，redis对将所有的写**命令**保存到一个aof文件中，根据这些写命令，实现数据的持久化和数据恢复，它增量备份。
 
 常见配置：
 
-```java
+```shell
 # 是否开启aof，默认是不开启
 appendonly no
 
@@ -106,6 +120,7 @@ appendfsync everysec
 
 # aof重写期间是否同步
 no-appendfsync-on-rewrite no
+
 
 # 重写触发配置
 # (当前AOF文件大小超过上一次重写的AOF文件大小的百分之多少才会重写)
@@ -119,19 +134,21 @@ aof-rewrite-incremental-fsync yes
 
 ①`appendfsync everysec`的三种模式：
 
-- always：把每个写命令都立即同步到aof文件，很慢，但是很安全
-- everysec：每秒同步一次，Redis官方推荐。
+- always：把**每个写命令**都立即同步到aof文件，很慢，但是很安全
+- everysec：每 1 秒同步一次，Redis官方推荐。
 - no：redis不刷盘交给OS来处理，非常快，但是也最不安全
 
  
 
 ②`aof-rewrite-incremental-fsync`：
 
-每次批量写入磁盘的数据量由aof-rewrite-incremental-fsync参数控制，默认为32M，避免单次刷盘数据过多造成硬盘阻塞
+每次批量写入磁盘的数据量由`aof-rewrite-incremental-fsync`参数控制，默认为32M，避免单次刷盘数据过多造成硬盘阻塞
 
 
 
 #### 3.1 AOF的工作流程：
+
+三个步骤：命令追加、文件写入、文件同步。
 
 1. 所有的写入命令追加到`aof_buf`缓冲区中。
 
@@ -141,7 +158,9 @@ aof-rewrite-incremental-fsync yes
 
 #### 3.2 为什么需要重写？
 
-因为重写后文件会变小。
+> redis不断的将写命令保存到AOF文件中，导致AOF文件越来越大，当AOF文件体积过大时，数据恢复的时间也是非常长的，所以就需要重写了。
+
+可以重写的情况：
 
 1. 进程内超时的数据不用再写入到AOF文件中。
 2. 存在删除命令。
@@ -187,7 +206,7 @@ auto-aof-rewrite-min-size 64mb
 
   
 
-  简单解释一下，首先当你AOF文件超过了 `auto-aof-rewrite-min-size`才会重写。
+简单解释一下，首先当你AOF文件超过了 `auto-aof-rewrite-min-size`才会重写。
 
    Redis会记录上一次重写的大小，和当前AOF的大小，当 `（当前AOF大小/上次重写AOF大小）> auto-aof-rewrite-percentage`  则自动重写。
 
@@ -212,13 +231,13 @@ localhost:0>bgrewriteaof
 
 AOF重写大致过程：
 
-1. 父进程执行fork()，创建一个子进程。
+1. 父进程执行`fork()`，创建一个子进程。
 
 2. 父进程处理客户端请求，父进程把所有修改命令会写入到`aof_rewrite_buf`中，并根据`appendfsync`策略持久化到AOF文件中。
 
 3. 子进程把新AOF文件写入完成后，子进程发送信号给父进程，父进程更新统计信息。
 
-4. 父进程将aof_rewrite_buf（AOF重写缓冲区）的数据写入到新的AOF文件中。
+4. 父进程将`aof_rewrite_buf`（AOF重写缓冲区）的数据写入到新的AOF文件中。
 
 > 过期的键不会被记录到 `AOF` 文件中
 
@@ -228,6 +247,22 @@ AOF重写大致过程：
 > AOF的持久化也可能会造成阻塞。
 
 fsync 每秒同步一次，假如系统磁盘比较忙，可能就会造成Redis主线程阻塞。
+
+###  AOF优缺点：
+
+优点：
+
+1. 提供了多种同步命令的方式，默认1秒同步一次写命令，最多丢失1秒内的数据；、
+
+2. 如果AOF文件有错误，比如在写AOF文件时redis崩溃了，redis提供了多种恢复AOF文件的方式，例如使用redis-check-aof工具修正AOF文件（一般都是最后一条写命令有问题，可以手动取出最后一条写命令）；
+
+3. AOF文件可读性交强，也可手动操作写命令。
+
+缺点：
+
+1. AOF文件比RDB文件较大；
+2. redis负载较高时，RDB文件比AOF文件具有更好的性能；
+3. RDB使用快照的方式持久化整个redis数据，而aof只是追加写命令，因此从理论上来说，RDB比AOF方式更加健壮，另外，官方文档也指出，在某些情况下，AOF的确也存在一些bug，（举个例子，阻塞命令 BRPOPLPUSH 就曾经引起过这样的 bug 。）这些bug的场景RDB是不存在的。
 
 
 
@@ -242,7 +277,6 @@ RDB恢复又分两种情况：
 1）**主库master**：
 
 - 载入RDB时，过期键会被忽略。
-
 
 2）**从库salve**：
 
@@ -264,8 +298,20 @@ redis4.0开始 添加了RDB-AOF混合方式，可以通过设置`aof-use-rdb-pre
 
 
 
+## 5、如何选用？
+
+如果你非常关心你的数据，但仍然可以承受数分钟以内的数据丢失， 那么你可以只使用 RDB 持久化。
+
+ 因为定时生成 RDB 快照（snapshot）非常便于进行数据库备份， 并且 RDB 恢复数据集的速度也要比 AOF 恢复的速度要快， 除此之外， 使用 RDB 还可以避免之前提到的 AOF 程序的 bug 。
+
+如果要担心数据安全和一致性，应该同时使用两种持久化功能。
+
+---
+
 参考：
 
 - https://www.cnblogs.com/ivictor/p/9749465.html
 - https://blog.csdn.net/qq_28018283/article/details/80764518
 - https://redis.io/topics/persistenc
+- [https://www.jianshu.com/p/cbe1238f592a](https://www.jianshu.com/p/cbe1238f592a)
+
