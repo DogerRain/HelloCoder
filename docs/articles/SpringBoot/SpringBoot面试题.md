@@ -1,6 +1,6 @@
 ### 1、什么是SpringBoot？和传统的Spring有什么区别？
 
-Spring Boot 是 Spring 开源组织下的子项目，是 Spring 组件一站式解决方案，主要是简化了使用 Spring 的难度，简省了繁重的配置，提供了各种启动器，开发者能快速上手。
+Spring Boot 是 Spring 开源组织下的子项目，是 Spring 组件**一站式解决方案，主要是简化了使用 Spring 的难度，简省了繁重的配置，提供了各种启动器，开发者能快速上手。**
 
 Spring在传统上要集成mybatis、maven、MVC 需要配置一大堆的xml，而且部署还需要servlet容器（Tomcat、Jetty等）。
 
