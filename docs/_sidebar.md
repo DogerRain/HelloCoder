@@ -117,8 +117,7 @@
     - 
     
 - <font style="color:black;font-size:18px;font-weight:500">Redis进阶篇</font>
-
-    - [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
+- [Redis为什么要把字符串设计成SDS？](articles\Redis\Redis为什么要把字符串设计成SDS？.md)
     - [Redis之缓存击穿、穿透、雪崩](articles\Redis\Redis之缓存击穿、穿透、雪崩.md)
     - [Redis分布式事务锁的原理](articles\Redis\Redis分布式事务锁的原理.md)
     - [Redis的删除策略和内存淘汰机制](articles\Redis\Redis的删除策略和内存淘汰机制.md)
@@ -143,6 +142,7 @@
     - [MySQL的自增ID用完了会怎样？](articles\MySQL\MySQL的自增ID用完了会怎样？.md) 
     - [数据库连接池为什么要使用ThreadLocal？](articles\Java线程\数据库连接池为什么要使用ThreadLocal？.md) 
     - [MySQL的架构和执行流程.md](articles\MySQL\MySQL的架构和执行流程.md) 
+    -  [binlog、redolog、undolog的区别和作用.md](articles\MySQL\binlog、redolog、undolog的区别和作用.md) 
     
 - <font style="color:black;font-size:20px;font-weight:2px">项目篇</font>
     - [如何设计一个高并发的系统](articles\项目深度\高并发系统的设计.md)
