@@ -80,7 +80,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
     // 扩容阈值为 1<<4 * 0.75 = 12 ，就是说容量大于12时，数组就会扩容
         if ((tab = table) == null || (n = tab.length) == 0)
             n = (tab = resize()).length;
-    //这个是key的数据插入数组的下标位置算法，(n - 1) & hash
+    //这个是key的数据插入数组的下标位置算法，(n - 1) & hash 这样下标肯定就是在 n 之内了
         if ((p = tab[i = (n - 1) & hash]) == null)
             tab[i] = newNode(hash, key, value, null);
     //hash冲突部分
@@ -98,7 +98,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                 for (int binCount = 0; ; ++binCount) {
                     if ((e = p.next) == null) {
                         p.next = newNode(hash, key, value, null);
-                        // 如果链表长度大于等于TREEIFY_THRESHOLD，则考虑转换为红黑树
+                        // 如果链表长度大于等于 TREEIFY_THRESHOLD=8，则考虑转换为红黑树
                         if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
                             //这里面还有判断
                             treeifyBin(tab, hash);
@@ -130,23 +130,27 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
     }
 ```
 
-**put操作过程总结：**
+**put操作过程总结：**（重要）
 
 1. 判断HashMap数组是否为空，是的话初始化数组（由此可见，在创建HashMap对象的时候并不会直接初始化数组）；
 
 2. 通过`(n-1) & hash`计算key在数组中的存放索引；
 
-3. 目标索引位置为空的话，直接创建Node存储；（说明刚开始是用链表存放的，并且返回null）
+3. 如果此时table的对应位置没有任何元素，也就是table[i]=null，那么就直接把Node放入table[i]的位置，并且这个Node的`next==null`，并且返回 null
 
 4. 目标索引位置不为空的话，分下面三种情况：
 
-   4.1. key相同，覆盖旧值；
+   4.1. （相同hash值，还会调用equals方法比较内容是否相同），都相同则覆盖旧值；
 
-   4.2. 该节点类型是红黑树的话，执行红黑树插入操作；
+   4.2. 该节点类型是红黑树的话，执行红黑树插入操作，根据hash值向红黑树中添加或替换TreeNode。（JDK1.8）
 
-   4.3. 该节点类型是链表的话，遍历到最后一个元素尾插入，如果期间有遇到key相同的，则直接覆盖。如果链表长度大于等于`TREEIFY_THRESHOLD`，并且数组容量大于等于`MIN_TREEIFY_CAPACITY`，则将链表转换为红黑树结构；
+   4.3. 该节点类型是链表的话，遍历到最后一个元素尾插入，则把新的Node插入链表的末端，作为之前末端Node的next，同时新Node的next==null，返回null
 
-5. 判断HashMap元素个数是否大于等于threshold，是的话，进行扩容操作。
+   -  如果期间有遇到key相同的，则直接覆盖。
+
+   -  如果链表长度大于等于`TREEIFY_THRESHOLD=8`，并且数组容量大于等于`MIN_TREEIFY_CAPACITY = 64`，则将链表转换为红黑树结构；
+
+5. 判断HashMap元素个数是否大于等于threshold（`16*0.75`），是的话，进行扩容操作。
 
 ## 3、为什么是红黑树？
 
@@ -255,6 +259,25 @@ static final float DEFAULT_LOAD_FACTOR = 0.75f
 
 当存储的所有节点数 大于 (16 * 0.75 = 12 )时，就会触发扩容，这个是泊松分布？折中的方法减少rehash次数，提高查找成本。
 
+修改容量的方法是这样的：
+
+```java
+/**
+ * Returns a power of two size for the given target capacity.
+ */
+static final int tableSizeFor(int cap) {
+    int n = cap - 1;
+    n |= n >>> 1;
+    n |= n >>> 2;
+    n |= n >>> 4;
+    n |= n >>> 8;
+    n |= n >>> 16;
+    return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+}
+```
+所以要注意，如果要往HashMap中放1000个元素，又不想让HashMap不停的扩容，最好一开始就把容量设为2048，设为1024不行，因为元素添加到七百多的时候还是会扩容。
+
+
 ### 6.4、UNTREEIFY_THRESHOLD
 
 ```java
@@ -279,4 +302,5 @@ static final int UNTREEIFY_THRESHOLD = 6
 
 - https://www.jianshu.com/p/104fa73c81b3  这个讲红黑树强的一批
 - https://mrbird.cc/Java-HashMap%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.html
+- https://blog.csdn.net/lkforce/article/details/89521318 可以看看这个，这个有画图看的更明白
 
