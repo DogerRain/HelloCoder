@@ -28,9 +28,9 @@ List有序，set无序，map无序，queue消息阻塞队列。
 
 2. ArrayList 采用数组存储，所以插入和删除元素的时间复杂度受元素位置的影响。插入末尾还好，如果是中间，则（add(int index, E element)）接近O（n）；LinkedList 采用链表存储，所以插入，删除元素时间复杂度不受元素位置的影响，都是近似 O（1）而数组为近似 O（n）。对于随机访问get和set，ArrayList优于LinkedList，因为LinkedList要移动指针。
 
-3. LinkedList 不支持高效的随机元素访问，而ArrayList 实现了RandmoAccess 接口，所以有随机访问功能。快速随机访问就是通过元素的序号快速获取元素对象(对应于get(int index)方法)。所**以ArrayList随机访问快，插入慢；LinkedList随机访问慢，插入快。**
+3. LinkedList 不支持高效的随机元素访问，而ArrayList 实现了RandmoAccess 接口，所以有随机访问功能。快速随机访问就是通过元素的序号快速获取元素对象(对应于get(int index)方法)。**所以ArrayList随机访问快，插入慢；LinkedList随机访问慢，插入快。**
 
-4. ArrayList的空 间浪费主要体现在在list列表的结尾会预留一定的容量空间，而LinkedList的空间花费则体现在它的每一个元素都需要消耗比ArrayList更多的空间（因为要存放直接后继和直接前驱以及数据）。
+4. ArrayList的 空间浪费 主要体现在在list列表的结尾会预留一定的容量空间，而LinkedList的空间花费则体现在它的每一个元素都需要消耗比ArrayList更多的空间（因为要存放直接后继和直接前驱地址以及数据）。
 
 
 
@@ -49,11 +49,13 @@ List有序，set无序，map无序，queue消息阻塞队列。
 
 
 
-HashMap可以通过下面的语句进行同步：
+**HashMap可以通过下面的语句进行同步：**
 
 ```java
 Map m = Collections.synchronizeMap(hashMap);
 ```
+
+或者改用 `ConcurrentHashMap`
 
 
 
@@ -219,17 +221,19 @@ class Student implements Comparable<Student> {
 
 **jdk1.7中：**
 
-ConcurrentHashMap 是由 Segment 数组结构和 HashEntry 数组结构组成。Segment 是一种可重入锁 ReentrantLock，在 ConcurrentHashMap 里扮演锁的角色，HashEntry 则用于存储键值对数据。
+ConcurrentHashMap 是由 `Segment 数组结构 + HashEntry 数组结构 + 链表` 组成。Segment 是一种可重入锁 ReentrantLock，在 ConcurrentHashMap 里扮演锁的角色，HashEntry 则用于存储键值对数据。
 
-Segment数组的意义就是将一个大的table分割成多个小的table来进行加锁，也就是上面的提到的锁分离技术，而每一个Segment元素存储的是HashEntry数组+链表，这个和HashMap的数据存储结构一样。
+Segment数组的意义就是将一个大的table分割成多个小的table来进行加锁，也就是上面的提到的锁分离技术，而每一个Segment元素存储的是`HashEntry数组+链表`，这个和HashMap的数据存储结构一样。
 
 ![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201020000216865.png)
 
 
 
+
+
 **jdk1.8中：**
 
-放弃了Segment，直接用 Node数组+链表+红黑树 的数据结构来实现，并发控制使用Synchronized + CAS来操作，整个看起来就像是优化过且线程安全的HashMap。
+放弃了Segment，直接用 `Node数组+链表+红黑树` 的数据结构来实现，并发控制使用`Synchronized + CAS`来操作，整个看起来就像是优化过且线程安全的HashMap。
 
 ![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/20180522155453418.png)
 
@@ -244,19 +248,19 @@ Segment数组的意义就是将一个大的table分割成多个小的table来进
 
 
 ```java
-        System.out.println("-----------forEach遍历-------------");
-        list.parallelStream().forEach(k -> {
-            System.out.println(k);
-        });
-        System.out.println("-----------for遍历-------------");
-        for (Student student : list) {
-            System.out.println(student);
-        }
-        System.out.println("-----------Iterator遍历-------------");
-        Iterator<Student> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+System.out.println("-----------forEach遍历-------------");
+list.parallelStream().forEach(k -> {
+    System.out.println(k);
+});
+System.out.println("-----------for遍历-------------");
+for (Student student : list) {
+    System.out.println(student);
+}
+System.out.println("-----------Iterator遍历-------------");
+Iterator<Student> iterator = list.iterator();
+while (iterator.hasNext()) {
+    System.out.println(iterator.next());
+}
 ```
 
 
@@ -267,15 +271,15 @@ Segment数组的意义就是将一个大的table分割成多个小的table来进
 - List 转数组：使用 List 自带的 toArray() 方法。
 
 ```java
-        // list to array
-        List<String> list = new ArrayList<String>();
-        list.add("HaC");
-        list.add("HelloCoder");
-        Object[] str = list.toArray();
+// list to array
+List<String> list = new ArrayList<String>();
+list.add("HaC");
+list.add("HelloCoder");
+Object[] str = list.toArray();
 
-        // array to list
-        String[] array = new String[]{"HaC", "HelloCoder"};
-        List<String> mylist = Arrays.asList(array);
+// array to list
+String[] array = new String[]{"HaC", "HelloCoder"};
+List<String> mylist = Arrays.asList(array);
 ```
 
 

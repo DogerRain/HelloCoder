@@ -278,7 +278,7 @@ static final int tableSizeFor(int cap) {
 所以要注意，如果要往HashMap中放1000个元素，又不想让HashMap不停的扩容，最好一开始就把容量设为2048，设为1024不行，因为元素添加到七百多的时候还是会扩容。
 
 
-### 6.4、UNTREEIFY_THRESHOLD
+### 6.4、什么时候退化为链表？
 
 ```java
 static final int UNTREEIFY_THRESHOLD = 6
