@@ -30,3 +30,7 @@ invokespecial：JVM对于初始化对象（Java构造器的方法为：）以及
 
 
 
+## 4、本地方法接口
+
+Native Interface
+
