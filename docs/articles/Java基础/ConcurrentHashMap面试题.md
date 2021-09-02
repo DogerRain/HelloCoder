@@ -32,7 +32,7 @@ Segment数组的意义就是将一个大的table分割成多个小的table来进
 
 放弃了Segment，直接用 `Node数组+链表+红黑树` 的数据结构来实现，并发控制使用`Synchronized + CAS`来操作，整个看起来就像是优化过且线程安全的HashMap。
 
-> 取消segments字段,采用table数组元素作为锁，从而实现了对每一行数据进行加锁，进一步减少并发冲突的概率。
+> 取消segments字段，采用table数组元素作为锁（使用synchronized锁住），从而实现了对每一行数据进行加锁，进一步减少并发冲突的概率。
 
 ![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/20180522155453418.png)
 
@@ -79,15 +79,33 @@ void sun::misc::Unsafe::putOrderedObject (jobject obj, jlong offset, jobject val
 
 
 
-## 3、ConcurrentHashMap是如何保证线程安全的？
+## 3、JDK 1.7 ConcurrentHashMap是如何保证线程安全的？
 
-总体来说，ConcurrentHashMap利用了unsafe操作+ReentrantLock，主要使用了：
+**jdk1.7中**，总体来说，ConcurrentHashMap利用了 **unsafe操作+ReentrantLock**，主要使用了：
 
 - compareAndSwapObject
 - putObjectVolatile
 - getObjectVolatile
 
+见字如意，通过分段思想，锁住需要的区间，提高了并发量，分段数越多，支持的并发量就越高。
 
+每个段（segment）就是一个小型的HashMap，调用 put 方法时，就会调用 segment 的put，segment 继承 ReentrantLock，加锁成功才会 put，否则一直循环等待。
+
+
+
+## 4、JDK 1.8 ConcurrentHashMap 读操作为什么不用加锁？
+
+ConcurrentHashMap 的 get 方法会调用 tabAt 方法，这是一个Unsafe类volatile的操作，保证每次获取到的值都是最新的。（强制将修改的值立即写入主存）
+
+```java
+static final <K,V> Node<K,V> tabAt(Node<K,V>[] tab, int i) {
+	return (Node<K,V>)U.getObjectVolatile(tab, ((long)i << ASHIFT) + ABASE);
+}
+```
+
+
+
+![img](https://axin-soochow.oss-cn-hangzhou.aliyuncs.com/18-10-9/axin-concur.png)
 
 ---
 
