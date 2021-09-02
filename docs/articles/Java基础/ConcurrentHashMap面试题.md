@@ -89,7 +89,7 @@ void sun::misc::Unsafe::putOrderedObject (jobject obj, jlong offset, jobject val
 
 见字如意，通过分段思想，锁住需要的区间，提高了并发量，分段数越多，支持的并发量就越高。
 
-每个段（segment）就是一个小型的HashMap，调用 put 方法时，就会调用 segment 的put，segment 继承 ReentrantLock，加锁成功才会
+每个段（segment）就是一个小型的HashMap，调用 put 方法时，就会调用 segment 的put，segment 继承 ReentrantLock，加锁成功才会 put，否则一直循环等待。
 
 
 
