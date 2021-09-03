@@ -25,13 +25,13 @@ Redis也可以使用 hash算法进行分配，比如说 有一个 名为 `HelloC
 
 一致性Hash算法也是使用取模的方法，不过，上述的取模方法是对**服务器的数量**进行取模，而一致性的Hash算法是对`2^32`取模。即，一致性Hash算法将整个Hash空间组织成一个虚拟的圆环，Hash函数的值空间为`0 ~ 2^32 - 1(一个32位无符号整型)`，整个哈希环如下：
 
-<img src="https://upload-images.jianshu.io/upload_images/6555006-1f81e81466729c6b.png?imageMogr2/auto-orient/strip|imageView2/2/w/830/format/webp" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/6555006-1f81e81466729c6b.png" style="zoom:50%;" />
 
 整个环从0位置开始，顺时针方向。
 
 我们可以把**服务器的IP**进行求hash，然后再和`2^32`取模，然后确定一个位置，比如我们有三台机器，使用IP地址哈希后在环空间的位置如图所示：
 
-<img src="https://upload-images.jianshu.io/upload_images/6555006-1f100c1012b06b40.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/6555006-1f100c1012b06b40.png" style="zoom:50%;" />
 
 （当然这个hash后的节点可能是不均匀的）
 
@@ -39,7 +39,7 @@ Redis也可以使用 hash算法进行分配，比如说 有一个 名为 `HelloC
 
 例如，现在有ObjectA，ObjectB，ObjectC三个数据对象，经过哈希计算后，在环空间上的位置如下：
 
-![](https://upload-images.jianshu.io/upload_images/6555006-defb48ae9714580d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+<img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/6555006-defb48ae9714580d.png" style="zoom:40%;" />
 
 根据一致性算法，ObjectA -> NodeA，ObjectB -> NodeB, ObjectC -> NodeC
 
@@ -49,11 +49,11 @@ Redis也可以使用 hash算法进行分配，比如说 有一个 名为 `HelloC
 
 假设我们的Node C宕机了，我们从图中可以看到，A、B不会受到影响，**只有Object C对象被重新定位到Node A**。所以我们发现，在一致性Hash算法中，如果一台服务器不可用，受影响的数据仅仅是此服务器到其环空间前一台服务器之间的数据（这里为Node C到Node B之间的数据），其他不会受到影响。如图1-6所示：
 
-![](https://upload-images.jianshu.io/upload_images/6555006-cd54d5c30e9cad6f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+<img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/6555006-cd54d5c30e9cad6f.png" style="zoom:40%;" />
 
 另外一种情况，现在我们系统增加了一台服务器Node X，如图所示：
 
-![](https://upload-images.jianshu.io/upload_images/6555006-8f61754de37eb380.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+<img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/6555006-8f61754de37eb380.png" style="zoom:40%;" />
 
 此时对象ObjectA、ObjectB没有受到影响，只有Object C重新定位到了新的节点X上。
  如上所述：
@@ -66,13 +66,13 @@ Redis也可以使用 hash算法进行分配，比如说 有一个 名为 `HelloC
 
 在一致性Hash算法服务节点太少的情况下，容易因为节点分布不均匀面造成`数据倾斜（被缓存的对象大部分缓存在某一台服务器上）问题`，如图：
 
-![img](https://upload-images.jianshu.io/upload_images/6555006-c504a13cbe34e617.png?imageMogr2/auto-orient/strip|imageView2/2/w/806/format/webp)
+<img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/6555006-f15ec4f10a433beb.png" style="zoom:50%;" />
 
 这时我们发现有大量数据集中在节点A上，而节点B只有少量数据。为了解决数据倾斜问题，一致性Hash算法引入了`虚拟节点机制`，**即对每一个服务器节点计算多个哈希，每个计算结果位置都放置一个此服务节点，称为虚拟节点。**
 
 具体操作可以为服务器IP或主机名后加入编号来实现，实现如图所示：
 
-![](https://upload-images.jianshu.io/upload_images/6555006-f15ec4f10a433beb.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+<img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/6555006-f15ec4f10a433beb.png" style="zoom:50%;" />
 
 数据定位算法不变，只需要增加一步：虚拟节点到实际点的映射。
 所以加入虚拟节点之后，即使在服务节点很少的情况下，也能做到数据的均匀分布。

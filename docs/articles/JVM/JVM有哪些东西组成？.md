@@ -18,7 +18,7 @@ JVM可以分为4大部分：类加载器，运行时数据区、执行引擎、N
 
 ![](https:////upload-images.jianshu.io/upload_images/1876023-6f8d0fddbf930520.png?imageMogr2/auto-orient/strip|imageView2/2/w/538/format/webp)
 
-在执行方法时JVM提供了四种指令来执行
+在执行方法时JVM提供了四种指令来执行：
 
 invokestatic:调用类的static方法。
 
@@ -33,4 +33,6 @@ invokespecial：JVM对于初始化对象（Java构造器的方法为：）以及
 ## 4、本地方法接口
 
 Native Interface
+
+比如说Unsafe类就是一个本地方法接口，都不是Java实现的，所以它属于JVM的范畴，一般都是C语言实现的。
 

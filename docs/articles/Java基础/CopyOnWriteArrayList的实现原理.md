@@ -1,0 +1,1 @@
+我们常用的ArrayList是线程不安全的，所以在高并发的场景下，我们会使用 CopyOnWriteArrayList ，
