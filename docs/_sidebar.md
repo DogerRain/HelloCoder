@@ -121,6 +121,7 @@
     -  [ConcurrentHashMap面试题](articles\Java基础\ConcurrentHashMap面试题.md) 
     -  [ArrayList和LinkedList空间占用哪个多？](articles\Java基础\ArrayList和LinkedList空间占用哪个多？.md) 
     -  [CopyOnWriteArrayList的实现原理](articles\Java基础\CopyOnWriteArrayList的实现原理.md) 
+    -   [ThreadLocal的原理.md](articles\Java基础\ThreadLocal的原理.md) 
     
 - <font style="color:black;font-size:18px;font-weight:500">Redis进阶篇</font>
 

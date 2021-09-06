@@ -82,7 +82,7 @@ Java虚拟机在运行程序时把其自动管理的内存划分为以下几个�
 
 ![](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200917123516415.png) 
 
-![](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/image-20200917123537436.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/image-20200917123537436.png)
 
 **(一)、 方法区(Method Area)**
 
@@ -126,7 +126,7 @@ JVM 中堆和栈属于不同的内存区域，使用目的也不同。栈常用�
 
 见上图：
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210224161111353.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/image-20210224161111353.png)
 
 
 

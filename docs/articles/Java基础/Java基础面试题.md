@@ -115,25 +115,25 @@ protected：可以在当前类、当前包、子类中进行访问
 
 ### 4、==、equals、hashcode区别
 
-- ==比较的是两个引用在内存中指向的是不是同一对象（即同一内存空间） 
+- ==比较的是两个引用在内存中指向的是不是同一对象（即同一内存空间，可以说 == 等于 hashcode） 
 
 - equals用来比较 两个对象的内容（值）是否相等。
 
-基本数据类型==比较都是值。
+> 注意：八个基本数据类型==比较都是 **值**。
 
 **有没有可能两个不相等的对象有相同的hashcode？**
 
 有可能。称为hash冲突。
 
-总结
+总结：
 
 (1) 同一对象上多次调用hashCode()方法，总是返回相同的整型值。
 
-(2) 如果a.equals(b)，则一定有a.hashCode() 一定等于 b.hashCode()
+(2) 如果 a.equals(b)，则一定有 a.hashCode() 一定等于 b.hashCode()
 
-(3)如果!a.equals(b)，则a.hashCode() 不一定等于 b.hashCode()。此时如果a.hashCode() 总是不等于 b.hashCode()，会提高hashtables的性能。
+(3)如果 !a.equals(b)，则 a.hashCode() **不一定等于** b.hashCode()。
 
-(4)a.hashCode()==b.hashCode() 则 a.equals(b)可真可假。
+(4)a.hashCode()==b.hashCode() 则 a.equals(b) 可真可假。
 
 (5)a.hashCode()！= b.hashCode() 则 a.equals(b)一定为假。 
 
