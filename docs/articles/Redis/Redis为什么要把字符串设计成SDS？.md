@@ -129,5 +129,5 @@ Redis保留了`\0` 结尾，虽然分配多了一个字节的空间，但这样�
 
 一图总结SDS的好处：
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20210222144222171.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/image-20210222144222171.png)
 
