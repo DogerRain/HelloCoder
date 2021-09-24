@@ -50,11 +50,11 @@ Spring的拦截器和过滤器大家或多或少都会用到，那**Spring拦截
 
 如果过滤器和拦截器有且仅各一个的情况下，运行的流程如下：
 
-![](https://img-blog.csdnimg.cn/2018112819593016.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phY2tzb25hcnk=,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/2018112819593016.png)
 
 多个拦截器和过滤器的运行流程如下（以两个为例）：
 
-![多拦截器、过滤器运行流程](https://img-blog.csdnimg.cn/20181128200003636.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phY2tzb25hcnk=,size_16,color_FFFFFF,t_70)
+![多拦截器、过滤器运行流程](https://img-blog.csdnimg.cn/20181128200003636.png)
 
 ## 4、使用不一样
 
