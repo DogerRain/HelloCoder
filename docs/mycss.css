@@ -726,7 +726,7 @@ section.cover blockquote > p > a:hover {
 
 .markdown-section a {
     color: var(--theme-color, #42b983);
-    font-weight: 600;
+    /*font-weight: 600;*/
     /*font-size:0.5rem;*/
 }
 
@@ -919,7 +919,7 @@ section.cover blockquote > p > a:hover {
     color: #c94922
 }
 
-.token.entity {
+.token.entity {.markdown-section a
     cursor: help
 }
 
