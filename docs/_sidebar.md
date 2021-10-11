@@ -117,7 +117,7 @@
     - [Redis主从、哨兵、集群的区别](articles\Redis\Redis主从、哨兵、集群的区别.md) 
     - [一致性hash算法](articles\Redis\一致性hash算法.md) 
     -  [Redis主从同步的原理.md](articles\Redis\Redis主从同步的原理.md) 
-    - 
+    -  [Redis的监控指标有哪些？.md](articles\Redis\Redis的监控指标有哪些？.md) 
 - <font style="color:black;font-size:18px;font-weight:500">MySQL进阶篇</font>
 
     -  [Mysql的索引和主键的区别](articles\MySQL\Mysql的索引和主键的区别.md) 
