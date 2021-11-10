@@ -26,7 +26,7 @@ JVM中的**CMS、G1垃圾回收器**所使用垃圾回收算法即为三色标�
 
 **黑色**：该对象已经被标记过了，且该对象下的属性也全部都被标记过了。（程序所需要的对象）
 
-![](picture/image-20211018100046048.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/image-20211018100046048.png)
 
 ### 算法流程
 
