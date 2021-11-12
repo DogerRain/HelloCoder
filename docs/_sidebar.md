@@ -13,7 +13,8 @@
   -   [项目的JVM堆内存大小如何设置](articles\JVM\项目的JVM堆内存大小如何设置.md) 
   -    [JVM有哪些东西组成？.md](articles\JVM\JVM有哪些东西组成？.md) 
   -    [谈谈你熟悉的垃圾回收器.md](articles\JVM\谈谈你熟悉的垃圾回收器.md) 
-  -      [JVM三色标记算法思想.md](articles\JVM\JVM三色标记算法思想.md) 
+  -    [JVM三色标记算法思想.md](\articles\JVM\JVM三色标记算法思想.md)
+  -      
 - Java多线程
   
   - [Java多线程面试题](articles\Java线程\Java多线程面试题.md)
@@ -71,7 +72,7 @@
   -  [Redis的使用规范有哪些？](articles\Redis\Redis的使用规范有哪些？.md) 
 - [算法篇](articles\算法\高频算法面试题.md)
 - [八大排序算法](articles\算法\八大排序算法.md) 
-    
+  
     - <font style="color:orange;font-size:14px;font-weight:500">字符串(辅助Map)：</font>
     - [1-两数之和](articles\算法\1-两数之和.md) 
     - [2-两数相加](articles\算法\2两数相加.md) 
