@@ -163,8 +163,7 @@
     - [知乎-一些质量很高的面试题](articles\面经\知乎-一些质量很高的面试题.md) 
     - [知乎-七彩云霞的回答](articles\面经\知乎-七彩云霞的回答.md) 
 - <font style="color:black;font-size:20px;font-weight:2px">求职</font>
-
-    - 如何和HR谈薪资
+- 如何和HR谈薪资
     -  [一些外包公司名单.md](articles\求职\一些外包公司名单.md) 
     
     - [为什么不建议去外包公司.md](articles\求职\为什么不建议去外包公司.md) 
