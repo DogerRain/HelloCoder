@@ -13,7 +13,7 @@
   -   [项目的JVM堆内存大小如何设置](articles\JVM\项目的JVM堆内存大小如何设置.md) 
   -    [JVM有哪些东西组成？.md](articles\JVM\JVM有哪些东西组成？.md) 
   -    [谈谈你熟悉的垃圾回收器.md](articles\JVM\谈谈你熟悉的垃圾回收器.md) 
-  -    [JVM三色标记算法思想.md](\articles\JVM\JVM三色标记算法思想.md)
+  -    [JVM三色标记算法思想.md](articles\JVM\JVM三色标记算法思想.md)
   -      
 - Java多线程
   
