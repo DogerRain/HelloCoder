@@ -16,7 +16,7 @@ JVM可以分为4大部分：类加载器，运行时数据区、执行引擎、N
 
 
 
-![](https:////upload-images.jianshu.io/upload_images/1876023-6f8d0fddbf930520.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/image-20211119232813619.png)
 
 在执行方法时JVM提供了四种指令来执行：
 
