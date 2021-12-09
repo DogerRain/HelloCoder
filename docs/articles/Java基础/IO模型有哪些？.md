@@ -40,7 +40,7 @@ IO的模型一般分为四种：
 
 ## 1、BIO：
 
-![](https://img-blog.csdnimg.cn/20190809100213430.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x6YjM0ODExMDE3NQ==,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20190809100213430.png)
 
 我们目前使用较多的也是这种BIO，比如说InputStream的wirte和read，都是同步阻塞的，只有等待文件读写完毕，我们才能进行下一步。
 
@@ -48,7 +48,7 @@ IO的模型一般分为四种：
 
 ## 2、NIO
 
-![img](https://img-blog.csdnimg.cn/20190809100722996.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x6YjM0ODExMDE3NQ==,size_16,color_FFFFFF,t_70)
+![img](https://img-blog.csdnimg.cn/20190809100722996.png)
 
 著名的 Netty 就是使用NIO。
 
@@ -56,7 +56,7 @@ IO的模型一般分为四种：
 
 ## 3、多路复用IO
 
-![img](https://img-blog.csdnimg.cn/20190809100538991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x6YjM0ODExMDE3NQ==,size_16,color_FFFFFF,t_70)
+![img](https://img-blog.csdnimg.cn/20190809100538991.png)
 
 Redis就是这种**多路复用IO**
 
@@ -81,16 +81,15 @@ Redis就是这种**多路复用IO**
 
 select可以同时观察许多流的I/O事件，在空闲的时候，会把当前线程阻塞掉，当有一个或多个流有I/O事件时，就从阻塞态中醒来，于是我们的程序就会轮询一遍所有的流（于是我们可以把“忙”字去掉了）。
 
-```
+```c
 while true {
-  select(streams[])
-  for i in streams[] {
+    select(streams[])
+    for i in streams[] {
             if i has data
                   read until unavailable
-}
+	}
 }
  
- 12345671234567
 ```
 
 **select()采用轮询的方式来检查fd是否就绪，当fd数量较多时，性能欠佳**。因为从select那里仅仅知道了，有I/O事件发生了，但却并不知道是那几个流（可能有一个，多个，甚至全部），我们只能无差别轮询所有流，找出能读出数据，或者写入数据的流，对他们进行操作。–from 知乎

@@ -277,10 +277,10 @@ public class SwitchCaseTest {
 
   String 是一个字符串常量，final修饰，当创建之后即不能更改，不可被继承，线程安全 
 
-  StringBuffer 用了`synchronized`修饰，线程安全；StringBuilder 线程不安全
+  StringBuffer 用了`synchronized`修饰，线程安全；反之 StringBuilder 线程不安全
 
 ```java
-@Override
+   @Override
     public synchronized StringBuffer append(String str) {
         toStringCache = null;
         super.append(str);
@@ -290,15 +290,15 @@ public class SwitchCaseTest {
 
 - 效率
 
-  StringBuffer很多方法都加了 synchronized , 也就是同时刻只能有一个线程去执行一个方法 ,效率就低。
+  StringBuffer很多方法都加了 synchronized ， 也就是同时刻只能有一个线程去执行一个方法 （加锁，需要等待），效率就低。
 
 
 
 对于三者使用的总结：
 
-1. 操作少量的数据 = String
-2. 单线程操作字符串缓冲区下操作大量数据 = StringBuilder
-3. 多线程操作字符串缓冲区下操作大量数据 = StringBuffer
+1. 操作少量的数据 --->>> String
+2. **单线程**操作字符串缓冲区下操作大量数据 --->>> StringBuilder
+3. **多线程**操作字符串缓冲区下操作大量数据 --->>> StringBuffer
 
 
 
@@ -328,8 +328,6 @@ public class Test {
 Math.round(11.5)的返回值是12，Math.round(-11.5)的返回值是-11。
 
 四舍五入的原理是在参数上加0.5然后进行下取整。
-
-
 
 
 
@@ -480,17 +478,19 @@ Java 的所有异常可以分为受检异常（checked exception）和非受检�
 
 ### 18、Object中常见的方法
 
-getClass()  //返回此 Object 的运行类。
-hashCode()  //用于获取对象的哈希值。
-equals(Object obj)   //用于确认两个对象是否“相同”。
-clone()  //创建并返回此对象的一个副本。
-toString()  //返回该对象的字符串表示。  
-notify()  //唤醒在此对象监视器上等待的单个线程。  
-notifyAll()   //唤醒在此对象监视器上等待的所有线程。  
-wait(long timeout)  //在其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或    者超过指定的时间量前，导致当前线程等待。  
-wait(long timeout, int nanos)  //在其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或者其他某个线程中断当前线程，或者已超过某个实际时间量前，导致当前线程等待。
-wait()  //用于让当前线程失去操作权限，当前线程进入等待序列
-finalize()  //当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。
+Object 是所有类的父类，Object中文又叫对象，所以又有Java一切皆对象的说法，而Object又提供了很多常见的API，如下：
+
+- getClass()  //返回此 Object 的运行类。
+- hashCode()  //用于获取对象的哈希值。
+- equals(Object obj)   //用于确认两个对象是否“相同”。
+- clone()  //创建并返回此对象的一个副本。
+- toString()  //返回该对象的字符串表示。  
+- notify()  //唤醒在此对象监视器上等待的单个线程。  
+- notifyAll()   //唤醒在此对象监视器上等待的所有线程。  
+- wait(long timeout)  //在其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或    者超过指定的时间量前，导致当前线程等待。  
+- wait(long timeout, int nanos)  //在其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或者其他某个线程中断当前线程，或者已超过某个实际时间量前，导致当前线程等待。
+- wait()  //用于让当前线程失去操作权限，当前线程进入等待序列
+- finalize()  //当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。
 
 
 
@@ -564,7 +564,7 @@ super可以理解为是指向自己超（父）类对象的一个指针，而这
 
 
 
-#### 23、break ,continue ,return 的区别及作用
+### 23、break ,continue ,return 的区别及作用
 
 - return的功能是结束一个方法。 一旦在循环体内执行到一个return语句，return语句将会结束该方法，循环自然也随之结束。
 - continue 跳出本次循环，继续执行下次循环(结束正在执行的循环 进入下一个循环条件)。
@@ -611,10 +611,16 @@ pub1ic class Get {
 
 | 引用类型 | 被垃圾回收时间 | 用途               | 生存时间          |
 | -------- | -------------- | ------------------ | ----------------- |
-| 强引用   | 从来不会       | 对象的一般状态     | jvm停止运行时终止 |
+| 强引用   | 从来不会       | 对象的一般状态     | JVM停止运行时终止 |
 | 软引用   | 当内存不足时   | 对象缓存           | 内存不足时终止    |
 | 弱引用   | 正常垃圾回收时 | 对象缓存           | 垃圾回收后终止    |
 | 虚引用   | 正常垃圾回收时 | 跟踪对象的垃圾回收 | 垃圾回收后终止    |
+
+```java
+Object o=new Object();   //  强引用
+SoftReference<String> softRef=new SoftReference<String>(str);     // 软引用
+WeakReference<String> abcWeakRef = new WeakReference<String>(str); //弱引用
+```
 
 
 
