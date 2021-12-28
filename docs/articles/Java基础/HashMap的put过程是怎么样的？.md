@@ -174,7 +174,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 
 我依次插入 10，20，30，15 到一个空树中：
 
-https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+[https://www.cs.usfca.edu/~galles/visualization/RedBlack.html](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
 
 
 
