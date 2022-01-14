@@ -14,7 +14,15 @@
 
 ## 2、ConcurrentHashMap的底层原理
 
+### 事先需要明白JDK1.7、1.8加锁的区别
 
+1.7是使用segements(16个segement)，每个segement都有一个table(Map.Entry数组)，相当于16个HashMap，同步机制为分段锁，每个segment继承`ReentrantLock`；
+
+1.8只有1个table(Map.Entry数组)，同步机制为`CAS + synchronized`保证并发更新
+
+总的来说就是锁的粒度更细，减少了冲突，提高了并发度。
+
+（以下是详细的介绍）
 
 **jdk1.7中：**
 
@@ -33,10 +41,12 @@ Segment数组的意义就是将一个大的table分割成多个小的table来进
 放弃了Segment，直接用 `Node数组+链表+红黑树` 的数据结构来实现，并发控制使用`Synchronized + CAS`来操作，整个看起来就像是优化过且线程安全的HashMap。
 
 > 取消segments字段，采用table数组元素作为锁（使用synchronized锁住），从而实现了对每一行数据进行加锁，进一步减少并发冲突的概率。
+>
+> 可以说将segment和数组合二为一
 
 ![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/20180522155453418.png)
 
-
+![img](https://axin-soochow.oss-cn-hangzhou.aliyuncs.com/18-10-9/axin-concur.png)
 
 jdk1.7、1.8 中，核心的方法是使用了Unsafe类中的各种native本地方法。
 
@@ -93,9 +103,13 @@ void sun::misc::Unsafe::putOrderedObject (jobject obj, jlong offset, jobject val
 
 
 
+
+
 ## 4、JDK 1.8 ConcurrentHashMap 读操作为什么不用加锁？
 
-ConcurrentHashMap 的 get 方法会调用 tabAt 方法，这是一个Unsafe类volatile的操作，保证每次获取到的值都是最新的。（强制将修改的值立即写入主存）
+读的时候如果不是恰好读到写线程写入相同Hash值的位置(可以认为我们的操作一般是读多写少，这种几率也比较低)
+
+ConcurrentHashMap 的 get 方法会调用 `tabAt` 方法，这是一个Unsafe类volatile的操作，保证每次获取到的值都是最新的。（强制将修改的值立即写入主存）
 
 ```java
 static final <K,V> Node<K,V> tabAt(Node<K,V>[] tab, int i) {
@@ -105,7 +119,106 @@ static final <K,V> Node<K,V> tabAt(Node<K,V>[] tab, int i) {
 
 
 
-![img](https://axin-soochow.oss-cn-hangzhou.aliyuncs.com/18-10-9/axin-concur.png)
+## 5、什么时候链表转为红黑树？
+
+和 HashMap 一模一样：
+
+- 链表长度超过 8 
+- 数组（桶）的长度超过 64
+
+
+
+
+
+## 6、1.8 中 ConcurrentHashMap put操作为什么用synchronized？
+
+源码如下：
+
+```java
+final V putVal(K key, V value, boolean onlyIfAbsent) {
+    //无论key还是value,不允许空
+    if (key == null || value == null) throw new NullPointerException();
+    //此处获取hash值的方法与HashTable类似
+    int hash = spread(key.hashCode());
+    int binCount = 0;
+    //无限循环
+    for (Node<K,V>[] tab = table;;) {
+        Node<K,V> f; int n, i, fh;
+        //如果节点数组为null，或者长度为0，初始化节点数组
+        if (tab == null || (n = tab.length) == 0)
+            tab = initTable();
+        //如果节点数组的某个节点为null，则put的时候就会采用无锁竞争来获取该节点的头把交椅
+        else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {
+            if (casTabAt(tab, i, null,
+                         new Node<K,V>(hash, key, value, null)))
+                break;                   // no lock when adding to empty bin
+        }
+        //需要扩容的时候先扩容，再写入
+        else if ((fh = f.hash) == MOVED)
+            tab = helpTransfer(tab, f);
+        else { //如果hash冲突的时候，即多线程操作时，大家都有一样的hash值
+            V oldVal = null;
+            synchronized (f) { //锁定节点数组的该节点
+                if (tabAt(tab, i) == f) {
+                    //如果当前该节点为链表形态
+                    if (fh >= 0) {
+                        binCount = 1;
+                        for (Node<K,V> e = f;; ++binCount) {
+                            K ek;
+                            //找链表中找到相同的key，把新value替代老value
+                            if (e.hash == hash &&
+                                ((ek = e.key) == key ||
+                                 (ek != null && key.equals(ek)))) {
+                                oldVal = e.val;
+                                if (!onlyIfAbsent)
+                                    e.val = value;
+                                break;
+                            }
+                            Node<K,V> pred = e;
+                            //如果找不到key，就添加到链表到末尾
+                            if ((e = e.next) == null) {
+                                pred.next = new Node<K,V>(hash, key,
+                                                          value, null);
+                                break;
+                            }
+                        }
+                    }
+                    //如果当前为红黑树形态，进行红黑树到查找和替代(存在相同的key)，或者放入红黑树到新叶节点上(key不存在)
+                    else if (f instanceof TreeBin) {
+                        Node<K,V> p;
+                        binCount = 2;
+                        if ((p = ((TreeBin<K,V>)f).putTreeVal(hash, key,
+                                                       value)) != null) {
+                            oldVal = p.val;
+                            if (!onlyIfAbsent)
+                                p.val = value;
+                        }
+                    }
+                }
+            }
+            if (binCount != 0) {
+                //如果链表长度超过了8，链表转红黑树
+                if (binCount >= TREEIFY_THRESHOLD)
+                    treeifyBin(tab, i);
+                if (oldVal != null)
+                    return oldVal;
+                break;
+            }
+        }
+    }
+    //统计节点个数，检查是否需要扩容
+    addCount(1L, binCount);
+    return null;
+}
+```
+
+有两个原因：
+
+1. 减少内存开销 
+   假设使用可重入锁来获得同步支持，那么每个节点都需要通过继承AQS来获得同步支持。但并不是每个节点都需要获得同步支持的，只有链表的头节点（红黑树的根节点）需要同步，这无疑带来了巨大内存浪费。
+2. 获得JVM的支持 
+   可重入锁毕竟是API这个级别的，后续的性能优化空间很小。 
+   synchronized则是JVM直接支持的，JVM能够在运行时作出相应的优化措施：锁粗化、锁消除、锁自旋等等。这就使得synchronized能够随着JDK版本的升级而不改动代码的前提下获得性能上的提升。
 
 ---
 
