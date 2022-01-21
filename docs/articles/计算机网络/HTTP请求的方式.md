@@ -35,7 +35,7 @@ GET和POST的区别，请参考：
 
 HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP连接。
 
-GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。
+GET和POST能做的事情是一样一样的。**你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。**
 
 
 

@@ -23,7 +23,10 @@
 - 计算机网络
   
   - [计算机网络面试题](articles\计算机网络\计算机网络面试题.md)
-  -  [Https的工作过程](articles\计算机网络\Https的工作过程.md) 
+  -  [Https的工作过程](articles\计算机网络\Https的工作过程.md)
+  -   [HTTP请求的方式.md](articles\计算机网络\HTTP请求的方式.md) 
+  -   [HTTP1.0、HTTP1.1、HTTP2.0的区别.md](articles\计算机网络\HTTP1.0、HTTP1.1、HTTP2.0的区别.md) 
+  -   [短连接、长连接区别和场景.md](articles\计算机网络\短连接、长连接区别和场景.md) 
 - 操作系统
   
   - [操作系统面试题](articles\操作系统\操作系统面试题.md)
