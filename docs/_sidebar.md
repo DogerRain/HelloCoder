@@ -23,7 +23,10 @@
 - 计算机网络
   
   - [计算机网络面试题](articles\计算机网络\计算机网络面试题.md)
-  -  [Https的工作过程](articles\计算机网络\Https的工作过程.md) 
+  -  [Https的工作过程](articles\计算机网络\Https的工作过程.md)
+  -   [HTTP请求的方式.md](articles\计算机网络\HTTP请求的方式.md) 
+  -   [HTTP1.0、HTTP1.1、HTTP2.0的区别.md](articles\计算机网络\HTTP1.0、HTTP1.1、HTTP2.0的区别.md) 
+  -   [短连接、长连接区别和场景.md](articles\计算机网络\短连接、长连接区别和场景.md) 
 - 操作系统
   
   - [操作系统面试题](articles\操作系统\操作系统面试题.md)
@@ -154,6 +157,7 @@
     - [阿里一面，给了几条SQL，问需要执行几次树搜索操作？](articles\大厂面试题\阿里\阿里一面，给了几条SQL，问需要执行几次树搜索操作？.md) 
     - [快手Java后台三面，意向已拿，面试官都问了些啥？](articles\大厂面试题\快手\快手Java后台三面，意向已拿，面试官都问了些啥？.md) 
     - [IBM面试题-不借助变量交换两个数](articles\大厂面试题\IBM面试题-不借助变量交换两个数.md) 
+    - 【腾讯】 [海量数据问题](articles\大厂面试题\腾讯\海量数据问题.md)
 - <font style="color:black;font-size:20px;font-weight:2px">面经</font>
     - [面了42场得到的方法论](articles\面经\42场面试得出的结论.md) 
     - [腾讯后端Java岗社招面经](articles\面经\腾讯后端Java岗社招面经.md) 
