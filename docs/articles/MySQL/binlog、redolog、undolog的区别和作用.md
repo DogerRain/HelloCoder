@@ -81,11 +81,11 @@ redo log 是 InnoDB 引擎特有的。redo log作为异常宕机或者介质故�
 因此， `redo log buffer` 写入 `redo logfile` 实际上是先写入 `OS Buffer` ，然后再通过系统调用 `fsync()` 将其刷到 `redo log file`
 中，过程如下：
 
-![](F:\笔记\LearnJavaToFindAJob（Java面试题）\docs\articles\MySQL\picture\image-20210824174026761.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202112image-20210824174026761.png)
 
 redolog支持三种将 `redo log buffer` 写入 `redo log file` 的时机，可以通过 `innodb_flush_log_at_trx_commit` 参数配置：
 
-![](F:\笔记\LearnJavaToFindAJob（Java面试题）\docs\articles\MySQL\picture\image-20210824174356130.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202112image-20210824174356130.png)
 
 
 
