@@ -281,3 +281,4 @@ class Car extends Vehicle
 父类方法有private修饰，所以对子类不可见，子类不能覆盖。所以子类方法和父类是两个方法。
 
 如果父类方法将private改为public 会报错，因为父类final不允许继承。
+
