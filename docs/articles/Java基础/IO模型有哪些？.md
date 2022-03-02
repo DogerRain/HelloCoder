@@ -140,6 +140,14 @@ epoll可以理解为event poll，不同于忙轮询和无差别轮询，**当连
 
 **epoll**明显优化了IO的执行效率，但在进程调用`epoll_wait()`时，仍然可能被阻塞。能不能酱紫：不用我老是去问你数据是否准备就绪，等我发出请求后，你数据准备好了通知我就行了，这就诞生了**信号驱动IO模型**。
 
+> 三者数据结构：
+>
+> select是数组 
+> poll链表 
+> epoll红黑树+链表 
+
+
+
 ### 信号驱动IO模型
 
 信号驱动IO不再用主动询问的方式去确认数据是否就绪，而是向内核发送一个信号（调用`sigaction`的时候建立一个`SIGIO`的信号），然后应用用户进程可以去做别的事，不用阻塞。
@@ -214,7 +222,7 @@ Nginx采用了**异步非阻塞**的方式工作。
 
 参考：
 
-- 公众号《田螺的小男孩》，写的真好
+- 公众号《田螺的小男孩》
 - 知乎，忘记链接了~
 - 小明例子：[https://blog.csdn.net/yournevermore/article/details/101029630](https://blog.csdn.net/yournevermore/article/details/101029630)
 - 100%弄明白5种IO模型：https://zhuanlan.zhihu.com/p/115912936
