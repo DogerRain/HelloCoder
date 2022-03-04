@@ -68,7 +68,7 @@ Sleep属于Thread类，wait属于Object类。
 
 ThreadLocal 无法解决共享对象的更新问题， ThreadLocal 对象建议使用 static修饰。这个变量是针对一个线程内所有操作共有的，所以设置为静态变量，所有此类实例共享此静态变量 ，也就是说在类第一次被使用时装载，只分配一块存储空间，所有此类的对象 ( 只要是这个线程内定义的 ) 都可以操控这个变量。
 
-##### ThreadLocal造成内存泄漏的原因？如何解决？
+**ThreadLocal造成内存泄漏的原因？如何解决？**
 
 > 参考：https://mp.weixin.qq.com/s?__biz=MzAxNTc4ODYzOQ==&mid=2247484359&idx=1&sn=4c501e11010297c323043d0ebc5243f0&chksm=9bfffcf7ac8875e13729c01505f68e20d16dd8f5329b053d79d84f2341504c3b8240ebfc7e86&token=602231616&lang=zh_CN#rd
 
