@@ -165,9 +165,8 @@
     - [三个面试中遇到的问题](articles\面经\三个面试中遇到的问题.md) 
     - [知乎-一些质量很高的面试题](articles\面经\知乎-一些质量很高的面试题.md) 
     - [知乎-七彩云霞的回答](articles\面经\知乎-七彩云霞的回答.md) 
-- <font style="color:black;font-size:20px;font-weight:2px">求职</font>
-
-    - [投简历技巧.md](articles\求职\投简历技巧.md) 
+- <font style="color:red;font-size:20px;font-weight:2px">求职</font>
+- [投简历技巧.md](articles\求职\投简历技巧.md) 
     -  [面试的技巧.md](articles\求职\面试的技巧.md) 
     -  [谈薪的技巧.md](articles\求职\谈薪的技巧.md) 
     -  [校招和社招的区别.md](articles\求职\校招和社招的区别.md) 
