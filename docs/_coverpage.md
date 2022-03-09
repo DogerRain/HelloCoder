@@ -1,4 +1,4 @@
-<div align="center"> <img src="https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7HelloCoder.png"/  style="zoom:50%;"> </div>
+<div align="center"> <img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/HelloCoder.png"/  style="zoom:50%;"> </div>
 
 #  LearnJavaToFindAJob
 
