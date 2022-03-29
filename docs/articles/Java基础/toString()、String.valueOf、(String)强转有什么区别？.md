@@ -2,7 +2,7 @@
 
 **1、toString()**
 
-可能会抛空指针异常
+**可能会抛空指针异常**
 
 基本上各自的类都有自己的 toString 方法，以覆盖父类Object的toString方法。
 
@@ -10,7 +10,7 @@
 
 **2、String.valueOf()**
 
-推荐使用。
+**推荐使用。**
 
 它不会出现空指针异常，而且是静态的方法，直接通过String调用即可。
 
@@ -18,7 +18,7 @@
 
 **3、(String)强转**
 
-不推荐使用
+**不推荐使用**
 
 （String）是标准的类型转换，将Object类型转为String类型，使用(String)强转时，最好使用instanceof做一个类型检查，以判断是否可以进行强转，否则容易抛出ClassCastException异常。需要注意的是编写的时候，编译器并不会提示有语法错误，所以这个方法要谨慎的使用。
 
@@ -28,7 +28,7 @@
 
 ## 1、toString()
 
-toString() 这个方法，每个类都不一样，需要注意的是**基本数据类型**是没有 toString() 的（基本数据类型不是类，自然就没有方法可言）
+toString() 这个方法，**每个类都不一样**，需要注意的是**基本数据类型是没有 toString()方法 的**（基本数据类型不是类，自然就没有方法可言）
 
 Object 类 的toString()方法是这样的：
 
@@ -38,9 +38,9 @@ public String toString() {
 }
 ```
 
-大多数情况下，都会重写Object类的 toString 方法
+大多数情况下，都会重写Object类的 toString 方法。
 
- Integer 的 toString 方法是这样的：
+ 例如 Integer类 的 toString 方法是这样的：
 
 ```java
     public static String toString(int i) {
@@ -59,11 +59,11 @@ public String toString() {
 
 ## 2、String.valueOf
 
-String.valueOf 方法可以把任意的对象、基本数据类型 转换 为一个String对象。
+**String.valueOf 方法可以把任意的 对象、基本数据类型 转换 为一个String对象**。
 
 要注意重载方法：
 
-![](picture\image-20210930175313816.png)
+![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202203/image-20210930175313816.png)
 
 常用的源码：
 

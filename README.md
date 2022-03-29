@@ -79,17 +79,9 @@
 
 ## 3、在线阅读地址：
 
-为了方便大家阅读，我做了一个在线阅读文档，点击任意一个链接即可在线阅读：
+为了方便大家阅读，我做了一个在线阅读文档：[https://learnjava.baimuxym.cn](https://learnjava.baimuxym.cn)
 
- 
 
-服务器端Pages：[https://learnjava.baimuxym.cn/#/](https://learnjava.baimuxym.cn/#/)
-
-GitHub Pages：[https://dogerrain.github.io/LearnJavaToFindAJob/#/](https://dogerrain.github.io/LearnJavaToFindAJob/#/)
-
-Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://rainyudianxx.gitee.io/learnjavatofindajob/#/)（国内访问快）
-
-> Gitee Pages  更新会慢一点
 
 ## 4、联系我
 
@@ -105,13 +97,11 @@ Gitee Pages ：[https://rainyudianxx.gitee.io/learnjavatofindajob/#/](https://ra
 
  
 
-同时，本项目后续会整理成PDF，Github 更新可能存在延迟，如果需要第一时间获取最新版本，可以关注我的公众号，也可以不关，反正都会更新到这里。（目前整理比较费时间，筒子们可以不定时打开）
+同时，本项目后续会整理成PDF，Github 更新可能存在延迟，如果需要第一时间获取最新版本，可以关注我的公众号，也可以不关，反正都会更新到这里。（目前整理比较费时间，更新频繁但CDN更新慢，大家可以不定时打开）
 
 ### 2、博客联系我
 
--  [HaC的博客](http://rain.baimuxym.cn) 写点与技术无关的事情
-
-
+-  [醋酸菌HaC的博客](http://rain.baimuxym.cn) 写点与技术无关的事情
 
 ## 5、友情链接
 
