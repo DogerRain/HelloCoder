@@ -359,7 +359,7 @@ body.sticky .sidebar, body.sticky .sidebar-toggle {
 
 .markdown-section {
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 60%;
     padding: 30px 15px 40px;
     position: relative
 }
@@ -769,8 +769,8 @@ section.cover blockquote > p > a:hover {
 }
 
 .markdown-section ol, .markdown-section p, .markdown-section ul {
-    line-height: 1.5rem;
-    word-spacing: .05rem;
+    line-height: 2rem;
+    word-spacing: 0rem;
     margin: 0.5rem 0;
     letter-spacing: 0.1em;
     /*font-size: 1.05em;*/
@@ -787,8 +787,8 @@ section.cover blockquote > p > a:hover {
 .markdown-section blockquote {
     border-left: 4px solid var(--theme-color, #858585);
     color: #858585;
-    margin: 1em 1em;
-    padding-left: 20px;
+    margin: 1em 0.2em;
+    padding-left: 1em;
     background: #d2dde844;
     position: relative;
 }
