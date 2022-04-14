@@ -11,7 +11,7 @@
 7. DispaterServlet 把返回的 Model 传给 View（视图渲染）。
 8. 把 View 返回给请求者（浏览器）
 
-![img](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/clipboard.png)
+![img](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202204/clipboard.png)
 
 ### 2、Spring MVC的主要组件
 
