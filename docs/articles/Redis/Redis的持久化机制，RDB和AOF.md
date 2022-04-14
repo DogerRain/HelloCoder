@@ -242,7 +242,7 @@ localhost:0>bgrewriteaof
 
 > 过期的键不会被记录到 `AOF` 文件中
 
-![ AOF重写流程 ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201027155614967.png)
+![ AOF重写流程 ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202204/image-20201027155614967.png)
 
 
 > AOF的持久化也可能会造成阻塞。
@@ -295,7 +295,7 @@ AOF则不会，过期但并未被删除释放的状态会被正常记录到 `AOF
 
 redis4.0开始 添加了RDB-AOF混合方式，可以通过设置`aof-use-rdb-preamble yes`开启。`.aof`文件就由`.rdb`和`.aof`文件组成了。这样加载速度快，同时结合AOF，增量的数据以AOF方式保存了，数据更少的丢失。
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201027170452172.png)
+![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202204/image-20201027170452172.png)
 
 
 

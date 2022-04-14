@@ -23,7 +23,7 @@ localhost:1> info
 
 结果如下：
 
-```shell
+```javascript
 # Server
 redis_version:3.0.504
 redis_git_sha1:00000000
@@ -121,7 +121,7 @@ db0:keys=5,expires=0,avg_ttl=0
 
 如一些内存信息：
 
-```shell
+```javascript
 [root@CombCloud-2020110836 src]# ./redis-cli info | grep used | grep human
 used_memory_human:2.99M  # 内存分配器从操作系统分配的内存总量
 used_memory_rss_human:8.04M  #操作系统看到的内存占用，top命令看到的内存
@@ -131,7 +131,7 @@ used_memory_lua_human:37.00K   # lua脚本引擎占用的内存大小
 
 一些活动指标：
 
-```shell
+```javascript
 [root@CombCloud-2020110836 src]# ./redis-cli info | grep connected_clients
 connected_clients:1
 [root@CombCloud-2020110836 src]# ./redis-cli info | grep connected
