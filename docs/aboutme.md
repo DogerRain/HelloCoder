@@ -1,3 +1,5 @@
+<div id="">
+
 ## 关于我
 
 我是`醋酸菌`，一名95后非科班的程序员，学的是**边缘计算机**专业，普通二本医药大学毕业。
@@ -52,3 +54,4 @@
 
 > 《佛典》曰：“ 自未得渡而渡人者，菩萨发心，又自渡生死苦海，而又渡人。”  佛系关注，佛系关注。
 
+<script src="https://readmore.openwrite.cn/js/readmore.js" type="text/javascript"></script> <script>     const btw = new BTWPlugin();     btw.init({         id: 'container',         blogId: '26640-1651926739798-172',         name: 'HelloCoder',         qrcode: 'https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/HelloCoder.png',         keyword: 'vip',     }); </script>
