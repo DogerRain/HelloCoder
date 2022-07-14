@@ -14,7 +14,7 @@
 
 ## 1、介绍
 
-本项目是使用 vuepress 构建的一个技术文档博客，收集了作者本人从入门Java的一些文章，多为系列文章。
+本项目是使用 vuepress 构建的一个技术文档博客，收集了作者本人 **Java入门、面试、求职** 的一些文章，多为系列文章。
 
 包括以下几个部分：
 
@@ -104,6 +104,6 @@
 
 ## 5、友情链接
 
-- https://doc.xugaoyi.com，vuepress-theme-vdoing🚀一款简洁高效的VuePress 知识管理&博客 主题
-- 
+- [vuepress-theme-vdoing](https://doc.xugaoyi.com) ，🚀一款简洁高效的VuePress 知识管理&博客 主题
+- [awesome-programming-resources](https://learnjava.baimuxym.cn/pages/awesome-programming-resources) 一个收集计算机优质资源的合集（包含电子书、教程、视频、一些工具，全部资源都是由我收集的，都是免费开源的）
 
