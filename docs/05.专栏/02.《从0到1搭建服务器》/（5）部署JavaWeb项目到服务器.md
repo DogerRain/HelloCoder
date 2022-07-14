@@ -1,14 +1,14 @@
 ---
 title: （5）部署JavaWeb项目到服务器
 date: 2022-07-14 16:13:16
-lock: true
 permalink: /pages/%EF%BC%885%EF%BC%89%E9%83%A8%E7%BD%B2JavaWeb%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8
-categories:
+categories: 
   - 专栏
   - 《从0到1搭建服务器》
-tags:
+tags: 
   - JavaWeb
   - 部署
+lock: need
 ---
 上两篇文章我教大家部署了静态网站，那么这篇文章来教大家部署一个JavaWeb项目。
 

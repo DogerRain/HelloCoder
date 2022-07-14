@@ -1,14 +1,14 @@
 ---
 title: （4）部署静态网站到Nginx服务器
 date: 2022-07-14 16:13:16
-lock: true
 permalink: /pages/%EF%BC%884%EF%BC%89%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E5%88%B0Nginx%E6%9C%8D%E5%8A%A1%E5%99%A8
-categories:
+categories: 
   - 专栏
   - 《从0到1搭建服务器》
-tags:
+tags: 
   - Nginx
   - 服务器
+lock: need
 ---
 上个章节[【教你搭建服务器系列】（3）部署静态网站到Tomcat服务器](https://blog.csdn.net/yudianxiaoxiao/article/details/109662030)，搭建Tomcat服务器部署静态网站实在是太麻烦了， 那么这一章节，我来教大家把静态简历网站部署到更**轻量级的Nginx服务器**。
 

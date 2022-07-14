@@ -1,14 +1,14 @@
 ---
 title: （3）部署静态网站到Tomcat服务器
 date: 2022-07-14 16:13:16
-lock: true
 permalink: /pages/%EF%BC%883%EF%BC%89%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E5%88%B0Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8
-categories:
+categories: 
   - 专栏
   - 《从0到1搭建服务器》
-tags:
+tags: 
   - Tomcat
   - 服务器
+lock: need
 ---
 上一篇文章[【教你搭建服务器系列】（2）搭建服务器环境，安装JDK、MySQL、Redis、Tomcat、Nginx](https://blog.csdn.net/yudianxiaoxiao/article/details/109589101)我们已经部署好了服务器的环境，那么接下来我们就可以部署我们的项目了。
 

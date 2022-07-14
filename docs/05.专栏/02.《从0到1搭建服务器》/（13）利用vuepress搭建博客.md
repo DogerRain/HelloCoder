@@ -1,15 +1,15 @@
 ---
 title: （13）利用vuepress搭建博客
 date: 2022-07-14 16:13:16
-lock: true
 permalink: /pages/%EF%BC%8813%EF%BC%89%E5%88%A9%E7%94%A8vuepress%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2
-categories:
+categories: 
   - 专栏
   - 《从0到1搭建服务器》
-tags:
+tags: 
   - vuepress
   - 利用
   - 搭建博客
+lock: need
 ---
 VuePress 由两部分组成：第一部分是一个极简静态网站生成器 (opens new window)，它包含由 Vue 驱动的主题系统和插件 API，另一个部分是为书写技术文档而优化的默认主题，它的诞生初衷是为了支持 Vue 及其子项目的文档需求。
 

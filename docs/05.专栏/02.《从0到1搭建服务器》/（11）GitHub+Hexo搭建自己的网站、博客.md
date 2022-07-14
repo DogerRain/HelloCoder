@@ -1,16 +1,16 @@
 ---
 title: （11）GitHub+Hexo搭建自己的网站、博客
 date: 2022-07-14 16:13:16
-lock: true
 permalink: /pages/%EF%BC%8811%EF%BC%89GitHub+Hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99%E3%80%81%E5%8D%9A%E5%AE%A2
-categories:
+categories: 
   - 专栏
   - 《从0到1搭建服务器》
-tags:
+tags: 
   - GitHubHexo
   - 搭建自己
   - 网站
   - 博客
+lock: need
 ---
 前面提到的都是有个人服务器和域名的，那在没有服务器又没有域名的情况下，我们想搭建自己的网站，该如何做呢？
 

@@ -97,7 +97,7 @@
         },
         methods: {
             isLock() {
-                return "need" === this.$page.frontmatter.lock;
+                return "need" === this.$page.frontmatter.lock || "true" === this.$page.frontmatter.lock || true===this.$page.frontmatter.lock;
             },
 
             slef_password() {

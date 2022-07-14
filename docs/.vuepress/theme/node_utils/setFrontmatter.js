@@ -30,12 +30,15 @@ function setFrontmatter(sourceDir, themeConfig) {
       .replace(/"|---\n/g, "")
     : '';
 
+
+
   files.forEach(file => {
     let dataStr = fs.readFileSync(file.filePath, 'utf8');// 读取每个md文件内容
 
     // fileMatterObj => {content:'剔除frontmatter后的文件内容字符串', data:{<frontmatter对象>}, ...}
     const fileMatterObj = matter(dataStr, {});
 
+    let lock = "false";
     if (Object.keys(fileMatterObj.data).length === 0) { // 未定义FrontMatter数据
       const stat = fs.statSync(file.filePath);
       const dateStr = dateFormat(
@@ -47,18 +50,17 @@ function setFrontmatter(sourceDir, themeConfig) {
       );
 
 
-      let lock = false;
       let cateLabelStr = '';
 
       categories.forEach(item => {
         cateLabelStr += os.EOL + '  - ' + item;
 
 
-        if (item==='牛客网题库' || item==='求职建议' || item==='专栏'){
-          lock = true
-        }
 
       });
+
+
+      lock = isLock(categories)
 
 
       let cateStr = '';
@@ -136,10 +138,7 @@ ${extendFrontmatterStr}---`;
         hasChange = true;
       }
 
-        if (!matterData.hasOwnProperty('lock')) { // lock
-            matterData.lock = 'false';
-            hasChange = true;
-        }
+
 
       if (file.filePath.indexOf('_posts') > -1 && !matterData.hasOwnProperty('sidebar')) { // auto侧边栏，_posts文件夹特有
         matterData.sidebar = "auto";
@@ -162,6 +161,14 @@ ${extendFrontmatterStr}---`;
           matterData.tags = tags;
           hasChange = true;
         }
+      }
+      //沒有lock
+      if (!matterData.hasOwnProperty('lock')) { // lock
+        if(hascategory.length===0){
+          hascategory = getCategories(file, categoryText);
+        }
+        matterData.lock = isLock(hascategory);
+        hasChange = true;
       }
 
       // 扩展自动生成frontmatter的字段
@@ -224,5 +231,31 @@ function getPermalink() {
 
 }
 
+// 是否锁住
+function isLock(categories) {
+
+
+
+  let lockDir = ['牛客网题库','求职建议','专栏','《从0到1学习Java多线程》','《从0到1搭建服务器》'];
+  let lock = "false";
+
+  if(categories===null || categories === undefined){
+    return lock;
+  }
+
+  for(let cat in categories){
+    for(let ld in lockDir){
+      if(lockDir[ld] ===categories[cat]){
+        log("命中加锁规则："+lockDir[ld])
+        lock="need"
+        return lock;
+      }
+    }
+  }
+
+  return lock;
+
+}
 
 module.exports = setFrontmatter;
+

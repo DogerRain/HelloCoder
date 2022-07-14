@@ -1,14 +1,14 @@
 ---
 title: （10）利用Docsify搭建个人笔记网站
 date: 2022-07-14 16:13:16
-lock: true
 permalink: /pages/%EF%BC%8810%EF%BC%89%E5%88%A9%E7%94%A8Docsify%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0%E7%BD%91%E7%AB%99
-categories:
+categories: 
   - 专栏
   - 《从0到1搭建服务器》
-tags:
+tags: 
   - Docsify
   - 利用
+lock: need
 ---
 写文档的工具非常多，但是作为程序员，大部人还是偏爱Markdown的，有时需要写一份开发文档，以供自己或者他人查看，那如何把 Markdown 文件转换成文档呢？
 
