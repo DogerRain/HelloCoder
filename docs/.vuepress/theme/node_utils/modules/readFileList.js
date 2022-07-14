@@ -6,8 +6,14 @@ const path = require('path'); // 路径模块
 const chalk = require('chalk') // 命令行打印美化
 const log = console.log
 
+
+
+
 function readFileList(dir, filesList = []) {
   const files = fs.readdirSync(dir);
+
+
+
   files.forEach((item, index) => {
     let filePath = path.join(dir, item);
     const stat = fs.statSync(filePath);

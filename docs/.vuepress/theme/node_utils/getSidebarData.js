@@ -3,6 +3,8 @@ const path = require('path'); // 路径模块
 const chalk = require('chalk') // 命令行打印美化
 const matter = require('gray-matter'); // front matter解析器
 const log = console.log
+const {sortLikeWindows}  = require('./modules/soreDIY.js');
+
 
 let catalogueData = {}; // 目录页数据
 
@@ -228,6 +230,8 @@ function mapTocToPostSidebar(root) {
 function mapTocToSidebar(root, collapsable, prefix = '') {
     let sidebar = []; // 结构化文章侧边栏数据
     const files = fs.readdirSync(root); // 读取目录（文件和文件夹）,返回数组
+
+    sortLikeWindows(files)
 
     files.forEach(filename => {
         const file = path.resolve(root, filename); // 方法：将路径或路径片段的序列解析为绝对路径
