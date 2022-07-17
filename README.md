@@ -107,3 +107,4 @@
 - [vuepress-theme-vdoing](https://doc.xugaoyi.com) ，🚀一款简洁高效的VuePress 知识管理&博客 主题
 - [awesome-programming-resources](https://learnjava.baimuxym.cn/pages/awesome-programming-resources) 一个收集计算机优质资源的合集（包含电子书、教程、视频、一些工具，全部资源都是由我收集的，都是免费开源的）
 
+[//]: # ([<img src="https://github-readme-stats.vercel.app/api/pin/?username=DogerRain&repo=HelloCoder" alt="ReadMe Card" class="no-zoom">]&#40;https://github.com/DogerRain/HelloCoder&#41;)

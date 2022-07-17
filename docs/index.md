@@ -102,7 +102,7 @@ postList: none
 
 
 
-更多想法，也可以在评论区留言。
+[//]: # (更多想法，也可以在评论区留言。)
 
 
 
@@ -134,5 +134,6 @@ postList: none
 
 
 <!-- 评论 -->
-<Vssue :title="$title" />
+
+[//]: # (<Vssue :title="$title" />)
 
