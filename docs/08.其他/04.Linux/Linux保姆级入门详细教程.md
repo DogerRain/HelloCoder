@@ -53,13 +53,13 @@ tags:
 
 常见的Linux系统版本：
 
-| 版本名称     | 网 址                                    | 特 点                                                        | 软件包管理器                                        |
-| ------------ | ---------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------- |
-| Debian Linux | [www.debian.org](http://www.debian.org/) | 开放的开发模式，且易于进行软件包升级                         | apt                                                 |
-| Fedora Core  | [www.redhat.com](http://www.redhat.com/) | 优秀带桌面环境的系统，拥有数量庞人的用户，优秀的社区技术支持. 并且有许多创新 | up2date（rpm），yum （rpm）                         |
-| CentOS       | [www.centos.org](http://www.centos.org/) | CentOS 是一种对 RHEL（Red Hat Enterprise Linux）源代码再编译的产物，由于 Linux 是开发源代码的操作系统，并不排斥样基于源代码的再分发，CentOS 就是将商业的 Linux 操作系统 RHEL 进行源代码再编译后分发，并在 RHEL 的基础上修正了不少已知的漏洞 | rpm                                                 |
-| SUSE Linux   | [www.suse.com](http://www.suse.com/)     | 专业的操作系统，易用的 YaST 软件包管理系统                   | YaST（rpm），第三方 apt （rpm）软件库（repository） |
-| Ubuntu       | [www.ubuntu.com](http://www.ubuntu.com/) | 优秀带桌面环境的系统，基于 Debian 构建，对新款硬件具有极强的兼容能力。 | apt                                                 |
+| 版本名称    | 网 址                                    | 特 点                                                        | 软件包管理器                                        |
+| ----------- | ---------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------- |
+| Debian      | [www.debian.org](http://www.debian.org/) | 开放的开发模式，且易于进行软件包升级                         | apt                                                 |
+| Fedora Core | [www.redhat.com](http://www.redhat.com/) | 优秀带桌面环境的系统，拥有数量庞人的用户，优秀的社区技术支持. 并且有许多创新 | up2date（rpm），yum （rpm）                         |
+| CentOS      | [www.centos.org](http://www.centos.org/) | CentOS 是一种对 RHEL（Red Hat Enterprise Linux）源代码再编译的产物，由于 Linux 是开发源代码的操作系统，并不排斥样基于源代码的再分发，CentOS 就是将商业的 Linux 操作系统 RHEL 进行源代码再编译后分发，并在 RHEL 的基础上修正了不少已知的漏洞 | rpm                                                 |
+| SUSE        | [www.suse.com](http://www.suse.com/)     | 专业的操作系统，易用的 YaST 软件包管理系统                   | YaST（rpm），第三方 apt （rpm）软件库（repository） |
+| Ubuntu      | [www.ubuntu.com](http://www.ubuntu.com/) | 优秀带桌面环境的系统，基于 Debian 构建，对新款硬件具有极强的兼容能力。 | apt                                                 |
 
 
 
