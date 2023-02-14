@@ -94,7 +94,7 @@ postList: none
 - Java核心的技术（较少）
 
 
- ![](/img/site/wuli_HelloCoder.png)
+![](https://rainyudianxx.baimuxym.cn/HelloCoder/home/wuli_HelloCoder.png)
 
 或者你有技术问题和想法，都可以和我联系。
 
@@ -102,26 +102,9 @@ postList: none
 
 
 
-[//]: # "更多想法，也可以在评论区留言。"
-
-
-
 <!-- AD -->
-<!--
-
-<div class="wwads-cn wwads-horizontal pageB" data-id="136" style="width:100%;max-height:80px;min-height:auto;"></div>
-<style>
-  .pageB img{width:80px!important;}
-  .pageT .wwads-content{display:flex;align-items: center;}
-  .pageT .wwads-poweredby{display:none!important;}
-  .pageT .wwads-hide{display:none!important;}
-</style>
-
-<div class="pageB" style="width:100%;max-height:80px;min-height:auto;"> 1</div>
--->
 
 
-<!--
 
 ## 友情链接
 
@@ -129,11 +112,7 @@ postList: none
 
 - [awesome-programming-resources](https://github.com/DogerRain/awesome-programming-resources) 一个收集开源计算机资源的合集
 
--->
 
 
 
-<!-- 评论 -->
-
-[//]: # "<Vssue :title="$title" />"
 

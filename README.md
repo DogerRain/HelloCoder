@@ -98,7 +98,7 @@
 
 可以佛系关注我的Java技术公众号，不定时分享Java技术干货（虽然也什么没什么干货😂🤣.....）
 
-<div align="center"> <img src="https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/wuli_HelloCoder.png"  style="zoom:30%;"></img> </div>
+<div align="center"> <img src="https://rainyudianxx.baimuxym.cn/HelloCoder/home/wuli_HelloCoder.png"  style="zoom:30%;"></img> </div>
 
 
 
@@ -106,5 +106,3 @@
 
 - [vuepress-theme-vdoing](https://doc.xugaoyi.com) ，🚀一款简洁高效的VuePress 知识管理&博客 主题
 - [awesome-programming-resources](https://learnjava.baimuxym.cn/pages/awesome-programming-resources/) 一个收集计算机优质资源的合集（包含电子书、教程、视频、一些工具，全部资源都是由我收集的，都是免费开源的）
-
-[//]: # "[<img src="https://github-readme-stats.vercel.app/api/pin/?username=DogerRain&repo=HelloCoder" alt="ReadMe Card" class="no-zoom">]&#40;https://github.com/DogerRain/HelloCoder&#41;"
