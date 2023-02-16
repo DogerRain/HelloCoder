@@ -59,13 +59,13 @@ postList: none
 
 
 
-### 2️⃣[《小白学Java》](/pages/PureJavaCoderRoad_README)
+### 2️⃣[《小白学Java》](/pages/PureJavaCoderRoad_README/)
 
 目标人群为 在校大学生 + 新手入门Java 的程序员。
 
 提供了找到一份Java工作需要掌握哪些技能的学习图谱，也是醋酸菌本人自学Java的过程。
 
-### 3️⃣[脚手架工具](/pages/Java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7)
+### 3️⃣[脚手架工具](/pages/Java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
 
 收集了一些 本人常用的开发工具，包含：
 
@@ -82,7 +82,7 @@ postList: none
 - 免费的学习网站
 - 一些毕设的建议、选题。
 
-### 5️⃣[随笔](/pages/Java%E4%B9%A6%E6%9C%AC%E6%8E%A8%E8%8D%90)
+### 5️⃣[随笔](/pages/Java%E4%B9%A6%E6%9C%AC%E6%8E%A8%E8%8D%90/)
 
 一些个人关于职场和技术的随笔
 
