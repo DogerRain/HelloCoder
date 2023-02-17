@@ -1,3 +1,15 @@
+---
+title: 企业级监控prometheus
+date: 2022-11-13 09:26:26
+lock: false
+permalink: /pages/%E4%BC%81%E4%B8%9A%E7%BA%A7%E7%9B%91%E6%8E%A7prometheus
+categories:
+  - 随笔
+  - 技术
+tags:
+  - prometheus
+  - 企业级监控
+---
 Prometheus（普罗米修斯）是由前google员工2015年正式发布的开源监控系统，采用Go语言开发。
 
 

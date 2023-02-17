@@ -1,3 +1,14 @@
+---
+title: springboot异步编程
+date: 2022-09-08 23:31:39
+lock: false
+permalink: /pages/springboot%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B
+categories:
+  - 随笔
+tags:
+  - springboot
+  - 异步编程
+---
 Spring Boot  有两种异步编程的实现：
 
 - `WebAsyncTask` ，包括 异步回调，超时处理 和 异常处理

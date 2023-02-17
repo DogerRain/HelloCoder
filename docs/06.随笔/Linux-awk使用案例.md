@@ -1,3 +1,14 @@
+---
+title: Linux-awk使用案例
+date: 2022-09-08 23:31:39
+lock: false
+permalink: /pages/Linux-awk%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B
+categories:
+  - 随笔
+tags:
+  - Linux-awk
+  - 使用案例
+---
 查看日志的线程使用情况：
 
 ```

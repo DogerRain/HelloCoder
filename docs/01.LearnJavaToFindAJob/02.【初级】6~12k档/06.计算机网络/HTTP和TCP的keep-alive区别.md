@@ -1,3 +1,18 @@
+---
+title: HTTP和TCP的keep-alive区别
+date: 2023-02-16 01:14:45
+lock: false
+permalink: /pages/HTTP%E5%92%8CTCP%E7%9A%84keep-alive%E5%8C%BA%E5%88%AB
+categories:
+  - LearnJavaToFindAJob
+  - 【初级】6~12k档
+  - 计算机网络
+tags:
+  - HTTP
+  - TCP
+  - keep-alive
+  - 区别
+---
 首先，HTTP用 `Keep-Alive` 标识， TCP 用 `Keepalive`标识。
 
 再者，这两个是完全不一样的东西，其实现的原理也不一样：

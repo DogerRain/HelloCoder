@@ -1,3 +1,14 @@
+---
+title: GraalVM看法
+date: 2022-11-14 23:50:50
+lock: false
+permalink: /pages/GraalVM%E7%9C%8B%E6%B3%95
+categories:
+  - 随笔
+tags:
+  - GraalVM
+  - 看法
+---
 https://www.zhihu.com/question/274042223
 
 Java自上世纪诞生以来，凭借其跨平台运行的能力，再加上庞大的生态圈，在众多语言中脱颖而出，且稳居第一座椅。

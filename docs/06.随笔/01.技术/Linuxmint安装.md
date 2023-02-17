@@ -1,3 +1,15 @@
+---
+title: Linuxmint安装
+date: 2022-07-30 23:05:06
+lock: false
+permalink: /pages/Linuxmint%E5%AE%89%E8%A3%85
+categories:
+  - 随笔
+  - 技术
+tags:
+  - Linuxmint
+  - 安装
+---
 Linux Mint 是一个年轻的操作系统，它于2006年开始发行，然而，它基于非常成熟的软件管理，并且采用了最新的Linux内核，支持XWayland，像GNU软件和Gnome桌面。
 
 

@@ -1,3 +1,15 @@
+---
+title: CPU和内存交互
+date: 2022-11-19 18:58:54
+lock: false
+permalink: /pages/CPU%E5%92%8C%E5%86%85%E5%AD%98%E4%BA%A4%E4%BA%92
+categories:
+  - 随笔
+  - 技术
+tags:
+  - CPU
+  - 内存交互
+---
 ## 储存器分类
 
 计算机中，主要有两大储存器：

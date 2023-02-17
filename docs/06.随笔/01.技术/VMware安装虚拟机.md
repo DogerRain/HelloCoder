@@ -1,3 +1,15 @@
+---
+title: VMware安装虚拟机
+date: 2022-07-30 22:14:23
+lock: false
+permalink: /pages/VMware%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA
+categories:
+  - 随笔
+  - 技术
+tags:
+  - VMware
+  - 安装虚拟机
+---
 想要拥有一台虚拟机，你有两个方法：
 
 - 购买一台云服务器

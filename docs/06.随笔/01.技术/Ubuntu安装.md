@@ -1,3 +1,15 @@
+---
+title: Ubuntu安装
+date: 2022-07-31 11:21:45
+lock: false
+permalink: /pages/Ubuntu%E5%AE%89%E8%A3%85
+categories:
+  - 随笔
+  - 技术
+tags:
+  - Ubuntu
+  - 安装
+---
 
 
 Ubuntu是一个以**桌面应用**为主的Linux操作系统。

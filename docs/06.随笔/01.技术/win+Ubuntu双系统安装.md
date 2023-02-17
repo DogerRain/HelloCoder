@@ -1,3 +1,15 @@
+---
+title: win+Ubuntu双系统安装
+date: 2022-10-15 18:42:26
+lock: false
+permalink: /pages/win+Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85
+categories:
+  - 随笔
+  - 技术
+tags:
+  - winUbuntu
+  - 双系统安装
+---
 
 
 
