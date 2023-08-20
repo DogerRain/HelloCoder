@@ -9,14 +9,13 @@ module.exports = {
         },
         {text: '《小白学Java》', link: '/pages/PureJavaCoderRoad_README/'},
 
-        {text: '脚手架工具', link: "/pages/Java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"},
+        {text: '计算机毕设', link: "/pages/%E5%A6%82%E4%BD%95%E9%80%89%E9%A2%98/"},
 
 
         {
             text: '计算机资源', items: [
                 {text: '一些免费计算机资源', link: '/pages/awesome-programming-resources/'},
-                {text: '毕设建议', link: '/pages/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%AF%95%E8%AE%BE%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BB%BA%E8%AE%AE/'},
-                // {text: '影视软件', link: '/pages/yingshiruanjian/'},
+                {text: '脚手架工具', link: '/pages/Java%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/'},
             ]
         },
 
