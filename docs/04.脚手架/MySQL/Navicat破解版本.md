@@ -52,19 +52,19 @@ Navicat 官网下载 [https://navicat.com.cn](https://navicat.com.cn)
 
 ###  3.1、 选择版本patch 
 
-![](picture/image-20240202181800807.png)
+![](./picture/image-20240202181800807.png)
 
 **注意：只可Patch一次**
 
 选择你 安装目录的  `navicat.exe` 文件
 
-![](picture/image-20240202182100422.png)
+![](./picture/image-20240202182100422.png)
 
 
 
 出现以下提示表示成功：
 
-![](picture/image-20240203161450213.png)
+![](./picture/image-20240203161450213.png)
 
 ### 3.2、生成注册码
 
@@ -72,7 +72,7 @@ License里选中Enterprise、在Produce里选择Premium、在Languages里选择S
 
 点击Generate按钮就会生成一个许可证秘钥
 
-![image-20240202182401474](picture/image-20240202182401474.png)
+![image-20240202182401474](./picture/image-20240202182401474.png)
 
 ### 3.3、注册
 
@@ -80,9 +80,9 @@ License里选中Enterprise、在Produce里选择Premium、在Languages里选择S
 
 注意这里需要断网。点击**手动激活**
 
-![image-20240203161540275](picture/image-20240203161540275.png)
+![image-20240203161540275](./picture/image-20240203161540275.png)
 
-然后把Navicat请求码粘贴到注册机Request Code框中，见下图。![](picture/image-20240203161819589.png)
+然后把Navicat请求码粘贴到注册机Request Code框中，见下图。![](./picture/image-20240203161819589.png)
 
 
 
