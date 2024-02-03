@@ -16,25 +16,27 @@
 本文将说明如何使用pojie版Navicat。
 
 
-## 1、下次激活工具
+## 1、下次激活机
 
-激活工具支持Navicat12、Navicat 15 版本激活。
+激活工具支持Navicat11、12 、15、**16** 版本激活。（相对于网上一些版本比较旧，普遍都是只支持15版本）
 
 
 下载后信任该文件，可能会被病毒误删。
 
-破解工具：
-[https://wwe.lanzoui.com/i09m2wosx6d](https://wwe.lanzoui.com/i09m2wosx6d)
-密码:d4vt
+ 激活文件见文末附近。
 
 
 ## 2、下载Navicat
 
-Navicat 官网下载 https://navicat.com.cn/
+Navicat 官网下载 [https://navicat.com.cn](https://navicat.com.cn)
 
-由于激活工具仅支持 Navicat12、Navicat 15 ，所以要下载对应的版本。
 
- 
+
+ 我看到Navicat 官网目前 是 2024年2月3日 16:21:47 最新版本已经是Navicat 16了。
+
+历史版本下载参考：[https://blog.csdn.net/akaiyijian001/article/details/132967525](https://blog.csdn.net/akaiyijian001/article/details/132967525)
+
+
 
 ## 3、激活步骤
 
@@ -44,9 +46,15 @@ Navicat 官网下载 https://navicat.com.cn/
 - 激活过程断网
 - 提前关闭杀毒软件
 
-###  3.1、 选择版本patch
+
+
+
+
+###  3.1、 选择版本patch 
 
 ![](picture/image-20240202181800807.png)
+
+**注意：只可Patch一次**
 
 选择你 安装目录的  `navicat.exe` 文件
 
@@ -54,7 +62,11 @@ Navicat 官网下载 https://navicat.com.cn/
 
 
 
-### 2、生成注册码
+出现以下提示表示成功：
+
+![](picture/image-20240203161450213.png)
+
+### 3.2、生成注册码
 
 License里选中Enterprise、在Produce里选择Premium、在Languages里选择Simplified Chinese(简体中文)、选择Site License
 
@@ -62,6 +74,29 @@ License里选中Enterprise、在Produce里选择Premium、在Languages里选择S
 
 ![image-20240202182401474](picture/image-20240202182401474.png)
 
-### 3、注册
+### 3.3、注册
 
-打开你的Navicat
+打开你的Navicat，点击 **注册**
+
+注意这里需要断网。点击**手动激活**
+
+![image-20240203161540275](picture/image-20240203161540275.png)
+
+然后把Navicat请求码粘贴到注册机Request Code框中，见下图。![](picture/image-20240203161819589.png)
+
+
+
+把激活码复制到Navicat就可以了。
+
+
+
+## 4、附件
+
+注册机下载地址：
+
+
+
+下载:[https://wwp.lanzout.com/itm9v1n75gbe](https://wwp.lanzout.com/itm9v1n75gbe) 
+
+密码:9i3v
+
