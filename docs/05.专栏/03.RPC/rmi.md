@@ -9,3 +9,6 @@ categories:
 tags:
   - rmi
 ---
+
+我打算做一期关于 RPC 框架的专栏。
+
