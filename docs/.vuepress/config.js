@@ -149,7 +149,7 @@ module.exports = {
                 {
                     iconClass: 'icon-zhihu',
                     title: '知乎',
-                    link: 'https://www.zhihu.com/people/dai-ma-coder'
+                    link: 'https://www.zhihu.com/people/HelloCoder'
                 },
                 {
                     iconClass: 'icon-weixin',
