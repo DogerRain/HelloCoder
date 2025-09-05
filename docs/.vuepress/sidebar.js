@@ -23,6 +23,7 @@ module.exports = {
             text: '专栏系列', items: [
                 {text: '《从0到1学习Java多线程》', link: '/pages/%EF%BC%88%E4%B8%80%EF%BC%89%E7%BA%BF%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88/'},
                 {text: '《从0到1搭建服务器》', link: '/pages/%EF%BC%881%EF%BC%89%E9%80%89%E6%8B%A9%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/'},
+                {text: '《可观测和监控》', link: '/pages/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%98%AF%E4%BB%80%E4%B9%88/'},
             ]
         },
 
