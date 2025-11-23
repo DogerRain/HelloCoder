@@ -150,13 +150,17 @@ auto-aof-rewrite-min-size 64mb
 aof-rewrite-incremental-fsync yes
 ```
 
-①`appendfsync everysec`的三种模式：
+#### 
 
-- always：把**每个写命令**都立即同步到aof文件，很慢，但是很安全
-- everysec：每 1 秒同步一次，Redis官方推荐。
-- no：redis不刷盘交给OS来处理，非常快，但是也最不安全
+参数说明：
 
- 
+①`appendfsync `的三种模式。Redis 提供了三种 AOF 同步策略，控制写命令同步到 AOF 文件的方式：
+
+- always：把**每个写命令**都立即同步到aof文件，性能差，但是很安全
+- everysec：`每 1 秒`同步一次，Redis官方默认推荐。
+- no：redis不刷盘交给OS来处理，性能最好，但数据安全性最差
+
+> 因此，在默认的`everysec`配置下进行AOF恢复，确实存在丢失最多1秒数据的可能性。
 
 ②`aof-rewrite-incremental-fsync`：
 
@@ -164,7 +168,7 @@ aof-rewrite-incremental-fsync yes
 
 
 
-#### 3.1 AOF的工作流程：
+#### 3.1 AOF的工作流程
 
 三个步骤：命令追加、文件写入、文件同步。
 
@@ -269,7 +273,9 @@ fsync 每秒同步一次，假如系统磁盘比较忙，可能就会造成Redis
 
 
 
-###  AOF优缺点：
+
+
+####  AOF优缺点：
 
 优点：
 
@@ -315,13 +321,23 @@ AOF则不会，过期但并未被删除释放的状态会被正常记录到 `AOF
 
 ### 混合模式
 
-redis4.0开始 添加了RDB-AOF混合方式，可以通过设置`aof-use-rdb-preamble yes`开启。`.aof`文件就由`.rdb`和`.aof`文件组成了。这样加载速度快，同时结合AOF，增量的数据以AOF方式保存了，数据更少的丢失。
+redis4.0开始 添加了RDB-AOF混合方式，可以通过设置`aof-use-rdb-preamble yes`开启。`.aof`文件就由`.rdb`和`.aof`文件组成了。这样加载速度快，同时结合AOF，**增量的数据以AOF方式保存了**，数据更少的丢失。
 
 ![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202204/image-20201027170452172.png)
 
 
 
-## 5、总结？
+## 5、总结
+
+
+
+| **对比维度**   | **RDB (Redis Database)**                       | **AOF (Append Only File)**                          |
+| :------------- | :--------------------------------------------- | :-------------------------------------------------- |
+| **工作原理**   | 定时生成内存数据的**二进制快照**               | 记录每一次**写操作命令**到日志文件（文本格式）      |
+| **数据可靠性** | 较低，可能丢失最后一次快照后的数据             | 较高，取决于配置（如`everysec`策略最多丢失1秒数据） |
+| **恢复速度**   | **快**（直接加载二进制文件）                   | **慢**（需逐条重放命令）                            |
+| **文件大小**   | 较小（压缩的二进制格式）                       | 较大（记录所有写命令）                              |
+| **性能影响**   | 对性能影响小，但`fork`子进程时可能导致短暂阻塞 | 对性能有一定影响，程度取决于同步策略                |
 
 如果你非常关心你的数据，但仍然可以承受数分钟以内的数据丢失， 那么你可以只使用 RDB 持久化。
 
@@ -331,12 +347,14 @@ redis4.0开始 添加了RDB-AOF混合方式，可以通过设置`aof-use-rdb-pre
 
 
 
----
+## 版本优化
 
-参考：
+**Redis 5.0**
 
-- https://www.cnblogs.com/ivictor/p/9749465.html
-- https://blog.csdn.net/qq_28018283/article/details/80764518
-- https://redis.io/topics/persistenc
-- [https://www.jianshu.com/p/cbe1238f592a](https://www.jianshu.com/p/cbe1238f592a)
+- 进一步对 AOF 持久化机制进行了优化，增强了 **AOF 文件的压缩和优化**。通过对 AOF 文件中的重复操作进行压缩，减少了磁盘的使用空间，提升了 AOF 机制的性能。
+- 持久化的配置进行了一些细化，比如优化了 AOF 文件的重写触发机制，避免了重写过程中因不必要的操作而造成性能的影响。
+
+
+
+
 

@@ -112,7 +112,35 @@ char是一个定长字段，假如申请了`char(10)`的空间，那么无论实
 
 ### 6、超大分页怎么处理?
 
-数据库层面，这也是我们主要集中关注的(虽然收效没那么大)，类似于`select * from table where age &gt; 20 limit 1000000`，10这种查询其实也是有可以优化的余地的. 这条语句需要load1000000数据然后基本上全部丢弃，只取10条当然比较慢. 当时我们可以修改为`select * from table where id in (select id from table where age &gt; 20 limit 1000000，10)`.这样虽然也load了一百万的数据，但是由于索引覆盖，要查询的所有字段都在索引中，所以速度会很快。
+- 方案一：基于主键/索引的"游标分页"（推荐）
+  - 利用索引快速定位，不需要扫描大量数据，性能极佳，无论翻到第多少页，查询时间都基本恒定
+  - 只能实现"上一页/下一页"，不能直接跳转到任意页码；需要连续的、有序的字段
+
+```sql
+-- 第一页：正常查询
+SELECT * FROM `big_table` ORDER BY `id` LIMIT 20;
+
+-- 第二页及以后：记住上一页的最后一条记录的id
+SELECT * FROM `big_table` 
+WHERE `id` > 上一页最后一条记录的id 
+ORDER BY `id` LIMIT 20;
+```
+
+- 方案二：覆盖索引优化
+
+```sql
+-- 原查询（性能差）
+SELECT * FROM `big_table` ORDER BY `create_time` LIMIT 1000000, 20;
+
+-- 优化后的查询
+SELECT * FROM `big_table` AS t1
+INNER JOIN (
+    -- 注意这里只查 id
+    SELECT `id` FROM `big_table` 
+    ORDER BY `create_time` 
+    LIMIT 1000000, 20
+) AS t2 ON t1.`id` = t2.`id`;
+```
 
 
 

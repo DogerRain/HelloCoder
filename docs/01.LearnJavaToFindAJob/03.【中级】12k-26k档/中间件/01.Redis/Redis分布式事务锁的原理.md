@@ -28,7 +28,7 @@ tags:
 >
 >除此之外面试，基本会问springboot、Redis，然后都会一路再聊到分布式事务、分布式事务锁的实现。
 
-## 1、常见的分布式事务锁
+## 1、常见的分布式（事务）锁
 
 1、数据库级别的锁 
 
@@ -155,6 +155,8 @@ SET key value NX EX timeOut
 2. 已有锁存在，不做任何操作。
 
 >注：从2.6.12版本后, 就可以使用set来获取锁、Lua 脚本来释放锁。setnx是以前刚开始的实现方式，set命令nx、xx等参数,，就是为了实现 setnx 的功能。
+>
+>Lua脚本更多的是原子性行为（不考虑脚本代码执行出错），它是一系列的操作，保证了顺序性和隔离性，所有命令作为一个序列被执行，不被中断，且全部生效。
 
 **解锁：**
 
@@ -291,20 +293,34 @@ lock.unlock()，就可以释放分布式锁。就是每次都对myLock数据结�
 
 如果发现加锁次数是0了，说明这个客户端已经不再持有锁了，此时就会用：“`del myLock`”命令，从redis里删除这个key。
 
-为了安全，会先校验是否持有锁再释放，防止
+**为了安全，会先校验是否持有锁再释放**，防止
 
-- 业务执行还没执行完，锁到期了。（此时没占用锁，再unlock就会报错）
+- 业务执行还没执行完，锁到期了。（此时没占用锁，再unlock就会报错，或者说把其他线程的锁释放了）
 -  主线程异常退出、或者假死
 
 ```java
 finally {
             if (rLock.isLocked()) {
                 if (rLock.isHeldByCurrentThread()) {
+                    //暂且释放锁就是 DEL 命令
                     rLock.unlock();
                 }
             }
         }
 ```
+
+或者使用lua 或者 `EVAL` 命令：
+
+```lua
+-- unlock.lua
+if redis.call("GET", KEYS[1]) == ARGV[1] then
+    return redis.call("DEL", KEYS[1])
+else
+    return 0
+end
+```
+
+
 
 #### （5） 缺点
 
