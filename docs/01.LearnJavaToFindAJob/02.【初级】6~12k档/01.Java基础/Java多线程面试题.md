@@ -44,13 +44,13 @@ synchronized关键字在JavaSE1.6之后进行了主要包括为了减少获得�
 
 多线程访问volatile关键字不会发生阻塞，而synchronized关键字可能会发生阻塞。
 
-volatile关键字能保证数据的可见性，但不能保证数据的原子性。synchronized关键字两者都能保证。
+**volatile关键字能保证数据的可见性，但不能保证数据的原子性。synchronized关键字两者都能保证。**
 
-volatile关键字主要用于解决变量在多个线程之间的**可见性**，而 synchronized关键字解决的是多个线程之间访问资源的同步性。
+**volatile关键字主要用于解决变量在多个线程之间的可见性，而 synchronized关键字解决的是多个线程之间访问资源的同步性。**
 
 synchronized 保证三大性：**原子性，有序性，可见性**，
 
-volatile 保证**有序性，可见性，不能保证原子性**。
+volatile 保证：**有序性，可见性，不能保证原子性**。
 
 
 
@@ -58,7 +58,7 @@ volatile 保证**有序性，可见性，不能保证原子性**。
 
 sleep方法和wait方法都可以用来放弃CPU一定的时间暂停当前运行的线程，不同点在于如果线程持有某个对象的监锁，**sleep方法不会释放这个对象的锁，wait方法会释放这个对象的锁**，sleep必须要设定时间，而wait可以设定也可以不设定。
 
-Sleep属于Thread类，wait属于Object类。
+sleep属于Thread类，wait属于Object类。
 
 
 
@@ -104,7 +104,7 @@ https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=151964076808745
 
 1. start（）方法来启动线程，真正实现了多线程运行。这时无需等待 run 方法体代码执行完毕，可以直接继续执行下面的代码。
 
-2. 通过调用 Thread 类的 start()方法来启动一个线程， 这时此线程是处于就绪状态， 并没有运行。
+2. 通过调用 Thread 类的 start()方法来启动一个线程， **此时线程是处于就绪状态， 并没有运行。**
 
 3. 方法 run()称为线程体，它包含了要执行的这个线程的内容，线程就进入了运行状态，开始运行 run 函数当中的代码。 Run 方法运行结束， 此线程终止。然后 CPU 再调度其它线程。
 
@@ -117,6 +117,7 @@ https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=151964076808745
 1.  都是用来协调多线程对共享对象、变量的访问
 2.  都是可重入锁，同一线程可以多次获得同一个锁
 3.  都保证了可见性和互斥性
+4.  synchronized 和 ReentrantLock 都是悲观锁（假设一定会发生冲突，先加锁再操作）
 
 异：
 
@@ -126,8 +127,6 @@ https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=151964076808745
 3.  ReentrantLock 是 API 级别的，synchronized 是 JVM 级别的
 4.  ReentrantLock 可以实现公平锁
 5.  ReentrantLock 通过 Condition 可以绑定多个条件
-6.  底层实现不一样， synchronized 是同步阻塞，使用的是悲观并发策略，lock 是同步非阻
-塞，采用的是乐观并发策略
 7.  Lock 是一个接口，而 synchronized 是 Java 中的关键字，synchronized 是内置的语言
 实现。
 8.  synchronized 在发生异常时，会自动释放线程占有的锁，因此不会导致死锁现象发生；
@@ -137,6 +136,10 @@ https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=151964076808745
 等待的线程会一直等待下去，不能够响应中断。
 10. 通过 Lock 可以知道有没有成功获取锁，而 synchronized 却无法办到。
 11. Lock 可以提高多个线程进行读操作的效率，既就是实现读写锁等。
+
+
+
+中断interrupt 只影响线程的状态，不影响 synchronized\ReentrantLockDeadLock 的锁持有
 
 
 
@@ -153,14 +156,3 @@ https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&album_id=151964076808745
 （4）另外一个更高优先级线程出现
 
 （5）在支持时间片的系统中，该线程的时间片用完
-
-
-
-### 12、如何停止一个正在运行的线程？
-
-1. 使用退出标志（比如return），使线程正常退出，也就是当run方法完成后线程终止。
-2. 使用stop方法强行终止，但是不推荐这个方法，因为stop和suspend及resume一样都是过期作废的方法。
-3. 使用interrupt方法中断线程。
-
-
-

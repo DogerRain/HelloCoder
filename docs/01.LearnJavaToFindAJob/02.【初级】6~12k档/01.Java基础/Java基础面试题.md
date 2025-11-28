@@ -45,7 +45,7 @@ tags:
 
 5. 接口隔离原则——ISP
 
-> 把接口分成满足依赖关系的最小接口，实现类中不能有不需要的方法。
+> 把接口分成满足依赖关系的最小接口，实现类中不能有不需要的方法。简单来说就是大接口拆开变成小接口
 
 6. 迪米特原则——LOD
 
@@ -59,7 +59,7 @@ tags:
 
 常见的有 抽象工厂模式、工厂方法模式、建造者模式、单例模式。
 
-![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-20210401/401339-20170928225241215-295252070.png)
+![ ](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/401339-20170928225241215-295252070.png)
 
 
 
@@ -67,16 +67,16 @@ tags:
 
 > String不是基本类型。
 
-双等号（==），比较的是他们的值。基本数据类型没有equals方法。
+双等号（==），比较的是他们的值。**基本数据类型没有equals方法。**
 
-![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/clipboard-1601965896460.png)
+![ ](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/clipboard-1601965896460.png)
 
 拆箱和装箱：
 
 ```java
 //自动装箱
 Integer total = 99;
-//自定拆箱
+//自动拆箱
 int totalprim = total;
 ```
 
@@ -117,12 +117,16 @@ Integer的默认值是null；int的默认值是0。
 
 ### 3、访问修饰符
 
-![ ](https://images-1253198264.cos.ap-guangzhou.myqcloud.com/7010483_1495588925759_ACED241801E307EE7A39612F85A94EBF.png)
+| 访问修饰符       | 当前类 | 同一个包 | 不同包的子类 | 不同包的非子类 | 通俗理解                          |
+| :--------------- | :----- | :------- | :----------- | :------------- | :-------------------------------- |
+| `public`         | ✔️      | ✔️        | ✔️            | ✔️              | **完全开放** - 对所有类可见       |
+| `protected`      | ✔️      | ✔️        | ✔️            | ❌              | **家族共享** - 对子类和同包类开放 |
+| `default` (不写) | ✔️      | ✔️        | ❌            | ❌              | **内部资料** - 仅同包内可见       |
+| `private`        | ✔️      | ❌        | ❌            | ❌              | **个人隐私** - 仅本类内可见       |
 
-public：所有地方的类都可以访问。
-private：只能在当前类中进行访问。
-protected：可以在当前类、当前包、子类中进行访问
-不写默认为default：可以在当前类，当前包中进行访问。
+
+
+
 
 
 
@@ -159,6 +163,7 @@ protected：可以在当前类、当前包、子类中进行访问
 方法的重载和重写都是实现多态的方式，区别在于：
 
 重载实现的是编译时的多态性。
+
 重写实现的是运行时的多态性。
 
 - 重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；**重载对返回类型没有特殊的要求，但不能根据返回类型进行区分。**
@@ -237,7 +242,7 @@ public interface People {
 | 实例化       | 不是具体类，不能实例化                                       | 不是类，不能实例化                                           |
 | 方法体       | 抽象方法访问类型**不能是private**，不能是 static、final修饰（需要实现的~），而且默认是 abstract 修饰 | 接口中方法默认是`public abstract`（只能是这两个关键字，或其中一个或都省略）。因为要被继承，所以是public的。 |
 
-> 接口可以看作一个更特殊的抽象类，修饰符和限制都更多了，但是自从1.8中及以后，接口的**普通方法**要比抽象类要灵活了，跟普通类一样使用；而抽象类不能使用static其他基本无异
+> 接口可以看作一个更特殊的抽象类，修饰符和限制都更多了，但是自从1.8中及以后，接口的**普通方法**要比抽象类要灵活了，跟普通类一样使用；抽象类除了不能使用static，其他基本无异
 
 
 
@@ -251,7 +256,9 @@ public interface People {
 
 ### 8、switch中能否使用string做参数?
 
-在JDK 1.7之前,switch只能支持byte,short,char,int或者其对应的包装类以及Enum类型.从JDK 1.7之后switch开始支持String类型.但到目前为止,switch都不支持long类型。
+在JDK 1.7之前,switch只能支持byte,short,char,int或者其对应的包装类以及Enum类型。
+
+从JDK 1.7之后switch开始支持String类型、枚举类型，但到目前为止，switch都不支持long类型。
 
 **还有break的坑：**
 
@@ -282,10 +289,8 @@ public class SwitchCaseTest {
 ### 9、String、StringBuffer、StringBuilder区别
 
 - 可变性
-  简单的来说：String 类中使用 final 关键字字符数组保存字符串， `private final char value[]` ，所以 String
-  对象是不可变的。而StringBuilder 与 StringBuffer 都继承自 AbstractStringBuilder 类，在 AbstractStringBuilder
-  中也是使用字符数组保存字符串`char[] value` 但是没有用 final 关键字修饰，所以这两种对象都是可变的。
-
+  简单的来说：String 类中使用 final 关键字字符数组保存字符串， `private final char value[]` ，所以 String对象是不可变的。而StringBuilder 与 StringBuffer 都继承自 AbstractStringBuilder 类，在 AbstractStringBuilder 中也是使用字符数组保存字符串`char[] value` 但是没有用 final 关键字修饰，所以这两种对象都是可变的。
+  
 - 安全性
 
   String 是一个字符串常量，final修饰，当创建之后即不能更改，不可被继承，线程安全 
@@ -315,6 +320,17 @@ public class SwitchCaseTest {
 
 
 
+| 特性         | String                 | StringBuffer               | StringBuilder            |
+| :----------- | :--------------------- | :------------------------- | :----------------------- |
+| **可变性**   | ❌ 不可变               | ✅ 可变                     | ✅ 可变                   |
+| **线程安全** | ✅ 线程安全             | ✅ 线程安全（synchronized） | ❌ 非线程安全             |
+| **性能**     | 最低（频繁创建新对象） | 中等（有同步开销）         | **最高**（无同步开销）   |
+| **使用场景** | 字符串常量、不需要修改 | 多线程环境下的字符串操作   | 单线程环境下的字符串操作 |
+
+
+
+
+
 留个题目：
 
 ```Java
@@ -341,6 +357,18 @@ public class Test {
 Math.round(11.5)的返回值是12，Math.round(-11.5)的返回值是-11。
 
 四舍五入的原理是在参数上加0.5然后进行下取整。
+
+
+
+或者你可以这样理解：
+
+> 简单来说：离目标小数近的整数；中间的（即  .5）往右靠
+
+```shell
+往右  ——————————>
+
+ -11.7 -- -11.5 —— -11 —— 0 —— 11.5 —— 12
+```
 
 
 
@@ -381,7 +409,7 @@ System. out. println(str==str2); //false
 
 ### 12、 异常
 
-![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/Home/image-20210115172917862.png)
+![](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20210115172917862.png)
 
 Throwable 分为Exception（异常） 和 Error（错误） ，二者都是 Java 异常处理的重要子类，各自都包含大量子类。
 
@@ -419,7 +447,7 @@ Java 的所有异常可以分为受检异常（checked exception）和非受检�
 
 ### 13、Throw 和 throws 的区别：
 
-​	  **位置不同：**
+**位置不同：**
 
 1. throws 用在函数上，后面跟的是异常类，可以跟多个；而 throw 用在函数内，后面跟的是异常对象。
 
@@ -432,6 +460,13 @@ Java 的所有异常可以分为受检异常（checked exception）和非受检�
 4. 两者都是消极处理异常的方式，只是抛出或者可能抛出异常，但是不会由函数去处理异常，真正的处理异常由函数的上层调用处理
 
 
+
+```java
+public static void main(String[] args) throws Exception,InterruptedException {}
+
+    
+throw new ZkSerializerException(e);
+```
 
 
 
@@ -453,13 +488,15 @@ Java 的所有异常可以分为受检异常（checked exception）和非受检�
 
 
 
- 字节流没有缓冲区，是直接输出的，而字符流是输出到缓冲区的。因此在输出时，字节流不调用colse()方法时，信息已经输出了，而字符流只有在调用close()方法关闭缓冲区时，信息才输出。要想字符流在未关闭时输出信息，则需要手动调用flush()方法。
+字节流没有缓冲区，是直接输出的，而字符流是输出到缓冲区的。因此在输出时，字节流不调用colse()方法时，信息已经输出了，而字符流只有在调用close()方法关闭缓冲区时，信息才输出。要想字符流在未关闭时输出信息，则需要手动调用flush()方法。
 
-·    读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。
+- 读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。
 
-·    处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。
+- 处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。
 
-**结论：只要是处理纯文本数据，就优先考虑使用字符流。除此之外都使用字节流。**
+
+
+**结论：只要是处理纯文本数据，就优先考虑使用字符流。除此之外都使用字节流。** 但是字节流可以处理字符流，反之不能。
 
 
 
