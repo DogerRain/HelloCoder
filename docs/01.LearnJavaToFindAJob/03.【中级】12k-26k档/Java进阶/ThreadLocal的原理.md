@@ -23,6 +23,8 @@ ThreadLocal 的作用：**为了通过本地化资源来避免共享，避免了
 
 2、来个不需要资源共享的例子，比如各自的线程都需要获取某个用户的权限信息，然后进行存储，那么我们可以在这个线程里面定义一个 `List<权限>` ，当然啦这样每个线程进来了都要 new 一个 `List<权限>` 去存储，如果使用 ThreadLocal  就不用这么复杂了。
 
+
+
 看一下代码就知道了：
 
 ```java
@@ -78,12 +80,13 @@ ThreadLocalMap 是一个内部类。
 
 ```java
  static class ThreadLocalMap {
+      // ThreadLocal<?> key 是弱引用（继承自 WeakReference）
         static class Entry extends WeakReference<ThreadLocal<?>> {
             Object value;
 
             Entry(ThreadLocal<?> k, Object v) {
-                super(k);
-                value = v;
+                super(k);  // key 作为弱引用
+                value = v; // value 作为强引用直接赋值
             }
         }
 ```
@@ -188,7 +191,9 @@ private Entry getEntryAfterMiss(ThreadLocal<?> key, int i, Entry e) {
 
 ## 3、ThreadLocal 会造成内存泄漏，为什么还要用弱引用？
 
-GC 的时候，只要是弱引用，就一定会回收。
+GC 的时候，只要是弱引用，就一定会回收；而强引用 永远不会被 GC。
+
+
 
 之前提到过，Entry 对 key 是弱引用，所以GC的时候，就一定会把 ThreadLocal 对象 清理掉。
 
@@ -206,9 +211,17 @@ GC 的时候，只要是弱引用，就一定会回收。
 
 而设置成弱引用，当方法调用结束，`栈-->堆` 断开，GC的时候 ，ThreadLocal 对象就会被回收，key 也回收，虽然 value 没办法回收，也会造成内存泄漏，但是风险却没有强引用这么高。
 
+>  value 弱引用 + key 弱引用，遇到GC的时候，数据会立即丢失！ThreadLocal就失去了存储数据的基本能力
+>
+> value  强引用 + key   强引用， 那么及时线程退出失去了对ThreadLocal的引用，ThreadLocal 实例无法被回收，内存泄漏更严重
+>
+> value 弱引用 + key 强引用，同样key会内存泄漏，而且值会丢失，更糟糕
+
 
 
 总结来说就是**为了减少严重内存泄漏的风险**。
+
+
 
 既然有这个内存泄漏的风险，ThreadLocal 提供了`remove`方法，我们只需要在用完 set、get 后，调用 remove 方法即可，它会把Entry的value 设置为 null 。
 
