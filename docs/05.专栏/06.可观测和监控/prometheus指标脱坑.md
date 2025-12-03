@@ -16,7 +16,7 @@ agent_redis_metrics_seconds_max{application="cloud-policy-web",exception="None",
 
 
 
-![](./picture/image-20251023093543196.png)
+![](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20251023093543196.png)
 
 
 
