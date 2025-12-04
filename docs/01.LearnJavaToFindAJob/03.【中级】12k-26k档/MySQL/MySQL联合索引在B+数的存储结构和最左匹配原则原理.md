@@ -63,10 +63,10 @@ MySQL把 B+Tree作为索引底层数据结构，联合索引也是一样，它�
 
 ```sql
 select * from T1 where b = 12 and c = 14 and d = 3;-- 全值索引匹配 三列都用到
-select * from T1 where b = 12 and c = 14 and e = 'd';-- 应用到两列索引
-select * from T1 where b = 12 and e = 'd';-- 应用到一列索引
-select * from T1 where b = 12  and c >= 14 and e = 'd';-- 应用到b、c两列列索引及索引条件下推优化
-select * from T1 where b = 12  and d = 3;-- 应用到一列索引  因为不能跨列使用索引 没有c列 连不上
+select * from T1 where b = 12 and c = 14 and e = 'd';-- 应用到b、c索引
+select * from T1 where b = 12 and e = 'd';-- 应用到 b 索引
+select * from T1 where b = 12  and c >= 14 and e = 'd';-- 应用 到b、c 两列列索引及索引条件下推优化
+select * from T1 where b = 12  and d = 3;-- 应用到b 索引  因为不能跨列使用索引 没有c列 连不上
 select * from T1 where c = 14  and d = 3;-- 无法应用索引，违背最左匹配原则
 ```
 

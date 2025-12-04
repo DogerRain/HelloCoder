@@ -23,6 +23,13 @@ tags:
 
 简单的说是**屏蔽硬件的差异**。
 
+```
+        // 不同CPU架构内存模型不同：
+        // x86: TSO（全存储定序）
+        // ARM: 弱内存模型
+        // POWER: 更弱的内存模型
+```
+
 > Java虚拟机规范中试图定义一种Java内存模型来屏蔽掉各种硬件和操作系统的内存访问差异。——《深入理解Java虚拟机》
 
 Java程序运行在不同配置的服务器上，CPU和内存的配置都不一样，如何保证数据的一致性，就需要Java内存模型了，定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中取出变量这样的底层细节。
@@ -31,10 +38,12 @@ CPU和内存是不直接通讯的，因为两者的运行效率是不一样的�
 
 为了解决这一问题，又引出了缓存一致性协议（MESI）。在读写时要根据协议进行操作，来维护缓存的一致性。
 
+> **MESI不属于Java内存模型（JMM），它是硬件层面CPU缓存一致性协议！**用来保证多核CPU中各个核心的缓存数据一致性。
+>
 > MESI的详解可参考：https://www.cnblogs.com/yanlong300/p/8986041.html
 
 
- ![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201123221127256.png)
+ ![](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201123221127256.png)
 
 
 
@@ -48,7 +57,7 @@ Java虚拟机带来的Java内存模型，定义程序中各个变量的访问规
 
 站在Java程序员的角度：**Java内存模型规定了不同线程如何以及何时可以看到其他线程写入共享变量的值以及如何在必要时同步对共享变量的访问**。
 
-![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201123220337582.png)
+![ ](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201123220337582.png)
 
 >每个处理器内核拥有私有的高速缓存，JMM 中每个线程拥有私有的本地内存
 
@@ -69,7 +78,7 @@ Java虚拟机带来的Java内存模型，定义程序中各个变量的访问规
 
 大致流程：
 
-![线程在JVM下交互过程](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201123222402791.png)
+![线程在JVM下交互过程](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201123222402791.png)
 
 线程1和线程2都有主内存中共享变量x的副本，初始时，这3个内存中x的值都为0。线程1中更新x的值为1之后同步到线程2主要涉及2个步骤：
 
@@ -89,13 +98,52 @@ Java虚拟机带来的Java内存模型，定义程序中各个变量的访问规
 - **store(存储)**:作用于线程的工作内存中的变量，把工作内存中的一个变量的值传递给主内存，以便随后的write操作使用
 - **write(写入)**:作用于主内存的变量，把store操作从工作内存中得到的变量的值放入主内存的变量中。
 
-![Java内存模型 - 同步操作与规则 ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201123223500627.png)
+![Java内存模型 - 同步操作与规则 ](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201123223500627.png)
 
 
 
-如上图所示，把一个变量数据从主内存复制到工作内存，要顺序执行 `read` 和 `load`；
+
+
+如上图所示，通过JMM抽象的操作指令，把一个变量数据从主内存复制到工作内存，要顺序执行 `read` 和 `load`；
 
 而把变量数据从工作内存同步回主内存，就要顺序执行 `store` 和 `write` 操作。
+
+
+
+但是我们程序员在写代码的时候只需要：
+
+```java
+public class JMMAbstractModel {
+    
+    private int sharedVariable = 0;
+    
+    public void threadOperation() {
+        // 程序员思考：线程如何与内存交互
+        // 1. read: 从主内存"读取"变量值到工作内存的概念空间
+        // 2. load: 将值放入工作内存的"变量副本"
+        // 3. use: 执行引擎使用这个值
+        // 4. assign: 给变量赋值
+        // 5. store: 将值传回主内存的概念空间
+        // 6. write: 写入主内存
+        
+        // 实际运行时，这些步骤被编译器、JVM、CPU优化合并
+        sharedVariable = 42;
+        
+        // 可能被编译成一条CPU指令：
+        // mov [内存地址], 42
+    }
+}
+```
+
+
+
+结合后的总体流程：
+
+![](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20251204164500065.png)
+
+
+
+
 
 ## 4、并发内存模型
 
@@ -137,13 +185,17 @@ Java虚拟机带来的Java内存模型，定义程序中各个变量的访问规
   
   保证有序性的关键字有`volatile`和`synchronized`，`volatile`禁止了指令重排序，而`synchronized`则由“一个变量在同一时刻只能被一个线程对其进行lock操作，串行操作”来保证。
 
+
+
+> 可以说，所有Java并发问题，最终都归结为对JMM三大特性（原子性、可见性、有序性）的理解和正确使用。
+
 ---
 
 ##  5、总结
 
-**Java内存模型定义了线程和内存间的抽象关系，在硬件的体现就是cpu核线程，高速缓存和主存间的关系。在并发情况下，Java通过引入synchronized和volatile解决 可见性、有序性 问题。**
+**Java内存模型是统一抽象，屏蔽硬件差异，定义了线程和内存间的抽象关系（通过JMM 8个指令），在硬件的体现就是cpu核线程，高速缓存和主存间的关系。在并发情况下，Java通过引入synchronized和volatile解决 可见性、有序性 问题。**
 
-![Java内存模型](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/Java内存模型.png)
+![Java内存模型](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/Java内存模型.png)
 
 参考：
 

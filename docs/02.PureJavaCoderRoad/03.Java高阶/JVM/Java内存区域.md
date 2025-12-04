@@ -21,11 +21,11 @@ tags:
 
 ##### 1.8 之前：
 
-![Java内存区域 1.8之前](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201109230052253.png)
+![Java内存区域 1.8之前](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201109230052253.png)
 
 ##### JDK1.8（含）之后：
 
-![Java内存区域 1.8](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201109230258985.png)
+![Java内存区域 1.8](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201109230258985.png)
 
 
 
@@ -37,7 +37,7 @@ tags:
 
 > 1.7部分内容（比如 常量池、静态变量有方法区转移到了堆）
 
-![演变](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201112231733936.png)
+![演变](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201112231733936.png)
 
 那么，Java 8 中 PermGen 为什么被移出 HotSpot JVM 了？我总结了两个主要原因（详见：[JEP 122: Remove the Permanent Generation](http://openjdk.java.net/jeps/122)）：
 
@@ -76,7 +76,7 @@ JVM会为每个线程分配一个程序计数器，与线程的生命周期相�
 
 在虚拟机栈内存不够的时候会`OutOfMemoryError`，在线程运行中需要更大的虚拟机栈时会出现`StackOverFlowError`。
 
-![ ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201112180235118.png)
+![ ](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201112180235118.png)
 
 虚拟机栈包含很多**栈帧**，每个方法执行的同时会创建一个栈帧，栈帧又存储了方法的局部变量表、操作数栈、动态连接和方法返回地址等信息。
 
@@ -129,9 +129,9 @@ JVM会为每个线程分配一个程序计数器，与线程的生命周期相�
 
 Java虚拟机栈是调用Java方法；本地方法栈是调用本地native方法，可以认为是通过 `JNI` (Java Native Interface) 直接调用本地 C/C++ 库，不受JVM控制。
 
-![ Native方法 ](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201102143405046.png)
+![ Native方法 ](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201102143405046.png)
 
-![Java虚拟机栈与本地方法栈的调用过程](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/image-20201112232713327.png)
+![Java虚拟机栈与本地方法栈的调用过程](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201112232713327.png)
 
 本地方法栈也会抛出 **StackOverflowError** 和 **OutOfMemoryError** 异常
 
@@ -143,7 +143,7 @@ Java 堆是被所有**线程共享**的一块内存区域，在虚拟机启动�
 
 现在的虚拟机（包括**HotSpot VM**）都是采用分代回收算法。在分代回收的思想中， 把堆分为：新生代+老年代+永久代（1.8没有了）； 新生代 又分为 Eden + From Survivor + To Survivor区。
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201030143215163.png)
+![ ](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/image-20201030143215163.png)
 
 ## 6、方法区
 
@@ -178,7 +178,7 @@ Integer b = 100;
 
 ## 8、总结：
 
- ![Java内存区域](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/Java内存区域.png)
+ ![Java内存区域](http://rainyudianxx.baimuxym.cn/HelloCoder/blog/Java内存区域.png)
 
 
 

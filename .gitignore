@@ -123,3 +123,9 @@ dist
 
 gh-md-toc.exe
 .temp
+
+ docs/.*/.*/picture/
+ docs/.*/.*/.*/picture/
+ docs/.*/*/*/*/picture/
+ docs/*/*/*/*/*/picture/
+*./picture/

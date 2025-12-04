@@ -12,150 +12,172 @@ tags:
   - happenbefore
   - 内存模型的
 ---
-happen-before 和 指令重排序不是一个概念。
-
-要清楚happen-before ，首先要知道Java内存模型。
-
 
 
 ## 指令重排序
 
-在执行程序时，**为了提高性能，编译器和处理器常常会对指令进行重排序**。
+在执行程序时，**为了提高性能，编译器/CPU 常常会对指令进行重排序**。
 
 *所以说我们书写代码的顺序，并不是等同于代码在CPU真正执行的顺序。*
 
 这些重排序会导致线程安全的问题，一个很经典的例子就是双重锁定检查（DCL）。
 
-DCL问题可以看看： https://www.jianshu.com/p/ca19c22e02f4 （单例模式）
 
-JMM的编译器重排序规则会禁止一些特定类型的编译器重排序；针对处理器重排序，编译器在生成指令序列的时候会通过**插入内存屏障**指令来禁止某些特殊的处理器重排序。
 
-**内存屏障**
-
-编译器和处理器都必须遵守重新排序规则。不需要特别的努力来确保单处理器保持适当的顺序，因为它们都保证“按顺序”一致性。但是在多处理器上，要保证一致性，通常需要发出屏障指令。即使编译器优化了字段访问（例如，因为未使用加载的值），也必须仍然生成屏障，就像访问仍然存在一样。
-
-> 内存屏障的概念以及：http://gee.cs.oswego.edu/dl/jmm/cookbook.html
+**指令重排序的一个重要限制**：**不能改变单线程程序的执行结果**（as-if-serial 语义）。
 
 
 
-指令重排序可以分为三种：
+以下是一个例子：
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/20181009231337835)
+```java
+public class YourExampleFixed {
+    int x = 0;
+    int y = 0;
+    
+    void correctReorderingPossibilities() {
+        // 原始：
+        x = 1;          // A
+        y = 2;          // B  
+        int sum = x + y; // C（依赖A和B）
+        
+        // ✅ 允许的重排序1：交换A和B（独立写）
+        y = 2;          // B先执行
+        x = 1;          // A后执行
+        int sum = x + y; // C（还是1+2=3）
+        
+        // ✅ 允许的重排序2：提前读取（读取的是初始化值0）
+        int sum = x + y; // C先执行（0+0=0）⚠️ 这改变了结果！
+        x = 1;          // A
+        y = 2;          // B
+        // ❌ 不允许！因为改变了单线程结果
+        // 因为这种重排序会改变单线程程序的执行结果，违反了as-if-serial语义，编译器和CPU不会这样做
 
-（1）编译器优化的重排序。编译器在不改变单线程程序语义的前提下，可以重新安排语句的执行顺序；
-（2）指令级并行的重排序。现代处理器采用了指令级并行技术来将多条指令重叠执行。如果不存在数据依赖性，处理器可以改变语句对应机器指令的执行顺序；
-（3）内存系统的重排序。由于处理器使用缓存和读/写缓冲区，这使得加载和存储操作看上去可能是在乱序执行的。
+    }
+}
+```
 
-比如说：
-
-![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img/20181009231434528)
-
-由于A,B之间没有任何关系，对最终结果也不会存在关系，它们之间执行顺序可以重排序。因此可以执行顺序可以是A->B->C或者B->A->C执行最终结果都是3.14，即A和B之间没有数据依赖性。
-
-以上部分参考自：https://blog.csdn.net/ma_chen_qq/article/details/82990603
+ 
 
 ## happen-before
 
 happen-before 是 Java 内存模型中保证多线程操作可见性的机制，也是对早期语言规范中含糊的可见性概念的一个精确定义。
 
-内存模型通过happen-before 关系向程序员提供跨线程的内存可见保证性（**如果A线程的写操作a与B线程的读操作b之间存在happens-before关系，尽管a操作和b操作在不同的线程中执行，但JMM向程序员保证a操作将对b操作可见**）。
+内存模型通过 happen-before 关系向程序员提供**跨线程**的内存可见保证性（**如果A线程的写操作a与B线程的读操作b之间存在happens-before关系，尽管a操作和b操作在不同的线程中执行，但JMM向程序员保证a操作将对b操作可见**）。
 
-**具体的定义为：**
-1）如果一个操作happens-before另一个操作，那么第一个操作的执行结果将对第二个操作可见，而且第一个操作的执行顺序排在第二个操作之前。
-
-2）两个操作之间存在happens-before关系，并不意味着Java平台的具体实现必须要按照happens-before关系指定的顺序来执行。如果重排序之后的执行结果，与按happens-before关系来执行的结果一致，那么这种重排序并不非法（也就是说，JMM允许这种重排序）。
-
-
-
-happen-before规则一共就八条：
-
-### 1、单线程happen-before原则：在同一个线程中，书写在前面的操作happen-before后面的操作。
-
-比如说：
+单线程：
 
 ```java
-int a = 3;      //1
-int b = a + 1;  //2
+// 线程内，代码顺序提供happens-before
+class ProgramOrder {
+    int x = 0;
+    
+    void method() {
+        x = 1;          // 操作A
+        int y = x + 1;  // 操作B
+        // A happens-before B
+        // B一定能看到A写入的1
+    }
+}
 ```
 
-这里 //1对变量a的赋值操作对//2一定可见。
-
-因为//2 中有用到//1中的变量a，再加上java内存模型提供了“单线程happen-before原则”，所以java虚拟机不许可操作系统对//1 //2 操作进行指令重排序。
-
-如果是：
+ 多线程
 
 ```java
-int a = 3;
-int b = 4;
+class VolatileRule {
+    private int data = 0;
+    // volatile限制特定类型的重排序
+    private volatile boolean ready = false;
+    
+    // 线程1：写数据
+    void writer() {
+        data = 42;          // 普通写 (1)
+        ready = true;       // volatile写 (2)
+        // (1) happens-before (2)
+        // (2) happens-before 所有后续的ready读
+    }
+    
+    // 线程2：读数据  
+    void reader() {
+        if (ready) {        // volatile读 (3)
+      //保证看到 42 ，而不是线程1 重排序后，先执行 ready = true 再执行线程2，这样线程2就会看到 0
+            System.out.println(data); //  (4) 
+            // (2) happens-before (3)
+            // (3) happens-before (4)
+            // 所以 (1) happens-before (4)！
+        }
+    }
+}
 ```
 
-指令重排序则可能发生。
 
-### 2、锁的happen-before原则：同一个锁的unlock操作happen-before此锁的lock操作。
 
-常见的就是synchronized、reentrantLock加锁。
 
-解锁操作的结果对后面的加锁操作一定是可见的，无论两个是否在一个线程；简单的说就是线程A加了锁，在我没有解锁之前，线程B是无法进入的，而当线程A解锁了，线程B是可以感知的。
 
-例子就不举了，前面的synchronized文章有说到。
+可以说：volatile建立跨线程的可见性保证和重排序约束，具体实现原理就是 StoreStore屏障
 
-### 3、volatile的happen-before原则： 对一个volatile变量的写操作happen-before对此变量的任意操作。
 
-对 volatile 变量的写操作的结果对于发生于其后的任何操作的结果都是可见的。x86 架构下volatile 通过**内存屏障**和**缓存一致性协议**实现了变量在多核心之间的一致性。
+
+### 常见误解澄清
+
+#### 误解1："happens-before禁止所有重排序"
+
+
 
 ```java
-volatile int a;
-//线程A执行
-a = 1; //1
-//线程B执行
-b = a;  //2
+// ❌ 错误理解
+class Misunderstanding1 {
+    int a = 0, b = 0;
+    
+    void wrong() {
+        // 认为：a=1 happens-before b=2
+        // 所以：a=1和b=2不能重排序
+        
+        a = 1;
+        b = 2;
+        // 实际上：单线程内可以重排序！
+        // happens-before只保证可见性，不禁止无害重排序
+    }
+}
 ```
 
-如果线程A 执行//1，线程B执行了//2，并且“线程A”执行后,“线程B”再执行,那么符合“volatile的happen-before原则”所以“线程2”中的a值一定是1，而不会是初始值0。
 
-###  4、happen-before的传递性原则：  如果A操作 happen-before B操作，B操作happen-before C操作，那么A操作happen-before C操作。
 
-可以根据这两个规则推导出两个没有直接联系的操作其实是存在happen-before 关系的。
+#### 误解2："所有volatile操作都不能重排序"
 
-#### 5、 线程启动的happen-before原则：同一个线程的start方法happen-before此线程的其它方法。
 
-翻译成人话就是：我在main线程 赋值了一个字段，下一步我又通过`start()`启动一个线程，那么这个main线程赋值操作对子线程是可见的。
 
 ```java
-int a ;
-//main线程
-a = 1;
-new Thread().start();
-
-//子线程
-b = a // b等于1
+// ❌ 错误理解  
+class Misunderstanding2 {
+    volatile int v1 = 0, v2 = 0;
+    
+    void wrong() {
+        // 认为：两个volatile变量操作不能重排序
+        v1 = 1;
+        v2 = 2;
+        // 实际上：可以重排序！
+        // volatile只保证：写v1 happens-before 读v1
+        // 不保证：写v1 happens-before 写v2
+    }
+}
 ```
 
-### 6、线程中断的happen-before原则：对线程interrupt方法的调用happen-before被中断线程的检测到中断发送的代码。
-
-### 7、 线程终结的happen-before原则：线程中的所有操作都happen-before线程的终止检测，又叫做join规则
-
-这两点可以理解为线程之间的通信，主线程对子线程发出通知，子线程是可以感知的。同时主线程可以感知子线程的状态。
-
-### 8、 对象finalize规则：一个对象的初始化完成（构造函数执行结束）先行于发生它的finalize()方法的开始。
-
-即先有类的初始化才有销毁，感觉这个和类加载器有关系。
 
 
 
----
 
-happen-before，它不能简单地说前后关系，是因为它不仅仅是对执行时间的保证，也包括对内存读、写操作顺序的保证。
+**指令重排序和happens-before是"矛和盾"的关系：**
 
-它和时间没有任何关系，仅仅是时钟顺序上的先后，并不能保证线程交互的可见性。
-
-
-
-对于学习JMM，个人觉得不要陷得太深，毕竟这东西和CPU打交道，纠结于这些复杂的东西，未必有价值。
-
+| 指令重排序（矛）             | happens-before（盾）           |
+| :--------------------------- | :----------------------------- |
+| **攻击方**：试图优化指令顺序 | **防守方**：设置规则约束重排序 |
+| **目标**：提高单线程性能     | **目标**：保证多线程正确性     |
+| **策略**：能重排就重排       | **策略**：该禁止时就禁止       |
 
 
-## 拓展：DCL的问题
+
+## 拓展：DCL的问题 - 单例模式
 
 double-check-locking 
 
@@ -255,21 +277,7 @@ public class SingleInstance {
 
 
 
-在Java中设置变量值的操作，除了long和double类型的变量外都是原子操作，也就是说，对于变量值的简单读写操作没有必要进行同步。
-
-> 于long和double变量，把他们作为2个原子性的32位值来对待，而不是一个原子性的64位值，
->  这样将一个long型的值保存到内存的时候，可能是2次32位的写操作，
->  2个竞争线程想写不同的值到内存的时候，可能导致内存中的值是不正确的结果。
->
-> 1、写入高位32位值(线程2)
-> 2、写入高位32位值(线程1)
-> 3、写入低位32位值(线程1)
-> 4、写入低位32位值(线程2)
->
-> 这样内存中的值变成线程1的高32位值和线程2的低32位值的组合，是个错误的值。volatile本身不保证获取和设置操作的原子性，仅仅保持修改的可见性。但是java内存模型保证声明为volatile的long和double变量的get和set操作是原子的。
->
-> 作者：达微
-> 链接：https://www.jianshu.com/p/f40d96d91c1c
+>  
 
 上面这个例子使用volatile屏蔽掉了VM中必要的代码优化（防止指令重排序），所以在效率上比较低，会带来一些性能问题，因此一定在必要时才使用此关键字。
 
