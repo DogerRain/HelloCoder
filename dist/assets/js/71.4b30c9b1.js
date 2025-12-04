@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[71],{487:function(t,s,n){"use strict";n.r(s);var r=n(7),e=Object(r.a)({},(function(){var t=this._self._c;return t("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[t("p",[this._v("我们常用的ArrayList是线程不安全的，所以在高并发的场景下，我们会使用 CopyOnWriteArrayList 作为替代方案。")])])}),[],!1,null,null,null);s.default=e.exports}}]);
