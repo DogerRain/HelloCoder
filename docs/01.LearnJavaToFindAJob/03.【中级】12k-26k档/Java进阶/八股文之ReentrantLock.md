@@ -13,7 +13,7 @@ tags:
 ---
 ## ReentrantLock的原理是什么？
 
-“`ReentrantLock` 是 java.util.concurrent 包下基于 AQS 实现的可重入互斥锁。**，通过一个volatile的state状态变量和一个CLH变体的双向等待队列来实现可重入的独占锁。**它主要用于替代 `synchronized`，但在功能上更加灵活和强大。”
+“`ReentrantLock` 是 java.util.concurrent 包下基于 AQS 实现的可重入互斥锁。**通过一个volatile的state状态变量和一个CLH变体的双向等待队列来实现可重入的独占锁。**它主要用于替代 `synchronized`，但在功能上更加灵活和强大。”
 
 
 
@@ -237,3 +237,67 @@ public boolean tryLock() {
 ```
 
 这里调用的就是 nonfairTryAcquire()，表明了是不公平的，和锁本身是否是公平锁无关。综上所述，公平锁就是会按照多个线程申请锁的顺序来获取锁，从而实现公平的特性。
+
+
+
+## ReentrantReadWriteLock
+
+`ReentrantReadWriteLock` 实现了 `ReadWriteLock` ，是一个可重入的读写锁，既可以保证多个线程同时读的效率，同时又可以保证有写入操作时的线程安全。
+
+
+
+- ReentrantLock：一切互斥
+
+```
+       读操作     写操作
+读操作     ❌        ❌
+写操作     ❌        ❌
+```
+
+- ReentrantReadWriteLock：读写分离
+
+```
+        读操作     写操作
+读操作     ✅        ❌
+写操作     ❌        ❌
+```
+
+> 简单来说 ReentrantReadWriteLock 只有 **读读不互斥**，在读多写少的情况下，使用 `ReentrantReadWriteLock` 能够明显提升系统性能。
+
+对比：
+
+| 场景           | ReentrantLock      | ReentrantReadWriteLock |
+| :------------- | :----------------- | :--------------------- |
+| **读多写少**   | 性能差（全部串行） | **性能优**（读并行）   |
+| **写多读少**   | 性能中等           | 性能差（锁管理开销）   |
+| **读写相当**   | 性能中等           | 性能中等               |
+| **锁获取开销** | 小                 | 较大（需区分读写）     |
+
+使用场景：
+
+| 场景         | 推荐锁        | 原因                 |
+| :----------- | :------------ | :------------------- |
+| **缓存系统** | ReadWriteLock | 读远多于写，提高并发 |
+| **计数器**   | ReentrantLock | 操作简单，频繁写     |
+| **配置中心** | ReadWriteLock | 配置读多，偶尔更新   |
+| **队列**     | ReentrantLock | 读写频繁交替         |
+| **Map实现**  | ReadWriteLock | 读远多于写           |
+
+
+
+**核心区别**：ReentrantLock是**排他锁**，ReentrantReadWriteLock是**读写分离锁**。
+
+**选型口诀**：
+
+- 读多写少用**读写锁**（性能提升）
+- 读写相当用**普通锁**（简单可靠）
+- 锁降级场景必须用**读写锁**
+- 性能测试是最终标准
+
+**实际项目中**：大多数场景ReentrantLock就够了，只有确定"读远多于写"且需要提升并发时才考虑ReentrantReadWriteLock。记住**不要过度优化**，先保证正确性，再用数据说话。
+
+
+
+
+
+`StampedLock` 是 JDK 1.8 引入的性能更好的读写锁，以替换掉 ReentrantReadWriteLock。

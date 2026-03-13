@@ -75,11 +75,13 @@ class ProgramOrder {
     void method() {
         x = 1;          // 操作A
         int y = x + 1;  // 操作B
-        // A happens-before B
+        // A happens-before B  ，程序顺序规则：同一线程中，前面的写操作 happens-before 后面的操作
         // B一定能看到A写入的1
     }
 }
 ```
+
+> **程序顺序规则**：同一线程中，前面的操作 happens-before 后面的操作
 
  多线程
 
@@ -110,7 +112,7 @@ class VolatileRule {
 }
 ```
 
-
+> **volatile 变量规则**：volatile 写 happens-before volatile 读
 
 
 
@@ -131,12 +133,12 @@ class Misunderstanding1 {
     
     void wrong() {
         // 认为：a=1 happens-before b=2
-        // 所以：a=1和b=2不能重排序
+        // 所以：a=1 和 b=2不能重排序
         
         a = 1;
         b = 2;
         // 实际上：单线程内可以重排序！
-        // happens-before只保证可见性，不禁止无害重排序
+        // happens-before只保证可见性，不禁止无害重排序（因为这两个操作无联系）
     }
 }
 ```
@@ -276,8 +278,6 @@ public class SingleInstance {
 ```
 
 
-
->  
 
 上面这个例子使用volatile屏蔽掉了VM中必要的代码优化（防止指令重排序），所以在效率上比较低，会带来一些性能问题，因此一定在必要时才使用此关键字。
 

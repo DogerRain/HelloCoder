@@ -63,12 +63,8 @@ HTTP 的 Keep-Alive 就是干这个的。它可以在第一次建立TCP后，不
 ```mermaid
 sequenceDiagram
 Title: HTTP2.0连续请求过程
-participant consumer as Client
-participant store as Server
 Client->>Server: request
 Server->>Client: response
-
-
 Client->>Server: request
 Client->>Server: request
 Server->>Client: response
