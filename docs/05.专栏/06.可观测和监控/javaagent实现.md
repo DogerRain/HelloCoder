@@ -1,0 +1,434 @@
+AgentLoaderMain.class:
+
+```java
+package com.meizu.xjsd.platform.agent;
+
+import com.google.common.collect.Lists;
+import org.springframework.boot.loader.archive.Archive;
+import org.springframework.boot.loader.archive.JarFileArchive;
+
+import java.io.File;
+import java.io.IOException;
+import java.lang.instrument.Instrumentation;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.security.CodeSource;
+import java.security.ProtectionDomain;
+import java.util.ArrayList;
+
+/**
+ * @author zhujiajun
+ * @version 1.0
+ * @since 2022/12/1 17:16
+ */
+public class AgentLoaderMain {
+
+    public static final ClassLoader BOOTSTRAP_CLASS_LOADER = null;
+    private static final String LIB = "lib/";
+    private static final String PLUGINS = "plugins/";
+    private static ClassLoader loader;
+
+
+    public static void premain(final String args, final Instrumentation inst) {
+        try {
+            File jar = getArchiveFileContains();
+            final JarFileArchive archive = new JarFileArchive(jar);
+            ArrayList<URL> urls = nestArchiveUrls(archive, LIB);
+            urls.addAll(nestArchiveUrls(archive, PLUGINS));
+            loader = new CompoundableClassLoader(urls.toArray(new URL[0]));
+            loader.loadClass("com.meizu.xjsd.platform.agent.StartBootstrap")
+                    .getMethod("premain", String.class, Instrumentation.class, String.class)
+                    .invoke(null, args, inst, jar.getPath());
+        } catch (Throwable e) {
+            System.err.println("[one-agent] ERROR One Agent initialization failed: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static ArrayList<URL> nestArchiveUrls(JarFileArchive archive, String prefix) throws IOException {
+        ArrayList<Archive> archives = Lists.newArrayList(
+                archive.getNestedArchives(entry -> !entry.isDirectory() && entry.getName().startsWith(prefix),
+                        entry -> true
+                ));
+
+        final ArrayList<URL> urls = new ArrayList<>(archives.size());
+
+        archives.forEach(item -> {
+            try {
+                urls.add(item.getUrl());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        });
+
+        return urls;
+    }
+
+    private static File getArchiveFileContains() throws URISyntaxException {
+        final ProtectionDomain protectionDomain = AgentLoaderMain.class.getProtectionDomain();
+        final CodeSource codeSource = protectionDomain.getCodeSource();
+        final URI location = (codeSource == null ? null : codeSource.getLocation().toURI());
+        final String path = (location == null ? null : location.getSchemeSpecificPart());
+
+        if (path == null) {
+            throw new IllegalStateException("Unable to determine code source archive");
+        }
+
+        final File root = new File(path);
+        if (!root.exists() || root.isDirectory()) {
+            throw new IllegalStateException("Unable to determine code source archive from " + root);
+        }
+        return root;
+    }
+
+}
+
+```
+
+
+
+
+
+CompoundableClassLoader.class :
+
+```java
+package com.meizu.xjsd.platform.agent;
+
+import org.springframework.boot.loader.LaunchedURLClassLoader;
+
+import java.lang.ref.WeakReference;
+import java.net.URL;
+import java.util.Objects;
+import java.util.Set;
+import java.util.concurrent.CopyOnWriteArraySet;
+
+/**
+ * @author zhujiajun
+ * @version 1.0
+ * @since 2022/12/1 18:18
+ */
+public class CompoundableClassLoader extends LaunchedURLClassLoader {
+
+    private final Set<WeakReference<ClassLoader>> externals = new CopyOnWriteArraySet<>();
+
+    CompoundableClassLoader(URL[] urls) {
+        super(urls, AgentLoaderMain.BOOTSTRAP_CLASS_LOADER);
+    }
+
+    @SuppressWarnings("unused")
+    public void add(ClassLoader cl) {
+        if (cl != null && !Objects.equals(cl, this)) {
+            externals.add(new WeakReference<>(cl));
+        }
+    }
+
+    @Override
+    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+        try {
+            return super.loadClass(name, resolve);
+        } catch (ClassNotFoundException e) {
+            for (WeakReference<ClassLoader> external : externals) {
+                try {
+                    ClassLoader cl = external.get();
+                    if (cl == null) {
+                        continue;
+                    }
+                    final Class<?> aClass = cl.loadClass(name);
+                    if (resolve) {
+                        resolveClass(aClass);
+                    }
+                    return aClass;
+                } catch (ClassNotFoundException ignored) {
+                    // ignored
+                }
+            }
+            throw e;
+        }
+    }
+
+    @Override
+    public URL findResource(String name) {
+        URL url = super.findResource(name);
+        if (url == null) {
+            for (WeakReference<ClassLoader> external : externals) {
+                try {
+                    ClassLoader cl = external.get();
+                    url = cl.getResource(name);
+                    if (url != null) {
+                        return url;
+                    }
+                } catch (Exception ignored) {
+                    // ignored
+                }
+            }
+        }
+        return url;
+    }
+
+}
+
+```
+
+
+
+
+
+
+
+以上是一个非常经典的 Java Agent 设计模式！你遇到的这个代码展示了**双重隔离策略**，让我解释为什么要同时使用这两种方式。
+
+## 一、这个 Agent 的设计目标
+
+从代码来看，这是一个**复杂的 Java Agent 框架**，它的设计目标是：
+
+1. **支持插件化**（从 `PLUGINS` 目录加载）
+2. **与其他 Agent 共存**（`CompoundableClassLoader` 可以组合其他 ClassLoader）
+3. **完全隔离**（避免污染主应用，也避免被主应用污染）
+
+## 二、为什么要两者都用？
+
+### 1. **Shade 重定位的作用**（解决"包名冲突"）
+
+
+
+```xml
+<relocation>
+    <pattern>org.springframework</pattern>
+    <shadedPattern>${shaded.prefix}.org.springframework</shadedPattern>
+</relocation>
+```
+
+
+
+**Shade 在这里解决的是：**
+
+- 将 Agent 内部使用的 Spring、Google Guava 等库**重命名**
+- 例如 `org.springframework.beans` → `com.meizu.xjsd.agent.org.springframework.beans`
+
+**为什么需要？**
+
+
+
+```java
+// 如果没有Shade重定位
+// Agent 需要 Spring 5.2
+// 主应用可能用 Spring 4.3
+
+// 当Agent加载Spring类时：
+Class<?> clazz = loader.loadClass("org.springframework.beans.BeanUtils");
+// 如果主应用已经加载了Spring 4.3，会返回主应用的类！
+// 导致 NoSuchMethodError 等方法冲突
+```
+
+
+
+### 2. **自定义 ClassLoader 的作用**（解决"类加载隔离"）
+
+java
+
+```
+loader = new CompoundableClassLoader(urls.toArray(new URL[0]));
+```
+
+
+
+**CompoundableClassLoader 的特色：**
+
+- 继承自 `LaunchedURLClassLoader`（Spring Boot 的可执行JAR类加载器）
+- **可以组合其他 ClassLoader**（`externals` 集合）
+- **打破双亲委派**：先自己加载，找不到再从外部找
+
+**为什么需要？**
+
+java
+
+```
+// CompoundableClassLoader 的工作流程
+protected Class<?> loadClass(String name, boolean resolve) {
+    // 1. 先尝试自己加载（Agent的类）
+    return super.loadClass(name, resolve);
+    // 2. 如果自己找不到，才从外部ClassLoader找
+    for (WeakReference<ClassLoader> external : externals) {
+        cl.loadClass(name); // 其他Agent的类
+    }
+}
+```
+
+
+
+## 三、具体场景分析
+
+### 场景：Agent 插件化架构
+
+text
+
+```
+[主应用 ClassLoader]
+        ↑
+[CompoundableClassLoader] ← 可以组合其他Agent的ClassLoader
+        ↑
+  加载以下JAR：
+  ├── LIB/ (Agent核心库)
+  │    ├── spring-core-5.2.jar (被重定位)
+  │    └── guava-30.0.jar (被重定位)
+  └── PLUGINS/ (插件)
+       ├── plugin1.jar (依赖重定位后的Spring)
+       └── plugin2.jar
+```
+
+
+
+### 为什么不能只用一种？
+
+#### **如果只用 Shade（不用自定义 ClassLoader）**
+
+xml
+
+```
+<!-- 只用Shade的问题 -->
+<!-- 编译后：agent.org.springframework.beans.BeanUtils -->
+```
+
+
+
+java
+
+```
+// 插件无法动态添加
+// 无法与其他Agent协作
+// 无法在运行时添加新的类路径
+```
+
+
+
+#### **如果只用自定义 ClassLoader（不用 Shade）**
+
+java
+
+```
+// 只用ClassLoader的问题
+loader.loadClass("org.springframework.beans.BeanUtils");
+// 如果主应用已经加载了不同版本的Spring
+// 会返回主应用的类，导致版本冲突！
+```
+
+
+
+## 四、这个设计的精妙之处
+
+### 1. **双重保障的隔离**
+
+java
+
+```
+public class CompoundableClassLoader extends LaunchedURLClassLoader {
+    
+    public CompoundableClassLoader(URL[] urls) {
+        // 重点：父ClassLoader是BOOTSTRAP，跳过AppClassLoader
+        super(urls, AgentLoaderMain.BOOTSTRAP_CLASS_LOADER);
+        // 这样主应用的类不会干扰Agent
+    }
+    
+    // 但通过 externals，可以有选择地与其他Agent协作
+    public void add(ClassLoader cl) {
+        externals.add(new WeakReference<>(cl));
+    }
+}
+```
+
+
+
+### 2. **资源隔离**
+
+java
+
+```
+@Override
+public URL findResource(String name) {
+    URL url = super.findResource(name);
+    if (url == null) {
+        // 先从外部找资源
+        for (WeakReference<ClassLoader> external : externals) {
+            url = cl.getResource(name);
+        }
+    }
+    return url;
+}
+// 确保配置文件和资源也被正确隔离
+```
+
+
+
+### 3. **插件化支持**
+
+java
+
+```
+ArrayList<URL> urls = nestArchiveUrls(archive, LIB);     // 核心库
+urls.addAll(nestArchiveUrls(archive, PLUGINS));          // 插件
+// 可以将不同插件隔离在不同的ClassLoader中
+```
+
+
+
+## 五、实际运行时的类加载路径
+
+java
+
+```
+// 假设主应用有: org.springframework.beans.BeanUtils (4.3)
+// Agent有: org.springframework.beans.BeanUtils (5.2) 被重定位为 agent.org.springframework...
+
+// 在Agent中调用
+BeanUtils.instantiateClass(clazz); // 实际是 agent.org.springframework...
+
+// 类加载过程：
+1. CompoundableClassLoader.loadClass("org.springframework.beans.BeanUtils")
+2. 父ClassLoader是Bootstrap，不加载
+3. CompoundableClassLoader自己查找
+4. 从Agent的JAR中找到 agent.org.springframework.beans.BeanUtils
+5. 返回（完全隔离，不受主应用影响）
+
+// 如果Agent需要访问主应用的类（比如增强主应用的类）
+loader.add(Thread.currentThread().getContextClassLoader());
+// 可以有控制地访问主应用类
+```
+
+
+
+## 六、为什么要用 LaunchedURLClassLoader？
+
+java
+
+```
+// 继承 LaunchedURLClassLoader 而不是 URLClassLoader
+class CompoundableClassLoader extends LaunchedURLClassLoader
+```
+
+
+
+**LaunchedURLClassLoader 的特点：**
+
+- 支持 Spring Boot 的嵌套 JAR（`jar:file:...!/...`）
+- 可以加载 `LIB/` 和 `PLUGINS/` 目录中的 JAR
+- 正确处理 JAR 中的资源
+
+## 七、总结：双重隔离的必要性
+
+| 隔离目标            | Shade 的作用   | ClassLoader 的作用                |
+| :------------------ | :------------- | :-------------------------------- |
+| **与主应用隔离**    | 避免包名冲突   | 避免类加载冲突                    |
+| **与其他Agent隔离** | 避免版本冲突   | 通过 `externals` 选择性协作       |
+| **插件隔离**        | 统一重定位规则 | 不同的插件可以有自己的ClassLoader |
+| **资源隔离**        | -              | 通过 `findResource` 控制资源访问  |
+| **动态性**          | -              | 可以运行时添加新的ClassLoader     |
+
+**这就是为什么这个设计如此强大：**
+
+1. **Shade 确保字节码层面无冲突**（静态隔离）
+2. **ClassLoader 确保运行时隔离**（动态隔离）
+3. **两者结合**：既能在编译时确保类不会冲突，又能在运行时灵活控制类加载
+
+这种设计在复杂的 Java Agent 中很常见，比如 SkyWalking、Arthas 等 APM 工具都采用类似的策略！
