@@ -23,7 +23,7 @@ tags:
 
 ## 1、《Head First Java》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/timg.jpg)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/timg.jpg)
 
 Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思想》、《Effective  Java》也很好，但是还是想推荐入门Java的小伙伴看这本书。
 
@@ -31,7 +31,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 2、《算法图解》
 
-![算法图解](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/s29358625.jpg)
+![算法图解](http://rainyudianxx.baimuxym.cn/hellocoder/s29358625.jpg)
 
 >本书示例丰富，图文并茂，以让人容易理解的方式阐释了算法，旨在帮助程序员在日常项目中更好地发挥算法的能量。书中的前三章将帮助你打下基础，带你学习二分查找、大O表示法、两种基本的数据结构以及递归等。余下的篇幅将主要介绍应用广泛的算法，具体内容包括：面对具体问题时的解决技巧，比如，何时采用贪婪算法或动态规划；散列表的应用；图算法；K最近邻算法。
 
@@ -41,7 +41,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 3、《深入浅出MySQL》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201023005822930.png)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/image-20201023005822930.png)
 
 网易内部高级开发人员写的 Mysql的经典入门书籍，比较全面的入门指南。
 
@@ -49,7 +49,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 4、《图解TCP IP第5版》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201023010132598.png)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/image-20201023010132598.png)
 
 >书中讲解了网络基础知识、TCP/IP基础知识、数据链路、IP协议、IP协议相关技术、TCP与UDP、路由协议、应用协议、网络安全等内容，引导读者了解和掌握TCP/IP，营造一个安全的、使用放心的网络环境。
 
@@ -57,11 +57,11 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 大量生动的图，比如：
 
-![img](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/381412-20161023151951295-1955119384.png)
+![img](http://rainyudianxx.baimuxym.cn/hellocoder/381412-20161023151951295-1955119384.png)
 
 ## 5、《深入理解Java虚拟机》
 
-![深入理解Java虚拟机（第2版）](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/s27458236.jpg)
+![深入理解Java虚拟机（第2版）](http://rainyudianxx.baimuxym.cn/hellocoder/s27458236.jpg)
 
 >第1版两年内印刷近10次，4家网上书店的评论近40000条，98%以上的评论全部为5星级的好评，是整个Java图书领域公认的经典著作和超级畅销书，繁体版在台湾也十分受欢迎。
 
@@ -75,7 +75,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 6、《Java并发编程实战》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/s2764832.jpg)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/s2764832.jpg)
 
 一本完美的Java并发参考手册。
 
@@ -103,7 +103,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 7、《阿里巴巴开发手册》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201023011738333.png)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/image-20201023011738333.png)
 
 >《阿里巴巴Java开发手册》是阿里巴巴集团技术团队的集体智慧结晶和经验总结，经历了多次大规模一线实战的检验及不断的完善，系统化地整理成册，反馈给广大开发者。
 
@@ -119,13 +119,13 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 码出高效，码出质量，相信也是我们每个coder的追求吧。
 
-![很多有用的建议](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201023012029099.png)
+![很多有用的建议](http://rainyudianxx.baimuxym.cn/hellocoder/image-20201023012029099.png)
 
 # 二、进阶、架构、性能
 
 ## 8、《Java性能优化权威指南》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/s27219217.jpg)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/s27219217.jpg)
 
 > Java性能优化圣经！Java之父重磅推荐！
 
@@ -137,7 +137,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 9、《大型网站技术架构：核心原理与案例分析》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/s27250675.jpg)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/s27250675.jpg)
 
 作者曾在阿里巴巴担任技术专家，参与阿里巴巴基础技术平台开发和www.alibaba.com架构设计。
 
@@ -147,7 +147,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 10、《高性能MySQL》
 
-![高性能MySQL(https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/s27783358.jpg)](https://img1.doubanio.com/view/subject/s/public/s27783358.jpg)
+![高性能MySQL](http://rainyudianxx.baimuxym.cn/hellocoder/s27783358.jpg)
 
 **不适合MySQL初学者看，因为太厚，语言很枯燥，理论性强，学术味浓。**
 
@@ -159,7 +159,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 11、 《代码整洁之道》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/s4103991.jpg)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/s4103991.jpg)
 
 本书提出一种观念：代码质量与其整洁度成正比。干净的代码，既在质量上较为可靠，也为后期维护、升级奠定了良好基础。
 
@@ -169,7 +169,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 12、《硅谷之迷》
 
-![ ](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201023003241180.png)
+![ ](http://rainyudianxx.baimuxym.cn/hellocoder/image-20201023003241180.png)
 
 >一本颠覆人们对信息时代的认识、对创新和创业的理解的书，解密了美国硅谷互联网企业的成功之谜，揭示了信息时代的特点和方法论。
 
@@ -181,7 +181,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 13、《人月神话》
 
-![人月神话](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/s1086045.jpg)
+![人月神话](http://rainyudianxx.baimuxym.cn/hellocoder/s1086045.jpg)
 
 在互联网行业，生产力到底是什么？1个人干10个月等于10个人干1个月？
 
@@ -207,7 +207,7 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 ## 15、《Effective Java中文版（第3版）》
 
-![](https://cdn.jsdelivr.net/gh/DogerRain/image@main/img-202109/image-20211228114304652.png)
+![](http://rainyudianxx.baimuxym.cn/hellocoder/image-20211228114304652.png)
 
 本书一共包含90个条目，每个条目讨论Java程序设计中的一条规则。这些规则反映了最有经验的优秀程序员在实践中常用的一些有益的做法。
 
@@ -223,13 +223,14 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 
 除以上推荐之外，还有一系列的书籍，分享一些作者个人读过的一些珍藏好书，比如《Redis实战》、《软技能-代码之外的生存指南》、《计算机网络  自顶而下》、《》都是不错的书籍，喜欢的也可以拜读一下。
 
-![](https://blog-1253198264.cos.ap-guangzhou.myqcloud.com/image-20201114023743424.png)
+![](http://rainyudianxx.baimuxym.cn/hellocoder/image-20201114023743424.png)
 
 
 
 需要的小伙伴可以自取：
-
 链接：https://pan.baidu.com/s/1DCdJ7vpHdLpOITH9u8TkeQ 
 提取码：zs60 
 
-链接如果失效了， 可以在我的公众号 回复 003 获取最新链接。
+
+
+链接如果失效了， 可以在我的公众号 回复 **003** 获取最新链接。
