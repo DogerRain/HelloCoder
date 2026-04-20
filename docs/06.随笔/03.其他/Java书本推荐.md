@@ -232,4 +232,4 @@ Java入门的经典书籍，虽然《Java核心技术 卷1》、《Java编程思
 链接：https://pan.baidu.com/s/1DCdJ7vpHdLpOITH9u8TkeQ 
 提取码：zs60 
 
-链接如果失效了，可以到这里下载：[https://rain.baimuxym.cn/article/5#menu_5](https://rain.baimuxym.cn/article/5#menu_5)
+链接如果失效了， 可以在我的公众号 回复 003 获取最新链接。
