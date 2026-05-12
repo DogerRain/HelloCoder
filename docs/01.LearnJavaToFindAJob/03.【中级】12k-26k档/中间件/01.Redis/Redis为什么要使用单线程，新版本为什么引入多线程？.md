@@ -113,7 +113,7 @@ Lazy Free，又称为懒惰删除。
 
 这三个线程被称为**BIO线程**（Background I/O线程）
 
-有兴趣的可以了解一下Redis的删除策略：[Redis的过期策略和内存淘汰机制](https://rain.baimuxym.cn/article/13)
+有兴趣的可以了解一下Redis的删除策略。（下面文章有）
 
 ## 4、Redis6.0 引用的多线程
 

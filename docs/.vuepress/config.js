@@ -25,9 +25,15 @@ module.exports = {
         ['link', {rel: 'icon', href: '/img/favicon.ico'}], //favicons，资源放在public文件夹
         ['meta', {name: 'keywords', content: 'java面试,java面试题目,java核心知识,面试指南,Java小白求职之路'}],
         ['meta', {name: 'theme-color', content: '#11a8cd'}], // 移动浏览器主题颜色
+        ['meta', {name: 'baidu-site-verification', content: 'codeva-rQ312fkJSe'}], // 百度收录
 
         // ['meta', {name: 'wwads-cn-verify', content: '6c4b761a28b734fe93831e3fb400ce87'}], // 广告相关，你可以去掉
         // ['script', {src: 'https://cdn.wwads.cn/js/makemoney.js', type: 'text/javascript'}], // 广告相关，你可以去掉
+        ['script', {
+            async: true,
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866912415266057',
+            crossorigin: 'anonymous'
+        }],
         ['script',
             {
                 charset: 'utf-8',
