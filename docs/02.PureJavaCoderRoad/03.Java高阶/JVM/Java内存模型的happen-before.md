@@ -18,6 +18,13 @@ tags:
 
 在执行程序时，**为了提高性能，编译器/CPU 常常会对指令进行重排序**。
 
+常见的指令重排序有下面 2 种情况：
+
+- **编译器优化重排**：编译器（包括 JVM、JIT 编译器等）在不改变单线程程序语义的前提下，重新安排语句的执行顺序。
+- **指令并行重排**：现代处理器采用了指令级并行技术(Instruction-Level Parallelism，ILP)来将多条指令重叠执行。如果不存在数据依赖性，处理器可以改变语句对应机器指令的执行顺序。
+
+
+
 *所以说我们书写代码的顺序，并不是等同于代码在CPU真正执行的顺序。*
 
 这些重排序会导致线程安全的问题，一个很经典的例子就是双重锁定检查（DCL）。
@@ -59,11 +66,61 @@ public class YourExampleFixed {
 
  
 
-## happen-before
+## happen-before规则
 
-happen-before 是 Java 内存模型中保证多线程操作可见性的机制，也是对早期语言规范中含糊的可见性概念的一个精确定义。
+happen-before的语义：**前一个操作的结果对于后一个操作是可见的**
 
-内存模型通过 happen-before 关系向程序员提供**跨线程**的内存可见保证性（**如果A线程的写操作a与B线程的读操作b之间存在happens-before关系，尽管a操作和b操作在不同的线程中执行，但JMM向程序员保证a操作将对b操作可见**）。
+> 操作 1 happens-before 操作 2，操作 1 的结果对操作 2 是可见的。（或者说操作1先发生于操作2）
+
+
+
+happens-before 的规则有 8 条。
+
+### 1. 程序次序规则
+
+> 一个线程内，代码前面操作 happens-before 后面操作。
+>
+> **理解**：单线程看似代码从上往下执行，JMM 允许不破坏单线程结果的指令重排；只要单线程执行结果不变，内部可以重排，只是从**可见性逻辑上**前面操作 hb 后面。
+
+### 2. 锁解锁规则（monitor）
+
+> 同一个锁：解锁 happens-before 后续加锁。
+>
+> **理解**：线程 A 释放 synchronized 锁，A 所有共享变量刷新到主存；后续线程 B 获取同一把锁，能看见 A 解锁前所有修改，是 synchronized 可见性的底层依据。
+
+### 3. volatile 读写规则
+
+> volatile 写 happens-before 后续任意 volatile 读。
+>
+> **理解**：写完 volatile 立刻刷入主存；后面读 volatile 强制清空本地缓存拿新值，是 volatile 可见性的 happens-before 来源。
+
+### 4. 传递性规则
+
+> A hb B，B hb C → A hb C。
+>
+> **理解：最关键串联规则**，可以跨同步组件传递可见性：
+>
+> 举例：普通变量赋值→写 volatile (hb)→读 volatile (hb)→普通读取，前面赋值对后面读取可见。
+
+### 5. 线程 start 启动规则
+
+> Thread.start () happens-before 子线程内所有代码。
+>
+> **理解**：主线程在 start () 之前的所有变量修改，子线程内部一定可见。
+
+
+
+
+
+
+
+下面是对上面规则的一些例子：
+
+
+
+JMM 通过 happen-before 关系向程序员提供**跨线程**的内存可见保证性（**如果A线程的写操作a与B线程的读操作b之间存在happens-before关系，尽管a操作和b操作在不同的线程中执行，但JMM向程序员保证a操作将对b操作可见**）。
+
+
 
 单线程：
 
@@ -83,7 +140,9 @@ class ProgramOrder {
 
 > **程序顺序规则**：同一线程中，前面的操作 happens-before 后面的操作
 
- 多线程
+
+
+ 多线程：
 
 ```java
 class VolatileRule {
@@ -120,9 +179,9 @@ class VolatileRule {
 
 
 
-### 常见误解澄清
+## 常见误解澄清
 
-#### 误解1："happens-before禁止所有重排序"
+### 误解1："happens-before禁止所有重排序"
 
 
 
@@ -145,7 +204,7 @@ class Misunderstanding1 {
 
 
 
-#### 误解2："所有volatile操作都不能重排序"
+### 误解2："所有volatile操作都不能重排序"
 
 
 

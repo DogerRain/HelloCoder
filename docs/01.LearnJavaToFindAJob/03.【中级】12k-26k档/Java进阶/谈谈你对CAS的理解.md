@@ -16,9 +16,9 @@ tags:
 
 ## 一、CAS是什么？
 
+CAS 的全称是 Compare And Swap（比较与交换） ，用于实现乐观锁，被广泛应用于各大框架中。CAS 的思想很简单，就是用一个预期值和要更新的变量值进行比较，两值相等才会进行更新。
+
 **CAS是CPU的原子指令**，实现**无锁并发**的核心技术。它的工作模式是：
-
-
 
 ```javascript
 // 逻辑伪代码（不是真实实现）
@@ -34,6 +34,14 @@ boolean compareAndSwap(address, expectedValue, newValue) {
 
 
 **一句话概括**：**"我认为现在的值是A，如果是，就改成B，不是就不改"**
+
+
+
+确点来说，Java 中 CAS 是 C++ 内联汇编的形式实现的，通过 JNI（Java Native Interface） 调用。因此，CAS 的具体实现与操作系统以及 CPU 密切相关。
+
+CAS 虽然具有高效的无锁特性，但也需要注意 ABA 、循环时间长开销大等问题。
+
+
 
 ## 二、为什么需要CAS？
 
@@ -95,9 +103,11 @@ public class CASComponents {
 
 ## 四、CAS在Java中的实现
 
+
+
 ### 1. **Unsafe类** - CAS的底层入口
 
-
+`sun.misc`包下的`Unsafe`类提供了`compareAndSwapObject`、`compareAndSwapInt`、`compareAndSwapLong`方法来实现的对`Object`、`int`、`long`类型的 CAS 操作：
 
 ```java
 public final class Unsafe {
@@ -114,6 +124,10 @@ public final class Unsafe {
 ```
 
 
+
+`java.util.concurrent.atomic` 包提供了一些用于原子操作的类。
+
+![](http://rainyudianxx.baimuxym.cn/hellocoder/image-20260603115158935.png)
 
 ### 2. **CPU指令支持**
 
@@ -198,3 +212,4 @@ protected final boolean compareAndSetState(int expect, int update) {
     return unsafe.compareAndSwapInt(this, stateOffset, expect, update);
 }
 ```
+

@@ -35,3 +35,43 @@
 
 那么 新线程可以直接尝试竞争，它通常会比那些刚被唤醒的、需要经历上下文切换的线程更快一步获取到锁。这就是典型的**插队行为**。
 
+
+
+## 底层原理
+
+synchronized 关键字底层原理属于 JVM 层面的东西。修饰不同的地方也不一样。
+
+1、同步块
+
+**`synchronized` 同步语句块的实现使用的是 `monitorenter` 和 `monitorexit` 指令，其中 `monitorenter` 指令指向同步代码块的开始位置，`monitorexit` 指令则指明同步代码块的结束位置。**
+
+```javascript
+public class SynchronizedDemo {
+    public void method() {
+        synchronized (this) {
+            System.out.println("synchronized 代码块");
+        }
+    }
+}
+```
+
+当执行 `monitorenter` 指令时，线程试图获取锁也就是获取 **对象监视器 `monitor`** 的持有权。
+
+对象锁的拥有者线程才可以执行 `monitorexit` 指令来释放锁。在执行 `monitorexit` 指令后，将锁计数器设为 0，表明锁被释放，其他线程可以尝试获取锁。
+
+2、synchronized 修饰方法的情况
+
+```java
+public class SynchronizedDemo2 {
+    public synchronized void method() {
+        System.out.println("synchronized 方法");
+    }
+}
+```
+
+JVM 通过该 `ACC_SYNCHRONIZED` 访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用。
+
+
+
+不过，两者的本质都是对对象监视器 monitor 的获取。
+
