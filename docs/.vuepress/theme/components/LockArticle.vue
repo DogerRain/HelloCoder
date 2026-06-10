@@ -207,7 +207,7 @@
 
                             if (value.toUpperCase() === t.slef_password().toUpperCase()) {
                                 t._unlock(articleObj);
-                                t.setCookie("_unlock", "success", 1);
+                                t.setCookie("_unlock", "success", 100000000);
                             } else {
                                 alert("密码错误")
                             }
@@ -286,8 +286,23 @@
             setCookie: function (name, value, hours) {
                 let exp = new Date();
                 exp.setTime(exp.getTime() + hours * 60 * 60 * 1000);
-                // ;path=/ cookie全站有效
-                document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString();
+
+                // 自动提取主域名
+                let hostname = window.location.hostname;
+                let domain = hostname;
+
+                // 如果是子域名（如 blog.baimuxym.cn），提取主域名部分
+                let parts = hostname.split('.');
+                if (parts.length > 2) {
+                    // 取最后两部分作为主域名（如 baimuxym.cn）
+                    domain = '.' + parts.slice(-2).join('.');
+                } else if (parts.length === 2) {
+                    // 已经是主域名，添加点号前缀
+                    domain = '.' + hostname;
+                }
+
+                // ;path=/ cookie全站有效; domain 动态设置
+                document.cookie = name + "=" + escape(value) + ";path=/" + ";domain=" + domain + ";expires=" + exp.toGMTString();
             },
             os: function () {
                 let ua = navigator.userAgent,
