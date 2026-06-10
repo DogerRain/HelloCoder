@@ -121,11 +121,12 @@
                 }
             },
             _detect: function (articleObj, t) {
-                // if (null == articleObj) return;
-
-
                 let res = this.getCookie("_unlock");
-                if ('success' === res) {
+
+                // 优先检查 localStorage（永久有效）
+                let localRes = localStorage.getItem("_unlock");
+
+                if ('success' === res || 'success' === localRes) {
                     return;
                 } else {
                     t._lock(articleObj, this);
@@ -207,7 +208,9 @@
 
                             if (value.toUpperCase() === t.slef_password().toUpperCase()) {
                                 t._unlock(articleObj);
-                                t.setCookie("_unlock", "success", 100000000);
+                                // 同时使用 localStorage（永久）和 Cookie（兼容）
+                                localStorage.setItem("_unlock", "success");
+                                t.setCookie("_unlock", "success", 8760);
                             } else {
                                 alert("密码错误")
                             }
@@ -327,7 +330,7 @@
             //
             //     alert("点击");
             //
-            //     //    获取输入框内容
+            //    获取输入框内容
             //     let inputValue =  document.getElementById('input_password');
             //     let articleObj = this.articleObj();
             //     if (inputValue ==='milk'){
