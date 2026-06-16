@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 参考：https://cloud.tencent.com/developer/article/2626160
 
 
@@ -42,3 +36,6 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 openclaw gateway
 ```
 
+
+
+这个东西好像不太好用，新手遇到的坑很多，而且还不好解决。
