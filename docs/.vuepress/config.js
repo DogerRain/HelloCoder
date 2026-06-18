@@ -27,7 +27,6 @@ module.exports = {
         ['meta', {name: 'theme-color', content: '#11a8cd'}], // 移动浏览器主题颜色
         ['meta', {name: 'baidu-site-verification', content: 'codeva-rQ312fkJSe'}], // 百度收录
         ['meta', {name:'google-site-verification', content: 'i_rImxUz8IK5zedSClxerX-sEpZs_T1oRE2S15KqdxA' }],
-
         // ['meta', {name: 'wwads-cn-verify', content: '6c4b761a28b734fe93831e3fb400ce87'}], // 广告相关，你可以去掉
         // ['script', {src: 'https://cdn.wwads.cn/js/makemoney.js', type: 'text/javascript'}], // 广告相关，你可以去掉
         ['script', {
@@ -35,6 +34,7 @@ module.exports = {
             src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866912415266057',
             crossorigin: 'anonymous'
         }],
+
         ['script',
             {
                 charset: 'utf-8',
@@ -78,6 +78,19 @@ module.exports = {
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
               })();
+            `
+        ],
+        // 添加 Google Analytics
+        ['script', {
+            async: true,
+            src: 'https://www.googletagmanager.com/gtag/js?id=G-S80HSYVQJE'
+        }],
+        ['script', {},
+            `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-S80HSYVQJE');
             `
         ]
 
