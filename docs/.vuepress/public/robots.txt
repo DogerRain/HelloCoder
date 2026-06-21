@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://learnjava.baimuxym.cn/sitemap.xml

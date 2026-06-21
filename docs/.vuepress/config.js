@@ -2,7 +2,6 @@ const baiduCode = require('./config/baiduCode.js'); // 百度统计hm码
 const htmlModules = require('./config/htmlModules.js');
 const sidebar = require('./sidebar.js');
 
-const hostname = 'https://learnjava.baimuxym.cn'
 const isCI = process.env.CI === 'true'
 
 module.exports = {
@@ -194,11 +193,6 @@ module.exports = {
 
         // fulltext-search indexes every page at build time; skip in CI to save memory
         ...(isCI ? [] : [['fulltext-search']]),
-
-        ['sitemap', { // 自动生成 sitemap.xml
-            hostname,
-            changefreq: 'weekly',
-        }],
 
         // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
         //   thirdparty: [ // 可选，默认 []
