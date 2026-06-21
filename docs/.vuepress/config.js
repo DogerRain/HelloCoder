@@ -2,7 +2,6 @@ const baiduCode = require('./config/baiduCode.js'); // 百度统计hm码
 const htmlModules = require('./config/htmlModules.js');
 const sidebar = require('./sidebar.js');
 
-const hostname = 'https://learnjava.baimuxym.cn'
 
 module.exports = {
 
@@ -55,6 +54,18 @@ module.exports = {
                 charset: 'utf-8',
                 async: 'async',
                 src: '/js/fingerprint2.min.js',
+            }],
+        ['script',
+            {
+                charset: 'utf-8',
+                async: 'async',
+                src: 'https://readmore.openwrite.cn/js/readmore.js',
+            }],
+        ['script',
+            {
+                charset: 'utf-8',
+                async: 'async',
+                src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',
             }],
         // 添加百度统计
         //已换成 learnjava 的 hmcode
@@ -170,7 +181,7 @@ module.exports = {
         },
         footer: { // 页脚信息
             createYear: 2020, // 博客创建年份
-            copyrightInfo: 'HaC | <a href="/pages/%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96/">隐私政策</a>', // 博客版权信息，支持a标签
+            copyrightInfo: 'HaC', // 博客版权信息，支持a标签
             // copyrightInfo:
             //     '<p>友情链接：<a href="https://uniadmin.jiangruyi.com" target="_blank">UniAdmin</a> | <a href="https://jiangruyi.com" target="_blank">江如意的博客</a></p>' +
             //     'Copyright © 2021-2040 FUJIE. All rights reserved. 北京符节科技有限公司版权所有 | ' +
@@ -182,19 +193,12 @@ module.exports = {
 
     // 插件
     plugins: [
-        [require('./plugins/filter-closed-pages')],
-
         // [require('./plugins/love-me'), { // 鼠标点击爱心特效
         //   color: '#11a8cd', // 爱心颜色，默认随机色
         //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
         // }],
 
         ['fulltext-search'], // 全文搜索
-
-        ['sitemap', { // 自动生成 sitemap.xml
-            hostname,
-            changefreq: 'weekly',
-        }],
 
         // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
         //   thirdparty: [ // 可选，默认 []

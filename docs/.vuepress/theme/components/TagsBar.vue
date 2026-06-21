@@ -20,6 +20,11 @@
         v-if="length !== 'all' && tagsData.length > length"
       >更多...</router-link>
     </div>
+<!--    <span id="busuanzi_container_site_pv">-->
+<!--👀    本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>次-->
+<!--</span>-->
+
+<!--    🐒本站访客数<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>人次-->
   </div>
 </template>
 

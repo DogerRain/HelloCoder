@@ -72,13 +72,12 @@
             //     this._detect($article, this);
             // }
 
-            // [DISABLED] WeChat lock feature — uncomment block below to re-enable article truncation
-            // setInterval(() => {
-            //     if (this.isLock()) {
-            //         let $article = this.articleObj();
-            //         this._detect($article, this);
-            //     }
-            // }, 1500);
+            setInterval(() => {
+                if (this.isLock()) {
+                    let $article = this.articleObj();
+                    this._detect($article, this);
+                }
+            }, 1500);
 
 
             // 判断是否锁定文章

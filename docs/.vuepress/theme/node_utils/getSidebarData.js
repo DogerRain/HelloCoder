@@ -4,7 +4,6 @@ const chalk = require('chalk') // 命令行打印美化
 const matter = require('gray-matter'); // front matter解析器
 const log = console.log
 const {sortLikeWindows}  = require('./modules/soreDIY.js');
-const { isPageOpen } = require('./modules/isPageOpen');
 
 
 let catalogueData = {}; // 目录页数据
@@ -205,9 +204,6 @@ function mapTocToPostSidebar(root) {
 
         const contentStr = fs.readFileSync(file, 'utf8') // 读取md文件内容，返回字符串
         const {data} = matter(contentStr, {}) // 解析出front matter数据
-        if (!isPageOpen(data)) {
-            return
-        }
         const {permalink = '', titleTag = ''} = data || {}
         if (data.title) {
             title = data.title
@@ -306,9 +302,6 @@ function mapTocToSidebar(root, collapsable, prefix = '') {
             }
             const contentStr = fs.readFileSync(file, 'utf8') // 读取md文件内容，返回字符串
             const {data} = matter(contentStr, {}) // 解析出front matter数据
-            if (!isPageOpen(data)) {
-                return
-            }
             const {permalink = '', titleTag = ''} = data || {}
 
             // 目录页对应的永久链接，用于给面包屑提供链接

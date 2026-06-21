@@ -6,8 +6,8 @@ import {type, compareDate} from './index'
  */
 export function filterPosts(posts) {
     posts = posts.filter(item => {
-        const {frontmatter: {pageComponent, article, home, open}} = item
-        return !(pageComponent || article === false || home === true || open === false) // 存在页面组件、article字段为false，以及首页，以及 open 为 false
+        const {frontmatter: {pageComponent, article, home}} = item
+        return !(pageComponent || article === false || home === true) // 存在页面组件、article字段为false，以及首页
     })
     return posts
 }

@@ -31,8 +31,7 @@
 
 
         </div>
-        <!-- [DISABLED] WeChat lock feature — uncomment to re-enable LockArticle component -->
-        <!-- <LockArticle /> -->
+        <LockArticle />
 
 
         <slot name="bottom" v-if="isShowSlotB" />
@@ -54,8 +53,7 @@
 import PageEdit from '@theme/components/PageEdit.vue'
 import PageNav from '@theme/components/PageNav.vue'
 import ArticleInfo from './ArticleInfo.vue'
-// [DISABLED] WeChat lock feature — uncomment to re-enable LockArticle component
-// import LockArticle from './LockArticle.vue'
+import LockArticle from './LockArticle.vue'
 import Catalogue from './Catalogue.vue'
 import UpdateArticle from './UpdateArticle.vue'
 import RightMenu from './RightMenu.vue'
@@ -69,7 +67,7 @@ export default {
     }
   },
   props: ['sidebarItems'],
-  components: { PageEdit, PageNav, ArticleInfo, Catalogue, UpdateArticle, RightMenu /* ,LockArticle */ },
+  components: { PageEdit, PageNav, ArticleInfo, Catalogue, UpdateArticle, RightMenu ,LockArticle},
   created() {
     this.updateBarConfig = this.$themeConfig.updateBar
   },

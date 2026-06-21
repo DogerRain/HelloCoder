@@ -34,16 +34,14 @@
             this.getHashText()
 
 
-            // [DISABLED] WeChat lock feature — uncomment to re-enable TOC lock
-            // this.Lock()
+            this.Lock()
 
         },
         watch: {
             $route() {
                 this.headers = this.$page.headers
                 this.getHashText()
-                // [DISABLED] WeChat lock feature — uncomment to re-enable TOC lock
-                // this.Lock()
+                this.Lock()
             }
         },
         methods: {
@@ -55,17 +53,14 @@
             },
 
             Lock() {
-                // [DISABLED] WeChat lock feature — uncomment block below to re-enable TOC lock when article is locked
-                // let islock =  this.NeedLock();
-                // let clone2 = this.articleObj();
-                // if (islock===true){
-                //     clone2.css('pointer-events','none');
-                //     // document.getElementById("right-menu-content").style="pointer-events:none";
-                // }else {
-                //     clone2.css('pointer-events','auto');
-                // }
+                let islock =  this.NeedLock();
                 let clone2 = this.articleObj();
-                clone2.css('pointer-events','auto');
+                if (islock===true){
+                    clone2.css('pointer-events','none');
+                    // document.getElementById("right-menu-content").style="pointer-events:none";
+                }else {
+                    clone2.css('pointer-events','auto');
+                }
                 return true;
 
             },
