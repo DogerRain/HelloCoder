@@ -2,7 +2,9 @@
 
 第二次提交 google adsene了，又被拒绝了。
 
-![](picture/image-20260621220028368.png)
+
+
+![](http://rainyudianxx.baimuxym.cn/hellocoder/image-20260621220028368.png)
 
 
 
