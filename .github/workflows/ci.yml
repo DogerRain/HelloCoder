@@ -11,6 +11,9 @@ on:
 permissions:
   contents: write
 
+env:
+  NODE_OPTIONS: '--max-old-space-size=6144'
+
 #env:
 #  SERVER_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }} # 服务器私钥
 #  SERVER_HOST: ${{ secrets.SERVER_HOST }} # 服务器IP地址
@@ -24,7 +27,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:

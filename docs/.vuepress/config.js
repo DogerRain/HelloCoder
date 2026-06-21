@@ -2,12 +2,10 @@ const baiduCode = require('./config/baiduCode.js'); // 百度统计hm码
 const htmlModules = require('./config/htmlModules.js');
 const sidebar = require('./sidebar.js');
 
-const isCI = process.env.CI === 'true'
+const hostname = 'https://learnjava.baimuxym.cn'
 
 module.exports = {
 
-    // Reduce SSR build memory for large sites (~400+ pages)
-    shouldPrefetch: false,
 
     port: '1299',
 
@@ -191,8 +189,12 @@ module.exports = {
         //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
         // }],
 
-        // fulltext-search indexes every page at build time; skip in CI to save memory
-        ...(isCI ? [] : [['fulltext-search']]),
+        ['fulltext-search'], // 全文搜索
+
+        ['sitemap', { // 自动生成 sitemap.xml
+            hostname,
+            changefreq: 'weekly',
+        }],
 
         // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
         //   thirdparty: [ // 可选，默认 []

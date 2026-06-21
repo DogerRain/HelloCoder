@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "del /q dist && node --openssl-legacy-provider --max-old-space-size=8192 node_modules/vuepress/cli.js build docs",
-    "buildLinux": "rm -rf dist && node --openssl-legacy-provider --max-old-space-size=8192 node_modules/vuepress/cli.js build docs",
+    "build": "del /q dist && vuepress build docs",
+    "buildLinux": "rm -rf  dist && vuepress build docs",
     "deploy": "bash deploy.sh",
     "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D",
     "editFm": "node utils/editFrontmatter.js"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=20"
-  },
   "devDependencies": {
     "dayjs": "^1.9.7",
     "inquirer": "^7.1.0",
@@ -23,6 +20,7 @@
     "vuepress-plugin-demo-block": "^0.7.2",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-one-click-copy": "^1.0.2",
+    "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-thirdparty-search": "^1.0.2",
     "vuepress-plugin-zooming": "^1.1.7",
     "vuepress-theme-vdoing": "^1.10.0",
