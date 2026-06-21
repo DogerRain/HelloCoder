@@ -1,3 +1,16 @@
+---
+title: Navicat替代品—DBeaver
+date: 2025-11-23 16:03:40
+lock: false
+permalink: /pages/Navicat%E6%9B%BF%E4%BB%A3%E5%93%81%E2%80%94DBeaver
+categories:
+  - 脚手架
+  - MySQL
+tags:
+  - Navicat
+  - DBeaver
+  - 替代品
+---
 在操作数据库的工具中，Navicat无疑是最强大的一个，但是它是收费的。而且支持的数据库产品较少。
 
 此前也介绍过 Workbench 这一个工具，也是开源免费的。但是Workbench 并不是那么好用。
