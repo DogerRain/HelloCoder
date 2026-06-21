@@ -10,6 +10,9 @@
     "editFm": "node utils/editFrontmatter.js"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
   "devDependencies": {
     "dayjs": "^1.9.7",
     "inquirer": "^7.1.0",
