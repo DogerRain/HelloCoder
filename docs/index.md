@@ -31,18 +31,6 @@ postList: none
 
 <br/>
 
-
-<!--
-<span id="busuanzi_container_site_pv">
-👀    本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>次
-</span>
-
-🐒本站访客数<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>人次
-
--->
-
-<br/>
-
 ## 关于本项目
 
 本项目包含以下几个模块：
