@@ -6,6 +6,8 @@ const hostname = 'https://learnjava.baimuxym.cn'
 
 module.exports = {
 
+    // Reduce SSR build memory for large sites (~400+ pages)
+    shouldPrefetch: false,
 
     port: '1299',
 

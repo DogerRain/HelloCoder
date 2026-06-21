@@ -6,7 +6,8 @@ tagline:
 #actionText: 开始使用 →
 actionLink: /pages/shiyongruanjian/
 #bannerBg: none  # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
-bannerBg: /img/site/blbcover.gif
+bannerBg: http://rainyudianxx.baimuxym.cn/hellocoder/blbcover.gif
+# /img/site/blbcover.gif
 features: # 可选的
   - title: 《Java小白求职》
     details: 作者本人在Java面试中遇到的题目

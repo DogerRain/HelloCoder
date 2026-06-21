@@ -11,6 +11,8 @@ on:
 permissions:
   contents: write
 
+env:
+  NODE_OPTIONS: '--openssl-legacy-provider --max-old-space-size=6144'
 
 #env:
 #  SERVER_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }} # 服务器私钥
