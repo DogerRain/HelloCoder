@@ -47,6 +47,18 @@ export default {
     }
   },
   components: { MainLayout, PostList, Pagination, TagsBar },
+  metaInfo () {
+    const raw = this.$route.query.tag
+    let pageTitle = '标签'
+    if (raw) {
+      try {
+        pageTitle = decodeURIComponent(String(raw))
+      } catch (err) {
+        pageTitle = String(raw)
+      }
+    }
+    return { title: pageTitle }
+  },
   mounted () {
     const queryTag = this.$route.query.tag
 

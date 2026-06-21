@@ -47,6 +47,18 @@ export default {
     }
   },
   components: { MainLayout, PostList, Pagination, CategoriesBar },
+  metaInfo () {
+    const raw = this.$route.query.category
+    let pageTitle = '分类'
+    if (raw) {
+      try {
+        pageTitle = decodeURIComponent(String(raw))
+      } catch (err) {
+        pageTitle = String(raw)
+      }
+    }
+    return { title: pageTitle }
+  },
   mounted () {
     const queryCategory = this.$route.query.category
     if (queryCategory) {
