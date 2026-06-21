@@ -2,6 +2,11 @@ const baiduCode = require('./config/baiduCode.js'); // 百度统计hm码
 const htmlModules = require('./config/htmlModules.js');
 const sidebar = require('./sidebar.js');
 
+// Sitemap canonical URL (build-time only). Override in CI/deploy when the domain changes:
+//   VUEPRESS_HOSTNAME=https://example.com npm run build
+//   or SITE_URL=https://example.com npm run build
+const DEFAULT_HOSTNAME = 'https://baimuxym.cn'
+const hostname = (process.env.VUEPRESS_HOSTNAME || process.env.SITE_URL || DEFAULT_HOSTNAME).replace(/\/$/, '')
 
 module.exports = {
 
@@ -54,18 +59,6 @@ module.exports = {
                 charset: 'utf-8',
                 async: 'async',
                 src: '/js/fingerprint2.min.js',
-            }],
-        ['script',
-            {
-                charset: 'utf-8',
-                async: 'async',
-                src: 'https://readmore.openwrite.cn/js/readmore.js',
-            }],
-        ['script',
-            {
-                charset: 'utf-8',
-                async: 'async',
-                src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',
             }],
         // 添加百度统计
         //已换成 learnjava 的 hmcode
@@ -201,6 +194,11 @@ module.exports = {
         // }],
 
         ['fulltext-search'], // 全文搜索
+
+        ['sitemap', { // 自动生成 sitemap.xml
+            hostname,
+            changefreq: 'weekly',
+        }],
 
         // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
         //   thirdparty: [ // 可选，默认 []
