@@ -11,9 +11,6 @@ on:
 permissions:
   contents: write
 
-env:
-  NODE_OPTIONS: '--max-old-space-size=6144'
-
 #env:
 #  SERVER_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }} # 服务器私钥
 #  SERVER_HOST: ${{ secrets.SERVER_HOST }} # 服务器IP地址
@@ -39,6 +36,8 @@ jobs:
         cache: 'npm'
 
     - name: Install and Build
+      env:
+        NODE_OPTIONS: '--max-old-space-size=8192'
       run: |
         npm install
         npm run buildLinux
