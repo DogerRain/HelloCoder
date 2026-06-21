@@ -87,7 +87,7 @@
 
    这里推荐到[https://pagespeed.web.dev](https://pagespeed.web.dev) 进行网站检测。
 
-   ![](picture/image-20260621221639934.png)
+   ![](http://rainyudianxx.baimuxym.cn/hellocoder/image-20260621221639934.png)
 
 5. **流量来源异常**：垃圾流量、刷量、点击交换、付费访客等违规流量渠道。
 
