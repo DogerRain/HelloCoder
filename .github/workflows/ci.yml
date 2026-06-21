@@ -36,10 +36,6 @@ jobs:
         cache: 'npm'
 
     - name: Install and Build
-      env:
-        # ubuntu-latest has ~7GB RAM (standard) or 16GB (larger runners).
-        # OOM at ~8073MB on Node 16 → try Node 20 first; if still OOM, bump to 10240.
-        NODE_OPTIONS: '--max-old-space-size=8192'
       run: |
         npm install
         npm run buildLinux

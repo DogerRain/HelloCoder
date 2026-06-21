@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "set NODE_OPTIONS=--max-old-space-size=8192&& del /q dist && vuepress build docs",
-    "buildLinux": "export NODE_OPTIONS='--max-old-space-size=8192' && rm -rf dist && vuepress build docs",
+    "build": "del /q dist && node --openssl-legacy-provider --max-old-space-size=8192 node_modules/vuepress/cli.js build docs",
+    "buildLinux": "rm -rf dist && node --openssl-legacy-provider --max-old-space-size=8192 node_modules/vuepress/cli.js build docs",
     "deploy": "bash deploy.sh",
     "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D",
     "editFm": "node utils/editFrontmatter.js"
