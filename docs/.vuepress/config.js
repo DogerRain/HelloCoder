@@ -187,6 +187,7 @@ module.exports = {
     // 插件
     plugins: [
         [require('./plugins/filter-closed-pages')],
+        [require('./plugins/markdown-mermaid')],
 
         // [require('./plugins/love-me'), { // 鼠标点击爱心特效
         //   color: '#11a8cd', // 爱心颜色，默认随机色
