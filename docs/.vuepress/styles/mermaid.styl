@@ -2,70 +2,19 @@
   margin 1.2rem auto
   text-align center
   overflow-x auto
-  position relative
 
 .theme-vdoing-content .mermaid-chart.is-rendered
-  width 80%
-  max-width 720px
+  width 65%
+  max-width 560px
 
 .theme-vdoing-content .mermaid-chart .mermaid-source
   display none
-
-.theme-vdoing-content .mermaid-chart .mermaid-chart-inner
-  position relative
-  display inline-block
-  width 100%
-  max-width 100%
-
-.theme-vdoing-content .mermaid-chart .mermaid-diagram
-  overflow-x auto
 
 .theme-vdoing-content .mermaid-chart.is-rendered svg
   max-width 100%
   height auto
   display block
   margin 0 auto
-
-.theme-vdoing-content .mermaid-chart .mermaid-toolbar
-  position absolute
-  top 8px
-  right 8px
-  z-index 2
-  display flex
-  gap 4px
-  opacity 0
-  transition opacity 0.2s ease
-
-.theme-vdoing-content .mermaid-chart .mermaid-chart-inner:hover .mermaid-toolbar,
-.theme-vdoing-content .mermaid-chart .mermaid-toolbar:focus-within
-  opacity 1
-
-@media (hover: none)
-  .theme-vdoing-content .mermaid-chart .mermaid-toolbar
-    opacity 0.85
-
-.theme-vdoing-content .mermaid-chart .mermaid-toolbar-btn
-  display inline-flex
-  align-items center
-  justify-content center
-  width 30px
-  height 30px
-  padding 0
-  border 1px solid var(--borderColor, #ccc)
-  border-radius 4px
-  background var(--mainBg, rgba(255, 255, 255, 0.92))
-  color var(--textColor, #333)
-  cursor pointer
-  box-shadow 0 1px 4px rgba(0, 0, 0, 0.08)
-  transition background 0.2s ease, color 0.2s ease, border-color 0.2s ease
-
-.theme-vdoing-content .mermaid-chart .mermaid-toolbar-btn:hover
-  color $accentColor
-  border-color $accentColor
-
-.theme-vdoing-content .mermaid-chart .mermaid-toolbar-btn:focus-visible
-  outline 2px solid $accentColor
-  outline-offset 2px
 
 .theme-vdoing-content .mermaid-chart.is-error .mermaid-error
   color #c62828
@@ -75,63 +24,3 @@
   font-size 14px
   text-align left
   white-space pre-wrap
-
-.mermaid-lightbox
-  position fixed
-  inset 0
-  z-index 9999
-  display none
-  align-items center
-  justify-content center
-  padding 24px
-  box-sizing border-box
-
-.mermaid-lightbox.is-open
-  display flex
-
-body.mermaid-lightbox-open
-  overflow hidden
-
-.mermaid-lightbox-backdrop
-  position absolute
-  inset 0
-  background rgba(0, 0, 0, 0.55)
-
-.mermaid-lightbox-panel
-  position relative
-  z-index 1
-  width min(96vw, 1200px)
-  max-height 92vh
-  overflow auto
-  padding 20px
-  border-radius 8px
-  background var(--mainBg, #fff)
-  border 1px solid var(--borderColor, #ccc)
-  box-shadow 0 12px 40px rgba(0, 0, 0, 0.2)
-
-.mermaid-lightbox-close
-  position absolute
-  top 8px
-  right 10px
-  width 32px
-  height 32px
-  border 0
-  border-radius 4px
-  background transparent
-  color var(--textColor, #333)
-  font-size 24px
-  line-height 1
-  cursor pointer
-
-.mermaid-lightbox-close:hover
-  color $accentColor
-
-.mermaid-lightbox-diagram
-  overflow auto
-  text-align center
-
-.mermaid-lightbox-diagram svg
-  max-width 100%
-  height auto
-  display block
-  margin 0 auto
