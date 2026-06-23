@@ -1,9 +1,38 @@
-import mermaid from 'mermaid'
 import Vue from 'vue'
 
+const MERMAID_SCRIPT = '/js/mermaid.min.js'
+
+let mermaidPromise = null
 let initialized = false
 
-function initMermaid () {
+function loadMermaid () {
+  if (typeof window === 'undefined') return Promise.resolve(null)
+  if (window.mermaid) return Promise.resolve(window.mermaid)
+  if (mermaidPromise) return mermaidPromise
+
+  mermaidPromise = new Promise((resolve, reject) => {
+    const existing = document.querySelector(`script[src="${MERMAID_SCRIPT}"]`)
+    if (existing) {
+      existing.addEventListener('load', () => resolve(window.mermaid))
+      existing.addEventListener('error', () => reject(new Error('Failed to load mermaid script')))
+      return
+    }
+
+    const script = document.createElement('script')
+    script.src = MERMAID_SCRIPT
+    script.async = true
+    script.onload = () => {
+      if (window.mermaid) resolve(window.mermaid)
+      else reject(new Error('mermaid script loaded but window.mermaid is missing'))
+    }
+    script.onerror = () => reject(new Error('Failed to load mermaid script'))
+    document.head.appendChild(script)
+  })
+
+  return mermaidPromise
+}
+
+function initMermaid (mermaid) {
   if (initialized) return
 
   mermaid.initialize({
@@ -19,9 +48,21 @@ function initMermaid () {
 async function renderMermaidCharts (container) {
   const root = container || document
   const charts = root.querySelectorAll('.mermaid-chart:not([data-rendered])')
-  if (!charts.length) return
+  if (!charts.length) return false
 
-  initMermaid()
+  let mermaid
+  try {
+    mermaid = await loadMermaid()
+  } catch (err) {
+    charts.forEach((chart) => {
+      chart.setAttribute('data-rendered', 'error')
+      chart.classList.add('is-error')
+      chart.innerHTML = `<pre class="mermaid-error">${err.message || String(err)}</pre>`
+    })
+    return true
+  }
+
+  initMermaid(mermaid)
 
   let index = 0
   for (const chart of charts) {
@@ -50,17 +91,30 @@ async function renderMermaidCharts (container) {
       chart.innerHTML = `<pre class="mermaid-error">${message}</pre>`
     }
   }
+
+  return true
+}
+
+function scheduleMermaidRender () {
+  let attempts = 0
+  const maxAttempts = 30
+
+  const tryRender = async () => {
+    attempts += 1
+    const rendered = await renderMermaidCharts()
+    if (!rendered && attempts < maxAttempts) {
+      setTimeout(tryRender, 100)
+    }
+  }
+
+  Vue.nextTick(() => {
+    tryRender()
+  })
 }
 
 export default ({ router, isServer }) => {
   if (isServer) return
 
-  const scheduleRender = () => {
-    Vue.nextTick(() => {
-      renderMermaidCharts()
-    })
-  }
-
-  router.onReady(scheduleRender)
-  router.afterEach(scheduleRender)
+  router.onReady(scheduleMermaidRender)
+  router.afterEach(scheduleMermaidRender)
 }
