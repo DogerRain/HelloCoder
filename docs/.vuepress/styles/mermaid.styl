@@ -4,6 +4,7 @@
   overflow-x auto
 
 .theme-vdoing-content .mermaid-chart.is-rendered
+  position relative
   width 65%
   max-width 560px
 
@@ -16,6 +17,34 @@
   display block
   margin 0 auto
 
+.theme-vdoing-content .mermaid-chart .mermaid-zoom-btn
+  position absolute
+  top 8px
+  right 8px
+  z-index 2
+  display flex
+  align-items center
+  justify-content center
+  width 32px
+  height 32px
+  padding 0
+  border none
+  border-radius 6px
+  background rgba(255, 255, 255, 0.92)
+  color #555
+  cursor pointer
+  box-shadow 0 1px 4px rgba(0, 0, 0, 0.12)
+  transition background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease
+
+.theme-vdoing-content .mermaid-chart .mermaid-zoom-btn:hover
+  background #fff
+  color #222
+  box-shadow 0 2px 8px rgba(0, 0, 0, 0.16)
+
+.theme-vdoing-content .mermaid-chart .mermaid-zoom-btn:focus-visible
+  outline 2px solid #3eaf7c
+  outline-offset 2px
+
 .theme-vdoing-content .mermaid-chart.is-error .mermaid-error
   color #c62828
   background #ffebee
@@ -24,3 +53,66 @@
   font-size 14px
   text-align left
   white-space pre-wrap
+
+.mermaid-lightbox
+  position fixed
+  inset 0
+  z-index 9999
+  display none
+  align-items center
+  justify-content center
+  padding 24px
+
+.mermaid-lightbox.is-open
+  display flex
+
+.mermaid-lightbox-backdrop
+  position absolute
+  inset 0
+  background rgba(0, 0, 0, 0.55)
+
+.mermaid-lightbox-panel
+  position relative
+  z-index 1
+  width min(92vw, 1100px)
+  max-height 90vh
+  overflow auto
+  padding 20px
+  border-radius 10px
+  background #fff
+  box-shadow 0 12px 40px rgba(0, 0, 0, 0.28)
+
+.mermaid-lightbox-close
+  position absolute
+  top 10px
+  right 10px
+  z-index 2
+  display flex
+  align-items center
+  justify-content center
+  width 36px
+  height 36px
+  padding 0
+  border none
+  border-radius 6px
+  background rgba(0, 0, 0, 0.06)
+  color #444
+  cursor pointer
+  transition background 0.15s ease, color 0.15s ease
+
+.mermaid-lightbox-close:hover
+  background rgba(0, 0, 0, 0.12)
+  color #111
+
+.mermaid-lightbox-close:focus-visible
+  outline 2px solid #3eaf7c
+  outline-offset 2px
+
+.mermaid-lightbox-body
+  padding 28px 12px 12px
+  text-align center
+
+.mermaid-lightbox-body svg
+  max-width 100%
+  height auto
+  display inline-block
