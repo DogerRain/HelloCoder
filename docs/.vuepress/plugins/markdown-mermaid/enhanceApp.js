@@ -6,6 +6,10 @@ const EXPAND_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="
 
 const CLOSE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
 
+const INLINE_MAX_HEIGHT_RATIO = 0.5
+const LIGHTBOX_WIDTH_RATIO = 0.8
+const LIGHTBOX_HEIGHT_RATIO = 0.8
+
 let mermaidPromise = null
 let initialized = false
 let lightbox = null
@@ -51,11 +55,62 @@ function initMermaid (mermaid) {
   initialized = true
 }
 
-function styleSvg (svgEl) {
-  if (!svgEl) return
-  svgEl.style.maxWidth = '100%'
-  svgEl.style.height = 'auto'
+function parseViewBox (svgEl) {
+  const viewBox = svgEl.getAttribute('viewBox')
+  if (!viewBox) return null
+
+  const parts = viewBox.trim().split(/[\s,]+/).map(Number)
+  if (parts.length < 4 || !parts[2] || !parts[3]) return null
+
+  return { width: parts[2], height: parts[3] }
+}
+
+function fitSvgToBounds (svgEl, maxWidth, maxHeight, allowUpscale = false) {
+  if (!svgEl || maxWidth <= 0 || maxHeight <= 0) return
+
+  svgEl.removeAttribute('width')
+  svgEl.removeAttribute('height')
+  svgEl.style.removeProperty('transform')
+  svgEl.style.removeProperty('transform-origin')
   svgEl.style.display = 'block'
+  svgEl.style.margin = '0 auto'
+  svgEl.style.maxWidth = '100%'
+  svgEl.style.maxHeight = `${maxHeight}px`
+  svgEl.style.width = 'auto'
+  svgEl.style.height = 'auto'
+  svgEl.setAttribute('preserveAspectRatio', 'xMidYMid meet')
+
+  const viewBox = parseViewBox(svgEl)
+  if (!viewBox) return
+
+  let scale = Math.min(maxWidth / viewBox.width, maxHeight / viewBox.height)
+  if (!allowUpscale) scale = Math.min(scale, 1)
+
+  svgEl.style.width = `${Math.round(viewBox.width * scale)}px`
+  svgEl.style.height = `${Math.round(viewBox.height * scale)}px`
+}
+
+function getInlineBounds (chart) {
+  const viewport = chart.querySelector('.mermaid-chart-viewport') || chart
+  const width = viewport.clientWidth || Math.min(window.innerWidth * 0.9, 720)
+  const height = window.innerHeight * INLINE_MAX_HEIGHT_RATIO
+
+  return { width, height }
+}
+
+function getLightboxBounds () {
+  const horizontalPadding = 64
+  const verticalPadding = 96
+
+  return {
+    width: Math.max(window.innerWidth * LIGHTBOX_WIDTH_RATIO - horizontalPadding, 240),
+    height: Math.max(window.innerHeight * LIGHTBOX_HEIGHT_RATIO - verticalPadding, 240)
+  }
+}
+
+function fitInlineSvg (svgEl, chart) {
+  const bounds = getInlineBounds(chart)
+  fitSvgToBounds(svgEl, bounds.width, bounds.height)
 }
 
 function ensureLightbox () {
@@ -86,18 +141,21 @@ function onLightboxKeydown (event) {
 }
 
 function openLightbox (svgEl) {
+  if (!svgEl) return
+
   const modal = ensureLightbox()
   const body = modal.querySelector('.mermaid-lightbox-body')
   body.innerHTML = ''
 
   const clone = svgEl.cloneNode(true)
   clone.removeAttribute('style')
-  clone.style.maxWidth = '100%'
-  clone.style.height = 'auto'
-  clone.style.display = 'block'
   body.appendChild(clone)
 
+  const bounds = getLightboxBounds()
+  fitSvgToBounds(clone, bounds.width, bounds.height, true)
+
   modal.classList.add('is-open')
+  modal.setAttribute('aria-hidden', 'false')
   document.body.style.overflow = 'hidden'
   bodyScrollLocked = true
 }
@@ -106,6 +164,7 @@ function closeLightbox () {
   if (!lightbox?.classList.contains('is-open')) return
 
   lightbox.classList.remove('is-open')
+  lightbox.setAttribute('aria-hidden', 'true')
   lightbox.querySelector('.mermaid-lightbox-body').innerHTML = ''
 
   if (bodyScrollLocked) {
@@ -114,20 +173,37 @@ function closeLightbox () {
   }
 }
 
-function addZoomButton (chart, svgEl) {
+function addZoomButton (chart) {
   let button = chart.querySelector('.mermaid-zoom-btn')
-  if (!button) {
-    button = document.createElement('button')
-    button.type = 'button'
-    button.className = 'mermaid-zoom-btn'
-    button.setAttribute('aria-label', 'Enlarge diagram')
-    button.innerHTML = EXPAND_ICON
-    chart.appendChild(button)
-    button.addEventListener('click', (event) => {
-      event.preventDefault()
-      event.stopPropagation()
-      openLightbox(svgEl)
-    })
+  if (button) return
+
+  button = document.createElement('button')
+  button.type = 'button'
+  button.className = 'mermaid-zoom-btn'
+  button.setAttribute('aria-label', 'Enlarge diagram')
+  button.innerHTML = EXPAND_ICON
+  chart.appendChild(button)
+
+  button.addEventListener('click', (event) => {
+    event.preventDefault()
+    event.stopPropagation()
+    const currentSvg = chart.querySelector('.mermaid-chart-viewport svg, svg')
+    openLightbox(currentSvg)
+  })
+}
+
+function refitRenderedCharts () {
+  document.querySelectorAll('.mermaid-chart.is-rendered').forEach((chart) => {
+    const svgEl = chart.querySelector('.mermaid-chart-viewport svg, svg')
+    if (svgEl) fitInlineSvg(svgEl, chart)
+  })
+
+  if (lightbox?.classList.contains('is-open')) {
+    const svgEl = lightbox.querySelector('.mermaid-lightbox-body svg')
+    if (svgEl) {
+      const bounds = getLightboxBounds()
+      fitSvgToBounds(svgEl, bounds.width, bounds.height, true)
+    }
   }
 }
 
@@ -161,10 +237,10 @@ async function renderMermaidCharts (container) {
     try {
       const chartId = `mermaid-diagram-${Date.now()}-${index++}`
       const { svg } = await mermaid.render(chartId, source)
-      chart.innerHTML = svg
+      chart.innerHTML = `<div class="mermaid-chart-viewport">${svg}</div>`
       const svgEl = chart.querySelector('svg')
-      styleSvg(svgEl)
-      addZoomButton(chart, svgEl)
+      fitInlineSvg(svgEl, chart)
+      addZoomButton(chart)
       chart.setAttribute('data-rendered', 'true')
       chart.classList.add('is-rendered')
     } catch (err) {
@@ -195,9 +271,16 @@ function scheduleMermaidRender () {
   })
 }
 
+let resizeTimer = null
+function onWindowResize () {
+  clearTimeout(resizeTimer)
+  resizeTimer = setTimeout(refitRenderedCharts, 150)
+}
+
 export default ({ router, isServer }) => {
   if (isServer) return
 
+  window.addEventListener('resize', onWindowResize)
   router.onReady(scheduleMermaidRender)
   router.afterEach(() => {
     closeLightbox()
