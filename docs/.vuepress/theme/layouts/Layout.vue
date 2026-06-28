@@ -133,6 +133,7 @@ import Buttons from '@theme/components/Buttons.vue'
 import Footer from '@theme/components/Footer'
 import BodyBgImg from '@theme/components/BodyBgImg'
 import {resolveSidebarItems} from '../util'
+import { buildQueryPageMetaInfo } from '../util/queryPageMeta'
 import storage from 'good-storage' // 本地存储
 import _ from 'lodash'
 
@@ -153,6 +154,15 @@ export default {
     BodyBgImg,
   },
 
+  metaInfo () {
+    const fm = this.$page.frontmatter
+    if (fm.tagsPage) {
+      return buildQueryPageMetaInfo(this, { queryKey: 'tag', defaultLabel: '标签' })
+    }
+    if (fm.categoriesPage) {
+      return buildQueryPageMetaInfo(this, { queryKey: 'category', defaultLabel: '分类' })
+    }
+  },
   data() {
     return {
       hideNavbar: false,

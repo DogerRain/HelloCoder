@@ -36,6 +36,7 @@ import MainLayout from '@theme/components/MainLayout'
 import PostList from '@theme/components/PostList'
 import Pagination from '@theme/components/Pagination'
 import TagsBar from '@theme/components/TagsBar'
+import { buildQueryPageMetaInfo } from '@theme/util/queryPageMeta'
 
 export default {
   data () {
@@ -48,16 +49,7 @@ export default {
   },
   components: { MainLayout, PostList, Pagination, TagsBar },
   metaInfo () {
-    const raw = this.$route.query.tag
-    let pageTitle = '标签'
-    if (raw) {
-      try {
-        pageTitle = decodeURIComponent(String(raw))
-      } catch (err) {
-        pageTitle = String(raw)
-      }
-    }
-    return { title: pageTitle }
+    return buildQueryPageMetaInfo(this, { queryKey: 'tag', defaultLabel: '标签' })
   },
   mounted () {
     const queryTag = this.$route.query.tag
