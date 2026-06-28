@@ -36,6 +36,7 @@ import MainLayout from '@theme/components/MainLayout'
 import PostList from '@theme/components/PostList'
 import Pagination from '@theme/components/Pagination'
 import CategoriesBar from '@theme/components/CategoriesBar'
+import { buildQueryPageMetaInfo } from '@theme/util/queryPageMeta'
 
 export default {
   data () {
@@ -48,16 +49,7 @@ export default {
   },
   components: { MainLayout, PostList, Pagination, CategoriesBar },
   metaInfo () {
-    const raw = this.$route.query.category
-    let pageTitle = '分类'
-    if (raw) {
-      try {
-        pageTitle = decodeURIComponent(String(raw))
-      } catch (err) {
-        pageTitle = String(raw)
-      }
-    }
-    return { title: pageTitle }
+    return buildQueryPageMetaInfo(this, { queryKey: 'category', defaultLabel: '分类' })
   },
   mounted () {
     const queryCategory = this.$route.query.category
