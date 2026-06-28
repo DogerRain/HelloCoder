@@ -1,3 +1,15 @@
+---
+title: GoogleAdsences开通
+date: 2026-06-21 23:40:20
+lock: false
+permalink: /pages/GoogleAdsences%E5%BC%80%E9%80%9A
+categories:
+  - 随笔
+  - 其他
+tags:
+  - GoogleAdsences
+  - 开通
+---
 
 第二次提交 google adsene了，又被拒绝了。
 

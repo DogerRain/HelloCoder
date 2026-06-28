@@ -1,3 +1,14 @@
+---
+title: 什么是 Sandbox
+date: 2026-06-21 23:40:20
+lock: need
+permalink: /pages/%E4%BB%80%E4%B9%88%E6%98%AF%20Sandbox
+categories:
+  - 专栏
+  - k8s
+tags:
+  - Sandbox
+---
 ## 🧐 什么是 Sandbox（`pause` 容器）？
 
 在 K8s 的体系中，**Pod 是最小的调度单位**，但 Pod 并不是一个真实的物理容器，它是一个**逻辑概念**。一个 Pod 内部可以包含一个或多个业务容器（比如：Hermes 机器人容器 + 日志收集容器）。

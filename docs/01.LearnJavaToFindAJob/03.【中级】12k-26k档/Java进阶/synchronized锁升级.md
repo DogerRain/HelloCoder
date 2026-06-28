@@ -1,3 +1,16 @@
+---
+title: synchronized锁升级
+date: 2026-06-21 23:53:05
+lock: false
+permalink: /pages/synchronized%E9%94%81%E5%8D%87%E7%BA%A7
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - Java进阶
+tags:
+  - synchronized
+  - 锁升级
+---
 锁升级过程：无锁 -> 偏向锁 -> 轻量级锁 -> 重量级锁。
 
 

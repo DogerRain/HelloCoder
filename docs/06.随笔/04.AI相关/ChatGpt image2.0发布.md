@@ -1,3 +1,14 @@
+---
+title: 0发布
+date: 2026-06-21 23:40:20
+lock: false
+permalink: /pages/0%E5%8F%91%E5%B8%83
+categories:
+  - 随笔
+  - AI相关
+tags:
+  - 发布
+---
 最近被一张Claude中国用户开放使用的官方图迷惑了，就是以下这一张：
 
 ![](https://cdn3.ldstatic.com/original/4X/6/9/5/695578c3963e7c1537ccf347a696e63561746b8e.jpeg)

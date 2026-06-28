@@ -1,3 +1,15 @@
+---
+title: HTTP 是不保存状态的协议, 如何保存用户状态
+date: 2026-06-21 23:53:05
+lock: false
+permalink: /pages/HTTP%20%E6%98%AF%E4%B8%8D%E4%BF%9D%E5%AD%98%E7%8A%B6%E6%80%81%E7%9A%84%E5%8D%8F%E8%AE%AE,%20%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E7%94%A8%E6%88%B7%E7%8A%B6%E6%80%81
+categories:
+  - LearnJavaToFindAJob
+  - 【初级】6~12k档
+  - 计算机网络
+tags:
+  - HTTP
+---
 HTTP 协议本身是 **无状态的 (stateless)** 。
 
 服务器默认情况下无法区分两个连续的请求是否来自同一个用户，或者同一个用户之前的操作是什么。

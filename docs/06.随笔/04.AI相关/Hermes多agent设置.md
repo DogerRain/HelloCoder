@@ -1,3 +1,16 @@
+---
+title: Hermes多agent设置
+date: 2026-06-21 23:40:20
+lock: false
+permalink: /pages/Hermes%E5%A4%9Aagent%E8%AE%BE%E7%BD%AE
+categories:
+  - 随笔
+  - AI相关
+tags:
+  - Hermes
+  - agent
+  - 设置
+---
 Hermes Agent 在运行时极其依赖它在宿主机上生成的配置文件、长期记忆数据库（FTS5 全文检索）以及本地 Skills 缓存。如果都在同一台机器上直接裸跑，由于它们默认都会去读写 `~/.hermes` 目录，必然会导致配置冲突、Token 覆盖以及多租户数据污染。
 
 

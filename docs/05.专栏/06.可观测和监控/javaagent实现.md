@@ -1,3 +1,15 @@
+---
+title: javaagent实现
+date: 2026-06-21 23:40:20
+lock: need
+permalink: /pages/javaagent%E5%AE%9E%E7%8E%B0
+categories:
+  - 专栏
+  - 可观测和监控
+tags:
+  - javaagent
+  - 实现
+---
 AgentLoaderMain.class:
 
 ```java

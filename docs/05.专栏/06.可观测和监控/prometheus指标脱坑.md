@@ -1,3 +1,15 @@
+---
+title: prometheus指标脱坑
+date: 2026-06-21 23:40:20
+lock: need
+permalink: /pages/prometheus%E6%8C%87%E6%A0%87%E8%84%B1%E5%9D%91
+categories:
+  - 专栏
+  - 可观测和监控
+tags:
+  - prometheus
+  - 指标脱坑
+---
 ## 1、max
 
 

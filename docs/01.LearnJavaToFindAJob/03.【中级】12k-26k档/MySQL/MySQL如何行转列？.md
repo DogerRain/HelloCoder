@@ -110,24 +110,6 @@ select  cs.courseno,cs.coursenm   from courses cs;
 select   st.stuid ID ,  st.stunm 姓名, cs.coursenm 课程名 ,sc.scores 成绩     from  student st, score sc ,courses cs
 where st.stuid = sc.stuid and sc.courseno = cs.courseno  ;
 
--- 结果看下图二
-select st.stuid 编号, st.stunm 姓名 ,
-Max(case c.coursenm when '大学语文' then s.scores else 0 end ) '大学语文',
-max(case c.coursenm when '新视野英语' then IFNULL(s.scores,0)else 0 end) '新视野英语',
-Max(case c.coursenm when '离散数学' then IFNULL(s.scores,0) ELSE 0 END) '离散数学',
-MAX(case c.coursenm when '概率论与数理统计' then IFNULL(s.scores,0) else 0 end) '概率论与数理统计',
-MAX(case c.coursenm  when '线性代数' then IFNULL(s.scores,0) else 0 END) '线性代数',
-MAX(case c.coursenm when '高等数学(一)' THEN IFNULL(s.scores,0) else 0 end) '高等数学(一)',
-MAX(case c.coursenm when '高等数学(二)' THEN IFNULL(s.scores,0) else 0 end) '高等数学(二)',
-round(AVG(s.scores),2) as 平均分,
-SUM(s.scores) as 总分
-from  student st 
-LEFT JOIN score s on st.stuid = s.stuid
-LEFT JOIN courses c on c.courseno = s.courseno
-GROUP BY st.stuid;
-
--- 结果看图三
-select   s.stuid 编号 , GROUP_CONCAT(courseno) 课程号 , GROUP_CONCAT(s.scores)  成绩  from score s GROUP BY  s.stuid;
 ```
 
 
@@ -170,7 +152,31 @@ select   s.stuid 编号 , GROUP_CONCAT(courseno) 课程号 , GROUP_CONCAT(s.scor
 +------+------+------------------+------+
 ```
 
-图二：
+
+
+## 方案一
+
+
+
+```sql
+
+select st.stuid 编号, st.stunm 姓名 ,
+Max(case c.coursenm when '大学语文' then s.scores else 0 end ) '大学语文',
+max(case c.coursenm when '新视野英语' then IFNULL(s.scores,0)else 0 end) '新视野英语',
+Max(case c.coursenm when '离散数学' then IFNULL(s.scores,0) ELSE 0 END) '离散数学',
+MAX(case c.coursenm when '概率论与数理统计' then IFNULL(s.scores,0) else 0 end) '概率论与数理统计',
+MAX(case c.coursenm  when '线性代数' then IFNULL(s.scores,0) else 0 END) '线性代数',
+MAX(case c.coursenm when '高等数学(一)' THEN IFNULL(s.scores,0) else 0 end) '高等数学(一)',
+MAX(case c.coursenm when '高等数学(二)' THEN IFNULL(s.scores,0) else 0 end) '高等数学(二)',
+round(AVG(s.scores),2) as 平均分,
+SUM(s.scores) as 总分
+from  student st 
+LEFT JOIN score s on st.stuid = s.stuid
+LEFT JOIN courses c on c.courseno = s.courseno
+GROUP BY st.stuid;
+```
+
+
 
 ```sql
 +------+------+----------+------------+----------+------------------+----------+--------------+--------------+--------+------+
@@ -249,7 +255,16 @@ LEFT JOIN courses c on c.courseno = s.courseno;
 
 
 
-图三：
+## 方案二
+
+
+
+```
+
+select   s.stuid 编号 , GROUP_CONCAT(courseno) 课程号 , GROUP_CONCAT(s.scores)  成绩  from score s GROUP BY  s.stuid;
+```
+
+
 
 ```sql
 +------+--------------------------+----------------+
@@ -264,4 +279,4 @@ LEFT JOIN courses c on c.courseno = s.courseno;
 +------+--------------------------+----------------+
 ```
 
-图三是个新函数`GROUP_CONCAT`的测试，可以略过~
+是个新函数`GROUP_CONCAT`的测试，可以略过~

@@ -1,3 +1,15 @@
+---
+title: Gradle项目导入
+date: 2026-06-21 23:40:20
+lock: false
+permalink: /pages/Gradle%E9%A1%B9%E7%9B%AE%E5%AF%BC%E5%85%A5
+categories:
+  - 随笔
+  - 技术
+tags:
+  - Gradle
+  - 项目导入
+---
 ```
 Download https://plugins.gradle.org/m2/com/fasterxml/jackson/module/jackson-module-parameter-names/2.14.2/jackson-module-parameter-names-2.14.2-sources.jar, took 77 ms
 Download https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2-sources.jar, took 434 ms

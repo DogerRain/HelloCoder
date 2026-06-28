@@ -1,3 +1,15 @@
+---
+title: k8s的DNS
+date: 2026-06-21 23:40:20
+lock: need
+permalink: /pages/k8s%E7%9A%84DNS
+categories:
+  - 专栏
+  - k8s
+tags:
+  - ks
+  - DNS
+---
 当你master登入一个pod后，可以看到它的DNS
 
 ```bash

@@ -1,3 +1,16 @@
+---
+title: 免费申请Xiaomi MiMo模型
+date: 2026-06-21 23:40:20
+lock: false
+permalink: /pages/%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7Xiaomi%20MiMo%E6%A8%A1%E5%9E%8B
+categories:
+  - 随笔
+  - AI相关
+tags:
+  - XiaomiMiMo
+  - 免费申请
+  - 模型
+---
 ## 2026年4月份
 
 小米自研的mimo模型开放了，只需要填单申请，表明自己使用AI编程的经历即可免费体验。

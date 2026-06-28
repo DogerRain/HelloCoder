@@ -1,3 +1,15 @@
+---
+title: log4j框架
+date: 2026-06-21 23:40:20
+lock: need
+permalink: /pages/log4j%E6%A1%86%E6%9E%B6
+categories:
+  - 专栏
+  - 05-《Java日志框架》
+tags:
+  - logj
+  - 框架
+---
 https://blog.csdn.net/wankunde/article/details/116717895
 
 log4j 不推荐使用。原因有以下：

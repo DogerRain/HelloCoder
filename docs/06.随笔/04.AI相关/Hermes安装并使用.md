@@ -1,3 +1,15 @@
+---
+title: Hermes安装并使用
+date: 2026-06-21 23:40:20
+lock: false
+permalink: /pages/Hermes%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8
+categories:
+  - 随笔
+  - AI相关
+tags:
+  - Hermes
+  - 安装并使用
+---
 ## 简易安装
 
 Hermes中文官方文档：[https://hermes-agent.nousresearch.com/docs/zh-Hans/](https://hermes-agent.nousresearch.com/docs/zh-Hans/)

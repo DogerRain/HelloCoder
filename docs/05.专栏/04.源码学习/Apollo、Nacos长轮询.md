@@ -1,3 +1,16 @@
+---
+title: Apollo、Nacos长轮询
+date: 2026-06-21 23:40:20
+lock: need
+permalink: /pages/Apollo%E3%80%81Nacos%E9%95%BF%E8%BD%AE%E8%AF%A2
+categories:
+  - 专栏
+  - 源码学习
+tags:
+  - Apollo
+  - Nacos
+  - 长轮询
+---
 如果要实现一个配置中心的更新通知操作，用户在管理后台修改某个配置后，服务端即可马上通知客户端更新，这种架构应该如何设计？
 
 

@@ -1,3 +1,15 @@
+---
+title: 如何访问pod
+date: 2026-06-21 23:40:20
+lock: need
+permalink: /pages/%E5%A6%82%E4%BD%95%E8%AE%BF%E9%97%AEpod
+categories:
+  - 专栏
+  - k8s
+tags:
+  - pod
+  - 如何访问
+---
 在你的 Master 虚拟机上，新建一个文件叫 `nginx-demo.yaml`：
 
 ```yaml

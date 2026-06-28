@@ -1,3 +1,14 @@
+---
+title: Kubernetes API Service
+date: 2026-06-21 23:40:20
+lock: need
+permalink: /pages/Kubernetes%20API%20Service
+categories:
+  - 专栏
+  - k8s
+tags:
+  - KubernetesAPIService
+---
 ```bash
 [root@yudianxx ~]# kubectl get svc | grep
 

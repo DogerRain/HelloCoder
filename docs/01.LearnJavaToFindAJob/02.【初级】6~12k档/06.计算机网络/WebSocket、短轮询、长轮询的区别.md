@@ -1,3 +1,18 @@
+---
+title: WebSocket、短轮询、长轮询的区别
+date: 2026-06-21 23:53:05
+lock: false
+permalink: /pages/WebSocket%E3%80%81%E7%9F%AD%E8%BD%AE%E8%AF%A2%E3%80%81%E9%95%BF%E8%BD%AE%E8%AF%A2%E7%9A%84%E5%8C%BA%E5%88%AB
+categories:
+  - LearnJavaToFindAJob
+  - 【初级】6~12k档
+  - 计算机网络
+tags:
+  - WebSocket
+  - 短轮询
+  - 长轮询
+  - 区别
+---
 
 
 ### 1. 短轮询（Short Polling）

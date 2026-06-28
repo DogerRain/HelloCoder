@@ -1,3 +1,16 @@
+---
+title: IDEA相逢恨晚的技巧
+date: 2026-06-21 23:53:05
+lock: false
+permalink: /pages/IDEA%E7%9B%B8%E9%80%A2%E6%81%A8%E6%99%9A%E7%9A%84%E6%8A%80%E5%B7%A7
+categories:
+  - 随笔
+  - 所思所悟
+tags:
+  - IDEA
+  - 相逢恨晚
+  - 技巧
+---
 https://www.zhihu.com/question/300830746/answer/2836522148
 
 IDEA的plugins插件就不在这里介绍了，有很多文章和答案都有分享过了。

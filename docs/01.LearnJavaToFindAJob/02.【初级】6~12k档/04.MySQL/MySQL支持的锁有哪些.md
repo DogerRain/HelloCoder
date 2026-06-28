@@ -1,3 +1,17 @@
+---
+title: MySQL支持的锁有哪些
+date: 2026-06-21 23:53:05
+lock: false
+permalink: /pages/MySQL%E6%94%AF%E6%8C%81%E7%9A%84%E9%94%81%E6%9C%89%E5%93%AA%E4%BA%9B
+categories:
+  - LearnJavaToFindAJob
+  - 【初级】6~12k档
+  - MySQL
+tags:
+  - MySQL
+  - 支持
+  - 锁有哪些
+---
 ## 一、引擎不同锁也不同
 
 MyISAM 和 MEMORY 采用 表级锁(table-level locking)

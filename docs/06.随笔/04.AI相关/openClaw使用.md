@@ -1,3 +1,15 @@
+---
+title: openClaw使用
+date: 2026-06-21 23:40:20
+lock: false
+permalink: /pages/openClaw%E4%BD%BF%E7%94%A8
+categories:
+  - 随笔
+  - AI相关
+tags:
+  - openClaw
+  - 使用
+---
 
 
 参考：https://cloud.tencent.com/developer/article/2626160
