@@ -1,3 +1,15 @@
+---
+title: Kafka如何避免消失丢失
+date: 2026-06-24 00:43:36
+lock: false
+permalink: /pages/Kafka%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%B6%88%E5%A4%B1%E4%B8%A2%E5%A4%B1
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - 中间件
+tags:
+  - Kafka
+---
 ## 一、消息丢失的几个典型场景
 
 我们先定位消息可能丢在哪，再来谈如何解决。

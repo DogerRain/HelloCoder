@@ -1,3 +1,15 @@
+---
+title: RPC下线窗口期
+date: 2026-06-24 16:02:45
+lock: need
+permalink: /pages/RPC%E4%B8%8B%E7%BA%BF%E7%AA%97%E5%8F%A3%E6%9C%9F
+categories:
+  - 专栏
+  - 03-RPC
+tags:
+  - RPC
+  - 下线窗口期
+---
 从服务端下线到客户端感知，哪怕只有几秒钟，在微服务高并发场景下也足以导致成千上万的请求失败。
 
 

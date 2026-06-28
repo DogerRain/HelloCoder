@@ -1,3 +1,15 @@
+---
+title: 跨线程传递Context
+date: 2026-06-27 11:17:13
+lock: need
+permalink: /pages/%E8%B7%A8%E7%BA%BF%E7%A8%8B%E4%BC%A0%E9%80%92Context
+categories:
+  - 专栏
+  - 可观测和监控
+tags:
+  - Context
+  - 跨线程传递
+---
 OpenTelemetry Java SDK 的 `Context` 确实默认是基于 `ThreadLocal` 实现的。这意味着当你创建新线程或向线程池提交任务时，父线程的 `Context` 不会自动传递给子线程。
 
 

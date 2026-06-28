@@ -1,3 +1,15 @@
+---
+title: MySQL那种事务隔离级别性能高
+date: 2026-06-24 15:24:06
+lock: false
+permalink: /pages/MySQL%E9%82%A3%E7%A7%8D%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E6%80%A7%E8%83%BD%E9%AB%98
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - MySQL
+tags:
+  - MySQL
+---
 
 
 ## 四种隔离级别性能排序

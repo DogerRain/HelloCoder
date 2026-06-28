@@ -1,3 +1,15 @@
+---
+title: MySQL大表索引重建
+date: 2026-06-24 15:49:49
+lock: false
+permalink: /pages/MySQL%E5%A4%A7%E8%A1%A8%E7%B4%A2%E5%BC%95%E9%87%8D%E5%BB%BA
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - MySQL
+tags:
+  - MySQL
+---
 **MySQL大表（千万级+）重建 / 新建 索引，核心原则是“不要直接在线上跑 ALTER TABLE”，会锁表导致业务不可用。**
 
 

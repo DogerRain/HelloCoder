@@ -1,3 +1,19 @@
+---
+title: MySQL的索引和主键的区别
+date: 2026-06-21 23:53:05
+lock: false
+permalink: /pages/MySQL%E7%9A%84%E7%B4%A2%E5%BC%95%E5%92%8C%E4%B8%BB%E9%94%AE%E7%9A%84%E5%8C%BA%E5%88%AB
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - MySQL
+tags:
+  - MySQL
+  - 索引
+  - 主键的区别
+  - 索引和主键
+  - 区别
+---
 
  索引是一种文件，它里面包含着对数据表里所有记录的引用指针。
 

@@ -1,3 +1,16 @@
+---
+title: MySQL的缓存
+date: 2026-06-25 23:19:47
+lock: false
+permalink: /pages/MySQL%E7%9A%84%E7%BC%93%E5%AD%98
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - MySQL
+tags:
+  - MySQL
+  - 缓存
+---
 在现代 MySQL（8.0+）中，**根本没有所谓的“连表缓存结果”**，底层全都是**单表的数据页缓存（Buffer Pool）**。只要执行 JOIN，MySQL 每次都要在内存里把这几张表的数据重新“手拉手”匹配一遍。
 
 那么，当数据发生改变（比如执行了 `UPDATE`、`DELETE` 或 `INSERT`）时，MySQL 的单表缓存（Buffer Pool）是如何精准判断失效并进行更新的呢？

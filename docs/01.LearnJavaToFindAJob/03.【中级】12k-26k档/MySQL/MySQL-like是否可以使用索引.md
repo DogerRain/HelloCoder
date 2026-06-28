@@ -1,3 +1,15 @@
+---
+title: MySQL-like是否可以使用索引
+date: 2026-06-24 15:23:31
+lock: false
+permalink: /pages/MySQL-like%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - MySQL
+tags:
+  - MySQL-like
+---
 如果你读了这篇文章 [Innodb和MyISAM索引的区别](Innodb和MyISAM索引的区别.md) ，你了解索引的结构后，就很容易明白了。
 
 

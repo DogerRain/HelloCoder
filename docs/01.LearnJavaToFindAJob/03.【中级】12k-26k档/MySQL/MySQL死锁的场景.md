@@ -1,3 +1,16 @@
+---
+title: MySQL死锁的场景
+date: 2026-06-24 15:49:40
+lock: false
+permalink: /pages/MySQL%E6%AD%BB%E9%94%81%E7%9A%84%E5%9C%BA%E6%99%AF
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - MySQL
+tags:
+  - MySQL
+  - 死锁的场景
+---
 在 MySQL（尤其是使用 InnoDB 存储引擎）中，**死锁（Deadlock）** 是指两个或多个事务在同一资源上相互占用，并请求锁定对方占用的资源，从而导致恶性循环的现象。
 
 MySQL 底层有一套死锁检测机制（`wait-for-graph` 算法），一旦发现死锁，会选择**回滚代价最小的那个事务**，让另一个事务成功执行。

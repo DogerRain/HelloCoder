@@ -1,3 +1,14 @@
+---
+title: IaC-基础设施即代码
+date: 2026-06-25 22:58:41
+lock: false
+permalink: /pages/IaC-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%8D%B3%E4%BB%A3%E7%A0%81
+categories:
+  - LearnJavaToFindAJob
+  - 【高级】26k+档
+tags:
+  - IaC-
+---
 在云计算和现代运维领域，**IaC（Infrastructure as Code，基础设施即代码）** 是一个极其核心的概念。
 
 

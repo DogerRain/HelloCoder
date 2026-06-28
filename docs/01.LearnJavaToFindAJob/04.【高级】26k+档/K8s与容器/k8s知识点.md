@@ -1,3 +1,16 @@
+---
+title: k8s知识点
+date: 2026-06-21 23:40:20
+lock: false
+permalink: /pages/k8s%E7%9F%A5%E8%AF%86%E7%82%B9
+categories:
+  - LearnJavaToFindAJob
+  - 【高级】26k+档
+  - K8s与容器
+tags:
+  - ks
+  - 知识点
+---
 ## 1、Kubernetes是什么？
 
 Kubernetes 就是容器化应用的操作系统，是容器编排平台，用于自动部署、扩展和管理容器化应用程序。

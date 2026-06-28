@@ -1,3 +1,16 @@
+---
+title: MySQL连表优化
+date: 2026-06-24 15:50:14
+lock: false
+permalink: /pages/MySQL%E8%BF%9E%E8%A1%A8%E4%BC%98%E5%8C%96
+categories:
+  - LearnJavaToFindAJob
+  - 【中级】12k-26k档
+  - MySQL
+tags:
+  - MySQL
+  - 连表优化
+---
 多表关联查询（Join）是 MySQL 中最常见也最容易出性能问题的场景。优化的核心思路是：**减少扫描数据量、利用索引、改写 SQL 或拆分查询。**
 
 
