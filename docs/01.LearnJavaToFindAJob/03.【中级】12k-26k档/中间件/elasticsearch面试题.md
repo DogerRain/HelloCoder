@@ -1,13 +1,69 @@
----
-title: elasticsearch面试题
-date: 2022-06-02 11:18:17
-lock: false
-permalink: /pages/elasticsearch%E9%9D%A2%E8%AF%95%E9%A2%98
-categories: 
-  - LearnJavaToFindAJob
-  - 【中级】12k-26k档
-  - 中间件
-tags: 
-  - elasticsearch
-  - 面试题
----
+
+
+## 1、层级对应关系（最容易记忆的类比）
+
+| Elasticsearch        | MySQL 关系库    | 说明                                        |
+| -------------------- | --------------- | ------------------------------------------- |
+| Index（索引）        | Database 数据库 | 逻辑数据集合，存放一类业务数据              |
+| Type（7.0 后废弃）   | Table 数据表    | ES 7.x 移除多 type，一个 Index 只存一类文档 |
+| Doc（Document 文档） | Row 单行记录    | Index 里最小数据单元，一条业务数据          |
+| Field（字段）        | Column 列       | Doc 内部的 key-value 字段，如 name、age     |
+
+
+
+> 重要版本提示：ES 7.0 彻底删除多 Type，**一个 Index 对应一类实体**，不再像 MySQL 一个库多张表。
+
+
+
+示例Doc：
+
+```json
+{
+  "_id": "1001", // 文档唯一标识（主键，可自定义/自动生成）
+  "_source": { // 原始业务数据
+    "name": "张三",
+    "age": 22,
+    "city": "广州"
+  }
+}
+```
+
+
+
+## 2、倒排索引如何理解
+
+### 1. 正排索引（行存储，MySQL / 原始文档逻辑）
+
+**文档 → 字段内容**
+
+```text
+doc1: name:张三, city:北京, age:22
+doc2: name:李四, city:上海, age:25
+doc3: name:张三, city:上海, age:30
+```
+
+查找需求：查所有叫「张三」的人
+
+正排逻辑：遍历 doc1、doc2、doc3，逐个读取 name 字段对比，数据量大时全量扫描，极慢。
+
+### 2. 倒排索引（ES 核心，反向映射）
+
+**词条 term → 包含该词条的文档列表**
+
+分词后构建映射表:
+
+```
+张三 → [doc1, doc3]
+李四 → [doc2]
+北京 → [doc1]
+上海 → [doc2, doc3]
+```
+
+查「张三」：直接定位 `[doc1, doc3]`，不用遍历全部文档，全文检索秒级匹配。
+
+
+
+
+
+ES 默认 `text/keyword/数值/日期` 都会开启倒排，只有手动 `index:false` 才不生成；
+
